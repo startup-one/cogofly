@@ -1,0 +1,54 @@
+{% load static staticfiles compress i18n %}
+<div class="row description-complete" style="display: none">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel panel-primary {% if request.session.message %}panel-toggle-message{% endif %}">
+            <div class="panel-heading">
+                <i class="fa fa-edit fa-fw"></i>&nbsp;{{ personne.full_name }}
+            </div>{# <!-- /.panel-heading --> #}
+            <div class="panel-body">
+                {% comment %}
+                Copier coller de la présentation pour avoir
+                la même chose : photo de profil + texte résumé à droite
+                {% endcomment %}
+                <div class="row">
+                    <div class="col-lg-6 self-profile-photo">
+                        <p class="text-center" style="margin: 0">
+                            {# url_photo précalculé #}
+                            <img src="{{ url_photo_profil }}"
+                                 style="max-width: 100%; max-height: 286px">
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p><b>
+                            {% for t in personne.description_resume %}
+                                {{ t }}{% if not forloop.last %}<br />{% endif %}
+                            {% endfor %}
+                        </b></p>
+                        <p style="margin-left: 5%">
+                            {% for t in personne.description_last_travels %}
+                                <span style="font-size:small">&#9679;</span>
+                                {{ t|safe }}{% if not forloop.last %}<br/>{% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                {# fin du copier/coller de la présentation #}
+                <div class="row" style="padding-bottom: 10px">
+                    <div class="col-lg-12">
+                        {% include "includes/person/description_complete.html" %}
+                    </div>
+                </div>
+                <button class="btn btn-dark btn-block"
+                        data-hqf-switch="$.ct('.row')/u/$('#profile-summary')/Od"
+                        style="margin: 0 0 6px;">
+                    &nbsp;&nbsp;&nbsp;
+                     <i class="fa fa-times"></i>
+                    &nbsp;&nbsp;
+                    {% trans "Close" %}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>

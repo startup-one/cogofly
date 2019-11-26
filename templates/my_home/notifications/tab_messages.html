@@ -1,0 +1,116 @@
+{% load static staticfiles compress i18n model_access dumper %}
+{% comment %}--------------------------------------------------------
+Grosse boucle qui affiche les blocs "résumé du message reçu"
+{% endcomment %}
+<div class="row conversations-summary" style="margin-top: 15px">
+    <div class="col-lg-12">
+        {% with opt_messages_not_read=True %}
+            {% for c in conversations %}
+                {% include "my_home/notifications/messages_list.html" %}
+            {% empty %}
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4 style="margin: 0">
+                                    {% trans 'No new messages' %}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endwith %}
+        {% with opt_messages_not_read=False %}
+            {% if conversations_lues.has_other_pages and conversations_lues.number > 1 %}
+                {# c'est mon paginateur maison #}
+                <ul class="pagination pagination-lg"
+                    style="margin-top: 0">
+                    {% for obj in conversations_lues.paginator.around %}
+                        <li{% if obj.is_current %} class="disabled"{% endif %}>
+                            <a {% if not obj.is_current %} href="?p_convs={{ obj.page }}"{% endif %}>
+                                {% if obj.last and not obj.is_current %}
+                                    &raquo;
+                                {% endif %}
+                                {{ obj.page }}
+                                {% if obj.first and not obj.is_current %}
+                                    &laquo;
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% for c in conversations_lues %}
+                {% include "my_home/notifications/messages_list.html" %}
+            {% endfor %}
+            {% if conversations_lues.has_other_pages %}
+                {# c'est mon paginateur maison #}
+                <ul class="pagination pagination-lg"
+                    style="margin-top: 0">
+                    {% for obj in conversations_lues.paginator.around %}
+                        <li{% if obj.is_current %} class="disabled"{% endif %}>
+                            <a {% if not obj.is_current %} href="?p_convs={{ obj.page }}"{% endif %}>
+                                {% if obj.last and not obj.is_current %}
+                                    &raquo;
+                                {% endif %}
+                                {{ obj.page }}
+                                {% if obj.first and not obj.is_current %}
+                                    &laquo;
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+<script>$(document).ready(function() {
+    notificationsApplyEffects('conversation', 'conversations');
+});</script>
+
+{% comment %}--------------------------------------------------------
+Grosse boucle qui affiche le détail d'une conversation = quand on clique sur
+les blocs d'avant, on affiche le bloc "conversation" d'ici :
+{% endcomment %}
+{% with message_not_read=True %}
+    {% for c in conversations %}
+        {% include "my_home/notifications/message_detail.html" %}
+    {% endfor %}
+{% endwith %}
+{% with message_not_read=False %}
+    {% for c in conversations_lues %}
+        {% include "my_home/notifications/message_detail.html" %}
+    {% endfor %}
+{% endwith %}
+
+{% comment %}Énorme commentaire en début du fichier inclus ci dessous,
+ expliquant pourquoi j'ai séparé le "div" modal et que je les mets APRÈS les
+ conversations :
+{% endcomment %}
+{% for c in conversations %}
+    {% include 'my_home/notifications/messages_list_delete.html' %}
+{% endfor %}
+{% for c in conversations_lues %}
+    {% include 'my_home/notifications/messages_list_delete.html' %}
+{% endfor %}
+
+{% if not conversations and not conversations_lues %}
+    <div class="row" style="margin-bottom: 10px">
+        <div class="col-lg-12">
+            <h4 style="margin-top: -7px;">
+                {% blocktrans trimmed %}
+                If you want to write a message to your contacts,
+                click here:
+                {% endblocktrans %}
+                <a href="{% url 'my_home_contacts' %}">
+                    <button class="btn btn-info">
+                        <i class="fa fa-users"></i>
+                    </button>
+                </a>
+            </h4>
+        </div>
+    </div>
+{% endif %}
+

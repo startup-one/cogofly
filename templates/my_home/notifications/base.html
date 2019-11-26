@@ -1,0 +1,58 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n %}
+{% block main-title %}
+    <i class="fa fa-list fa-fw"></i>
+    {% block title %}{% trans "Notifications" %}{% endblock %}
+{% endblock %}
+{% block central %}
+
+<div class="row">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel">
+            <div class="panel-body" style="padding-bottom:5px;">
+                {% include "includes/panel_message.html" %}
+                <ul class="nav nav-pills">
+                    <li id="btn-tab-messages" class="active">
+                        <a href="#tab-messages" aria-expanded="false" data-toggle="tab">
+                            {% trans 'Messages' %}
+                            {% with common.notifications.messages_not_read_count as c %}
+                                <span class="badge{% if c > 0 %} badge-new{% endif %}">{{ c }}</span>
+                            {% endwith %}
+                        </a>
+                    </li>
+                    <li id="btn-tab-invitations">
+                        <a href="#tab-invitations" aria-expanded="false" data-toggle="tab">
+                            {% trans 'Invitations' %}
+                            {% with common.notifications.invitations_count as c %}
+                                <span class="badge{% if c > 0 %} badge-new{% endif %}">{{ c }}</span>
+                            {% endwith %}
+                        </a>
+                    </li>
+                    <li id="btn-tab-likes">
+                        <a href="#tab-likes" aria-expanded="false" data-toggle="tab">
+                            {% trans 'Likes' %}
+                            {% with common.notifications.likes_count as c %}
+                                <span class="badge{% if c > 0 %} badge-new{% endif %}">{{ c }}</span>
+                            {% endwith %}
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    {# séparation dans des fichiers sinon HTML trop surchargé #}
+                    <div class="tab-pane fade active in" id="tab-messages">
+                        {% include 'my_home/notifications/tab_messages.html' %}
+                    </div>
+                    <div class="tab-pane fade" id="tab-invitations">
+                        {% include 'my_home/notifications/tab_invitations.v2.html' %}
+                    </div>
+                    <div class="tab-pane fade" id="tab-likes">
+                        {% include 'my_home/notifications/tab_likes.v2.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>
+{% endblock %}

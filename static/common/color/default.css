@@ -1,0 +1,59 @@
+
+a,.tp-caption a.btn:hover {
+	color: #e88b60;
+}
+.top-nav-collapse {
+	background: rgba(255,255,255,0.1);
+}
+
+.navbar-custom ul.nav ul.dropdown-menu li a:hover {
+	color: #e88b60;
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+    background-color: #e88b60;
+}
+
+.widget-avatar .avatar:hover {
+    border: 5px solid #e88b60;
+}
+
+.bg-skin {
+	background: #e88b60;
+}
+
+form#contact-form input:focus,form#contact-form select:focus,form#contact-form textarea:focus {
+	border-color: #e88b60;
+}
+
+footer {
+    background-color: #0e263d;
+}
+
+.btn-skin {
+  color: #fff;
+  background-color: #e88b60;
+  border-color: #e88b60;
+}
+
+/*
+body.vegas-container>.vegas-overlay, body.vegas-container>.vegas-slide, body.vegas-container>.vegas-timer {
+    position: absolute;
+}
+
+.dropdown-menu {
+    outline: solid 1px blue;
+    max-width: 5px;
+}
+
+.dropdown-menu ul {
+    outline: solid 1px rebeccapurple;
+    max-width: 5px;
+}
+.dropdown-menu ul li {
+    outline: solid 1px darkred;
+    max-width: 5px;
+}
+
+*/

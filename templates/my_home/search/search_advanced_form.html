@@ -1,0 +1,26 @@
+{% comment %}--------------------------------------------------------------
+basic forme / séparé pour alléger le template principal
+{% endcomment %}{% load static staticfiles compress i18n klass %}
+{% with form_avancee as form_search_generic %}
+{% include 'my_home/search/search_generic_form.html' %}
+{% endwith %}
+
+
+<div class="row">
+    <div class="col-lg-9">
+        <div class="form-group">
+            <button class="btn btn-validate btn-block"
+                    type="submit"
+                    onclick="$(this).hide(); $(this).next().show();">
+                {% trans 'Co&nbsp;!' %}
+            </button>
+            <button class="btn btn-dark btn-block"
+                    type="button"
+                    style="display: none">
+                <img src="{% static 'img/anims/wait.gif' %}"
+                     alt="{% trans 'Searching...' %}">
+                {% trans 'Searching...' %}
+            </button>
+        </div>
+    </div>
+</div>

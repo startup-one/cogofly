@@ -1,0 +1,13 @@
+{% comment %}--------------------------------------------------------------
+Forme entièrement générique, qui inclut l'autre
+template d'affichage des champs, entièrement générique lui aussi :
+{% endcomment %}{% load static staticfiles compress i18n klass %}
+
+{% for hidden in form_search_generic.hidden_fields %}
+{{ hidden }}
+{% endfor %}
+
+{% with form_search_generic as form %}
+    {% include 'includes/form_generic/fields_by_groupno.html' %}
+{% endwith %}
+

@@ -1,0 +1,58 @@
+{% extends 'my_home/contacts/base.html' %}
+{% load static staticfiles compress i18n %}
+{% block main-title %}
+    <i class="fa fa-envelope fa-fw"></i>
+    {% block title %}{% trans "Invite friends" %}{% endblock %}
+{% endblock %}
+{% block central %}
+<div class="row">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        {% include "includes/panel_message.html" %}
+        <div class="panel panel-default" {% if request.session.message %}style="display: none" {% endif %}>
+            <div class="panel-body">
+                <p style="text-align: center">
+                <img src="{% static 'img/icons/friends.png' %}"
+                             title="{% trans 'Invite a friend' %}"
+                             alt="{% trans 'Invite a friend' %}">
+                </p>
+                <form id="invite-form" action="{% url 'my_home_contacts_invite' %}"
+                      method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group {% if field.errors %}has-error{% endif %}">
+                            <label>{{ field.label }}</label>
+                            <label for="{{ field.auto_id }}"
+                                   class="sr-only">{{ field.label }}
+                            </label>
+                            {{ field }}
+                        </div>
+                        {% if field.errors %}
+                        <div class="form-group">
+                            <div class="alert alert-danger" role="alert">
+                            {% for error in field.errors %}
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">{{ error }}</span>
+                                {{ error }}
+                            {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {{ field.help_text }}
+                    {% endfor %}
+
+                    {% include "includes/form_generic/form_non_field_errors.html" %}
+
+                    <button class="btn btn-validate btn-block"
+                            id="register-submit-button" type="submit">
+                        {% trans "Send" %}
+                        &nbsp;&nbsp;
+                        <i class="fa fa-envelope fa-fw"></i>
+                    </button>
+                </form><!-- /.list-group -->
+            </div><!-- /.panel-body -->
+        </div><!-- /.panel -->
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>
+{% endblock %}

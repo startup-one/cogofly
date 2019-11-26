@@ -1,0 +1,19 @@
+{% load static staticfiles compress i18n %}
+<div class="row">
+    <div class="col-lg-12 col-help">{% spaceless %}
+        <p>
+        {% blocktrans trimmed %}
+            At any time, via the “My settings” button on your profile,
+            you can decide whether or not to keep your account active.
+        {% endblocktrans %}
+        </p>
+        <p>
+        {% blocktrans trimmed %}
+            A final “alert” message will appear, allowing you to confirm
+            or change your mind, in order to avoid any inadvertent
+            keyboard errors.
+        {% endblocktrans %}
+        </p>
+    {% endspaceless %}
+    </div>
+</div>

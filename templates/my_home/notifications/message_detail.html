@@ -1,0 +1,57 @@
+{% load static staticfiles compress i18n model_access dumper %}
+{% comment %}--------------------------------------------------------
+Afficher le détail d'une conversation. C'est ce qui est affiché quand
+ on clique sur le "résumé" de la conversation
+{% endcomment %}
+
+{# Tous les paramètres à envoyer à l'include "person_detail" : #}
+{% with c.form as form_send_message %}
+{% with 'my_home_notifications' as form_send_message_url %}
+{% with c.conversation as conversation %}
+{% with c.conversation|first_person_who_is_not:common.personne as personne %}
+{# (!!) -> passer la conversation pour qu'elle soit affichée #}
+{% with c as personne_conversation %}
+
+{% with link_contact_detail=True %}
+{% with show_buttons=False %}
+
+    <div class="row" style="margin-top: 15px; display: none"
+         id="conversation-full-{{ c.conversation.pk }}">
+        <div class="col-lg-12">
+            {% include 'includes/person/detail.html' %}
+
+            <div class="panel">
+                {% with _('Answer') as label_send_a_message %}
+                {% with ' ' as btn_added_class %}{# btn-validate ! #}
+                {% with personne.id as id_unique %}
+                    {% include "includes/person/send_message.html" %}
+                {% endwith %}
+                {% endwith %}
+                {% endwith %}
+                {% if message_not_read %}
+                <button type="button" class="btn btn-dark"
+                        style="margin-left: 0"
+                        onclick="location.reload(true);">
+                    <i class="fa fa-times"></i>
+                    {% trans "Close" %}
+                </button>
+                {% else %}
+                <button type="button" class="btn btn-dark"
+                        style="margin-left: 0"
+                        data-hqf-switch="$.ct('.row')/Xu/$.ct('.row').pa('.conversations-summary:first')/Od">
+                    <i class="fa fa-times"></i>
+                    {% trans "Close" %}
+                </button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endwith %}
+{% endwith %}
+{% endwith %}
+{% endwith %}
+{% endwith %}
+{% endwith %}
+{% endwith %}
+

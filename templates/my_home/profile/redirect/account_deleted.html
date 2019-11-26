@@ -1,0 +1,45 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n django_markdown %}
+
+{% block main-title %}
+    {% block title %}{% if user.is_authenticated %}
+        {{ common.hello }}{% else %}{% trans "My home" %}
+    {% endif %}{% endblock %}
+{% endblock %}
+
+{% block central %}
+    <div class="row">
+        {% if message %}
+        <div class="col-lg-12">
+            {% include "includes/panel_message.html" %}
+        </div>
+        {% endif %}
+        <div class="col-lg-3">&nbsp;</div>
+
+        <div class="col-lg-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <strong>{% trans "Account deleted" %}</strong>
+                </div>
+                <div class="panel-body">
+                    <p>{% blocktrans trimmed %}
+                        This account is deleted.
+                    {% endblocktrans %}
+                    </p>
+                    <p>{% url 'my_home_remarks_and_testimonies' as url_support %}
+                        {% blocktrans trimmed %}
+                            You still can join the support team by
+                            <a href="{{ url_support }}">clicking here.</a>
+                        {% endblocktrans %}
+                    </p>
+                </div>{% comment %}
+                <div class="panel-footer">
+                    Footer
+                </div>{% endcomment %}
+            </div>
+        </div>
+
+        <div class="col-lg-3">&nbsp;</div>
+
+    </div>
+{% endblock %}

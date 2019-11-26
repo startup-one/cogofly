@@ -1,0 +1,129 @@
+{% comment %}--------------------------------------------------------------
+basic hints / séparé pour alléger le template principal
+{% endcomment %}{% load static staticfiles compress i18n klass %}
+
+<div class="row">
+    <div class="col-lg-9" style="margin-top: 12px">
+        <button class="btn btn-outline btn-default btn-block"
+                type="button" onclick="return false;"
+                data-hqf-switch="$.ct('.row')/Xu/$.ct('.row').nt()/Xd">
+            {% trans 'Hints &raquo;' %}
+        </button>
+    </div>
+</div>
+<div class="row" id="search-hint-advanced"
+     style="display: none">
+    <div style="margin-top: 10px" class="col-lg-9">
+        <ul class="nav nav-pills">
+            <li id="btn-profile" class="active">
+                <a href="#search-hint-advanced-tip1" aria-expanded="false" data-toggle="tab">
+                    {% trans 'Tip 1' %}
+                </a>
+            </li>
+            <li id="btn-visibility">
+                <a href="#search-hint-advanced-tip2" aria-expanded="false" data-toggle="tab">
+                    {% trans 'Tip 2' %}
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="search-hint-advanced-tip1">
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-lg-12">
+                    <div class="col-lg-12">{% spaceless %}{% blocktrans trimmed %}
+                        <p><b>All of the fields above are optional.</b></p>
+                        <p>Choose any number of preferences in any order,
+                            find your ideal travel companion and use one
+                            of the following approaches:</p>
+                        <ul>
+                        <li><b>You know precisely where and
+                            when you want to go:</b>
+                            fill in all fields.</li>
+                        <li><b>You don’t know when you want to go away: </b>
+                            fill in at the very least the destination,
+                            and then check the dates that appear
+                            and select the ones that suit you.</li>
+                        <li><b>You don’t know where you want to go:</b>
+                            fill in at the very least your date of
+                            departure and/or arrival, or even a time
+                            frame, and sit back while the most
+                            amazing destinations are selected for you.</li>
+                        <li><b>You wish to remain in your « comfort zone » and
+                            go away with people:</b><br/><br/>
+                            <ul>
+                                <li>Who work in the same sector.</li>
+                                <li>Who do exactly the same job.</li>
+                                <li>With whom you have activities in common
+                                    (sporting, cultural, leisure...).</li>
+                                <li>Who have visited the same
+                                    cities/countries.</li>
+                                <li>Who have the same plans.</li>
+                                <li>And so on...</li>
+                            </ul>
+                        </li>
+                        </ul>
+                        <p>This advanced search will respond <b>perfectly</b>
+                            to your most realistic demands.</p>
+                    {% endblocktrans %}{% endspaceless %}
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="search-hint-advanced-tip2">
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-lg-12">{% spaceless %}{% blocktrans trimmed %}
+                        <p><b>All of the fields above are optional.</b></p>
+                        <p>You enjoy being alone and wish to remain so...
+                            <b>This site is also for you!</b>
+                        </p>
+                        <p>You will be able to use this <b>advanced search</b>
+                            to find,
+                            <b>just like the basic search,</b>
+                            people who have already been to the town/country
+                            that you have picked as your next destination.
+                            Furthermore, thanks to all of the useful criteria,
+                            you will be able to find people
+                            <b>with the same centers of interest.</b></p>
+                        <p><b>Will the latter be sufficient and pertinent
+                            enough to enable you to hit it off with people
+                            and discuss your travel plans to the full?...
+                            You alone have the answer!</b></p>
+                        <p>You will <b>no doubt</b> be able to obtain helpful
+                            information through other people’s experiences
+                            and the useful information they share via this
+                            new platform, and why not make the most of some
+                            of their recommendations.</p>
+                        <p>In order to do so you can use
+                            <b>this search by entering dates in the
+                            past</b> and then chatting with people to your
+                            heart’s content in order to prepare your next
+                            trip/day out.</p>
+                        <p><b>You will then also be able to use the search by
+                            entering dates in the future if:</b></p>
+                        <ul>
+                        <li>You change your mind at the last minute.</li>
+                        <li>You need help once you’ve arrived at your
+                            chosen destination.</li>
+                        <li>You haven’t found anyone who has visited the
+                            place in question.</li>
+                        <li>You want to help a friend who hasn't had time to
+                            sign up to the site and who wants to find
+                            a travel companion.</li>
+                        </ul>
+                        <p><b>Who better than fellow travellers to help
+                            you: travel like they do, make the most of their
+                            feedback and share practical information about
+                            the countries they have visited?</b></p>
+                        {% endblocktrans %}{% endspaceless %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-dark btn-block" type="button"
+                onclick="return false;"
+                data-hqf-switch="$.ct('.row').pv()/Xd/$.ct('.row')/Ou">
+            <i class="fa fa-times"></i>&nbsp;{% trans 'Close' %}
+        </button>
+    </div>
+</div>

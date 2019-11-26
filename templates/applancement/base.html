@@ -1,0 +1,178 @@
+<!doctype html>{% spaceless %}
+{% load staticfiles i18n templates_extras compress %}
+{% get_current_language as LANGUAGE_CODE %}
+
+{# ------------------------------------------------------------------------- #}
+{#    Choix des langues                                                      #}
+{# ------------------------------------------------------------------------- #}
+{% trans "Languages" as langues %}
+
+{% captureas meta_description %}{% blocktrans trimmed %}
+    Find a trust person to travel together, plan your trip, whether it be
+    going away for the weekend or just on a day out and give your ambitions a
+    boost
+{% endblocktrans %}{% endcaptureas %}
+{% captureas meta_og_title %}{% blocktrans trimmed %}
+    Don't want to travel alone ? This site is made for you!
+    Sign up for free and join the new community.
+{% endblocktrans %}{% endcaptureas %}
+{% captureas meta_og_description %}{% blocktrans trimmed %}
+    Only one rule: never stay alone ! Think together, think 'Co', and take off.
+    Don't wait to be abroad to meet great persons, anticipate to take
+    advantage during all your trip and have fun!
+{% endblocktrans %}{% endcaptureas %}
+{% captureas meta_twitter_title %}{% blocktrans trimmed %}
+    Don't want to travel alone? This site is made for you! Sign up for free,
+    join the new trust community and let's go together.
+{% endblocktrans %}{% endcaptureas %}
+{% captureas meta_twitter_description %}{% blocktrans trimmed %}
+    Only one rule: never stay alone ! Think together, think 'Co', and take
+    off! Don't wait to be abroad to meet great persons, anticipate to take
+    advantage during all your trip and have fun!
+{% endblocktrans %}{% endcaptureas %}
+
+{% captureas meta_property_headline %}{% blocktrans trimmed %}
+    Don't want to travel alone? This site is made for you! Sign up for free
+    and join the new community.
+{% endblocktrans %}{% endcaptureas %}
+
+
+{% captureas meta_itemprop_og_headline %}{% blocktrans trimmed %}
+    Don't want to travel alone? This site is made for you! Sign up for free
+    and join the new community.
+{% endblocktrans %}{% endcaptureas %}
+
+{% captureas meta_itemprop_og_description %}{% blocktrans trimmed %}
+    Don't want to travel alone? This site is made for you! Sign up for free,
+    join the new trust community and let's go together.Only one rule: never
+    stay alone ! Think together, think 'Co', and take off ! Don't wait to be
+    abroad to meet great persons, anticipate to take advantage during all
+    your trip and have fun!
+{% endblocktrans %}{% endcaptureas %}
+
+{% captureas meta_itemprop_name %}{% blocktrans trimmed %}
+    Don't want to travel alone? This website is
+    for you... Sign up for free and join the new community.
+{% endblocktrans %}{% endcaptureas %}
+
+{% captureas meta_itemprop_description %}{% blocktrans trimmed %}
+    Don't want to travel alone? This site is made for you! Sign up for free
+    and join the new community and let's go together. Only one rule: never
+    stay alone ! Think together, think 'Co', and take off ! Don't wait to be
+    abroad to meet great persons, anticipate to take advantage during all
+    your trip and have fun!
+{% endblocktrans %}{% endcaptureas %}
+
+{# ------------------------------------------------------------------------- #}
+{#    Fin des chaînes à traduire                                             #}
+{# ------------------------------------------------------------------------- #}
+<html lang="{{ LANGUAGE_CODE }}">{% endspaceless %}
+<head>
+    <meta charset="utf-8">
+
+{% block title %}
+    <title>Cogofly</title>
+{% endblock %}
+
+{% block metas %}
+    <meta name="description" content="{{ meta_description }}" />
+    <link rel="author" href="https://plus.google.com/115626917121959048988/" />
+    <link rel="publisher" href="https://plus.google.com/115304506665062236158/"/>
+    <meta property="og:title" content="{{ meta_og_title }}"/>
+    <meta property="og:url" content="http://{{ request.META.HTTP_HOST }}" />
+     <meta property="og:site_name" content="Cogofly" /> 
+{% comment %} Ces mongoliens de Facebook ont ici aussi changé la donne :
+il faut absolument tout préciser sur l'image : taille et type
+https://developers.facebook.com/docs/sharing/best-practices
+http://ogp.me/
+{% endcomment %}
+    <meta property="og:image" content="{% static 'img/logo/main-page-800x800.jpg' %}" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:description" content="{{ meta_og_description }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <meta property="fb:admins" content="cogofly@gmail.com" />
+    <meta property="fb:app_id" content="755565081236511" />
+    <meta property="article:author" content="https://www.facebook.com/CoGofly" />
+    <meta property="article:publisher" content="https://www.facebook.com/CoGofly" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://{{ request.get_host }}" />
+    <meta property="twitter:title" content="{{ meta_twitter_title }}" />
+    <meta property="twitter:description" content="{{ meta_twitter_description }}" />
+    <meta property="twitter:image" content="http{% if request.is_secure %}s{% endif %}://{{ request.META.HTTP_HOST }}{% static 'img/thumbnail-800x800.jpg' %}" />
+
+
+    {# <!-- Ajoutez les trois balises suivantes dans l'en-tête. --> #}
+    <meta property="headline" content="{{ meta_property_headline }}"/>
+    <meta itemprop="og:headline" content="{{ meta_itemprop_og_headline }}" />
+    <meta itemprop="og:description" content="{{ meta_itemprop_og_description }}" />
+    <meta property="og:image" content="{% static 'img/logo/main-page-800x800.jpg' %}" />
+
+    <meta itemprop="name" content="{{ meta_itemprop_name }}">
+    <meta itemprop="description" content="{{ meta_itemprop_description }}">
+    <meta itemprop="image" content="http{% if request.is_secure %}s{% endif %}://{{ request.get_host }}{% static 'img/logo/main-page-800x800.jpg' %}" />
+
+{% endblock %}
+
+<link type="text/css" rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,700,100italic,300italic">
+{% compress css %}
+    <link rel="stylesheet" href="{% static "css/countdown.css" %}" type="text/css" />
+    <style>h1, section, .title {
+        background: transparent none;
+        margin: 0;
+    }
+    h1 {
+        text-align: center;
+    }</style>
+{% endcompress %}
+{% compress css %}
+    <link rel="stylesheet" href="{% static '3rdp/vegas/vegas.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/log.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/facebook.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/general.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/my_home_base.css' %}" type="text/css" />
+{% endcompress %}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+{% comment "C'est pour la fin" %}
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="blabla.png">
+    <link rel="shortcut icon" href="favicon.png">
+{% endcomment %}
+    <link rel="icon" href="{% static 'favicon-32.png' %}?v=6" />
+    <script>var globLanguage='{{ LANGUAGE_CODE }}';</script>
+{% block custom_js %}
+{% compress js %}
+    <script src="{% static 'js/jquery/jquery-2.1.4.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/jquery/jquery-ui-custom.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/launch/jquery.countdown.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/launch/countdown.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/highlight.js' %}" type="text/javascript"></script>
+    <script src="{% static '3rdp/vegas/vegas.min.js' %}" type="text/javascript"></script>
+{% if custom_js_slider %}
+    <script src="{% static custom_js_slider %}" type="text/javascript"></script>
+{% else %}
+    <script src="{% static 'js/launch/bg-slider.js' %}" type="text/javascript"></script>
+{% endif %}
+    <script src="{% static 'js/jquery/jquery.scrollTo.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/launch/login.js' %}" type="text/javascript"></script>
+{% endcompress %}
+{% endblock custom_js %}
+
+</head>
+<body>
+{% block body %}
+{% endblock %}
+</body>
+</html>

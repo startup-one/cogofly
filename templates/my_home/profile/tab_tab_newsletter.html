@@ -1,0 +1,28 @@
+{% load static staticfiles compress i18n %}
+
+<div class="row" style="margin-top: 10px">
+    <form id="edit-change-password-form"
+          action="{% url 'my_home_newsletter_set_configuration' %}"
+          method="POST">
+        <div class="col-lg-12">
+            {% csrf_token %}
+            {% with form_newsletter_configuration as form %}
+            {% with group_no=0 %}
+                {% include 'includes/form_generic/fields_by_groupno.html' %}
+            {% endwith %}
+            {% endwith %}
+        </div>
+        <div class="col-lg-6">
+            <button type="submit" class="btn btn-validate btn-block">
+                {% trans "Confirm" %}
+            </button>
+        </div>
+        <div class="col-lg-6">
+            <button class="btn btn-dark btn-block" type="button"
+                    data-hqf-switch="$.ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pv().pv().pv()/Od">
+                <i class="fa fa-times"></i>
+                {% trans "Close" %}
+            </button>
+        </div>
+    </form>
+</div>

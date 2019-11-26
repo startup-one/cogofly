@@ -1,0 +1,55 @@
+{% load static staticfiles compress i18n %}
+<div class="row" style="display: none">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel panel-default {% if request.session.message %}panel-toggle-message{% endif %}">
+            <div class="panel-heading">
+                {% trans "All my groups" %}
+            </div>{# <!-- /.panel-heading --> #}
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="text-center">
+                            C'est ici que seront tous les comptes
+                        </p>
+                    </div>{# <!-- /.col-lg-12 --> #}
+                    <div class="col-lg-4">
+                        <button class="btn btn-primary btn-block disabled"
+                                type="button" style="text-align: left"
+                                data-hqf-switch="$.ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pv().pv().pv().pv()/d">
+                            &nbsp;
+                            <i class="fa fa-heart"></i>
+                            &nbsp;
+                            {% trans "Add my couple account" %}
+                        </button>
+                        <button class="btn btn-primary btn-block disabled"
+                                type="button" style="text-align: left"
+                                data-hqf-switch="$.ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pv().pv().pv().pv()/d">
+                            &nbsp;
+                            <i class="fa fa-users"></i>
+                            &nbsp;
+                            {% trans "Add my family account" %}
+                        </button>
+                        <button class="btn btn-primary btn-block disabled"
+                                type="button" style="text-align: left"
+                                data-hqf-switch="$.ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pv().pv().pv().pv()/d">
+                            &nbsp;
+                            <i class="fa fa-users"></i>
+                            &nbsp;
+                            {% trans "Add a group" %}
+                        </button>
+                        <button class="btn btn-dark btn-block"
+                                type="button" style="text-align: left"
+                                data-hqf-switch="$.ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pv().pv().pv().pv()/d">
+                            &nbsp;
+                            <i class="fa fa-times"></i>
+                            &nbsp;
+                            {% trans "Close" %}
+                        </button>
+                    </div>{# <!-- /.col-lg-12 --> #}
+                </div>
+            </div>{# <!-- /.panel-body --> #}
+        </div>{# <!-- /.panel --> #}
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>

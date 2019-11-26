@@ -1,0 +1,331 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n django_markdown dumper %}
+
+{% block main-title %}
+    {% block title %}{% if user.is_authenticated %}
+        {{ common.hello }}{% else %}{% trans "My home" %}
+    {% endif %}{% endblock %}
+{% endblock %}
+
+{% block central %}
+    <div class="row">
+        {% if message %}
+        <div class="col-lg-12">
+            {% include "includes/panel_message.html" %}
+        </div>
+        {% endif %}
+        <div class="col-lg-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    {% trans "Key steps:" %}
+                    <img src="{% static 'img/icons/64px-feed-icon-cogofly.png' %}"
+                         alt="{% trans "Information" %}"
+                         title="{% trans "Information" %}"
+                         style="display: block; float: right; max-height: 22px; width: auto;">
+                </div>
+                <div class="panel-body">
+                    <ul>
+                    <li style="margin-bottom: 10px"><b>{% blocktrans trimmed %}
+                        Search for a cotraveller:
+                        {% endblocktrans %}</b><br/>
+                        &raquo;
+                        <a href="{% url 'my_home_search' %}">
+                            <i class="fa fa-search fa-fw"></i>
+                            {% trans "Click here" %}
+                        </a>
+                    </li>
+
+                    <li style="margin-bottom: 10px"><b>{% blocktrans trimmed %}
+                        Add a trip, a weekend or a day:
+                        {% endblocktrans %}</b><br/>
+                        &raquo;
+                        <a href="{% url 'my_home_travel' %}">
+                            <i class="fa fa-briefcase fa-fw"></i>
+                            {% trans "Click here" %}
+                        </a>
+                    </li>
+
+                    <li><b>{% blocktrans trimmed %}
+                        Complete your profile:
+                        {% endblocktrans %}</b><br/>
+                        &raquo;
+                        <a href="{% url 'my_home_profile_edit' %}">
+                            <i class="fa fa-user fa-fw"></i>
+                            {% trans "Click here" %}
+                        </a>
+                    </li>
+                    </ul>
+                    {% comment %}
+                    <p>{% blocktrans trimmed %}
+                        This first version, a fun and intuitive platform,
+                        will mainly help you to no longer travel alone...
+                        in just a few clicks, you will be able to find people,
+                        close to home or abroad, looking to go away to the
+                        same place(s) as you.
+                    {% endblocktrans %}</p>
+
+                    <p><strong>{% blocktrans trimmed %}
+                        Whether you are about to leave or have just arrived at
+                        your chosen destination... no need to "go it alone"
+                        and find a Cogoflyer you can trust and make your trip a
+                        truly unforgettable one.
+                    {% endblocktrans %}</strong></p>
+
+                    <p>{% blocktrans trimmed %}
+                        Cogofly is a site which quite simply puts you in
+                        touch with others. Starting right now, you can
+                        communicate with people, travel together, and/or
+                        share in the experiences of other keen travellers.
+                    {% endblocktrans %}</p>
+                    {% endcomment %}
+                </div>
+                <div class="panel-footer panel-custom">
+                    {% trans "The Cogoflyers' dashboard" %}
+                </div>
+            </div>
+            {% for publicite in publicites_gauche %}
+                <div class="panel panel-primary">
+                    <div class="panel-body panel-ads">
+                        <h1>{{ publicite.title }}</h1>
+                        {{ publicite.content|markdown }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-lg-6">
+
+        {% if progression %}
+            {% include "includes/progression.html" %}
+        {% endif %}
+
+
+        <div class="panel">
+            <div class="panel-body panel-default">
+                <form action="{% url 'my_home_index' %}"
+                      method="POST">
+                    {% csrf_token %}
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-lg-12 text-center">
+                            {% with express_yourself as form %}
+                            {% with group_no=0 %}
+                                {% include 'includes/form_generic/fields_by_groupno.html' %}
+                            {% endwith %}
+                            {% endwith %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button class="btn btn-validate btn-block"
+                                    type="submit"
+                                    onclick="$(this).hide(); $(this).next().show();">
+                                {% trans "Confirm" %}
+                            </button>
+                            <button class="btn btn-dark btn-block"
+                                    type="button"
+                                    style="display: none">
+                                <img src="{% static 'img/anims/wait.gif' %}"
+                                     alt="{% trans 'Updating...' %}">
+                                {% trans 'Updating...' %}
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        {% with link_contact_detail=True %}
+        {% with show_buttons=True %}
+        {% with show_like=True %}
+        {% with show_comment=True %}
+        {% with show_send_message=False %}
+        {% with show_activities=True %}
+        {% with show_share=True %}
+
+
+            {% if activites.has_other_pages and activites.number > 1 %}
+                {# my home-made paginator #}
+                <ul class="pagination pagination-lg"
+                    style="margin-top: 0">
+                    {% for obj in activites.paginator.around %}
+                        <li{% if obj.is_current %} class="disabled"{% endif %}>
+                            <a {% if not obj.is_current %} href="?page={{ obj.page }}"{% endif %}>
+                                {% if obj.last and not obj.is_current %}
+                                    &raquo;
+                                {% endif %}
+                                {{ obj.page }}
+                                {% if obj.first and not obj.is_current %}
+                                    &laquo;
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+
+            {% for a in activites %}
+                {% if a.objet.blog_traduit.blog.ordre_si_top %}
+
+                {% endif %}
+                {% if a.objet.blog_traduit %}
+                    <div class="panel">
+                        <div class="panel-heading panel-custom">
+                            {% trans "Cogofly's News" %}
+                        </div>
+                        <div class="panel-body panel-news">
+                            {{ a.objet.blog_traduit.content|markdown }}
+                        </div>
+                    </div>
+                {% else %}
+                    {% with a.objet as activite %}
+                    {% with a.form as form_send_message %}
+                    {% with a.form_comment as form_comment %}
+                    {% with 'my_home_index' as form_send_message_url %}
+                        {% if activite.travel %}
+                            {% with activite.travel.personne as personne %}
+                            {% with activite.travel.personne.pk as id_unique %}
+
+                                {% include 'includes/person/detail.html' %}
+
+                            {% endwith %}
+                            {% endwith %}
+                        {% elif activite.relation %}
+                            {% with activite.relation.src as personne %}
+                            {% with activite.relation.src.pk as id_unique %}
+
+                                {% include 'includes/person/detail.html' %}
+
+                            {% endwith %}
+                            {% endwith %}
+                        {% elif activite.testimony %}
+                            {% with activite.testimony.personne as personne %}
+                            {% with activite.testimony.personne.pk as id_unique %}
+                            {% with show_buttons=False %}
+
+                                {% include 'includes/person/detail.html' %}
+
+                            {% endwith %}
+                            {% endwith %}
+                            {% endwith %}
+                        {% elif activite.express_yourself %}
+
+                            {% with activite.express_yourself.personne as personne %}
+                            {% with activite.express_yourself.personne.pk as id_unique %}
+                            {% with show_description=False %}
+                            {% with show_buttons=True %}
+                            {% with show_activities=False %}
+                            {% with show_express_yourself=True %}
+
+                                {% include 'includes/person/detail.html' %}
+
+                            {% endwith %}
+                            {% endwith %}
+                            {% endwith %}
+                            {% endwith %}
+                            {% endwith %}
+                            {% endwith %}
+
+                        {% endif %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                {% endif %}
+            {% endfor %}
+
+
+            {% if activites.has_other_pages %}
+                <ul class="pagination pagination-lg"
+                    style="margin-top: 0">
+                    {% for obj in activites.paginator.around %}
+                        <li{% if obj.is_current %} class="disabled"{% endif %}>
+                            <a {% if not obj.is_current %} href="?page={{ obj.page }}"{% endif %}>
+                                {% if obj.last and not obj.is_current %}
+                                    &raquo;
+                                {% endif %}
+                                {{ obj.page }}
+                                {% if obj.first and not obj.is_current %}
+                                    &laquo;
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% comment %} Paginateur "officiel" de Django :
+                <ul class="pagination pagination-lg">
+                    {% for idx in activites.paginator.page_range %}
+                        <li{% if idx == activites.number %} class="disabled"{% endif %}>
+                            <a {% if idx != activites.number %} href="?page={{ idx }}"{% endif %}>
+                                {{ idx }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% endcomment %}
+            {% endif %}
+
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        </div>
+
+        <div class="col-lg-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <strong>{% trans "Cogofly listens!" %}</strong>
+                </div>
+                <div class="panel-body">
+                    <p>{% blocktrans trimmed %}
+                        If you have any remarks, notes or suggestions,
+                        please click on the link below.
+                    {% endblocktrans %}
+                    </p>
+                {% comment %}17 sept 2016 : Franck veut retirer ces textes :
+                    <p>{% blocktrans trimmed %}
+                        Help us to improve this version of the site, in
+                        accordance with your likes, needs and tastes... your
+                        opinion matters and will be taken seriously!
+                    {% endblocktrans %}</p>
+                    <p>{% blocktrans trimmed %}
+                        Whether your ideas match the Cogofly ethos or not
+                        ...your feedback will be looked at and replied to
+                        as soon as possible...
+                    {% endblocktrans %}</p>
+                    {% endcomment %}
+                    <p>
+                    <a href="{% url 'my_home_remarks_and_testimonies' %}"
+                       style="text-decoration: none">
+                    <button class="btn btn-block btn-validate">
+                        <i class="fa fa-envelope-o fa-fw"></i>
+                        {% comment %}17 sept 2016 : Franck veut retirer ceci :
+                        {% trans 'Suggestions' %}{% endcomment %}
+                    </button>
+                    </a>
+                    </p>
+                    <p><strong>{% blocktrans trimmed %}
+                        Thank you in advance for your trust and support,
+                        along with any comments and suggestions you may have.
+                    {% endblocktrans %}</strong></p>
+                </div>{% comment %}
+                <div class="panel-footer">
+                    Footer
+                </div>{% endcomment %}
+            </div>
+            {% for publicite in publicites_droite %}
+                <div class="panel panel-primary">
+                    <div class="panel-body panel-ads">
+                        <h1>{{ publicite.title }}</h1>
+                        {{ publicite.content|markdown }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+{% endblock %}

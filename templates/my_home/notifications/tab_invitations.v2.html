@@ -1,0 +1,84 @@
+{% load static staticfiles compress i18n model_access %}
+
+<div class="row invitations-summary" style="margin-top: 15px">
+    <div class="col-lg-12">
+        {% for personne_relation in common.notifications.invitations.all %}
+            <div class="panel panel-primary invitation-summary"
+                 id="invitation-summary-{{ personne_relation.pk }}">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-3 profile-photo">
+                            <div class="photo-profile-normal"
+                                 style="height: 80px;">
+                                <span class="helper"></span>
+                                <img src="{{ personne_relation.src.url_photo_profil }}" />
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <h4>
+                                {% with personne_relation|description_with_tag:'strong' as d %}
+                                    {{ d|safe }}
+                                {% endwith %}
+                            </h4>
+                            <button type="button" class="btn btn-validate"
+                                    onclick="return false;"
+                                    data-hqf-switch="$('#invitation-full-{{ personne_relation.pk }}').ct('.row')/Xd">
+                                {% blocktrans trimmed %}
+                                Show invitation
+                                {% endblocktrans %}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% for personne_relation in common.notifications.invitations.all %}
+    <div class="row" style="margin-top: 15px; display: none"
+         id="invitation-full-{{ personne_relation.pk }}">
+
+        <div class="col-lg-12">
+        {# Tous les paramètres à envoyer à l'include "person_detail" : #}
+        {% with form_send_message_url='my_home_notifications' %}
+        {% with personne=personne_relation.src %}
+        {% with id_unique=personne_relation.src.pk %}
+        {% with link_contact_detail=True %}
+        {% with show_travels=False %}
+        {% with show_buttons=True %}
+        {% with show_invite_big=False %}
+        {% with show_invite_small=False %}
+        {% with show_invitation_accept=True %}
+        {% with form_invitation_send_decision_url='my_home_notifications' %}
+
+                {% include 'includes/person/detail.html' %}
+
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        </div>
+    </div>
+
+    <script>$(document).ready(function() {
+        notificationsApplyEffects('invitation', 'invitations');
+    });</script>
+
+{% empty %}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h4>{% blocktrans trimmed %}
+            You have no invitations yet
+        {% endblocktrans %}</h4>
+    </div>
+</div>
+
+{% endfor %}

@@ -1,0 +1,127 @@
+.errorlist {
+    padding: 0;
+    margin: 0 0 30px;
+}
+.errorlist li {
+    list-style-type: none;
+    font-style: italic;
+    font-size: larger;
+    color: red;
+}
+
+h2.title, .terms-and-conditions, .terms-of-service, .blog {
+    border: 1px solid #fff;
+    margin: 80px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    padding: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-weight: normal;
+}
+@media only screen and (max-width : 600px) {
+    h2.title, .terms-and-conditions, .terms-of-service, .blog {
+        margin: 0;
+    }
+}
+
+.title-inner, h2.title {
+    border: 0px solid purple;
+    margin: 20px;
+    padding-bottom: 60px;
+    position: relative;
+    top: 100px;
+}
+.title-inner li {
+    border: 0px solid purple;
+    margin-bottom: 10px;
+}
+.title-inner ul {
+    color: black;
+    font-family: Lato,serif;
+    font-size: 18px;
+    list-style-type: square;
+}
+section.title, div.title {
+    margin: 0;
+    padding: 0;
+}
+div.title {
+    border: 0 solid blue;
+    height: 100px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    top: 80px;
+}
+.terms-and-conditions p a,
+.terms-of-service p a,
+.blog p a {
+    text-decoration: none;
+    font-style: italic;
+    color: white;
+    font-weight: bolder;
+}
+
+footer {
+    border: 0px solid #fff;
+    margin: 0;
+    padding: 0;
+}
+
+
+div.title img {
+    border: 0px solid red;
+    text-align: center;
+    max-width:100%;
+    max-height:100%;
+}
+
+.title-inner h2 {
+    text-align: center;
+    color: #fff;
+    font-family: Lato, serif;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 700;
+    margin: 0;
+}
+.title-inner .advantages {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    margin: 50px auto 30px;
+    padding: 10px;
+    width: 80%;
+}
+
+.title-inner, h2.title {
+    margin: 30px;
+}
+
+.title-inner.centre {
+    margin-bottom: -40px;
+    position: relative;
+    text-align: center;
+    top: 0;
+}
+
+div.title {
+    border: 0 solid blue;
+    height: 150px;
+    margin-top: 0;
+    text-align: center;
+}
+.social-widgets-wrapper .love {
+    border: 0px solid purple;
+    color: white;
+    padding-bottom: 5px;
+    font-family: arial, sans-serif;
+}
+section.blog {
+    background-color: rgba(255,255,255,.15);
+    margin-top: 10px;
+}
+

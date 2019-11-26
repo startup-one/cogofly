@@ -1,0 +1,56 @@
+{# base.html #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Authomatic Functional Test</title>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+        <style>
+          .hidden {
+            height: 0px;
+            line-height: 0px;
+            overflow: hidden;
+            color: transparent;
+            margim: 0;
+            padding: 0;
+          }
+        </style>
+    </head>
+    <body>
+        <h1>Authomatic {{ framework_name|capitalize }} Functional Test</h1>
+        <h1>Providers</h1>
+        <h2>Oauth 1.0a</h2>
+        <ul>
+            {% for key, provider in oauth1_providers|dictsort() %}
+            <li>
+                <a id="{{ provider._path }}"
+                    href="/login/{{ provider._path }}">
+                    {{ provider._path }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <h2>Oauth 2.0</h2>
+        <ul>
+            {% for key, provider in oauth2_providers|dictsort() %}
+            <li>
+                <a id="{{ provider._path }}"
+                    href="/login/{{ provider._path }}">
+                    {{ provider._path }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <h2>Openid</h2>
+        <ul>
+            {% for key, provider in openid_providers|dictsort() %}
+            <li>
+                <a id="{{ provider._path }}"
+                    href="/login/{{ provider._path }}">
+                    {{ provider._path }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% block body %}{% endblock %}
+    </body>
+</html>

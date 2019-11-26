@@ -1,0 +1,142 @@
+/*--------- For Large Desktop Device -----------*/
+
+/* 1440 to 1599 */
+@media only screen and (min-width:1440px){
+	
+}
+
+/* 1600 to 1679 */
+@media only screen and (min-width:1600px){
+	
+}
+
+/* 1680 to 1919 */
+@media only screen and (min-width:1680px){
+	
+}
+
+/* 1920 to 2049 */
+@media only screen and (min-width:1920px){
+	
+}
+
+/* 2050 to 2559 */
+@media only screen and (min-width:2050px){
+	
+}
+
+/* Greater than 2560*/
+@media only screen and (min-width:2560px){
+	
+}
+
+
+/*--------- For Tablate and Small Desktop Device -----------*/
+
+/* For 1280 or Up to 1365 */
+@media only screen and (max-width:1365px){
+	
+}
+
+/* For 1024 or Up to 1279 */
+@media only screen and (max-width:1279px){
+	
+}
+
+/* For 960 or Up to 1023 */
+@media only screen and (max-width:1023px){
+    .statistics_data .count {
+        font-size: 20px;
+    }
+    .statistics_data .title {
+        font-size: 18px;
+    }
+    .future {
+        padding-bottom: 180px;
+    }
+}
+
+/* For 800 or Up to 959 */
+@media only screen and (max-width:959px){
+	
+}
+
+/* For 768 or Up to 799 */
+@media only screen and (max-width:799px){
+    .container {
+        width: 94%;
+    }
+    .mb-xs-20 {
+        margin-bottom: 20px;
+    }
+}
+
+
+/*--------- For Tablate and Mobile Device -----------*/
+
+/* For 640 or Up to 767 */
+@media only screen and (max-width:767px){
+	.vegas-wrapper{
+        padding: 70px 0px 0px !important;
+    }
+    .home-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .home-section.future {
+        padding-bottom: 120px;
+    }
+    .navbar {
+        height: auto;
+    }
+    .navbar-nav >li.language >a {
+        padding: 0 5px !important;
+    }
+    .navbar-collapse {
+        box-shadow: none;
+    }
+    .navbar-nav >li.language >a {
+        width: 60px;
+        text-align: right;
+    }
+    .navbar-nav .open.language .dropdown-menu {
+        position: absolute;
+        left: -100px;
+        border: 1px solid rgba(0,0,0,.15);
+        box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    }
+}
+
+/* For 540 or Up to 639 */
+@media only screen and (max-width:639px){
+	
+}
+
+/* For 480 or Up to 539 */
+@media only screen and (max-width:539px){
+	.container {
+        width: 91%;
+    }
+    #navsection .navitem a {
+        padding: 0 20px;
+        border: none;
+    }
+    .section-heading {
+        margin-top: 0;
+    }
+}
+
+/* For 380 or Up to 479 */
+@media only screen and (max-width:479px){
+	
+}
+
+/* For 360 or Up to 379 */
+@media only screen and (max-width:379px){
+	
+}
+
+/* For 320 or Up to 359 */
+@media only screen and (max-width:359px){
+	
+}

@@ -1,0 +1,863 @@
+{% load staticfiles i18n templates_extras translate_url compress dumper templates_extras %}
+{% get_current_language as LANGUAGE_CODE %}
+{% captureas meta_description %}{% blocktrans trimmed %}
+    Find a trust person to travel together, plan your trip, whether it be
+    going away for the weekend or just on a day out and give your ambitions a
+    boost
+{% endblocktrans %}{% endcaptureas %}
+{% captureas meta_og_title %}{% blocktrans trimmed %}
+    Fed up of travelling alone?
+{% endblocktrans %}{% endcaptureas %}
+{% captureas meta_og_description %}{% blocktrans trimmed %}
+    Break down borders together!
+    Join the international cotraveller's community and choose
+    with whom you go away
+{% endblocktrans %}{% endcaptureas %}
+{% captureas meta_twitter_title %}{% blocktrans trimmed %}
+    Don't want to travel alone? This site is made for you! Sign up for free,
+    join the new trust community and let's go together.
+{% endblocktrans %}{% endcaptureas %}
+{% captureas meta_twitter_description %}{% blocktrans trimmed %}
+    Only one rule: never stay alone ! Think together, think 'Co', and take
+    off! Don't wait to be abroad to meet great persons, anticipate to take
+    advantage during all your trip and have fun!
+{% endblocktrans %}{% endcaptureas %}
+
+{% captureas meta_property_headline %}{% blocktrans trimmed %}
+    Don't want to travel alone? This site is made for you! Sign up for free
+    and join the new community.
+{% endblocktrans %}{% endcaptureas %}
+
+{% comment %}---------------------------------------------------------------
+Calcul de l'url de l'image :
+ces attardés de Facebook demandent une URL complète :
+{% endcomment %}
+{% if LANGUAGE_CODE == 'fr' %}
+    {% if request.is_secure %}
+        {% captureas img_logo_url %}{% cleanup %}
+            https://{{ request.META.HTTP_HOST }}{% static 'img/logo/main-page-800x800.fr.1.jpg' %}
+        {% endcleanup %}{% endcaptureas %}
+    {% else %}
+        {% captureas img_logo_url %}{% cleanup %}
+            https://{{ request.META.HTTP_HOST }}{% static 'img/logo/main-page-800x800.fr.1.jpg' %}
+        {% endcleanup %}{% endcaptureas %}
+    {% endif %}
+    {% captureas LOCALE_LONG %}{% cleanup %}fr_FR{% endcleanup %}{% endcaptureas %}
+{% else %}
+    {% if request.is_secure %}
+        {% captureas img_logo_url %}{% cleanup %}
+            https://{{ request.META.HTTP_HOST }}{% static 'img/logo/main-page-800x800.en.1.jpg' %}
+        {% endcleanup %}{% endcaptureas %}
+    {% else %}
+        {% captureas img_logo_url %}{% cleanup %}
+            http://{{ request.META.HTTP_HOST }}{% static 'img/logo/main-page-800x800.en.1.jpg' %}
+        {% endcleanup %}{% endcaptureas %}
+    {% endif %}
+    {% captureas LOCALE_LONG %}{% cleanup %}en_US{% endcleanup %}{% endcaptureas %}
+{% endif %}
+{% if request.is_secure %}
+    {% captureas canonical_url %}{% cleanup %}
+        https://{{ request.META.HTTP_HOST }}{{ request.path }}
+    {% endcleanup %}{% endcaptureas %}
+{% else %}
+    {% captureas canonical_url %}{% cleanup %}
+        https://{{ request.META.HTTP_HOST }}{{ request.path }}
+    {% endcleanup %}{% endcaptureas %}
+{% endif %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="{{ canonical_url }}" />
+
+    <meta name="description" content="{{ meta_description }}" />
+    <link rel="author" href="https://plus.google.com/115626917121959048988/" />
+    <link rel="publisher" href="https://plus.google.com/115304506665062236158/" />
+{% comment %}Ce qui est affiché lorsqu'on partage sur Facebook :
+- le title en "h1"
+-  "h1"
+{% endcomment %}
+    <meta property="og:title" content="{{ meta_og_title }}" />
+    <meta property="og:description" content="{{ meta_og_description }}" />
+
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:site_name" content="Cogofly" />
+{% comment %}
+Ces mongoliens de Facebook ont ici aussi changé la donne :
+il faut absolument tout préciser sur l'image : taille et type
+https://developers.facebook.com/docs/sharing/best-practices
+http://ogp.me/
+{% endcomment %}
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image" content="{{ img_logo_url }}" />
+    <meta property="og:image:url" content="{{ img_logo_url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{ LOCALE_LONG }}" />
+
+    <meta property="fb:admins" content="CogoflyWorld" />
+    <meta property="fb:app_id" content="755565081236511" />
+    <meta property="article:author" content="https://www.facebook.com/Cogofly-713356962151536/" />
+    <meta property="article:publisher" content="https://www.facebook.com/Cogofly-713356962151536/" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://{{ request.get_host }}" />
+    <meta property="twitter:title" content="{{ meta_twitter_title }}" />
+    <meta property="twitter:description" content="{{ meta_twitter_description }}" />
+    <meta property="twitter:image" content="{{ img_logo_url }}" />
+
+    <title>{% trans "Cogofly - Don't travel alone anymore" %}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static "css/animate.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static '3rdp/vegas/vegas.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <link href="{% static '3rdp/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static "color/default.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static "css/responsive.css" %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	<!-- Preloader -->
+	<div id="preloader">
+	  <div id="load"></div>
+	</div>
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#intro">
+                    <img id="navbar-brand-img-logo"
+                         src="{% static "img/cogofly-logo-md.png" %}">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+		        <ul class="nav navbar-nav">
+		            <li>
+                        <a href="{% url 'my_home_login' %}">
+                            {% trans 'Log in' %}
+                        </a>
+                    </li>
+		            <li class="dropdown language">
+		               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                           {% trans 'Language' %} <b class="caret"></b>
+                       </a>
+                    
+                       <ul class="dropdown-menu" style="background-color: transparent;">
+                           {% for l in common.translated_urls %}
+                            <li id="{{ l.locale }}">
+                                <a href="{{ l.slug }}"  title="{{ l.locale }}" style="background-color: transparent;">
+                                    {# Calcul du nom du drapeau flag-us-s.png etc. : #}
+                                    {% with "img/icons/flag-"|add:l.locale|add:"-s.png" as img_drapeau %}
+                                        <img src="{% static img_drapeau %}">
+                                    {% endwith %}
+                                </a>
+                            </li>
+                           {% endfor %}
+		               </ul>
+		            </li>
+		        </ul>
+            </div>
+            
+
+            <!-- /.navbar-collapse -->
+        <div class="container">
+
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	<!-- Section: intro -->
+    <section id="intro" class="intro">
+	    <div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="slogan" id="slogan">
+						<h2>{% trans "FED UP OF<br/>TRAVELLING ALONE?" %}</h2>
+                        <h4 style="display:none; margin-top: 20px">
+                        {% trans "Break down borders together!" %}
+                        </h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					 <div class="section-nav page-scroll" id="navsection">
+						<ul class="navitem">
+                            <li><a href="#concept">{% trans "Concept" %}</a></li>
+                            <li><a href="#community">{% trans "Community" %}</a></li>
+                            <li><a href="#advantages">{% trans "Advantages" %}</a></li>
+                            <li><a href="#statement">{% trans "Observations" %}</a></li>
+                            <li><a href="#future">{% trans "How does it work?" %}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="slogan">
+                        {% spaceless %}
+                            <h4 style="color: orange">
+                                {% blocktrans trimmed %}
+                                    JOIN THE INTERNATIONAL COTRAVELLER's COMMUNITY AND CHOOSE WITH WHOM YOU GO AWAY...
+                                {% endblocktrans %}
+                            </h4>
+                        {% endspaceless %}
+					</div>
+				</div>
+			</div>
+	        <div class="row">
+	            <div class="col-12">
+                    <div class="connection">
+                        <a class="btn btn-square button-register" href="{% url 'my_home_register' %}">{% cleanup %}
+                            {% trans "SIGN UP FOR FREE" %}
+                        {% endcleanup %}</a>
+                    </div>
+	            </div>
+            </div>
+			<div class="row" style="margin-top: {% if LANGUAGE_CODE != 'fr' %} 7% {% else %} 0 {% endif %}">
+                <div class="page-scroll" id="first-page-scroll">
+                    <a href="#concept" class="btn btn-circle">
+                        <i class="fa fa-4x fa-angle-down animated"></i>
+                    </a>
+                </div>
+			</div>
+	    </div>
+    </section>
+    {# <!-- /Section: intro --> #}
+
+	{# <!-- /Section: concept --> #}
+    <section id="concept" class="home-section text-center concept">
+        <div class="heading-about dimBg wow fadeIn" data-wow-delay="0.4s">
+			<div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-xs-8 col-xs-offset-2">
+                        <div class="wow bounceInDown" data-wow-delay="0.4s">
+                            <div class="section-heading page-scroll">
+                                <a href="#concept"><h2>{% trans "Concept" %}</h2></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="play_btn">
+                        <button class="button secondary play">{% trans "Play" %}</button>
+                        <button class="button secondary stop">{% trans "Stop" %}</button>
+                    </div>
+                </div>
+			</div>
+		</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-5">
+                    <hr class="marginbot-50">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6 row-eq-height">
+                    <div class="owl-carousel owl-theme box-bloc">
+                        <div class="col-eq-height">
+                            <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                                <div class="box">
+                                    <i class="fa fa-2x fa-hand-o-right"></i>
+                                    <div class="concept-desc">
+                                        <p>
+                                            {% blocktrans trimmed %}
+                                            Don’t be fazed by travelling any more, whether
+                                            you want to go away for the weekend or just on a
+                                            day out, and give your dreams a boost.
+                                            {% endblocktrans %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-eq-height">
+                            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="box">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <div class="concept-desc">
+                                        <p>
+                                            {% blocktrans trimmed %}
+                                            Find someone you can trust,
+                                            <br />
+                                            close to home or abroad, and plan together
+                                            your trips... you'll also be able
+                                            to plan and share weekends and outings.
+                                            {% endblocktrans %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-eq-height">
+                            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="box">
+                                    <i class="fa fa-2x fa-paper-plane-o"></i>
+                                    <div class="concept-desc">
+                                        <p>{% blocktrans trimmed %}
+                                            Discover a new way to get away which is
+                                            financially advantageous, safe,
+                                            and highly practical.
+                                            {% endblocktrans %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-eq-height col-sm-12 col-md-12 less-visible">
+                    <span id="slogan">
+                        {% trans "Alone we think, together we act!" %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+	{# <!-- Section: community --> #}
+    <section id="community" class="home-section text-center community">
+		<div class="heading-about dimBg wow fadeIn" data-wow-delay="0.4s">
+			<div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-xs-8 col-xs-offset-2">
+                        <div class="wow bounceInDown" data-wow-delay="0.4s">
+                            <div class="section-heading page-scroll">
+                                <a href="#community">
+                                    <h2>{% trans "Community" %}</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-5">
+                    <hr class="marginbot-50">
+                </div>
+            </div>
+            <div class="col-sm-12 row-eq-height">
+                <div class="owl-carousel owl-theme box-bloc">
+                    <div class="col-eq-height">
+                        <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                            <div class="community-box">
+                                <div class="service-icon">
+                                    <i class="fa fa-suitcase"></i>
+                                    <i class="fa fa-2x fa-suitcase"></i>&nbsp;
+                                    <i class="fa fa-3x fa-suitcase"></i>
+                                    <i class="fa fa-4x fa-suitcase"></i>
+                                </div>
+                                <div class="community-desc">
+                                    <h4>{% blocktrans trimmed %}
+                                        THE GENESIS OF COTRAVELLERS
+                                        {% endblocktrans %}</h4>
+                                    <hr>
+                                    <p>{% blocktrans trimmed %}
+                                        Connect with persons from the 4 corners of the
+                                        world, share their experiences and expand
+                                        your network.
+                                        {% endblocktrans %}</p>
+                                    <p>{% blocktrans trimmed %}
+                                        Find cotravellers, with potentially the
+                                        same socio-professional criteria and areas of
+                                        interest, in order to organise your trips in the
+                                        best possible conditions.
+                                        {% endblocktrans %}</p>
+                                    <p>{% blocktrans trimmed %}
+                                        Think <span style="text-decoration: underline;">Together</span>,
+                                        think <span style="text-decoration: underline;">Co</span>,
+                                        and take off to share your trips, weekends,
+                                        and others outings.!
+                                        {% endblocktrans %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="container">
+            <div class="row">
+                <div class="col-eq-height col-sm-12 col-md-12 less-visible">
+                    <span id="slogan">
+                        {% blocktrans trimmed %}
+                            The world of Cogoflyers is born...
+                            come and follow their adventures!
+                        {% endblocktrans %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="statistics">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-xs-20">
+                    <div class="statistics_data">
+                        <div class="count">2424200 +</div>
+                        <div class="title">{% trans "Members" %}</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-xs-20">
+                    <div class="statistics_data">
+                        <div class="count">65</div>
+                        <div class="title">{% trans "Countries" %}</div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-xs-20">
+                    <div class="statistics_data">
+                        <div class="count">5000+</div>
+                        <div class="title">{% trans "Cities" %}</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mb-xs-20">
+                    <div class="statistics_data">
+                        <div class="count">65</div>
+                        <div class="title">{% trans "Nationalities" %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- /Section: community -->
+
+	<!-- Section: advantages -->
+    <section id="advantages" class="home-section text-center advantages">
+		<div class="heading-about dimBg wow fadeIn" data-wow-delay="0.4s">
+			<div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-xs-8 col-xs-offset-2">
+                        <div class="wow bounceInDown" data-wow-delay="0.4s">
+                            <div class="section-heading page-scroll">
+                                <a href="#advantages"><h2>{% trans 'ADVANTAGES' %}</h2></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="play_btn">
+                        <button class="button secondary play">{% trans "Play" %}</button>
+                        <button class="button secondary stop">{% trans "Stop" %}</button>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-5">
+                    <hr class="marginbot-50">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6 row-eq-height">
+                    <div class="owl-carousel owl-theme box-bloc">
+                        <div class="col-eq-height">
+                            <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                                <div class="advantages-desc">
+                                    <i class="fa fa-2x fa-thumbs-o-up"></i>
+                                    <h4>{% trans 'Peace of mind' %}</h4>
+                                    <hr>
+                                    <ul>
+                                        <li>
+                                            {% trans 'Trips out, at any time, in complete confidence.' %}
+                                        </li>
+                                        <li>
+                                            {% trans 'Break down language barriers.' %}
+                                        </li>
+                                        <li>
+                                            {% trans 'No more last-minute rushing around. Plan ahead in order to make the most of your stay.' %}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-eq-height">
+                            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="advantages-desc">
+                                    <i class="fa fa-2x fa-money"></i>
+                                    <h4>{% trans 'Financial' %}</h4>
+                                    <hr>
+                                    <ul>
+                                        <li>{% trans "Share accommodation costs (eg. additional fees for a double room...)." %}</li>
+                                        <li>{% trans 'Share additional expenses (taxi, car hire, fuel, tolls...).' %}</li>
+                                        <li>{% trans 'More attractive prices for shows, sightseeing, excursions...' %}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-eq-height">
+                            <div class="wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="advantages-desc">
+                                    <i class="fa fa-2x fa-map-marker"></i>
+                                    <h4>{% trans 'Practical' %}</h4>
+                                    <hr>
+                                    <ul>
+                                        <li>{% trans 'Join up easily with groups on turnkey trips and excursions or to take part in diverse activities.' %}
+                                        </li>
+                                        <li>{% trans "Additional activities: sport, excursions, local and regional sightseeing..." %}</li>
+                                        <li>{% trans 'Find a willing and reliable travel companion…and who knows, maybe a new friend!' %}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="container">
+            <div class="row">
+                <div class="col-eq-height col-sm-12 col-md-12 less-visible">
+                    <span id="slogan">
+                        {% trans "Combine handy tips and fun projects and get away stress-free!" %}
+                    </span>
+                </div>
+            </div>
+		</div>
+    </section>
+	{# <!-- /Section: advantages --> #}
+
+	{# <!-- Section: statement --> #}
+    <section id="statement" class="home-section text-center statement">
+		<div class="heading-about dimBg wow fadeIn" data-wow-delay="0.4s">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 col-xs-8 col-xs-offset-2">
+						<div class="wow bounceInDown" data-wow-delay="0.4s">
+                            <div class="section-heading page-scroll">
+                                <a href="#statement">
+                                    <h2>{% trans "Observations" %}</h2>
+                                </a>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-5">
+                    <hr class="marginbot-50">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 row-eq-height col-eq-height">
+                    <div class="owl-carousel owl-theme box-bloc">
+                        <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                            <div class="statement-box">
+                                <div class="service-icon">
+                                    <i class="fa fa-2x fa-minus-circle"></i>
+                                </div>
+                                <div class="statement-desc">
+                                    <h4>{% trans 'Never alone' %}</h4>
+                                    <hr>
+                                    <p>{% blocktrans trimmed %}
+                                        Too many people travel alone and remain so for
+                                        the duration of their trip.
+                                        {% endblocktrans %}</p>
+                                    <p>{% blocktrans trimmed %}
+                                        Divorce, friends changing their minds,
+                                        expatriate reintegration and, quite simply,
+                                        solitude, are often the root-cause of
+                                        this situation...
+                                        {% endblocktrans %}</p>
+                                    <p>{% blocktrans trimmed %}
+                                        Held back by shyness?
+                                        Don't know anyone to join groups?
+                                        Lacking motivation?
+                                        ...Plan ahead and step into the unknown together!
+                                        {% endblocktrans %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+		<div class="container">
+		<div class="row">
+			<div class="col-eq-height col-sm-12 col-md-12 less-visible">
+                <span id="slogan">
+                    {% blocktrans trimmed %}
+                        You prefer to be alone...
+                        this site is also made for you!
+                    {% endblocktrans %}
+                </span>
+			</div>
+        </div>
+		</div>
+	</section>
+	{# <!-- /Section: statement --> #}
+
+	{# <!-- Section: future --> #}
+    <section id="future" class="home-section text-center future">
+
+		<div class="heading-about dimBg wow fadeIn" data-wow-delay="0.4s">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 col-xs-8 col-xs-offset-2">
+					<div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading page-scroll">
+                            <a href="#future"><h2>{% trans 'How does it work?' %}</h2></a>
+                        </div>
+					</div>
+                </div>
+                <div class="play_btn">
+                    <button class="button secondary play">{% trans "Play" %}</button>
+                    <button class="button secondary stop">{% trans "Stop" %}</button>
+                </div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-lg-offset-5">
+					<hr class="marginbot-50">
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-eq-height col-md-offset-3 col-md-6 col-xs-12">
+                    <div class="wow fadeInLeft col-eq-height col-sm-12 col-xs-12" data-wow-delay="0.2s">
+                        <div class="future-box">
+                            <div class="service-icon">
+                                <i class="fa fa-2x fa-gears"></i>
+                            </div>
+                            <div class="future-desc">
+                                <h4>{% trans "1, 2, 3... Go!" %}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6 row-eq-height">
+                    <div class="owl-carousel owl-theme box-bloc">
+                        <div class="col-eq-height">
+                            <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                                <div class="future-box">
+                                    <div class="future-desc">
+                                        {% blocktrans trimmed %}
+                                        1. Fill in all mandatory fields.
+                                        {% endblocktrans %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-eq-height">
+                            <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                                <div class="future-box">
+                                    <div class="future-desc">
+                                        {% blocktrans trimmed %}
+                                        2. Add your trips(s) : trip, weekend away, day out...
+                                        {% endblocktrans %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-eq-height">
+                            <div class="wow fadeInLeft" data-wow-delay="0.2s">
+                                <div class="future-box">
+                                    <div class="future-desc">
+                                        {% blocktrans trimmed %}
+                                        3. Use the search, basic or advanced, in order to find your travel companion: <b>THE COGOFLYER!</b>
+                                        {% endblocktrans %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+	        <div class="row box-bloc no-space-for-mobile">
+	            <div id="future-box-2" class="col-sm-12 col-md-12">
+                    <div class="col-12">
+                        <span class="love">
+                            <span class="register-sentence">
+                                {% trans 'Convinced and want to try?' %}
+                            </span>
+                            <a class="btn btn-square button-register"
+                               href="{% url 'my_home_register' %}">{% cleanup %}
+                                {% trans "SIGN UP FOR FREE" %}
+                            {% endcleanup %}</a>
+                        </span><br />
+                    </div>
+	            </div>
+	        </div>
+        </div>
+
+        <footer id="footer" class="footerbar">
+            <div class="container footer-container">
+                <div class="footerrow">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="footer-box">
+                            <ul class="footer-links">
+                                <li class="active"><a target="_blank" href="{% url "about" %}">{% trans 'About' %}</a></li>
+                                <li><a target="_blank" href="{% url "the_team" %}">{% trans 'The team' %}</a></li>
+                                <li><a target="_blank" href="{% url "testimonies" %}">{% trans 'Testimonies' %}</a></li>
+                                <li><a target="_blank" href="{% url "terms_and_conditions" %}">{% trans 'Terms &amp; Conditions' %}</a></li>
+                                <li><a target="_blank" href="{% url "privacy_policy" %}">{% trans 'Privacy policy' %}</a></li>
+                                <li><a target="_blank" href="{% url "contact_us" %}">{% trans 'Contact us' %}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footerrow">
+                    <div class="col-12">
+                        {% trans "To love is to share:" %}
+                        {% comment %}-------------------------------------------------------------
+                                            Social widget - addthis
+                        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                        -------------------------------------------------------------{% endcomment %}
+                        <div class="social-widgets-wrapper">
+                            <div class="addthis_sharing_toolbox"></div>
+                        </div>
+                        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-562240682ffebd02" async="async"></script>
+                    </div>
+                </div>
+                </div>
+                <div class="footerrow">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="footer-copyright">
+                        {% url 'app_index' as url_index %}
+                        {% now "Y" as date_now %}
+                        {% blocktrans trimmed %}
+                            &copy; Copyright {{ date_now }} -
+                            <a href="{{ url_index }}">Cogofly</a>
+                            - All rights reserved.
+                        {% endblocktrans%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+	</section>
+{% comment %}
+	<!-- /Section: future -->
+
+	<!--
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+					<div class="footer-box">
+				      <ul class="footer-links">
+				        <li class="active"><a href="#">About</a></li>
+						<li><a href="#">Contact us</a></li>
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Privacy policy</a></li>
+				      </ul>
+				    </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+                   <div class="social-slogan">
+                        To love is to share
+                    </div>
+            		<div class="social-icons">
+            			<ul class="company-social">
+                            <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+					<div class="footer-copyright">
+					&copy;Copyright 2015 - Cogofly. All rights reserved.
+				    </div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	-->
+{% endcomment %}
+    <!-- Core JavaScript Files -->
+    <script src="{% static "js/jquery/jquery-2.1.4.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/jquery/jquery.easing.min.js" %}"></script>
+	<script src="{% static "js/jquery/jquery.scrollTo.js" %}"></script>
+    <script src="{% static "3rdp/vegas/vegas.min.js" %}" type="text/javascript"></script>
+	<script src="{% static "js/wow.min.js" %}"></script>
+
+    <script src="{% static "3rdp/owlcarousel/owl.carousel.js" %}"></script>
+    {#<!-- Custom Theme JavaScript -->#}
+{% compress js %}
+    <script src="{% static "js/bg-slider.js" %}" type="text/javascript"></script>
+{% endcompress %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-93018020-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script src="{% static "js/index-custom.js" %}"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+            var sliderOptions = {
+                nav: true,
+                items: 1,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true
+            };
+            $('#concept .owl-carousel').owlCarousel(sliderOptions);
+            $('#advantages .owl-carousel').owlCarousel(sliderOptions);
+            $('#community .owl-carousel').owlCarousel(sliderOptions);
+            $('#statement .owl-carousel').owlCarousel(sliderOptions);
+            $('#future .owl-carousel').owlCarousel(sliderOptions);
+            
+            
+            $('.play').hide();
+
+            $('.play').on('click', function() {
+                var sectionId = $(this).closest('section').attr('id');
+                console.log(sectionId);
+
+                $(this).hide();
+                $('#'+ sectionId +' .stop').show();
+                $('#'+ sectionId +' .owl-carousel').trigger('play.owl.autoplay', [1000])
+            });
+            
+            $('.stop').on('click', function() {
+                var sectionId = $(this).closest('section').attr('id');
+                $(this).hide();
+                $('#' + sectionId +' .play').show();
+                $('#' + sectionId + ' .owl-carousel').trigger('stop.owl.autoplay')
+            });
+        })
+  </script>
+    <script>
+        var path = window.location.pathname;
+        var test = path.replace("/", "").replace("/", "");
+        var flag = $('#' + test + ' a').html();
+        $('.language .dropdown-toggle').html(flag + ' <span class="caret"></span>');
+    </script>
+</body>
+
+</html>

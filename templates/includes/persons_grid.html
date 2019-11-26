@@ -1,0 +1,156 @@
+{% comment %}---------------------------------------------------------------
+Fichier inclus lorsqu'on veut afficher une liste de personnes format "carte".
+{% endcomment %}{% load static staticfiles compress i18n templates_extras %}
+<div class="panel panel-info" id="search-result-panel">
+    <div class="panel-heading" style="min-height: 62px; line-height: 40px; background-color: #3f729b;">
+
+        <span style="color: white">{{ grid_title }}</span>
+
+        {% if show_close_button %}
+        <button type="button" class="btn nav-pills btn-hqf-close"
+                data-hqf-switch="$.ct('.contacts')/Ou"
+                style="display: block; float: right">
+        <i class="fa fa-times"></i>
+            {% trans 'Close' %}
+        </button>
+        {% endif %}
+    </div>
+    <div class="panel-body">
+        {% if show_pagination %}
+            {% if personnes.has_other_pages %}
+                {# c'est mon paginateur maison #}
+                <ul class="pagination pagination-lg"
+                    style="margin-top: 0">
+                    {% for obj in personnes.paginator.around %}
+                        <li{% if obj.is_current %} class="disabled"{% endif %}>
+                            {% url_replace_parameter request.get_full_path page=obj.page as new_url %}
+                            <a {% if not obj.is_current %} href="{{ new_url }}"{% endif %}>
+                                {% if obj.is_current %}
+                                    <span class="paginator-current">
+                                {% endif %}
+                                {% if obj.last and not obj.is_current %}
+                                    &raquo;
+                                {% endif %}
+                                {{ obj.page }}
+                                {% if obj.first and not obj.is_current %}
+                                    &laquo;
+                                {% endif %}
+                                {% if obj.is_current %}
+                                    </span>
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
+
+        {# appliquer l'isotope sur la grille juste après #}
+        <script>
+        function resizeCompute() {
+            var w = '100%';
+            if ($('body').width() > 1400) {
+                w = '32%';
+            } else if ($('body').width() > 700) {
+                w = '48%';
+            }
+            $('.grid-item').css({ 'width': w });
+            var g = $('.grid');
+            g.isotope({
+                itemSelector: '.grid-item',
+                layoutMode: 'fitRows',
+                transitionDuration: '2s'
+            });
+            g.isotope({ sortBy : 'original-order' });
+            /*
+            g.isotope('once', 'arrangeComplete', function() {
+                g.isotope({ sortBy : 'original-order' });
+            });
+            g.isotope({ sortBy : 'random' });
+            var j = $('.grid-item').length*10;
+            $('.grid-item').each(function() {
+                console.log(j);
+                $(this).css('z-index', j--);
+            });
+            */
+        }
+
+        var gTimerResize = 0;
+        $(document).ready(function () {
+            gTimerResize = window.setTimeout(resizeCompute, 1);
+        });
+
+
+        $(window).resize(function(){
+            if (gTimerResize !== null) {
+                window.clearTimeout(gTimerResize);
+            }
+            gTimerResize = window.setTimeout(resizeCompute, 500);
+        });
+
+        </script>
+        <div class="grid">
+            {% for personne in personnes %}
+                <div class="grid-item">
+                    {% with personne.pk as id_unique %}
+
+                    {% with link_contact_detail=True %}
+                    {% with show_buttons=True %}
+                    {% with show_like=True %}
+                    {% with show_comment=True %}
+                    {% with show_send_message=False %}
+                    {% with show_activities=False %}
+                    {% with show_travels=False %}
+                    {% with show_invite_small=True %}
+                    {% with show_invite_big=False %}
+                    {% with mode_grid=True %}
+
+                        {% include 'includes/person/detail.html' %}
+
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+                    {% endwith %}
+
+                    {% endwith %}
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if show_pagination %}
+            {% if personnes.has_other_pages %}
+                {# c'est mon paginateur maison #}
+                <ul class="pagination pagination-lg"
+                    style="margin-top: 0">
+                    {% for obj in personnes.paginator.around %}
+                        <li{% if obj.is_current %} class="disabled"{% endif %}>
+                            {% url_replace_parameter request.get_full_path page=obj.page as new_url %}
+                            <a {% if not obj.is_current %} href="{{ new_url }}"{% endif %}>
+                                {% if obj.is_current %}
+                                    <span class="paginator-current">
+                                {% endif %}
+                                {% if obj.last and not obj.is_current %}
+                                    &raquo;
+                                {% endif %}
+                                {{ obj.page }}
+                                {% if obj.first and not obj.is_current %}
+                                    &laquo;
+                                {% endif %}
+                                {% if obj.is_current %}
+                                    </span>
+                                {% endif %}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endif %}
+
+    </div>
+</div>

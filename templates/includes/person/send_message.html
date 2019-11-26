@@ -1,0 +1,79 @@
+{% comment %}---------------------------------------------------------------
+On l'inclut pour donner la possibilité d'avoir un bouton "envoyer un message",
+et si on clique dessus, la boîte qui s'affiche avec.
+Attention ! On a besoin d'un id unique qui doit être unique sur toute la page.
+{% endcomment %}{% load static staticfiles compress i18n klass %}
+
+<button type="button" class="btn btn-default btn-linkedin{{ btn_added_class }}"
+    data-toggle="modal" data-target="#modal-{{ id_unique }}"
+    title="{{ label_send_a_message }}">
+    <i class="fa fa-envelope-o"></i>
+    {{ label_send_a_message }}
+</button>
+<div class="modal fade"
+     id="modal-{{ id_unique }}"
+     tabindex="-1" role="dialog"
+     aria-labelledby="{% trans 'Send a message' %}" aria-hidden="true"
+     style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{% if form_send_message_full_url %}{{ form_send_message_full_url }}{% else %}{% url form_send_message_url %}{% endif %}"
+                  method="POST" autocomplete="false">
+                <div class="modal-header">
+                    <strong>{% trans 'Write below:' %}</strong>
+                    <button type="button" class="close" aria-hidden="true"
+                            data-dismiss="modal">×</button>
+                    <h4 class="modal-title">
+                        {% spaceless %}
+                            {{ prefilled_content }}
+                        {% endspaceless %}
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    {# Boucle alors qu'il y a un champ ! Mais au cas où : #}
+                    {% for field in form_send_message %}
+
+                        <div class="form-group {% if field.errors %}has-error{% endif %}">
+                            {% if field.label %}
+                                <label>{{ field.label }}</label>
+                                <label for="{{ field.auto_id }}"
+                                       class="sr-only">{{ field.label }}
+                                </label>
+                                {% if field.field.widget|klass == 'DateSelectorWidget' %}
+                                    <br/>
+                                {% endif %}
+                            {% endif %}
+                            {{ field }}
+                        </div>
+                        {% if field.errors %}
+                        <div class="form-group">
+                            <div class="alert alert-danger" role="alert">
+                            {% for error in field.errors %}
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">{{ error }}</span>
+                                {{ error }}
+                            {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {{ field.help_text }}
+
+                    {% endfor %}
+
+
+
+                </div>{#<!-- /modal-body --> #}
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-validate">
+                        {% trans 'Submit' %}
+                    </button>
+                    <button type="cancel" class="btn btn-dark"
+                            data-dismiss="modal">
+                        {% trans 'Cancel' %}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

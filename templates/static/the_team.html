@@ -1,0 +1,26 @@
+{% extends "applancement/index.html" %}
+{% load staticfiles i18n templates_extras compress %}
+
+{% block title %}
+    <title>{{ the_team_title }}</title>
+{% endblock %}
+
+{% block custom_js %}
+    {% with "js/launch/bg-slider-the-team.js" as custom_js_slider %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock custom_js %}
+
+{% block body %}
+    {% block header_applancement %}
+    {% autoescape off %}
+    <section class="terms-and-conditions">
+        <h1>{{ the_team_title }}</h1><br />
+        <p>{{ the_team_who_are_we }}</p>
+        {% for story in the_team_stories %}
+            <p>{{ story }}</p>
+        {% endfor %}
+    </section>
+    {% endautoescape %}
+    {% endblock header_applancement %}
+{% endblock body %}

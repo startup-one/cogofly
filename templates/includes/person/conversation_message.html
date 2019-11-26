@@ -1,0 +1,89 @@
+{% comment %}---------------------------------------------------------------
+Affichage du détail d'un message.
+En général, cela doit faire partie d'une conversation qui boucle en affichant
+tous les messages de la conversation
+{% endcomment %}{% load static staticfiles compress i18n l10n templates_extras %}
+{% if message.src == common.personne and message.src_visible %}
+    {% captureas date_message %}
+        <b><i class="fa fa-clock-o"></i>
+        {{ message.date_creation_relative }}&nbsp;/&nbsp;</b>
+        {% trans 'You wrote:' %}
+    {% endcaptureas %}
+
+    {% comment %}-----------------
+    Même code presque dupliqué (cf plus bas) mais impossible de le sortir
+    à cause du test "src_visible" qui est différent de "dst_visible"
+    et rend le tout impossible à "fusionner" (si tu me crois pas, essaie !)
+    {% endcomment %}
+    <li class="timeline-inverted">
+        {# - badge *AU MILIEU* - #}
+        <div class="timeline-badge" style="background-color: #0b878f">
+            <i class="fa fa-check"></i>
+        </div>
+
+        <div class="timeline-panel">
+            <div class="timeline-heading">
+                {# titre : <h4 class="timeline-title">Lorem ipsum dolor</h4> #}
+                <p>
+                    <small class="text-muted">
+                    {{ date_message }}
+                    </small>
+                </p>
+            </div>
+
+            {# - contenu message - #}
+            <div class="timeline-body">
+                <p>{{ message.message_to_html|safe }}</p>
+            </div>
+        </div>
+    </li>
+    {% comment %}fin du code presque dupliqué
+    ---------
+    {% endcomment %}
+
+{% elif message.dst == common.personne and message.dst_visible %}
+
+    {% captureas date_message %}
+        <b><i class="fa fa-clock-o"></i>
+        {{ message.date_creation_relative }}</b>
+        &nbsp;/&nbsp;
+            {{ message.src.full_name }} {% trans "wrote:" %}
+    {% endcaptureas %}
+
+    {% comment %}-----------------
+    Code presque dupliqué (long commentaire dans celui du dessus)
+    {% endcomment %}
+    <li>
+        {# - badge *AU MILIEU* - #}
+        <div class="timeline-badge"
+        {% if not message.is_read %}style="background-color: #c55f6d; color: yellow; text-shadow: 1px 1px 2px #000;"{% endif %}>
+            {% if not message.is_read %}
+                <i class="fa fa-star"></i>
+            {% else %}
+                <i class="fa fa-check"></i>
+            {% endif %}
+        </div>
+
+        <div class="timeline-panel">
+
+            {# - date du message - #}
+            <div class="timeline-heading">
+                {# titre : <h4 class="timeline-title">Lorem ipsum dolor</h4> #}
+                <p>
+                    <small class="text-muted">
+                    {{ date_message }}
+                    </small>
+                </p>
+            </div>
+
+            {# - contenu message - #}
+            <div class="timeline-body">
+                <p>{{ message.message_to_html|safe }}</p>
+            </div>
+        </div>
+    </li>
+    {% comment %}fin du code presque dupliqué
+    ---------
+    {% endcomment %}
+
+{% endif %}

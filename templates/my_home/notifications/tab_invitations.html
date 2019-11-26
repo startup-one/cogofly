@@ -1,0 +1,78 @@
+{% load static staticfiles compress i18n %}
+<div class="row" style="margin-top: 10px">
+    {% if common.notifications.invitations.all.count %}
+    <script>
+    $(document).ready(function() {
+        $('.grid-item').find('.panel-body').each(function(){
+            $(this).css({
+                'min-height': '225px'
+            });
+        });
+        $('#btn-tab-invitations').click(function() {
+            var g = $('.grid');
+            g.isotope({
+                itemSelector: '.grid-item',
+                layoutMode: 'fitRows',
+                transitionDuration: '.5s'
+            });
+            {% comment %}
+            Franck ne veut pas de cet effet sympa :
+            g.isotope('once', 'arrangeComplete', function() {
+                setTimeout(function() {
+                    g.isotope({sortBy: 'original-order'});
+                }, 1);
+            });
+            setTimeout(function() {
+                g.isotope({sortBy: 'random'});
+            }, 600);
+            {% endcomment %}
+            setTimeout(function() {
+                g.isotope({sortBy: 'original-order'});
+            }, 400);
+        });
+    });
+    </script>
+    <div class="grid">
+    {% endif %}
+
+    {% for personne_relation in common.notifications.invitations.all %}
+
+        <div class="grid-item">
+            {# Tous les paramètres à envoyer à l'include "person_detail" : #}
+            {% with form_send_message_url='my_home_notifications' %}
+            {% with personne=personne_relation.src %}
+            {% with id_unique=personne_relation.src.pk %}
+            {% with link_contact_detail=True %}
+            {% with show_travels=False %}
+            {% with show_buttons=True %}
+            {% with show_invite_big=False %}
+            {% with show_invite_small=False %}
+            {% with show_invitation_accept=True %}
+            {% with form_invitation_send_decision_url='my_home_notifications' %}
+
+                    {% include 'includes/person/detail.html' %}
+
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+        </div>
+
+    {% empty %}
+
+        <h4>{% blocktrans trimmed %}
+            You have no invitations yet
+        {% endblocktrans %}</h4>
+
+    {% endfor %}
+
+    {% if common.notifications.invitations.all.count %}
+    </div>
+    {% endif %}
+</div>

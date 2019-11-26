@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-17 17:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:44
+msgid "Arabic"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:45
+msgid "Bulgarian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:46
+msgid "Bengali"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:47
+msgid "Bosnian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:48
+msgid "Catalan"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:49
+msgid "Czech"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:50
+msgid "Welsh"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:51
+msgid "Danish"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:52
+msgid "German"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:53
+msgid "Greek"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:54
+msgid "English"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:55
+msgid "British English"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:56
+msgid "Spanish"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:57
+msgid "Argentinian Spanish"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:58
+msgid "Estonian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:59
+msgid "Basque"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:60
+msgid "Persian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:61
+msgid "Finnish"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:62
+msgid "French"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:63
+msgid "Frisian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:64
+msgid "Irish"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:65
+msgid "Galician"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:66
+msgid "Hebrew"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:67
+msgid "Hindi"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:68
+msgid "Croatian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:69
+msgid "Hungarian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:70
+msgid "Indonesian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:71
+msgid "Icelandic"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:72
+msgid "Italian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:73
+msgid "Japanese"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:74
+msgid "Georgian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:75
+msgid "Khmer"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:76
+msgid "Kannada"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:77
+msgid "Korean"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:78
+msgid "Lithuanian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:79
+msgid "Latvian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:80
+msgid "Macedonian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:81
+msgid "Malayalam"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:82
+msgid "Mongolian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:83
+msgid "Dutch"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:84
+msgid "Norwegian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:85
+msgid "Norwegian Bokmal"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:86
+msgid "Norwegian Nynorsk"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:87
+msgid "Polish"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:88
+msgid "Portuguese"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:89
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:90
+msgid "Romanian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:91
+msgid "Russian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:92
+msgid "Slovak"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:93
+msgid "Slovenian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:94
+msgid "Albanian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:95
+msgid "Serbian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:96
+msgid "Serbian Latin"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:97
+msgid "Swedish"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:98
+msgid "Tamil"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:99
+msgid "Telugu"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:100
+msgid "Thai"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:101
+msgid "Turkish"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:102
+msgid "Ukrainian"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:103
+msgid "Vietnamese"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:104
+msgid "Simplified Chinese"
+msgstr ""
+
+#: .\third_party\google_appengine_1_9_25\google\appengine\_internal\django\conf\global_settings.py:105
+msgid "Traditional Chinese"
+msgstr ""

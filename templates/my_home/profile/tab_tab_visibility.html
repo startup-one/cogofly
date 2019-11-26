@@ -1,0 +1,61 @@
+{% load static staticfiles compress i18n %}
+<div class="row" style="margin-top: 10px">
+
+    <form id="edit-profile-form" enctype="multipart/form-data"
+      action="{% url 'my_home_profile_visibility_change' %}"
+      method="POST">
+    {% csrf_token %}
+
+        <div class="col-lg-12">
+
+            <div class="panel panel-info {% if request.session.message %}panel-toggle-message{% endif %}">
+                <div class="panel-heading">
+                    <i class="fa fa-eye-slash fa-fw"></i>
+                    {% trans 'Uncheck if you want to hide those informations' %}
+                </div>
+                <div class="panel-body">
+
+                    <div class="row" style="margin-top: 10px">
+                    {% with form_visibilite as form %}
+                    {# principe : n'afficher que les champs "groupno"=valeur #}
+                        <div class="col-lg-12">
+                            {% with group_no=0 %}
+                                {% include "includes/form_generic/fields_by_groupno.html" %}
+                            {% endwith %}
+                        </div>
+                        <div class="col-lg-6">
+                            {% with group_no=1 %}
+                                {% include "includes/form_generic/fields_by_groupno.html" %}
+                            {% endwith %}
+                        </div>
+                        <div class="col-lg-6 options-visibility-2nd-column">
+                            {% with group_no=2 %}
+                                {% include "includes/form_generic/fields_by_groupno.html" %}
+                            {% endwith %}
+                        </div>
+
+                        {% include "includes/form_generic/form_non_field_errors.html" %}
+                    {% endwith %}
+                    </div>
+
+                    <div class="row" style="margin-top: 10px">
+                        <div class="col-lg-6">
+                            <button class="btn btn-validate btn-block"
+                                    id="register-submit-button" type="submit">
+                                {% trans "Confirm" %}
+                            </button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button class="btn btn-dark btn-block" type="button"
+                                    data-hqf-switch="$.ct('.row').pt().ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pt().ct('.row').pv().pv().pv()/Od">
+                                <i class="fa fa-times"></i>
+                                {% trans "Close" %}
+                            </button>
+                        </div>
+                    </div>
+
+                </div>{# <!-- /.panel-body --> #}
+            </div>{# <!-- /.panel --> #}
+        </div>{# <!-- /.col-lg-12 --> #}
+    </form>
+</div>

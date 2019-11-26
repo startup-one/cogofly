@@ -1,0 +1,465 @@
+{% extends "applancement/base.html" %}
+{% load staticfiles i18n templates_extras translate_url compress %}
+
+{% block title %}
+    <title>{% blocktrans trimmed %}
+    Cogofly - Don't want to travel alone? This site is made for you! Sign up
+    for free and join the new community.
+{% endblocktrans %}</title>
+{% endblock %}
+
+{% block body %}
+
+
+{% block header_applancement %}
+{% comment %}-------------------------------------------------------------
+                      En-tête
+-------------------------------------------------------------{% endcomment %}
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc0zrgx2mk-YPqzUvvpv4anNNWbMMk9EQ&libraries=places"></script>
+<script>
+/*
+$(document).ready(function(){
+    $.ajax({
+        url: 'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=eiffel&key=AIzaSyCc0zrgx2mk-YPqzUvvpv4anNNWbMMk9EQ',
+        cache: false,
+        crossDomain: true,
+        dataType: 'json',
+        method: 'get'
+    }).done(function(data){
+         // do stuff with json (in this case an array)
+         console.log("Success!");
+    }).error(function(){
+        console.log("Erreur!");
+    }).complete(function(a,b,c){
+         // do stuff with json (in this case an array)
+         console.log(a, b, c);
+    });
+});
+*/
+</script>
+
+    <section class="title">
+        <div class="title">
+            <img src="{% static "img/logo-h.png" %}"
+                 alt="Logo Cogofly" title="Logo Cogofly" />
+        </div>
+        <div class="title-inner">
+            <h2>{% blocktrans trimmed %}
+                    Don't want to travel alone any more?
+                {% endblocktrans %}</h2>
+            <h2>{% blocktrans trimmed %}
+                    ... This site is made for you!
+                {% endblocktrans %}</h2>
+            <div class="advantages">
+            <ul>
+                <li>{% blocktrans trimmed %}Don't think twice about
+                    travelling any more, whether it be going away for the
+                    weekend or just on a day out, and give your ambitions a
+                    boost.{% endblocktrans %}</li>
+                <li>{% blocktrans trimmed %}
+                    Find someone you can trust, close to home or abroad,
+                    and plan your trips together…you'll also be able
+                    to plan and share weekends and outings.
+                {% endblocktrans %}</li>
+                <li>{% blocktrans trimmed %}Discover a new way of travelling
+                    which is safe, practical and financially advantageous.
+                {% endblocktrans %}</li>
+            </ul>
+            </div>
+        </div>
+        <div class="title-inner centre">
+            <h2>{% blocktrans trimmed %}
+        Come and surf, very soon, this new wave.
+            {% endblocktrans %}</h2>
+            <h2>{% blocktrans trimmed %}
+                In order to be notified of the site’s official release,
+                and start the adventure with us, please register below:
+            {% endblocktrans %}</h2>
+        </div>
+    </section>
+
+
+{% endblock header_applancement %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Drapeaux
+-------------------------------------------------------------{% endcomment %}
+<div style="text-align: center; display: block; position: fixed;
+            top: 20px; right: 20px">
+{% spaceless %}
+    {% language 'fr' %}
+    <a href="{% url 'applancement_index' %}">
+        <img src="{% static 'img/flag-fr-s.png' %}"
+             alt="Français" title="Français" />
+    </a>
+        &nbsp;&nbsp;
+    {% endlanguage %}
+    {% language 'en' %}
+    <a href="{% url 'applancement_index' %}">
+        <img src="{% static 'img/flag-en-s.png' %}"
+             alt="English" title="English" />
+    </a>
+    {% endlanguage %}
+{% endspaceless %}
+</div>
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Message "déjà enregistré"
+-------------------------------------------------------------{% endcomment %}
+{% if request.session.reg_already_done %}
+<div id="registration-done-check-email" style="display: none">
+    <form>
+        <div class="information">
+            {% trans 'You were already registered' %}<br /><br />
+            <strong>{% trans 'Thank you for registering!' %}</strong>
+        </div>
+        <div>
+            <input class="fr" type="submit" value="{% trans 'Click here' %}">
+        </div>
+    </form>
+</div>
+<script>
+$(document).ready(function() { window.setTimeout(function () {
+    $('#registration-done-check-email form').submit(function () {
+        gFnToggle('#registration-done-check-email', {
+            'start': function () { gFnToggle('#register'); },
+            'end': function () { $('html, body').scrollTo(
+                        $('#register').offset().top - 10, 'slow', 'easing'
+                    );
+            }
+        });
+        return false;
+    });
+    gFnToggle('#registration-done-check-email', {
+        'start': function () { $('html, body').scrollTo(
+            $('#registration-done-check-email').offset().top - 10,
+                'slow', 'easing'
+        );
+    }});
+}, 1000) });
+</script>
+{% endif %}
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Message "allez checker votre email"
+-------------------------------------------------------------{% endcomment %}
+{% if request.session.reg_done_check_email %}
+<div id="registration-done-check-email" style="display: none">
+    <form>
+        <div class="information">{% blocktrans trimmed %}
+            We've sent you an<br />
+            <strong>email for validation!</strong><br />
+            If you haven't received it in a few minutes,<br />
+            please check your spam folder!{% endblocktrans %}
+        </div>
+        <div>
+            <input class="fr" type="submit" value="{% trans 'I got it!' %}">
+        </div>
+    </form>
+</div>
+<script>
+$(document).ready(function() { window.setTimeout(function () {
+    $('#registration-done-check-email form').submit(function () {
+        gFnToggle('#registration-done-check-email', {
+            'start': function () { gFnToggle('#register'); },
+            'end': function () { $('html, body').scrollTo(
+                        $('#register').offset().top - 10, 'slow', 'easing'
+                    );
+            }
+        });
+        return false;
+    });
+    gFnToggle('#registration-done-check-email', {
+        'start': function () { $('html, body').scrollTo(
+            $('#registration-done-check-email').offset().top - 10,
+                'slow', 'easing'
+        );
+    }});
+}, 1000) });
+</script>
+{% endif %}
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Message "vous avez été correctement enregistré"
+-------------------------------------------------------------{% endcomment %}
+{% if request.session.reg_validated %}
+<div id="registration-validated" style="display: none">
+    <form>
+        <div class="information"><br />{% blocktrans trimmed %}
+            <strong>Congratulations!</strong><br /><br />
+            Your registration is confirmed!{% endblocktrans %}
+            <br /><br />
+        </div>
+        <div>
+            <input class="fr" type="submit" value="{% trans 'Great!' %}">
+        </div>
+    </form>
+</div>
+<script>
+$(document).ready(function() { window.setTimeout(function () {
+    $('#registration-validated form').submit(function () {
+        gFnToggle('#registration-validated', {
+            'start': function () { gFnToggle('#register'); },
+            'end': function () { $('html, body').scrollTo(
+                        $('#register').offset().top - 10, 'slow', 'easing'
+                    );
+            }
+        });
+        return false;
+    });
+    gFnToggle('#registration-validated');
+}, 1000) });
+</script>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Compte à rebours
+-------------------------------------------------------------{% endcomment %}
+
+    {% comment %} C'est terminé le compte à rebours magnifique sur lequel
+    j'ai passé plusieurs jours et nuits pour qu'il soit parfaitement responsive
+    <div class="digits"></div>
+    {% endcomment %}
+    <div id="fb-root"></div>
+
+
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Facebook
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="social-widgets-wrapper">
+        <div class="fb-like"
+             data-layout="button_count"
+             data-action="like"
+             data-show-faces="false"
+             data-share="true"></div>
+    </div>
+-------------------------------------------------------------{% endcomment %}
+
+
+
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      twitter
+    <div class="social-widgets-wrapper">
+        <a href="https://twitter.com/share"
+           class="twitter-share-button"
+           data-via="cogofly"
+           data-related="cogofly" data-hashtags="cogofly">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
+                p=/^http:/.test(d.location)?'http':'https';
+            if(!d.getElementById(id)){js=d.createElement(s);
+                js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js,fjs);}}(document,
+                'script', 'twitter-wjs');
+        </script>
+    </div>
+
+
+    <div class="social-widgets-wrapper">
+        <a href="https://twitter.com/cogofly"
+           class="twitter-follow-button"
+           data-show-count="false">Follow @cogofly</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
+                p=/^http:/.test(d.location)?'http':'https';
+            if(!d.getElementById(id)){js=d.createElement(s);
+                js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js,fjs);}}(document,
+                'script', 'twitter-wjs');
+        </script>
+    </div>
+-------------------------------------------------------------{% endcomment %}
+
+
+
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Login
+-------------------------------------------------------------{% endcomment %}
+    <div id="signup-page" style="display: none">
+        <div class="formContainer">
+            <div id="openid-buttons">
+                <div class="major-provider   facebook-login">
+                <a href="{% url 'login' 'facebook' %}?url={{request.path|urlencode}}">
+                    <div class="icon-container"><span class="icon"></span></div>
+                    <div class="text"><span>Facebook</span></div>
+                    <br class="cbt">
+                </a>
+                </div>
+                <div class="major-provider   google-login">
+                    <a href="{% url 'login' 'google' %}?url={{request.path|urlencode}}">
+                    <div class="icon-container"><span class="icon"></span></div>
+                        <div class="text"><span>Google</span></div>
+                        <br class="cbt">
+                    </a>
+                </div>
+            </div>
+            <div class="or-container">
+                <hr class="or-hr">
+                <div id="or">or</div>
+            </div>
+
+            <form id="se-login-form" action="{% url 'register' %}"
+                  method="POST">
+                {% csrf_token %}
+                <div id="se-login-fields">
+                    {% for field in form %}
+                    {{ field.label_tag }}<br />
+                    {{ field }}<br />
+                    {% if field.errors %}
+                        {{ field.errors }}
+                    {% endif %}
+                    {{ field.help_text }}
+                    {% endfor %}
+                    {{ form.non_field_errors }}
+                </div>
+                <div id="controls-row">
+                    <input class="fr" type="submit" id="submit-button"
+                           name="submit-button" value="{% trans 'Register' %}">
+                </div>
+            </form>
+            <div class="cbt" style="padding-top: 25px;">
+                {% comment %}
+                    Traduction définie dans register.py :
+                {% endcomment %}
+                {% autoescape off %}
+                    {{ agree_with_toc_and_tos }}
+                {% endautoescape %}
+            </div>
+            <br class="cbt">
+            <form id="signup-page-cancel">
+                <div>
+                    <input class="fr"
+                           type="submit" value="{% trans 'Cancel' %}" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="register" style="display: none">
+        <form>
+            <div>
+                <input class="fr" type="submit"
+                       value="{% trans 'Sign up for free' %}">
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Social widget - addthis
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+-------------------------------------------------------------{% endcomment %}
+<div class="social-widgets-wrapper">
+    <span class="love">{% blocktrans trimmed %}
+        To love is to share... Go ahead and click on the buttons below:
+    {% endblocktrans %}</span><br />
+</div>
+<div class="social-widgets-wrapper">
+    <div class="addthis_sharing_toolbox"></div>
+</div>
+<script type="text/javascript"
+        src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-562240682ffebd02"
+        async="async"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      A jeter
+-------------------------------------------------------------{% endcomment %}
+<div class="register">
+{% if user.is_authenticated %}
+<a href="{% url 'logout' %}?url={{request.path}}">
+    <img src="{% static "img/logout.png" %}"
+         alt="{% trans 'Logout' %}" title="{% trans 'Logout' %}"
+         style="width: auto; max-height: 30px;" /></a>
+{% endif %}
+</div>
+
+
+
+
+
+
+{% comment %}-------------------------------------------------------------
+                      Footer
+-------------------------------------------------------------{% endcomment %}
+    <footer class="footer">
+        <div class="title-inner centre">
+            <h2>{% trans 'Alone we think...Together we get away!' %}</h2>
+        </div>
+    </footer>
+
+
+
+{% endblock body %}

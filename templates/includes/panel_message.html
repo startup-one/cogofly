@@ -1,0 +1,43 @@
+{% comment %}---------------------------------------------------------------
+
+Fichier à inclure si on veut afficher un message qui est dans la session.
+La première ligne du message = header
+La dernière ligne du message = texte à mettre sur le bouton
+
+Je le mets juste avant le panel principal, et je cache le panel principal
+si jamais il y a un message via l'ajout de classe:
+
+     {% if request.session.message %}panel-toggle-message{% endif %}">
+
+{% endcomment %}
+{% load static staticfiles compress i18n %}
+{% if message %}
+<div id="message-panel" style="display: none"
+     class="panel panel-custom-information panel-toggle-message">
+    <div class="panel-heading">
+        {% trans 'Information' %}
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                {% autoescape off %}
+                {% for msg in message %}
+                    {% if forloop.first %}
+                        <h3 style="margin-top: 0">{{ msg }}</h3>
+                    {% elif forloop.last %}
+                    <span class="btn btn-default message-to-show"
+                          onclick="toggle_elements_visible('.panel-toggle-message')"
+                          style="margin-top: 10px">
+                        {{ msg }}
+                    </span>
+                    {% else %}
+                        {{ msg }}<br />
+                    {% endif %}
+                {% endfor %}
+                {% endautoescape %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

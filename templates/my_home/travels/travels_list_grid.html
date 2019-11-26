@@ -1,0 +1,61 @@
+{% comment %}---------------------------------------------------------------
+Fichier inclus lorsqu'on veut afficher une liste de personnes format "carte".
+{% endcomment %}{% load static staticfiles compress i18n  %}
+{# appliquer l'isotope sur la grille juste après #}
+<div class="grid">
+    {% for v in voyages %}
+        <div class="grid-item-travel"
+             data-hqf-switch="$.ct('.row').pt().fd('#travel-summary-{{ v.obj.pk }}')/Xd/$.ct('.row')/Xu/$.ct('.travels-summary').sb('h4')/Xu">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary edit-travel-grid-item">
+                        <div class="panel-heading">
+                            {{ v.obj.travel.formatted_address }}
+                            <span style="display: inline-block; float: right">
+                                <i class="fa fa-search fa-fw"></i>
+                            </span>
+                        </div>{# <!-- /.panel-heading --> #}
+                        <div class="panel-body">
+                            <h5>{{ v.obj.description_dates }}</h5>
+                            <p class="travel-description">
+                                {% if v.obj.comments %}
+                                    {{ v.obj.comments_summary|safe }}
+                                {% else %}
+                                    {% trans 'No comment for this travel' %}
+                                {% endif %}
+                            </p>
+                            {% for url in v.obj.urls_photos %}
+                                <a href="{{ url }}" class="travel-image-popup">
+                                    <img src="{{ url }}"
+                                         alt="{{ v.obj.travel.formatted_address }}"
+                                         style="max-height: 150px; max-width: 110px">
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<script>$(document).ready(function () {
+    $('.grid-item-travel').each(function(){
+        $(this).css({
+            'display': 'block',
+            'min-height': '180px',
+            'border': 'none',
+            'padding': '0'
+        });
+    });
+    var g = $('.grid');
+    g.isotope({
+        itemSelector: '.grid-item-travel',
+        layoutMode: 'fitRows',
+        transitionDuration: '.5s'
+    });
+    g.isotope('once', 'arrangeComplete', function() {
+        setTimeout(function() {
+            g.isotope({sortBy: 'original-order'});
+        }, 1);
+    });
+});</script>

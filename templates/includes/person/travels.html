@@ -1,0 +1,40 @@
+{% comment %}---------------------------------------------------------------
+Fichier inclus lorsqu'on veut afficher les voyages d'une personne.
+{% endcomment %}{% load static staticfiles compress i18n  %}
+<ul class="nav nav-pills" style="display:none">
+    <li class="active">
+        <a href="#personne-{{ id_unique }}-travels-past" data-toggle="tab" aria-expanded="false">
+            {% trans 'Realized' %}
+        </a>
+    </li>
+    <li>
+        <a href="#personne-{{ id_unique }}-travels-futur" data-toggle="tab" aria-expanded="false">
+            {% trans 'To do' %}
+        </a>
+    </li>
+    <li class="li-button-close">
+        <button type="button" class="btn nav-pills btn-hqf-close"
+                data-hqf-switch="$.ct('ul.nav-pills')/u/$.ct('ul.nav-pills').nt()/u/$.ct('div.travels')/Ou">
+        <i class="fa fa-times"></i>
+            {% trans "Close" %}
+        </button>
+    </li>
+</ul>
+
+{# <!-- Tab panes --> #}
+<div class="tab-content" style="display:none;">
+    <div class="tab-pane fade active in" id="personne-{{ id_unique }}-travels-past">
+        {% for personne_travel in personne.travels_past %}
+            {% with personne_travel as personne_travel %}
+                {% include "includes/person/travel.html" %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+    <div class="tab-pane fade" id="personne-{{ id_unique }}-travels-futur">
+        {% for personne_travel in personne.travels_futur %}
+            {% with personne_travel as personne_travel %}
+                {% include "includes/person/travel.html" %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+</div>

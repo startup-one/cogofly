@@ -1,0 +1,54 @@
+{% extends "applancement/base.html" %}
+{% load staticfiles i18n templates_extras compress %}
+
+{% block title %}
+    <title>{{ about_title }}</title>
+{% endblock %}
+
+{% block custom_js %}
+    {% with "js/launch/bg-slider-about.js" as custom_js_slider %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock custom_js %}
+
+{% block body %}
+    {% block header_applancement %}
+    {% autoescape off %}
+    <section class="terms-and-conditions">
+        <h1>{{ about_title }}</h1><br />
+        <p>{{ about_main_aim }}</p>
+        <p>{{ about_constat }}</p>
+        <h2>{{ about_concept_title }}</h2>
+        <p>{{ about_concept_content_1 }}</p>
+        <p>{{ about_concept_content_2 }}</p>
+        <p>{{ about_concept_content_3 }}</p>
+        <p>{{ about_concept_content_4 }}</p>
+        <p>{{ about_concept_content_5 }}</p>
+        <h2>{{ about_brand_title }}</h2>
+        <p>{{ about_brand_content_1 }}</p>
+        <p>{{ about_brand_content_2 }}</p>
+        <ul>
+        <li>{{ about_brand_content_li_1 }}</li>
+        <li>{{ about_brand_content_li_2 }}</li>
+        </ul>
+        <h2>{{ about_name_title }}</h2>
+        <p>{{ about_name_content_1 }}</p>
+        <p>{{ about_name_content_2 }}</p>
+        <p>{{ about_name_content_3 }}</p>
+        <p>{{ about_name_content_4 }}</p>
+        <p>{{ about_name_content_5 }}</p>
+        <p>{{ about_name_content_6 }}</p>
+        <h2>{{ about_logo_title }}</h2>
+        <p>{{ about_logo_content_1 }}</p>
+        <ul>
+        <li>{{ about_logo_content_li_1 }}</li>
+        <li>{{ about_logo_content_li_2 }}</li>
+        <li>{{ about_logo_content_li_3 }}</li>
+        <li>{{ about_logo_content_li_4 }}</li>
+        <li>{{ about_logo_content_li_5 }}</li>
+        <li>{{ about_logo_content_li_6 }}</li>
+        </ul>
+    </section>
+    {% endautoescape %}
+    {% endblock header_applancement %}
+{% endblock body %}

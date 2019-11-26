@@ -1,0 +1,128 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n %}
+
+{% block main-title %}
+    <i class="fa fa-user"></i>
+    {% block title %}{{ contact.full_name }}{% endblock %}
+{% endblock %}
+
+{% block central %}
+    {# augmenter la taille de la photo pour prendre plus de place : #}
+    <script>$(document).ready(function() {
+        $('div.photo-profile-normal').css('height', '300px');
+    });</script>
+
+    {% if message %}
+        <div class="row">
+            <div class="col-lg-3">&nbsp;
+            </div>
+            <div class="col-lg-6">
+                {% include "includes/panel_message.html" %}
+            </div>
+            <div class="col-lg-3">&nbsp;
+            </div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-lg-3">&nbsp;
+        </div>
+        <div class="col-lg-6">
+
+            {% with personne=contact %}
+            {% with personne.pk as id_unique %}
+
+            {% with show_buttons=False %}
+            {% with show_like=False %}
+            {% with show_comment=True %}
+
+            {% with request.get_full_path as form_send_message_full_url %}
+            {% with show_send_message=True %}
+
+            {% with show_activities=False %}
+            {% with show_travels=True %}
+            {% with show_invite_small=False %}
+            {% with show_invite_big=True %}
+            {% with personne_conversation=True  %}
+            {% with show_description_complete=True  %}
+            {% with show_contacts=True  %}
+            {% with personne_conversation=False  %}
+
+                {% include 'includes/person/detail.html' %}
+
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+
+            <div class="row contacts" style="display: none">
+                <div class="col-lg-12">
+                    {% if contact_contacts|length %}
+                        {% with grid_title=contact.description_ses_contacts %}
+                        {% with personnes=contact_contacts %}
+                        {% with hide_profile_photo=True %}
+                        {% with show_close_button=True %}
+                        {% with show_pagination=True %}
+
+                            {% include 'includes/persons_grid.html' %}
+
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                        {% endwith %}
+                    {% else %}
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"
+                                 style="min-height: 62px; line-height: 40px; background-color: #3f729b;">
+                                <span style="color: white">{{ contact.description_ses_contacts }}</span>
+                                <button type="button" class="btn nav-pills btn-hqf-close"
+                                        data-hqf-switch="$.ct('.contacts')/Ou" />
+                                <i class="fa fa-times"></i>
+                                    {% trans 'Close' %}
+                                </button>
+                            </div>
+                            <div class="panel-body">
+                            {% if contact.est_un_homme %}
+                                {% blocktrans trimmed %}
+                                    He has no contacts yet.
+                                {% endblocktrans %}
+                            {% else %}
+                                {% blocktrans trimmed %}
+                                    She has no contacts yet.
+                                {% endblocktrans %}
+                            {% endif %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">&nbsp;
+        </div>
+    </div>
+{% endblock %}
+
+{% if contact_contacts|length %}
+{% block script_more %}
+    {# prions pour qu'on ne change pas d'icone sur le bouton "contacts" : #}
+    <script>if (typeof(gQueryParams['page'])!='undefined') {
+        $(document).ready(function() {
+            setTimeout(function() {
+                $('.fa.fa-users').last().closest('button').click();
+            }, 100);
+        });
+
+    }</script>
+{% endblock %}
+{% endif %}

@@ -1,0 +1,103 @@
+{% comment %}---------------------------------------------------------------
+On l'inclut pour donner la possibilité d'avoir un bouton "inviter",
+et si on clique dessus, la boîte qui s'affiche avec.
+Attention ! On a besoin d'un id unique.
+{% endcomment %}{% load static staticfiles compress i18n klass model_access %}
+
+{# type_of_relation_you = fonction pour extraire une relation : #}
+{% with common.personne|type_of_relation_you_short:personne as relation_desc %}
+{% with common.personne|can_remove_relation:personne as can_remove %}
+
+{# N'afficher que si ce n'est pas l'utilisateur en cours : #}
+{% if personne != common.personne %}
+    {# Ne proposer d'inviter que si on n'a pas déjà de lien avec elle : #}
+    {% if relation_desc %}
+        {% if can_remove %}
+            {% if not button_already_shown %}
+                <button type="button"
+                        class="btn btn-default btn-danger{{ btn_added_class }}"
+                        data-toggle="modal"
+                        data-target="#modal-remove-{{ id_unique }}"
+                        title="{% trans 'Remove this relation' %}">
+                    <i class="fa fa-times"></i>&nbsp;
+                    {% trans 'Remove this relation' %}
+                </button>
+            {% endif %}
+
+            <div class="modal fade"
+                 id="modal-remove-{{ id_unique }}"
+                 tabindex="-1" role="dialog"
+                 aria-labelledby="{% trans 'Remove this relation' %}"
+                 aria-hidden="true"
+                 style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-body">
+                            {% blocktrans trimmed with nom=personne.full_name %}
+                            Remove the relation with {{ nom }}?
+                            {% endblocktrans %}
+                        </div>{#<!-- /modal-body --> #}
+
+                        <div class="modal-footer">
+                            <button class="btn btn-primary invite"
+                                    data-relation-remove="{{ personne.pk }}">
+                                {% trans 'Yes' %}
+                            </button>
+                            <button type="button" class="btn btn-default"
+                                    data-dismiss="modal">
+                                {% trans 'No' %}
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        {% else %}{# can't remove #}
+
+            <button type="button"
+                    class="btn btn-default disabled{{ btn_added_class }}">
+                {{ relation_desc }}
+            </button>
+
+        {% endif %}{# can_remove #}
+    {% else %}
+        <button type="button"
+                class="btn btn-default btn-facebook {{ btn_added_class }}"
+            data-toggle="modal" data-target="#modal-invite-{{ id_unique }}"
+            title="{% trans 'Invite' %}">
+            <i class="fa fa-user fa-fw"></i> {% trans 'Invite' %}
+        </button>
+        <div class="modal fade"
+             id="modal-invite-{{ id_unique }}"
+             tabindex="-1" role="dialog"
+             aria-labelledby="{% trans 'Invite' %}" aria-hidden="true"
+             style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        {% blocktrans trimmed with nom=personne.full_name %}
+                        Invite {{ nom }}?
+                        {% endblocktrans %}
+                    </div>{#<!-- /modal-body --> #}
+
+                    <div class="modal-footer">
+                        <button class="btn btn-primary invite"
+                                data-invite="{{ personne.pk }}">
+                            {% trans 'Yes' %}
+                        </button>
+                        <button class="btn btn-default" data-dismiss="modal">
+                            {% trans 'No' %}
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}
+
+{% endwith %}
+{% endwith %}

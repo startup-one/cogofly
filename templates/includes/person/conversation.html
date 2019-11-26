@@ -1,0 +1,9 @@
+{% comment %}---------------------------------------------------------------
+Fichier inclus pour afficher les conversations d'une personne.
+{% endcomment %}{% load static staticfiles compress i18n model_access %}
+{% with _('Answer') as label_send_a_message %}
+    {% for message in conversation.messages_by_date.all %}
+        {% include "includes/person/conversation_message.html" %}
+    {% endfor %}
+{% endwith %}
+

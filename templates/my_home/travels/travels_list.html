@@ -1,0 +1,104 @@
+{% comment %}--------------------------------------------
+  Fichier inclus lorsque je reçois une liste de voyages à afficher.
+  Je dois afficher une liste de voyages passés et à venir, et le principe
+  est *exactement* le même : je fais donc deux fois l'include de ce fichier,
+  avec "voyages" qui change car le include est entouré de "with XX as voyages" :
+{% endcomment %}{% load i18n addstr %}
+<div class="row travels-summary" style="margin-top: 10px">
+    <div class="col-lg-12">
+        {% include 'my_home/travels/travels_list_grid.html' %}
+    </div>
+</div>
+
+{% for v in voyages %}
+<div class="row" style="margin-top: 10px; display: none"
+     id="travel-summary-{{ v.obj.pk }}">
+    <div class="col-lg-12">
+        <h4>{{ v.obj.travel.formatted_address }}</h4>
+        <h5>{{ v.obj.description_dates }}</h5>
+        <p class="travel-description">{% if v.obj.comments %}
+            {{ v.obj.comments|safe }}
+        {% else %}
+            {% trans 'No comment for this travel' %}
+        {% endif %}</p>
+    </div>
+    <div class="col-lg-12" style="margin-top: 10px">
+        {% for url in v.obj.urls_photos %}
+            <a href="{{ url }}"
+               class="travel-image-popup">
+                <img src="{{ url }}"
+                     alt="{{ v.obj.travel.formatted_address }}"
+                     style="max-height: 320px; max-width: 300px">
+            </a>
+        {% endfor %}
+    </div>
+    <div class="col-lg-12" style="margin-top: 10px">
+        <button class="btn btn-primary"
+                data-hqf-switch="$.ct('.row').nt()/Xd/$.ct('.row')/Xu"
+                style="width: 150px">
+            <i class="fa fa-pencil"></i>
+            &nbsp;&nbsp;{% trans "Modify" %}
+        </button>
+        <button class="btn btn-dark"
+                data-hqf-switch="$.ct('.row')/Xu/$.ct('.row').pt().find('.travels-summary')/Xd/$.ct('.tab-pane').cd('h4')/Od"
+                style="width: 150px">
+            <i class="fa fa-times"></i>&nbsp;&nbsp;{% trans "Close" %}
+        </button>
+        {% with "modal-remove-"|addstr:v.obj.pk as modal_remove %}
+        <button class="btn btn-danger" style="width: 150px"
+                data-toggle="modal" data-target="#{{ modal_remove }}"
+                title="{% trans "Remove" %}">
+            <i class="fa fa-times"></i>&nbsp;&nbsp;{% trans "Delete" %}
+        </button>
+        <div class="modal fade" id="{{ modal_remove }}" tabindex="-1" role="dialog"
+             aria-labelledby="{% trans "Remove" %}" aria-hidden="true"
+             style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" aria-hidden="true"
+                                data-dismiss="modal">×</button>
+                        <h4 class="modal-title">
+                            {{ v.obj.travel.formatted_address }}
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        {% trans "Remove this travel?" %}<br />
+                        {% trans "This travel will be removed from your travel list" %}
+                    </div>
+                    <div class="modal-footer">
+                        {# Mettre une forme sans champs = supprimer la forme #}
+                        <form action="{% url 'my_home_travel' %}"
+                              method="POST">
+                            {% csrf_token %}
+                            {% for hidden in v.form.hidden_fields %}
+                                {{ hidden }}
+                            {% endfor %}
+                            <button class="btn btn-default"
+                                    data-dismiss="modal">
+                                {% trans "No" %}
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                {% trans "Yes" %}
+                            </button>
+                        </form>
+                    </div>
+                </div>{# <!-- /.modal-content -->#}
+            </div>{# <!-- /.modal-dialog -->#}
+        </div>
+        {% endwith %}{# <!-- /modal_remove -->#}
+    </div>
+</div>
+    {% trans "Edit" as title_form %}
+    {% trans "Save" as btn_submit_label %}
+    {% trans "Close" as btn_cancel_label %}
+
+    {% with "form-edit-voyage-"|addstr:v.obj.pk as id_form %}
+    {% with "margin-top:12px" as form_style_add %}
+    {% with v.form as form %}
+        {% include "my_home/travels/travel_form_edit.html" %}
+    {% endwith %}{# form #}
+    {% endwith %}{# form_style_add #}
+    {% endwith %}{# id_form #}
+{% endfor %}
+

@@ -1,0 +1,15 @@
+{% comment %}---------------------------------------------------------------
+Après avoir affiché tous les champs d'un formulaire, on affiche les
+erreurs générales, qui ne correspondent pas à un champ particulier
+(ex: "la date de début du voyage est après la date de fin")
+{% endcomment %}{% load i18n %}
+
+{% for err in form.non_field_errors %}
+<div class="form-group">
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">{% trans 'Error:' %}</span>
+        {{ err }}
+    </div>
+</div>
+{% endfor %}

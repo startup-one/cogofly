@@ -1,0 +1,75 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n klass %}
+{% block main-title %}
+    <i class="fa fa-search fa-fw"></i>
+    {% block title %}{% trans "Search" %}{% endblock %}
+{% endblock %}
+{% block central %}
+<div class="row">
+    {% if message %}
+        {# if there are some results, panel is displayed AFTER. #}
+        {% if not search_results %}
+            <div class="col-lg-12">
+                {% include "includes/panel_message.html" %}
+            </div>
+        {% endif %}
+    {% endif %}
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <ul id="search-pills" class="nav nav-pills"
+                    style="width: 90%;margin-left: 0; margin-right: auto; margin-bottom: 10px">
+                    <li {% if request.GET.tab != '2' %}class="active"{% endif %}>
+                        <a href="#tab-search-basic" data-toggle="tab" aria-expanded="true">
+                            {% trans 'Basic' %}
+                        </a>
+                    </li>
+                    <li {% if request.GET.tab == '2' %}class="active"{% endif %}>
+                        <a href="#tab-search-advanced" data-toggle="tab" aria-expanded="false">
+                            {% trans 'Advanced' %}
+                        </a>
+                    </li>
+                </ul>
+
+
+                <div class="tab-content">
+                    <div class="input-group custom-search-form"></div>
+                    <div class="tab-pane fade {% if request.GET.tab != '2' %}active in{% endif %}" id="tab-search-basic">
+                        <form role="form" method="GET" autocomplete="off"
+                              class="form-search">
+                        {% include "my_home/search/search_basic_form.html" %}
+                        {% include "my_home/search/search_basic_good_to_know.html" %}
+                        {% include "my_home/search/search_basic_hints.html" %}
+                        </form>
+
+                        {% if request.GET.tab != '2' %}
+                            {% if search_results != None and message %}
+                                {% include "includes/panel_message.html" %}
+                            {% endif %}
+                            {% include "my_home/search/results.html" %}
+
+                        {% endif %}
+                    </div>
+
+
+                    <div class="tab-pane fade {% if request.GET.tab == '2' %}active in{% endif %}" id="tab-search-advanced">
+                        <form role="form" method="GET" autocomplete="off"
+                              class="form-search">
+                        {% include "my_home/search/search_advanced_form.html" %}
+                        {% include "my_home/search/search_advanced_good_to_know.html" %}
+                        {% include "my_home/search/search_advanced_hints.html" %}
+                        </form>
+                        {% if request.GET.tab == '2' %}
+                            {% if search_results != None and message %}
+                                {% include "includes/panel_message.html" %}
+                            {% endif %}
+                            {% include "my_home/search/results.html" %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "applancement/base.html" %}
+{% load staticfiles i18n templates_extras compress %}
+
+{% block title %}
+    <title>{{ tos_title }}</title>
+{% endblock %}
+
+{% block body %}
+    {% block header_applancement %}
+    {% autoescape off %}
+    <section class="terms-of-service">
+        <h1>{{ tos_title }}</h1>
+        <p>{{ tos_contact_us }}</p>
+        <h2>{{ tos_introduction }}</h2>
+        <p>{{ tos_introduction_1 }}</p>
+        <p>{{ tos_introduction_2 }}</p>
+        <h2>{{ tos_licence }}</h2>
+        <p>{{ tos_licence_1 }}</p>
+        <p>{{ tos_licence_2 }}</p>
+        <p>{{ tos_licence_you_must_not.title }}</p>
+        <ul>
+            {% for txt in tos_licence_you_must_not.tab %}
+                <li>{{ txt }}</li>
+            {% endfor %}
+        </ul>
+        <p>{{ tos_content_redistribution }}</p>
+        <h2>{{ tos_acceptable_use.title }}</h2>
+        {% for txt in tos_acceptable_use.tab %}
+            <p>{{ txt }}</p>
+        {% endfor %}
+        <ul>
+        {% for txt in tos_acceptable_this_includes_tab %}
+            <li>{{ txt }}</li>
+        {% endfor %}
+        </ul>
+        <p>{{ tos_you_must_not_use_1 }}</p>
+        <p>{{ tos_you_must_not_use_2 }}</p>
+        <h2>{{ tos_restricted_access_title }}</h2>
+        <p>{{ tos_restricted_access_1 }}</p>
+        <p>{{ tos_restricted_access_2 }}</p>
+        <p>{{ tos_restricted_access_3 }}</p>
+        <h2>{{ tos_user_content }}</h2>
+        <p>{{ tos_user_content_1 }}</p>
+        <p>{{ tos_user_content_2 }}</p>
+        <p>{{ tos_user_content_3 }}</p>
+        <p>{{ tos_user_content_4 }}</p>
+        <p>{{ tos_user_content_5 }}</p>
+        <p>{{ tos_user_content_6 }}</p>
+        <h2>{{ tos_no_warranties_title }}</h2>
+        <p>{{ tos_no_warranties_1 }}</p>
+        <p>{{ tos_no_warranties_2 }}</p>
+        <ul>
+          <li>{{ tos_no_warranties_2_1 }}</li>
+          <li>{{ tos_no_warranties_2_2 }}</li>
+        </ul>
+        <p>{{ tos_no_warranties_3 }}</p>
+        <h2>{{ tos_liability_title }}</h2>
+        <p>{{ tos_liability_1 }}</p>
+        <ul>
+          <li>{{ tos_liability_1_1 }}</li>
+          <li>{{ tos_liability_1_2 }}</li>
+          <li>{{ tos_liability_1_3 }}</li>
+        </ul>
+        <p>{{ tos_liability_2 }}</p>
+        <h2>{{ tos_exceptions_title }}</h2>
+        <p>{{ tos_exceptions_1 }}</p>
+        <ul>
+          <li>{{ tos_exceptions_1_1 }}</li>
+          <li>{{ tos_exceptions_1_2 }}</li>
+          <li>{{ tos_exceptions_1_3 }}</li>
+        </ul>
+        <h2>{{ tos_reasonableness_title }}</h2>
+        <p>{{ tos_reasonableness_1 }}</p>
+        <p>{{ tos_reasonableness_2 }}</p>
+        <h2>{{ tos_other_parties_title }}</h2>
+        <p>{{ tos_other_parties_1 }}</p>
+        <p>{{ tos_other_parties_2 }}</p>
+        <h2>{{ tos_unenforceable_provisions_title }}</h2>
+        <p>{{ tos_unenforceable_provisions_1 }}</p>
+        <h2>{{ tos_indemnity_title }}</h2>
+        <p>{{ tos_indemnity_1 }}</p>
+        <h2>{{ tos_breaches_title }}</h2>
+        <p>{{ tos_breaches_1 }}</p>
+        <h2>{{ tos_variation_title }}</h2>
+        <p>{{ tos_variation_1 }}</p>
+        <h2>{{ tos_assignment_title }}</h2>
+        <p>{{ tos_assignment_1 }}</p>
+        <p>{{ tos_assignment_2 }}</p>
+        <h2>{{ tos_severability_title }}</h2>
+        <p>{{ tos_severability_1 }}</p>
+        <h2>{{ tos_entire_agreement_title }}</h2>
+        <p>{{ tos_entire_agreement_1 }}</p>
+        <h2>{{ tos_law_and_juridiction_title }}</h2>
+        <p>{{ tos_law_and_juridiction_1 }}</p>
+
+        <h2>{{ tos_about_title }}</h2>
+        <p>{{ tos_about_1 }} </p>
+        <p>{{ tos_about_2 }}</p>
+        <p>{{ tos_about_3 }}</p>
+        <h2>{{ tos_details_title }}</h2>
+        <p>{{ tos_details_1 }}</p>
+        <p>{{ tos_details_2 }}</p>
+        <h2>{{ tos_other_title }}</h2>
+        <p>{{ tos_other_1 }}</p>
+        <p>{{ tos_other_2 }}</p>
+    </section>
+    {% endautoescape %}
+    {% endblock header_applancement %}
+{% endblock %}

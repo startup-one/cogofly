@@ -1,0 +1,24 @@
+.digits {
+    width: 822px;
+    height: 166px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cntDigit {
+    margin-top: 14px !important;
+}
+
+@media screen and (max-width: 822px) {
+    .digits {
+        width: 410px;
+        height: 83px;
+    }
+}
+
+h1, section, .title {
+        background: transparent none;
+        margin: 0;
+    }
+    h1 {
+        text-align: center;
+    }

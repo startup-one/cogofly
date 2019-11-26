@@ -1,0 +1,1300 @@
+{% load static staticfiles i18n templates_extras compress dumper %}
+{% get_current_language as LANGUAGE_CODE %}
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% trans "Home" %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+{# A mettre dans un fichier à part : #}
+<style>
+.ilike:hover {
+    cursor:pointer;
+}
+</style>
+    {# <!-- Bootstrap Core CSS -->#}
+    <link href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    {# <!-- MetisMenu CSS -->#}
+    <link href="{% static "bower_components/metisMenu/dist/metisMenu.min.css" %}" rel="stylesheet">
+
+    {# <!-- Social buttons CSS -->#}
+    <link href="{% static "bower_components/bootstrap-social/bootstrap-social.css" %}" rel="stylesheet">
+
+    {# <!-- Timeline CSS -->#}
+    <link href="{% static "bower_components/metisMenu/dist/metisMenu.min.css" %}" rel="stylesheet">
+
+    {# <!-- Timeline CSS -->#}
+    <link href="{% static "dist/css/timeline.css" %}" rel="stylesheet">
+
+    {# <!-- Custom CSS -->#}
+    <link href="{% static "bower_components/metisMenu/dist/metisMenu.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/bootstrap-datetimepicker.css" %}" rel="stylesheet">
+    {% compress css %}
+    {% endcompress %}
+
+    {# <!-- Timeline CSS -->#}
+    <link href="{% static "dist/css/sb-admin-2.css" %}" rel="stylesheet">
+
+    {# <!-- Morris Charts CSS -->#}
+    <link href="{% static "bower_components/morrisjs/morris.css" %}" rel="stylesheet">
+
+    {# <!-- Custom Fonts -->#}
+    <link href="{% static "bower_components/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+
+    {# <!-- jQuery placecomplete -->#}
+    <link href="{% static "css/select2.css" %}" rel="stylesheet" type="text/css">
+    {# <!-- jQuery placecomplete -->#}
+    <link href="{% static "jquery.placecomplete.css" %}" rel="stylesheet" type="text/css">
+
+    {# <!-- Customisation Cogofly -->#}
+    <link href="{% static "3rdp/magnific-popup/magnific-popup.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/my_home_base.css" %}" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+{% compress js %}
+    <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+    <script src="{% static "3rdp/moment/min/moment-with-locales.min.js" %}"></script>
+    <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-datetimepicker.js" %}"></script>
+    <script src="{% static "bower_components/metisMenu/dist/metisMenu.min.js" %}"></script>
+{% endcompress %}
+    <script src="{% static "bower_components/raphael/raphael-min.js" %}"></script>
+    {# <!-- le script au dessus fait péter compress, le remettre ici : --> #}
+{% compress js %}
+    <script src="{% static "js/tools/cookies.js" %}"></script>
+    <script src="{% static "bower_components/morrisjs/morris.min.js" %}"></script>
+    <script src="{% static "js/morris-data.js" %}"></script>
+    <script src="{% static "dist/js/sb-admin-2.js" %}"></script>
+    <script src="{% static "js/select2.full.js" %}"></script>
+    <script src="{% static "js/jquery/jquery.cookiesdirective.js" %}"></script>
+
+{% endcompress %}
+    {% block css_supplementaire %}{% endblock %}
+</head>
+
+<body>
+    {# script Cookies #}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.cookiesDirective({
+                duration: 0,
+                fontSize: '14px',
+                explicitConsent: false,
+                position: 'bottom',
+                cookieScripts: null,
+                limit: 0,
+                message: "" +
+                    "{% trans 'This site uses cookies in order to provide,' %}" +
+                    " "+
+                    "{% trans "protect and optimise Cogofly's services." %}" +
+                    "<br/>" +
+                    "{% trans 'By continuing, you agree to our policy covering all of the above.' %}"+
+                    "<br/>",
+                moreDetails: "" +
+                    "{% trans 'Find out more here:&nbsp;' %}",
+                privacyPolicyText: "{% trans 'Cogofly - Privacy policy' %}",
+                privacyPolicyUri: '{% url "privacy_policy" %}',
+                linkColor: 'white',
+                backgroundColorLinkColor: '#5D5D5D',
+                doNotShowThisMessageAgain: "" +
+                        "{% trans 'Do not show this message again' %}"
+            });
+        });
+    </script>
+
+    <div id="wrapper">
+        {# <!-- Navigation --> #}
+        {% block navigation %}
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="margin: 0" href="{% url 'my_home_index' %}">
+                    <div style="display: block; position: relative; float: left; width: 222px; top: 0; left: 0; height: 60px; margin: 5px 5px 5px 20px;">
+
+                        <img src="{% static "img/logo-home-new.png" %}"
+                             style="display: inline-block; float: left; height: 100%"
+                             alt="Logo Cogofly" title="Logo Cogofly" />
+                        <img src="{% static "img/cogofly-nom-seul-md.png" %}"
+                             style="display: inline-block; float: right; height: 80%; margin-top: 8px;"
+                             alt="Logo Cogofly" title="Logo Cogofly" />
+                        {% comment %} ancienne maison
+                        <img src="{% static "img/logo-s.png" %}" style="display: inline-block; float: left; height: 100%"
+                             alt="Logo Cogofly" title="Logo Cogofly" />
+                        &nbsp;
+                        <i class="fa fa-home fa-fw" style="color: white; font-size: large"></i>
+                        {% endcomment %}
+                    </div>
+                </a>
+            </div>
+            {# <!-- /.navbar-header --> #}
+            <ul class="nav navbar-top-links navbar-right navbar-collapse hqf-menu">
+
+
+                {% if user.is_authenticated %}
+                <li class="dropdown">
+                    <a href="{% url 'my_home_search' %}">
+{#                        <span style="color: #5cb85c; text-shadow: 1px 1px 2px #000;">#}
+                        <span style="color: #f85a29; text-shadow: 1px 1px 2px #000;">
+                        <i class="fa fa-search fa-fw"></i><br/>
+                        </span>
+                        {% trans 'Search' %}
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'my_home_profile_edit' %}">
+                        <i class="fa fa-user fa-fw"></i><br/>
+                        {% trans 'My account' %}
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'my_home_travel' %}">
+                        <i class="fa fa-briefcase fa-fw"></i><br/>
+                        {% trans 'My trips' %}
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'my_home_contacts' %}">
+                        <i class="fa fa-users fa-fw"></i><br/>
+                        {% trans 'My contacts' %}
+                    </a>
+                </li>
+                {# ici besoin d'un id pour changer le badge en temps réel : #}
+                <li id="menu-notifications" class="dropdown">
+                    <a href="{% url 'my_home_notifications' %}">
+                        <i class="fa fa-comments fa-fw"></i>
+                        {% if common.notifications.total > 0 %}
+                            <span class="badge badge-notify badge-new">{{ common.notifications.total }}</span>
+                        {% endif %}
+                        <br/>
+                        {% trans 'Notifications' %}
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'my_home_remarks_and_testimonies' %}">
+                        <i class="fa fa-pencil fa-fw"></i>
+                        <br/>
+                        {% trans 'My notices' %}
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'my_home_contacts_invite' %}">
+                        <span style="color: yellow; text-shadow: 1px 1px 2px #000;">
+                        <i class="fa fa-star-o fa-fw"></i><br/>
+                        </span>
+                        {% trans 'Invite' %}
+                    </a>
+                    {% comment %}
+                    <a href="{% url 'my_home_premium' %}">
+                        <span style="color: yellow; text-shadow: 1px 1px 2px #000;">
+                        <i class="fa fa-star-o fa-fw"></i><br/>
+                        </span>
+                        {% trans 'Premium' %}
+                    </a>
+                    {% endcomment %}
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'my_home_logout' %}">
+                        {% comment %}fa-times-circle{% endcomment %}
+                        <i class="fa fa-unlock fa-fw"></i><br/>
+                        {% trans 'Logout' %}
+                    </a>
+                </li>
+                {% else %}
+                <li class="dropdown">
+                    <a href="{% url 'my_home_language' %}">
+                        <i class="fa fa-language fa-fw"></i><br/>
+                        {% trans 'Language' %}
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'my_home_login' %}">
+                        {% comment %}fa-times-circle{% endcomment %}
+                        <i class="fa fa-lock fa-fw"></i><br/>
+                        {% trans 'Login' %}
+                    </a>
+                </li>
+                {% endif %}
+
+
+
+
+
+
+{% comment %}
+
+
+
+
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="../../static/extern_base_templates/SB%20Admin%202/pages/login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+{% endcomment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+
+
+
+
+
+
+{% block menu-gauche %}
+{% comment %}
+22/02/2016 : sur demande de Franck, suppression de tout ...
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control"
+                                       placeholder="{% trans 'Search...' %}">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{% url 'my_home_index' %}">
+                                <i class="fa fa-home fa-fw"></i>
+                                {% trans 'Tes' %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'my_home_remarks_and_testimonies' %}">
+                                <i class="fa fa-comment-o fa-fw"></i>
+                                {% trans 'Remarques' %}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'my_home_index' %}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="../../static/extern_base_templates/SB%20Admin%202/pages/tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                        </li>
+                        <li>
+                            <a href="../../static/extern_base_templates/SB%20Admin%202/pages/forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/panels-wells.html">Panels and Wells</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/base.html">Notifications</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/typography.html">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/icons.html"> Icons</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/grid.html">Grid</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>"
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/blank.html">Blank Page</a>
+                                </li>
+                                <li>
+                                    <a href="../../static/extern_base_templates/SB%20Admin%202/pages/login.html">Login Page</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>{# <!-- /.sidebar-collapse --> #}
+            </div>{# <!-- /.navbar-static-side --> #}
+{% endcomment %}
+
+{% endblock menu-gauche %}
+
+        </nav>{# <!-- Navigation --> #}
+
+{% endblock navigation %}
+
+        <div id="page-wrapper" {% cleanup %}
+            {% if common.personne.url_photo_banniere %}
+                style="background-image: url({{ common.personne.url_photo_banniere }}); background-size: cover; background-repeat: no-repeat; background-position: center center;"
+            {% endif %}
+        {% endcleanup %}>
+
+            {# ! Hack pour décaler tout le reste vers le bas : #}
+            {% block ligne_top_vide %}
+            <div class="row">
+                <div class="col-lg-12" style="height: 50px">
+                    <p>&nbsp;</p>
+                </div>
+                {# <!-- /.col-lg-12 --> #}
+            </div>
+            {% endblock %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        {% block main-title %}Main title{% endblock %}
+                    </h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+
+{% block central %}
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">26</div>
+                                    <div>New Comments!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">12</div>
+                                    <div>New Tasks!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">124</div>
+                                    <div>New Orders!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-support fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">13</div>
+                                    <div>Support Tickets!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Action</a>
+                                        </li>
+                                        <li><a href="#">Another action</a>
+                                        </li>
+                                        <li><a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="morris-area-chart"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Action</a>
+                                        </li>
+                                        <li><a href="#">Another action</a>
+                                        </li>
+                                        <li><a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>3326</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>3:29 PM</td>
+                                                    <td>$321.33</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3325</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>3:20 PM</td>
+                                                    <td>$234.34</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3324</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>3:03 PM</td>
+                                                    <td>$724.17</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3323</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>3:00 PM</td>
+                                                    <td>$23.71</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3322</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>2:49 PM</td>
+                                                    <td>$8345.23</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3321</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>2:23 PM</td>
+                                                    <td>$245.12</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3320</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>2:15 PM</td>
+                                                    <td>$5663.54</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3319</td>
+                                                    <td>10/21/2013</td>
+                                                    <td>2:13 PM</td>
+                                                    <td>$943.45</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.col-lg-4 (nested) -->
+                                <div class="col-lg-8">
+                                    <div id="morris-bar-chart"></div>
+                                </div>
+                                <!-- /.col-lg-8 (nested) -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <ul class="timeline">
+                                <li>
+                                    <div class="timeline-badge"><i class="fa fa-check"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
+                                            </p>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero laboriosam dolor perspiciatis omnis exercitationem. Beatae, officia pariatur? Est cum veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge warning"><i class="fa fa-credit-card"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolorem quibusdam, tenetur commodi provident cumque magni voluptatem libero, quis rerum. Fugiat esse debitis optio, tempore. Animi officiis alias, officia repellendus.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium maiores odit qui est tempora eos, nostrum provident explicabo dignissimos debitis vel! Adipisci eius voluptates, ad aut recusandae minus eaque facere.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-badge danger"><i class="fa fa-bomb"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus numquam facilis enim eaque, tenetur nam id qui vel velit similique nihil iure molestias aliquam, voluptatem totam quaerat, magni commodi quisquam.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates est quaerat asperiores sapiente, eligendi, nihil. Itaque quos, alias sapiente rerum quas odit! Aperiam officiis quidem delectus libero, omnis ut debitis!</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-badge info"><i class="fa fa-save"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis minus modi quam ipsum alias at est molestiae excepturi delectus nesciunt, quibusdam debitis amet, beatae consequuntur impedit nulla qui! Laborum, atque.</p>
+                                            <hr>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="fa fa-gear"></i>  <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#">Action</a>
+                                                    </li>
+                                                    <li><a href="#">Another action</a>
+                                                    </li>
+                                                    <li><a href="#">Something else here</a>
+                                                    </li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Separated link</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>{% lorem %}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="timeline-inverted">
+                                    <div class="timeline-badge success"><i class="fa fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="timeline-panel">
+                                        <div class="timeline-heading">
+                                            <h4 class="timeline-title">Lorem ipsum dolor</h4>
+                                        </div>
+                                        <div class="timeline-body">
+                                            <p>{% lorem %}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-bolt fa-fw"></i> Server Crashed!
+                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-warning fa-fw"></i> Server Not Responding
+                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
+                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-money fa-fw"></i> Payment Received
+                                    <span class="pull-right text-muted small"><em>Yesterday</em>
+                                    </span>
+                                </a>
+                            </div>
+                            <!-- /.list-group -->
+                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
+                        </div>
+                        <div class="panel-body">
+                            <div id="morris-donut-chart"></div>
+                            <a href="#" class="btn btn-default btn-block">View Details</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <div class="chat-panel panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-comments fa-fw"></i>
+                            Chat
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-chevron-down"></i>
+                                </button>
+                                <ul class="dropdown-menu slidedown">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-refresh fa-fw"></i> Refresh
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-check-circle fa-fw"></i> Available
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-times fa-fw"></i> Busy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-clock-o fa-fw"></i> Away
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <ul class="chat">
+                                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font">Jack Sparrow</strong>
+                                            <small class="pull-right text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                                            </small>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="right clearfix">
+                                    <span class="chat-img pull-right">
+                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <small class=" text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
+                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <strong class="primary-font">Jack Sparrow</strong>
+                                            <small class="pull-right text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i> 14 mins ago</small>
+                                        </div>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="right clearfix">
+                                    <span class="chat-img pull-right">
+                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                                    <div class="chat-body clearfix">
+                                        <div class="header">
+                                            <small class=" text-muted">
+                                                <i class="fa fa-clock-o fa-fw"></i> 15 mins ago</small>
+                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                        </div>
+                                        <p>
+                                            {% lorem %}
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                        <div class="panel-footer">
+                            <div class="input-group">
+                                <input id="btn-input" type="text"
+                                       class="form-control input-sm"
+                                       placeholder="Type your message here..." />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-validate btn-sm" id="btn-chat">
+                                        Send
+                                    </button>
+                                </span>
+                            </div>
+                        </div><!-- /.panel-footer -->
+                    </div><!-- /.panel .chat-panel -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /#page-wrapper -->
+{% endblock central %}
+    </div><!-- /#wrapper -->
+
+
+    <script>
+        {#/* création dynamique du script */#}
+        var a = "{% static 'js/' %}", l = '{{ LANGUAGE_CODE }}';
+        document.write('<script src="'+a+'i18n/'+l+'.js"><\/script>')
+    </script>
+    <script src="{% static "js/isotope.2.2.2.pkgd.min.js" %}"></script>
+    <script src="{% static "jquery.placecomplete.js" %}"></script>
+    <script src="{% static "3rdp/magnific-popup/jquery.magnific-popup.min.js" %}"></script>
+    {# Pour google maps : language #}
+    <script>var globCurrentLanguage = '{{ LANGUAGE_CODE }}';</script>
+    <script src="{% static "js/custom.js" %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            initializeSelect2('{{ LANGUAGE_CODE }}')
+
+            {#/* ---------- Google maps ---------- */#}
+            {#/* ---------- DateTimePicker ---------- */#}
+            initializeDateTimePicker('{{ LANGUAGE_CODE }}');
+
+            {#/* select2 Plante si jamais les éléments sont "hidden",   * #}
+            {# * donc j'initialize PUIS si tout a fonctionné, je cache  * #}
+            {# * tout le monde sauf le message                          */#}
+            if ($('.panel-toggle-message').length) {
+                var msg = $('.panel-toggle-message:hidden');
+                $('.panel-toggle-message:visible').hide();
+                msg.slideDown('slow');
+            }
+
+            handleTravelsReady();
+            initializeILike('{% url 'json_liked' '0' %}',
+                            '{% url 'json_liked_profile' '0' %}');
+            initializeInvite('{% url 'json_invite' '0' %}');
+            initializeRelationRemove('{% url 'json_relation_remove' '0' %}');
+            initializeMarkMessageRead('{% url 'json_message_read' '0' %}');
+            initializeMarkLikeRead('{% url 'json_liked_read' '0' %}');
+            selectPicturesInitialize('{% trans "Cancel" %}');
+        });
+    </script>
+
+    {% block script_more %}
+    {% endblock %}
+
+    {% block footer %}
+
+    <div id="footer-top">
+        <img src="{% static 'img/footer-top.png' %}"
+             style="margin: 0; padding: 0; width: auto; position: relative; left: -20%; min-height:100px; max-height: 100px;">
+    </div>
+
+    <footer id="footer" style="background-color: #214269; height: 100%">
+
+        <div class="footerrow">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="footer-box">
+                    <ul class="footer-links">
+                        <li class="active"><a target="_blank" href="{% url "about" %}">{% trans 'About' %}</a></li>
+                        <li><a target="_blank" href="{% url "the_team" %}">{% trans 'The team' %}</a></li>
+                        <li><a target="_blank" href="{% url "testimonies" %}">{% trans 'Testimonies' %}</a></li>
+                        <li><a target="_blank" href="{% url "terms_and_conditions" %}">{% trans 'Terms &amp; Conditions' %}</a></li>
+                        <li><a target="_blank" href="{% url "privacy_policy" %}">{% trans 'Privacy policy' %}</a></li>
+                        <li><a target="_blank" href="{% url "contact_us" %}">{% trans 'Contact us' %}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-12 text-center"
+                 style="color: white; margin: 10px">
+                {% trans "Follow us on:" %}
+            </div>
+            <div class="col-md-12 col-lg-12 text-center">
+                <a target="_blank" class="btn btn-social-icon btn-facebook"
+                   href="https://www.facebook.com/Cogofly-713356962151536/">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a target="_blank" class="btn btn-social-icon btn-twitter"
+                   href="https://twitter.com/cogofly">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a target="_blank" class="btn btn-social-icon btn-instagram"
+                   href="https://www.instagram.com/cogofly/">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a target="_blank" class="btn btn-social-icon btn-pinterest"
+                   href="https://fr.pinterest.com/cogofly/">
+                    <i class="fa fa-pinterest"></i>
+                </a>
+                <a target="_blank" class="btn btn-social-icon btn-google-plus"
+                   href="https://plus.google.com/+wwwcogoflycomworld">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                {% comment %}
+                Franck veut être partout sur tous les réseaux du monde,
+                mais je cite, mail du 20 mars 2016 à 15:06 :
+                on verra pour le reste, linkedin, viadeo, etc...des que
+                le site sera officiellement divulgué...
+
+                <a class="btn btn-social-icon btn-bitbucket"><i class="fa fa-bitbucket"></i></a>
+                <a class="btn btn-social-icon btn-dropbox"><i class="fa fa-dropbox"></i></a>
+                <a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                <a class="btn btn-social-icon btn-flickr"><i class="fa fa-flickr"></i></a>
+                <a class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+                <a class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+                <a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
+                <a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                <a class="btn btn-social-icon btn-pinterest"><i class="fa fa-pinterest"></i></a>
+                <a class="btn btn-social-icon btn-tumblr"><i class="fa fa-tumblr"></i></a>
+                <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+                <a class="btn btn-social-icon btn-vk"><i class="fa fa-vk"></i></a>
+                {% endcomment %}
+            </div>
+            <div class="col-md-12 col-lg-12 text-center"
+                 style="margin: 20px; color: white">
+                {% url 'app_index' as url_index %}
+                {% now "Y" as annee %}
+                {% blocktrans trimmed %}
+                    &copy; Copyright {{ annee }} -
+                    <a href="{{ url_index }}">Cogofly</a>
+                    - All rights reserved.
+                {% endblocktrans%}
+            </div>
+        </div>
+        </div>
+    </footer>
+    {% endblock %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-93018020-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

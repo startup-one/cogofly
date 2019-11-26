@@ -1,0 +1,96 @@
+{% comment %}---------------------------------------------------------------
+Fichier à inclure si on veut afficher le pourcentage de progression
+de l'inscription
+{% endcomment %}
+{% load static staticfiles compress i18n %}
+{% if progression %}
+{% if progression.percent != 100 %}
+<div id="progression" class="panel panel-success panel-toggle-message"
+     style="display: none; margin-bottom: 10px">
+    <div class="panel-body">
+        <div class="row">
+            {% if warn_no_travels %}
+                <div class="col-md-12 message-warn-no-travels">
+                    <h1>{% blocktrans trimmed %}
+                        Important: it is of paramount importance to add a trip,
+                        a weekend or a day out if you want to appear in the search
+                        results and give yourself the opportunity
+                        to meet new cogoflyers!
+                    {% endblocktrans %}
+                    </h1>
+                    <hr />
+                </div>
+            {% endif %}
+
+            <div class="col-md-12">
+                {% with progression.percent as progression_percent %}
+                <p><strong>{% blocktrans trimmed %}
+                Your profile is {{ progression_percent }}% complete:
+                {% endblocktrans %}</strong></p>
+                {% endwith %}
+            </div>
+            <div class="col-md-12">
+                <div class="progress" style="height: 30px; margin: 0">
+                  <div class="progress-bar progress-bar-striped active"
+                       role="progressbar"
+                       aria-valuemin="0" aria-valuemax="100"
+                       aria-valuenow="{{ progression.percent }}"
+                       style="width:{{ progression.percent }}%; font-size: larger; padding: 4px">
+                      {{ progression.percent }} %
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p style="margin-top: 15px"><strong>{% blocktrans trimmed %}
+                    In order to add to it, or even finalise it,
+                    please go to "Amend your profile".
+                {% endblocktrans %}</strong></p>
+                <p style="margin-top: 15px"><strong>{% blocktrans trimmed %}
+                    The more information you have on your profile,
+                    the more people will check it out. What's more,
+                    they'll be more inclined to place their trust in you...
+                    increase your chances of being found straightaway.
+                {% endblocktrans %}</strong></p>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-validate btn-block" type="button"
+                        style="margin-top: 10px;"
+                        data-hqf-switch="$.ct('.row')/u/$.ct('.row').nt()/Xd">
+                    <i class="fa fa-user"></i>
+                    &raquo; {% trans "Show me more" %}
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-dark btn-block" type="button"
+                        style="margin-top: 10px;"
+                        data-hqf-switch="$('#progression')/u">
+                    <i class="fa fa-times"></i> {% trans "Close" %}
+                </button>
+            </div>
+        </div>
+        <div class="row progression-details"
+             style="display: none; background-image: url({% static 'img/icons/visit-card-empty.jpg' %});">
+            <div class="col-md-12">
+            <p><strong>{% blocktrans trimmed %}
+                    Once you have filled out the missing optional information,
+                    your profile will be 100% complete,
+                    and therefore viewed by more people:
+                {% endblocktrans %}</strong></p>
+                <ul>
+                {% for msg in progression.missing %}
+                    <li>{{ msg|capfirst }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="col-md-12">
+                <button class="btn btn-dark btn-block" type="button"
+                        style="margin-top: 10px;"
+                        data-hqf-switch="$.ct('.row')/u/$.ct('.row').pv()/Xd">
+                    <i class="fa fa-times"></i> {% trans "Close" %}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endif %}

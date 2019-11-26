@@ -1,0 +1,72 @@
+{% comment %}
+(!) Problème d'origine : un div "conversation" englobe TOUT :
+    bouton "historique" et bouton "supprimer". Si la conversation est "non lue",
+    on peut cliquer sur tout le "div".
+    Problème : quand on clique sur un bouton ça simule AUSSI qu'on a cliqué sur
+    le div. Seule solution efficace trouvée :
+    - JavaScript : voir notificationsApplyEffects() où il y a ce bout de code :
+            if ($(e.target).filter('[data-toggle]').length) {
+                /* Si on bouton alors on ne fait rien */
+                return;
+            }
+
+    - JavaScript : bout ajouté le 11/02/2017 : si jamais on clique dessus le
+                   "résumé", le code veut dire ceci :
+                   si ça n'est pas un bouton alors click sur bouton "détail" et
+                   ne rien faire d'autre ('return false')
+        $('div.conversation-summary').click(function(e) {
+            if ((!$(e.target).is(':button')) &&
+                 !($(e.target).parent().is(':button'))) {
+                $(this).find(':button.btn-validate').click();
+                return false;
+            }
+        });
+
+    - restait un problème avec les modal que j'ai résolu en les sortant
+      TOTALEMENT de la div
+    ->  obligé d'include ce fichier des div "modal" APRES les conversations :
+{% endcomment %}{% load static staticfiles compress i18n model_access dumper %}
+<div id="conversation-delete-{{ c.conversation.pk }}"
+     class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <form action="{% url 'my_home_conversation_delete' c.conversation.pk %}"
+          method="post">
+    {% csrf_token %}
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                {% with personne.full_name as p_full %}
+                    {% blocktrans trimmed %}
+                    Conversation with {{ p_full }}
+                    {% endblocktrans %}
+                {% endwith %}
+                </h4>
+            </div>
+            <div class="modal-body">
+                {% blocktrans trimmed %}
+                    Do you really want to delete
+                    the whole conversation?
+                {% endblocktrans %}
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-validate"
+                        data-dismiss="modal">
+                    {% trans 'No' %}
+                </button>
+                <button type="submit"
+                        class="btn btn-default">
+                    {% trans 'Yes' %}
+                </button>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>

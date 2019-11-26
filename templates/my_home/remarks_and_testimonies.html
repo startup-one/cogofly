@@ -1,0 +1,108 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n %}
+{% block main-title %}
+    <i class="fa fa-pencil fa-fw"></i>
+    {% block title %}{% trans "Remarks and testimonies" %}{% endblock %}
+{% endblock %}
+{% block central %}
+
+<div class="row">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        {% include "includes/panel_message.html" %}
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>
+<div class="row"{% if request.session.message %} style="display: none" {% endif %}>
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel">
+            <div class="panel-body" style="padding-bottom:15px;">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#tab-remarks" aria-expanded="false" data-toggle="tab">
+                            {% trans 'Remarks' %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab-tesminonies" aria-expanded="false" data-toggle="tab">
+                            {% trans 'Testimonies' %}
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    {# séparation dans des fichiers sinon HTML trop surchargé #}
+                    <div class="tab-pane fade active in" id="tab-remarks">
+                        <div class="row" style="margin-top: 10px">
+                            <div class="col-lg-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <form id="invite-form"
+                                              action="{% url 'my_home_remarks_and_testimonies' %}"
+                                              method="POST">
+                                            {% csrf_token %}
+                                            {% for hidden in form_remarks.hidden_fields %}
+                                            {{ hidden }}
+                                            {% endfor %}
+                                            {% with form_remarks as form %}
+                                                <p style="text-align: center">
+                                                    <img src="{% static 'img/icons/smileys-only-2.jpg' %}"
+                                                         title="{% trans 'Appreciation' %}"
+                                                         alt="{% trans 'Appreciation' %}">
+                                                </p>
+                                                {% include "includes/form_generic/fields_by_groupno.html" %}
+                                                {% include "includes/form_generic/form_non_field_errors.html" %}
+                                            {% endwith %}
+
+                                            <button class="btn btn-validate btn-block"
+                                                    id="register-submit-button" type="submit">
+                                                <i class="fa fa-envelope fa-fw"></i>
+                                                {% trans "Send" %}
+                                            </button>
+                                        </form>
+                                    </div>{# <!-- /.panel-body --> #}
+                                </div>{# <!-- /.panel --> #}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-tesminonies">
+                        <div class="row" style="margin-top: 10px">
+                            <div class="col-lg-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <form id="invite-form"
+                                              action="{% url 'my_home_remarks_and_testimonies' %}"
+                                              method="POST">
+                                            {% csrf_token %}
+                                            {% for hidden in form_testimonies.hidden_fields %}
+                                            {{ hidden }}
+                                            {% endfor %}
+                                            {% with form_testimonies as form %}
+                                                <p style="text-align: center">
+                                                    <img src="{% static 'img/icons/smiley-happy.jpg' %}"
+                                                         title="{% trans 'Appreciation' %}"
+                                                         alt="{% trans 'Appreciation' %}">
+                                                </p>
+                                                {% include "includes/form_generic/fields_by_groupno.html" %}
+                                                {% include "includes/form_generic/form_non_field_errors.html" %}
+                                            {% endwith %}
+
+                                            <button class="btn btn-validate btn-block"
+                                                    id="register-submit-button" type="submit">
+                                                <i class="fa fa-envelope fa-fw"></i>
+                                                {% trans "Send" %}
+                                            </button>
+                                        </form>
+                                    </div>{# <!-- /.panel-body --> #}
+                                </div>{# <!-- /.panel --> #}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>
+{% endblock %}

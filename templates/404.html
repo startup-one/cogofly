@@ -1,0 +1,18 @@
+{% extends "my_home/base.html" %}{% load static staticfiles i18n dumper %}
+{% block title %}{% trans 'Page not found' %}{% endblock %}
+{% block main-title %}{% trans 'Page not found' %}{% endblock %}
+{% block central %}
+
+    <p>Sorry, but the requested page could not be found.</p>
+
+    {% if request.session.message %}
+        {% with request.session.message as message %}
+        <div class="row">
+            <div class="col-lg-12">
+                {% include "includes/panel_message.html" %}
+            </div>
+        </div>
+        {% endwith %}
+    {% endif %}
+
+{% endblock %}

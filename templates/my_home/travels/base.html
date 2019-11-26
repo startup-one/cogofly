@@ -1,0 +1,159 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n django_markdown %}
+{% block title %}
+    {% trans "My travels" %}
+{% endblock %}
+{% block main-title %}
+    <i class="fa fa-briefcase fa-fw"></i>
+    {% trans "My trips" %}
+{% endblock %}
+{% block central %}
+    <div class="row" id="row-all-travels">
+    {% comment %}
+        <div class="col-lg-3">
+            {% for publicite in publicites_gauche %}
+                <div class="panel panel-primary">
+                    <div class="panel-body panel-ads">
+                        <h1>{{ publicite.title }}</h1>
+                        {{ publicite.content|markdown }}
+                    </div>
+                </div>
+            {% empty %}
+                &nbsp;
+            {% endfor %}
+        </div>{# <!-- /.col-lg-3 --> #}
+     {% endcomment %}
+        <div class="col-lg-9">
+            {% include "includes/panel_message.html" %}
+
+            <div class="panel panel-primary">
+                <div class="panel-body" style="padding-bottom: 5px;">
+                    {# <!-- Nav tabs --> #}
+                    <ul class="nav nav-pills" style="margin-bottom: 15px">
+                        <li id="btn-travels-past">
+                            <a href="#travels-past" aria-expanded="false"
+                               onclick="travelsTabChange(0, 'travels-past');"
+                               data-toggle="tab">{% trans 'Realized' %}</a>
+                        </li>
+                        <li id="btn-travels-future">
+                            <a href="#travels-future" aria-expanded="false"
+                               onclick="travelsTabChange(1, 'travels-future');"
+                               data-toggle="tab">{% trans 'To do' %}</a>
+                        </li>
+                    </ul>
+
+                    {# <!-- Tab panes --> #}
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="travels-past">
+                            {% with voyages_passes as voyages %}
+                            {% include "my_home/travels/travels_list.html" %}
+                            {% endwith %}
+                            <h4>
+                                <button type="button"
+                                        class="btn btn-validate btn-add-travel"
+                                        id="btn-add-travel-1"
+                                        data-btn-to-show="btn-add-travel-1"
+                                        data-panel-to-show="form-ajout-voyage"
+                                        onclick="travelTogglePanelAdd();">
+                                    {% trans "Add a trip" %}
+                                </button>
+                                <button type="button"
+                                        class="btn btn-hint btn-add-travel"
+                                        data-hqf-switch="$('#good-to-know-travels-past')/Xd">
+                                    {% trans 'Good to know &raquo;' %}
+                                </button>
+                            </h4>
+                            {% include 'my_home/travels/travel_hint_good_to_know-past.html' %}
+                        </div>
+                        <div class="tab-pane fade" id="travels-future">
+                            {% with voyages_a_venir as voyages %}
+                            {% include "my_home/travels/travels_list.html" %}
+                            {% endwith %}
+                            <h4>
+                                <button type="button"
+                                        class="btn btn-validate btn-add-travel"
+                                        id="btn-add-travel-2"
+                                        data-btn-to-show="btn-add-travel-2"
+                                        data-panel-to-show="form-ajout-voyage"
+                                        onclick="travelTogglePanelAdd();">
+                                    {% trans "Add a trip" %}
+                                </button>
+                                <button type="button"
+                                        class="btn btn-hint btn-add-travel"
+                                        data-hqf-switch="$('#good-to-know-travels-future')/Xd">
+                                    {% trans 'Good to know &raquo;' %}
+                                </button>
+                            </h4>
+                            {% include 'my_home/travels/travel_hint_good_to_know-future.html' %}
+                        </div>
+                    </div>
+                </div>{# <!-- /.panel-body --> #}
+            </div>
+        </div>{# <!-- /.col-lg-9 --> #}
+        <div class="col-lg-3">
+            {% for publicite in publicites_droite %}
+                <div class="panel panel-primary">
+                    <div class="panel-body panel-ads">
+                        <h1>{{ publicite.title }}</h1>
+                        {{ publicite.content|markdown }}
+                    </div>
+                </div>
+            {% empty %}
+                &nbsp;
+            {% endfor %}
+        </div>{# <!-- /.col-lg-3 --> #}
+    {% comment %} place pour de la pub :
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    {% trans 'Pub' %}
+                </div>
+                <div class="panel-body">
+                    <p>
+                        {% lorem %}
+                    </p>
+                    <a href="http://olivierpons.fr/">
+                        <button class="btn btn-primary btn-block"
+                                style="background-color: #f0ad4e; border-color: #A07436;">
+                            <i class="fa fa-envelope fa-fw"></i>
+                            {% trans "Invite friends" %}
+                        </button>
+                    </a>
+                </div>
+                <div class="panel-footer">
+                    {% trans "The Cogofly team" %}
+                </div>
+            </div>
+
+        </div>
+    {% endcomment %}
+    </div>
+    {# Formulaire d'ajout de voyage (peu importe l'onglet) #}
+    {% trans "Add a trip" as title_form %}
+    {% trans "Confirm" as btn_submit_label %}
+    {% trans "Cancel" as btn_cancel_label %}
+    {% trans "form-ajout-voyage" as id_form %}
+    <div class="row">
+        <div class="col-lg-3">&nbsp;</div>
+        <div class="col-lg-6">
+            {% include "my_home/travels/travel_form_add.html" %}
+        </div>
+        <div class="col-lg-3">&nbsp;</div>
+    </div>
+
+    <script>$(document).ready(function() {
+        travelsInitializePreview("{% url 'my_home_travel' %}");
+        $('.travel-image-popup').magnificPopup({
+            type: 'image',
+            showCloseBtn: false,
+            closeOnContentClick: true,
+            modal: false,
+            mainClass: 'mfp-with-zoom',
+            zoom: {
+                enabled: true, // By default false, don't forget to enable it
+                duration: 300, // duration of the effect, in milliseconds
+                easing: 'ease-in-out'
+            }
+        });
+    });</script>
+{% endblock %}

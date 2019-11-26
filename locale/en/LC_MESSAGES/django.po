@@ -1,0 +1,6217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-03 01:39+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\app\admin\admin.py:25
+msgid "Cogofly's administration"
+msgstr ""
+
+#: .\app\admin\admin.py:61
+msgid "Email / Last+First name"
+msgstr ""
+
+#: .\app\admin\admin.py:66 .\app\models\generic.py:39
+#: .\app\models\personne.py:822
+msgid "Created"
+msgstr ""
+
+#: .\app\admin\admin.py:77
+msgid "Go to details"
+msgstr ""
+
+#: .\app\admin\admin.py:93 .\app\admin\admin.py:399
+msgid "Advanced options"
+msgstr ""
+
+#: .\app\admin\admin.py:108 .\app\admin\admin.py:118 .\app\admin\admin.py:126
+msgid "Image"
+msgstr ""
+
+#: .\app\admin\admin.py:138
+msgid "Validity information"
+msgstr ""
+
+#: .\app\admin\admin.py:150 .\app\models\personne.py:747
+msgid "Picture"
+msgstr ""
+
+#: .\app\admin\admin.py:151
+msgid "Pictures"
+msgstr ""
+
+#: .\app\admin\admin.py:172 .\app\models\personne.py:641
+#: .\app\models\personne.py:737 .\app\models\personne.py:805
+msgid "Travel"
+msgstr ""
+
+#: .\app\admin\admin.py:173
+msgid "Travels"
+msgstr ""
+
+#: .\app\admin\admin.py:183 .\app\models\personne.py:1094
+msgid "Relation"
+msgstr ""
+
+#: .\app\admin\admin.py:184 .\app\models\personne.py:1095
+msgid "Relations"
+msgstr ""
+
+#: .\app\admin\admin.py:193
+msgid "Liked"
+msgstr ""
+
+#: .\app\admin\admin.py:194
+msgid "Liked's"
+msgstr ""
+
+#: .\app\admin\admin.py:204 .\app\models\personne.py:587
+msgid "Subject"
+msgstr ""
+
+#: .\app\admin\admin.py:205 .\app\forms\profile\profile.py:305
+#: .\app\forms\search\advanced.py:279 .\app\models\tag.py:83
+msgid "Subjects"
+msgstr ""
+
+#: .\app\admin\admin.py:212 .\app\models\personne.py:596
+#: .\app\models\personne.py:768
+msgid "Activity sector"
+msgstr ""
+
+#: .\app\admin\admin.py:213 .\app\models\tag.py:84
+msgid "Activity sectors"
+msgstr ""
+
+#: .\app\admin\admin.py:220 .\app\models\personne.py:605
+#: .\app\models\tag.py:31
+msgid "Hobby"
+msgstr ""
+
+#: .\app\admin\admin.py:221 .\app\forms\profile\profile.py:347
+#: .\app\forms\search\advanced.py:318 .\app\models\tag.py:85
+msgid "Hobbies"
+msgstr ""
+
+#: .\app\admin\admin.py:228 .\app\models\personne.py:614
+msgid "Licence"
+msgstr ""
+
+#: .\app\admin\admin.py:229 .\app\forms\profile\profile.py:368
+#: .\app\forms\search\advanced.py:337
+msgid "Licences"
+msgstr ""
+
+#: .\app\admin\admin.py:246 .\app\admin\admin.py:260 .\app\admin\admin.py:273
+#: .\app\admin\admin.py:343 .\app\admin\admin.py:347 .\app\admin\admin.py:366
+#: .\app\admin\admin.py:415
+msgid "Administration only"
+msgstr ""
+
+#: .\app\admin\admin.py:385
+msgid "Visibility of optional information"
+msgstr ""
+
+#: .\app\admin\admin.py:405
+msgid "Newsletter"
+msgstr ""
+
+#: .\app\admin\admin.py:409
+msgid "Validity / Registering"
+msgstr ""
+
+#: .\app\admin\admin.py:442
+msgid "Translations"
+msgstr ""
+
+#: .\app\admin\admin.py:451 .\app\admin\admin.py:476 .\app\admin\admin.py:502
+#: .\app\admin\admin.py:536
+msgid "Validity"
+msgstr ""
+
+#: .\app\admin\admin.py:465
+msgid "Ads translated"
+msgstr ""
+
+#: .\app\admin\admin.py:483 .\app\models\publicite.py:57
+msgid "Ad"
+msgstr ""
+
+#: .\app\admin\admin.py:484 .\app\models\publicite.py:58
+msgid "Ads"
+msgstr ""
+
+#: .\app\admin\admin.py:492
+msgid "Tag traduit"
+msgstr ""
+
+#: .\app\admin\admin.py:493
+msgid "Tags traduits"
+msgstr ""
+
+#: .\app\admin\admin.py:518 .\app\models\tag.py:350
+msgid "Tags google maps of a place in a language"
+msgstr ""
+
+#: .\app\admin\admin.py:527
+msgid "World coordinates (lat/lng)"
+msgstr ""
+
+#: .\app\admin\admin.py:531
+msgid "World coordinates rectangle (lat/lng)"
+msgstr ""
+
+#: .\app\forms\comment_send.py:17 .\app\forms\express_yourself.py:13
+#: .\app\forms\forms.py:8 .\app\forms\forms.py:31
+#: .\app\forms\invite_friend.py:8 .\app\forms\message_send.py:17
+#: .\app\forms\personne_invitation_refuse.py:16
+#: .\app\forms\personne_travel.py:37 .\app\forms\profile\profile.py:46
+#: .\app\forms\profile\profile_delete.py:15
+#: .\app\forms\profile\profile_desactivate.py:14
+#: .\app\forms\profile\profile_newsletter_configuration.py:17
+#: .\app\forms\profile\profile_password.py:8
+#: .\app\forms\profile\profile_password_recover.py:14
+#: .\app\forms\profile\profile_visibilite.py:29 .\app\forms\remarks.py:8
+#: .\app\forms\search\advanced.py:19 .\app\forms\search\basic.py:12
+#: .\app\forms\testimony.py:11
+msgid "This field is required"
+msgstr ""
+
+#: .\app\forms\comment_send.py:18 .\app\forms\express_yourself.py:14
+#: .\app\forms\forms.py:9 .\app\forms\forms.py:32
+#: .\app\forms\invite_friend.py:9 .\app\forms\message_send.py:18
+#: .\app\forms\personne_invitation_refuse.py:17
+#: .\app\forms\personne_travel.py:38 .\app\forms\profile\profile.py:47
+#: .\app\forms\profile\profile_delete.py:16
+#: .\app\forms\profile\profile_desactivate.py:15
+#: .\app\forms\profile\profile_newsletter_configuration.py:18
+#: .\app\forms\profile\profile_password.py:9
+#: .\app\forms\profile\profile_password_recover.py:15
+#: .\app\forms\profile\profile_visibilite.py:30 .\app\forms\remarks.py:9
+#: .\app\forms\search\advanced.py:20 .\app\forms\search\basic.py:13
+#: .\app\forms\testimony.py:12
+msgid "This field contains invalid data"
+msgstr ""
+
+#: .\app\forms\comment_send.py:21
+msgid "Send a comment:"
+msgstr ""
+
+#: .\app\forms\express_yourself.py:17
+msgid "Express yourself:"
+msgstr ""
+
+#: .\app\forms\express_yourself.py:27
+msgid ""
+"Express yourself:\n"
+"\n"
+"You've been away together!\n"
+"Talk about your encounter, your destination and your adventure in general.\n"
+"Inspire your other contacts..."
+msgstr ""
+
+#: .\app\forms\forms.py:10 .\app\forms\forms.py:64
+#: .\app\forms\invite_friend.py:27 .\app\forms\profile\profile.py:49
+msgid "Email:"
+msgstr ""
+
+#: .\app\forms\forms.py:15 .\app\forms\profile\profile.py:54
+msgid "mymail@exemple.org or username"
+msgstr ""
+
+#: .\app\forms\forms.py:19 .\app\forms\forms.py:72
+msgid "Password:"
+msgstr ""
+
+#: .\app\forms\forms.py:47 .\app\forms\invite_friend.py:10
+#: .\app\forms\profile\profile.py:227
+msgid "First name:"
+msgstr ""
+
+#: .\app\forms\forms.py:51 .\app\forms\profile\profile.py:232
+msgid "my first name"
+msgstr ""
+
+#: .\app\forms\forms.py:56 .\app\forms\invite_friend.py:19
+#: .\app\forms\profile\profile.py:237
+msgid "Last name:"
+msgstr ""
+
+#: .\app\forms\forms.py:60 .\app\forms\profile\profile.py:242
+msgid "my last name"
+msgstr ""
+
+#: .\app\forms\forms.py:68
+msgid "mymail@exemple.org"
+msgstr ""
+
+#: .\app\forms\forms.py:80
+msgid "Confirm password:"
+msgstr ""
+
+#: .\app\forms\generic\fields\typed_choice_tag.py:20
+#: .\app\forms\generic\fields\typed_choice_tag.py:22
+#: .\app\forms\generic\fields\typed_choice_tag.py:38
+#: .\app\forms\generic\fields\typed_choice_tag.py:72
+#: .\app\forms\generic\fields\typed_choice_tag.py:76
+msgid "List required"
+msgstr ""
+
+#: .\app\forms\generic\fields\typed_choice_tag.py:27
+msgid "coerce is overriden"
+msgstr ""
+
+#: .\app\forms\generic\fields\typed_choice_tag.py:32
+msgid "Empty: list required"
+msgstr ""
+
+#: .\app\forms\generic\fields\typed_choice_tag.py:57
+msgid "custom_tag: result should be int"
+msgstr ""
+
+#: .\app\forms\generic\fields\typed_choice_tag.py:80
+msgid "List of int required"
+msgstr ""
+
+#: .\app\forms\invite_friend.py:14
+msgid "his/her first name"
+msgstr ""
+
+#: .\app\forms\invite_friend.py:23
+msgid "his/her last name"
+msgstr ""
+
+#: .\app\forms\invite_friend.py:31
+#: .\app\forms\profile\profile_password_recover.py:28
+msgid "mail@exemple.org"
+msgstr ""
+
+#: .\app\forms\invite_friend.py:35
+msgid "Personal message (optional):"
+msgstr ""
+
+#: .\app\forms\message_send.py:21
+msgid "Send a message:"
+msgstr ""
+
+#: .\app\forms\personne_invitation_refuse.py:19
+msgid "Reason:"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:40
+msgid "Town / Country / Place:"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:49
+msgid "town / country / place"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:53 .\app\forms\search\advanced.py:37
+#: .\app\forms\search\basic.py:29
+msgid "Start:"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:63 .\app\forms\search\advanced.py:50
+#: .\app\forms\search\basic.py:41
+msgid "End:"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:73
+msgid "Add a comment:"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:102
+msgid "Picture {}:"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:106
+msgid ""
+"<span class=\"suggestion\">Want to upload photos of your different "
+"experiences and inspire future travellers?</span>"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:119
+msgid "picture {}"
+msgstr ""
+
+#: .\app\forms\personne_travel.py:177 .\app\forms\profile\profile.py:487
+#: .\app\forms\profile\profile.py:502
+msgid "Unknown type of image"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:59 .\app\forms\search\advanced.py:63
+msgid "Sex:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:70 .\app\forms\search\advanced.py:87
+msgid "Children:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:102 .\app\forms\search\advanced.py:133
+#: .\templates\includes\person\description_complete.html:195
+msgid "Smoker:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:115
+msgid "Date of birth: <span class=\"important-field\">*</span>"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:126
+msgid "Describe yourself:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:135 .\app\forms\search\advanced.py:111
+#: .\templates\includes\person\description_complete.html:58
+msgid "Level of education:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:148 .\app\forms\search\advanced.py:122
+#: .\templates\includes\person\description_complete.html:115
+msgid "Job:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:161
+msgid "Mother tongue: <span class=\"important-field\">*</span>"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:172
+msgid ""
+"How did you know Cogofly? <span style=\"font-size: smaller\">Important: a "
+"Cogoflyer may be close...</span>"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:187 .\app\forms\search\advanced.py:145
+#: .\templates\includes\person\description_complete.html:202
+msgid "Star sign:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:205
+msgid "Picture:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:210
+msgid "my picture"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:216
+msgid "Banner/background picture:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:221
+msgid "my banner"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:247
+msgid "Town/Country of birth"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:252
+msgid "my town/country of birth"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:258
+msgid "Town/Country where I live:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:266
+msgid "town where I live"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:271 .\app\forms\search\advanced.py:161
+#: .\templates\includes\person\description_complete.html:91
+msgid "Current employer:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:276 .\app\forms\search\advanced.py:166
+#: .\app\views\common_mixins.py:56
+msgid "current employer"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:283 .\app\forms\search\advanced.py:172
+#: .\templates\includes\person\description_complete.html:103
+msgid "Previous employer:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:288 .\app\forms\search\advanced.py:177
+#: .\app\views\common_mixins.py:57
+msgid "previous employer"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:326 .\app\forms\search\advanced.py:299
+#: .\templates\includes\person\description_complete.html:138
+msgid "Activity sectors:"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:389 .\app\forms\search\advanced.py:356
+msgid "Personalities"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:410 .\app\forms\search\advanced.py:374
+#: .\templates\my_home\profile\tab_parameters.html:15
+msgid "Spoken languages"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:508
+msgid "No birth date precised"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:511
+msgid "Invalid birth date (you must be >= 18 years old)"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:522 .\app\forms\profile\profile.py:524
+#: .\app\views\my_home\profile\password_change.py:40
+#: .\app\views\my_home\profile\password_change.py:42
+msgid "New password missing"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:526
+#: .\app\views\my_home\profile\password_change.py:44
+msgid "The new password is not the same twice"
+msgstr ""
+
+#: .\app\forms\profile\profile.py:536
+msgid ""
+"The language you've set is unknown ('{}'). Please go to My Profile -> Change "
+"my parameters and choose a known language"
+msgstr ""
+
+#: .\app\forms\profile\profile_delete.py:12
+#: .\app\forms\profile\profile_desactivate.py:11
+#: .\app\forms\profile\profile_password_recover.py:11
+#: .\templates\includes\person\invite.html:45
+#: .\templates\includes\person\invite.html:89
+#: .\templates\my_home\notifications\messages_list_delete.html:66
+#: .\templates\my_home\travels\travels_list.html:82
+msgid "Yes"
+msgstr ""
+
+#: .\app\forms\profile\profile_delete.py:13
+#: .\app\forms\profile\profile_desactivate.py:12
+#: .\app\forms\profile\profile_password_recover.py:12
+#: .\app\models\personne_enums.py:66
+#: .\templates\includes\person\invite.html:49
+#: .\templates\includes\person\invite.html:92
+#: .\templates\my_home\notifications\messages_list_delete.html:62
+#: .\templates\my_home\travels\travels_list.html:79
+msgid "No"
+msgstr ""
+
+#: .\app\forms\profile\profile_delete.py:18
+msgid ""
+"In order to help us improving Cogofly, and add new features, could you "
+"please precise us the reason?"
+msgstr ""
+
+#: .\app\forms\profile\profile_delete.py:27
+msgid "By clicking \"Yes\" you agree to delete your account:"
+msgstr ""
+
+#: .\app\forms\profile\profile_delete.py:31
+#: .\app\forms\profile\profile_desactivate.py:21
+msgid "Still agree?"
+msgstr ""
+
+#: .\app\forms\profile\profile_desactivate.py:17
+msgid "By clicking \"Yes\" you agree to desactivate your account:"
+msgstr ""
+
+#: .\app\forms\profile\profile_newsletter_configuration.py:20
+msgid "When do you want to receive your dashboard and other notifications?"
+msgstr ""
+
+#: .\app\forms\profile\profile_password.py:11
+msgid "Old password:"
+msgstr ""
+
+#: .\app\forms\profile\profile_password.py:13
+msgid "Change your password here:"
+msgstr ""
+
+#: .\app\forms\profile\profile_password.py:24
+msgid "New password:"
+msgstr ""
+
+#: .\app\forms\profile\profile_password.py:35
+msgid "Retype the new password:"
+msgstr ""
+
+#: .\app\forms\profile\profile_password_recover.py:17
+msgid "If you're not a robot, click \"Yes\" to get your password back:"
+msgstr ""
+
+#: .\app\forms\profile\profile_password_recover.py:24
+msgid "Enter your email to recover your password:"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:32
+msgid ""
+"<span style=\"padding-bottom: 10px; display: inline-block;\">Who can see my "
+"profile?</span>"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:37
+#: .\templates\my_home\profile\tab_help.html:72
+#: .\templates\my_home\profile\tab_parameters.html:20
+msgid "Visibility"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:47
+msgid "Show your age"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:51
+msgid "What do you want to show?"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:58
+msgid "Show number of children"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:67
+msgid "Show the language you talk"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:75
+msgid "Show other languages you talk"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:83
+msgid "Show your level of education"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:91
+msgid "Show your program"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:98
+msgid "Show your current employer"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:105
+msgid "Show your previous employer"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:113
+msgid "Show your job"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:120
+msgid "Show your activity"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:127
+msgid "Show your hobbies"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:134
+msgid "Show your driving licence"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:141
+msgid "Show your personality"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:148
+msgid "Show if you're a smoker"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:155
+msgid "Show your zodiacal sign"
+msgstr ""
+
+#: .\app\forms\profile\profile_visibilite.py:162
+msgid "Show your self-description"
+msgstr ""
+
+#: .\app\forms\remarks.py:11
+msgid ""
+"Feel free to contact us with any remarks or suggestions you may have, any "
+"problems you have encountered and any ways in which you feel the site could "
+"be improved in order to meet your expectations."
+msgstr ""
+
+#: .\app\forms\search\advanced.py:22 .\app\forms\search\basic.py:15
+msgid "Where do you want to go?"
+msgstr ""
+
+#: .\app\forms\search\advanced.py:29 .\app\forms\search\basic.py:22
+msgid "town/country"
+msgstr ""
+
+#: .\app\forms\search\advanced.py:40 .\app\forms\search\basic.py:32
+msgid "When?"
+msgstr ""
+
+#: .\app\forms\search\advanced.py:99
+#: .\templates\includes\person\description_complete.html:33
+msgid "Mother tongue:"
+msgstr ""
+
+#: .\app\forms\search\advanced.py:386
+msgid "Age:"
+msgstr ""
+
+#: .\app\forms\testimony.py:14
+msgid ""
+"Your testimonies and positive feedback are paramount in helping Cogofly go "
+"that extra mile...They will also motivate new members to join this new "
+"community of Cogoflyers! <br/><br/>These same testimonies will appear on "
+"your contacts' news feed and will be available to view at any time via the "
+"link \"Testimonies\" below"
+msgstr ""
+
+#: .\app\forms\testimony.py:31
+msgid ""
+"Check if you agree to add your name, and your photo profile, inside the "
+"testimony"
+msgstr ""
+
+#: .\app\forms\widgets\select2.py:25
+msgid "data-select2-json class needed"
+msgstr ""
+
+#: .\app\forms\widgets\widget_date_selector.py:26
+msgid "DD"
+msgstr ""
+
+#: .\app\forms\widgets\widget_date_selector.py:30
+msgid "MM"
+msgstr ""
+
+#: .\app\forms\widgets\widget_date_selector.py:34
+msgid "YYYY"
+msgstr ""
+
+#: .\app\management\commands\send_notifications_messages_unread.py:86
+msgid "{} sent you a message:"
+msgstr ""
+
+#: .\app\management\commands\send_notifications_messages_unread.py:97
+#: .\app\management\commands\sendnewsletter.py:303
+msgid ""
+"If you would like to find out more, please log in via the following link:"
+msgstr ""
+
+#: .\app\management\commands\send_notifications_messages_unread.py:107
+#: .\app\management\commands\sendnewsletter.py:313
+msgid ""
+"If you no longer wish to receive the Cogoflyer dashboard, or any other "
+"notifications, please click here:"
+msgstr ""
+
+#: .\app\management\commands\send_notifications_messages_unread.py:116
+#: .\app\management\commands\sendnewsletter.py:322
+msgid "And don't forget to click on: 'Change my parameters'"
+msgstr ""
+
+#: .\app\management\commands\send_notifications_messages_unread.py:122
+msgid "Cogofly's message!"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:117
+#: .\app\management\commands\sendnewsletter.py:121
+msgid ""
+"- {}, {}:\n"
+"{}\n"
+"\n"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:130
+msgid "You have {} message not read."
+msgid_plural "You have {} messages not read."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\app\management\commands\sendnewsletter.py:135
+msgid "You have {} invitation not read."
+msgid_plural "You have {} invitations not read."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\app\management\commands\sendnewsletter.py:140
+msgid "You have {} like!"
+msgid_plural "You have {} likes!"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\app\management\commands\sendnewsletter.py:147
+msgid ""
+"Here is the latest news on your contacts, along with other notifications "
+"that might be of interest to you, since your last connection:"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:190
+msgid "Since the previous newsletter:"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:193
+msgid "{} people are already registered!"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:195
+msgid "<b>{}</b> people are already registered!"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:201
+msgid ""
+"There have been {} new people registered!\n"
+"There's a total of <b>{}</b> people registered!"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:205
+msgid ""
+"There have been <b>{}</b> new people registered!<br/>There's a total of <b>{}"
+"</b> people registered!"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:211
+msgid "There's a total of <b>{}</b> travels!\n"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:244
+msgid "Here are some new travels that have been added:"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:278
+msgid "Here are some travels searches that have been done:"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:288
+msgid "- {} ({} results)"
+msgstr ""
+
+#: .\app\management\commands\sendnewsletter.py:328
+#: .\app\models\personne.py:795
+msgid "Cogofly's news"
+msgstr ""
+
+#: .\app\models\blog.py:16
+msgid "A recall of what this blog contains (language independant)"
+msgstr ""
+
+#: .\app\models\blog.py:18 .\app\models\publicite.py:40
+msgid "Label"
+msgstr ""
+
+#: .\app\models\blog.py:21 .\app\models\publicite.py:43
+msgid "Publication date"
+msgstr ""
+
+#: .\app\models\blog.py:24
+msgid ""
+"Priority: the higher first (\"2\" is <b>before</b> \"1\" and so on...).<br /"
+"><b>Let it blank if you don't want this blog on top</b>"
+msgstr ""
+
+#: .\app\models\blog.py:27
+msgid "If this blog is always on top"
+msgstr ""
+
+#: .\app\models\blog.py:31
+msgid ""
+"Blank = never sent. If the date is older than now it will be sent tonight."
+msgstr ""
+
+#: .\app\models\blog.py:33
+msgid "Add this blog into the newsletter"
+msgstr ""
+
+#: .\app\models\blog.py:42 .\app\models\personne.py:739
+#: .\app\models\personne.py:949
+msgid "Blog"
+msgstr ""
+
+#: .\app\models\blog.py:43
+msgid "Blogs"
+msgstr ""
+
+#: .\app\models\blog.py:52
+msgid "Blog's locale (en, fr, ...)"
+msgstr ""
+
+#: .\app\models\blog.py:53
+msgid "Blog's locale"
+msgstr ""
+
+#: .\app\models\blog.py:56
+msgid "Blog's title"
+msgstr ""
+
+#: .\app\models\blog.py:57 .\app\models\publicite.py:72
+msgid "Title"
+msgstr ""
+
+#: .\app\models\blog.py:59
+msgid "Blog's content"
+msgstr ""
+
+#: .\app\models\blog.py:60 .\app\models\publicite.py:75
+msgid "Content"
+msgstr ""
+
+#: .\app\models\blog.py:64 .\app\models\publicite.py:79
+msgid "no locale"
+msgstr ""
+
+#: .\app\models\blog.py:65 .\app\models\publicite.py:80
+msgid "no title"
+msgstr ""
+
+#: .\app\models\blog.py:66 .\app\models\publicite.py:81
+msgid "no content yet"
+msgstr ""
+
+#: .\app\models\blog.py:74
+msgid "Blog-translated content"
+msgstr ""
+
+#: .\app\models\blog.py:75
+msgid "Blogs-translated"
+msgstr ""
+
+#: .\app\models\conversation.py:18
+#: .\templates\my_home\notifications\base.html:18
+msgid "Messages"
+msgstr ""
+
+#: .\app\models\conversation.py:22
+msgid "Destination is notified by mail"
+msgstr ""
+
+#: .\app\models\conversation.py:25
+msgid "Visible by src"
+msgstr ""
+
+#: .\app\models\conversation.py:27
+msgid "Visible by dst"
+msgstr ""
+
+#: .\app\models\conversation.py:42
+msgid "read"
+msgstr ""
+
+#: .\app\models\conversation.py:42
+msgid "unread"
+msgstr ""
+
+#: .\app\models\conversation.py:99
+msgid "Conversation n.{}"
+msgstr ""
+
+#: .\app\models\date_partial.py:14
+msgid "Year can't be None"
+msgstr ""
+
+#: .\app\models\date_partial.py:16
+msgid "Day must be None if month is None"
+msgstr ""
+
+#: .\app\models\generic.py:41
+msgid "Last changed"
+msgstr ""
+
+#: .\app\models\generic.py:45
+msgid "V. start"
+msgstr ""
+
+#: .\app\models\generic.py:51
+msgid "V. end"
+msgstr ""
+
+#: .\app\models\generic.py:58
+msgid "Infini"
+msgstr ""
+
+#: .\app\models\generic.py:78
+msgid "(Empty)"
+msgstr ""
+
+#: .\app\models\generic.py:86
+msgid "No date"
+msgstr ""
+
+#: .\app\models\generic.py:97
+msgid "1 day ago"
+msgstr ""
+
+#: .\app\models\generic.py:99
+msgid "{} days ago"
+msgstr ""
+
+#: .\app\models\generic.py:101
+msgid "Just now"
+msgstr ""
+
+#: .\app\models\generic.py:103
+msgid "{} seconds ago"
+msgstr ""
+
+#: .\app\models\generic.py:105
+msgid "1 minute ago"
+msgstr ""
+
+#: .\app\models\generic.py:107
+msgid "{} minutes ago"
+msgstr ""
+
+#: .\app\models\generic.py:109
+msgid "1 hour ago"
+msgstr ""
+
+#: .\app\models\generic.py:111
+msgid "{} hours ago"
+msgstr ""
+
+#: .\app\models\generic.py:147
+msgid "- activated"
+msgstr ""
+
+#: .\app\models\generic.py:151 .\templates\applancement\base.html:8
+msgid "Languages"
+msgstr ""
+
+#: .\app\models\generic.py:169
+msgid "Text"
+msgstr ""
+
+#: .\app\models\personne.py:36
+msgid "It's filled when someone adds a trip picture, you should not touch it"
+msgstr ""
+
+#: .\app\models\personne.py:60
+msgid "Language chosen in the website"
+msgstr ""
+
+#: .\app\models\personne.py:64 .\app\models\personne.py:76
+#: .\app\models\personne_enums.py:244
+msgid "Capricorn"
+msgstr ""
+
+#: .\app\models\personne.py:65 .\app\models\personne_enums.py:245
+msgid "Aquarius"
+msgstr ""
+
+#: .\app\models\personne.py:66 .\app\models\personne_enums.py:246
+msgid "Pisces"
+msgstr ""
+
+#: .\app\models\personne.py:67 .\app\models\personne_enums.py:247
+msgid "Aries"
+msgstr ""
+
+#: .\app\models\personne.py:68 .\app\models\personne_enums.py:248
+msgid "Taurus"
+msgstr ""
+
+#: .\app\models\personne.py:69 .\app\models\personne_enums.py:249
+msgid "Gemini"
+msgstr ""
+
+#: .\app\models\personne.py:70 .\app\models\personne_enums.py:250
+msgid "Cancer"
+msgstr ""
+
+#: .\app\models\personne.py:71 .\app\models\personne_enums.py:251
+msgid "Leo"
+msgstr ""
+
+#: .\app\models\personne.py:72 .\app\models\personne_enums.py:252
+msgid "Virgo"
+msgstr ""
+
+#: .\app\models\personne.py:73 .\app\models\personne_enums.py:253
+msgid "Libra"
+msgstr ""
+
+#: .\app\models\personne.py:74 .\app\models\personne_enums.py:254
+msgid "Scorpio"
+msgstr ""
+
+#: .\app\models\personne.py:75 .\app\models\personne_enums.py:255
+msgid "Sagittarius"
+msgstr ""
+
+#: .\app\models\personne.py:81
+msgid "(None)"
+msgstr ""
+
+#: .\app\models\personne.py:84
+msgid "Star sign"
+msgstr ""
+
+#: .\app\models\personne.py:90 .\app\models\personne.py:150
+msgid "(Not precised)"
+msgstr ""
+
+#: .\app\models\personne.py:156
+msgid "{} years old"
+msgstr ""
+
+#: .\app\models\personne.py:158
+msgid "Birth date"
+msgstr ""
+
+#: .\app\models\personne.py:200
+msgid "Place of birth"
+msgstr ""
+
+#: .\app\models\personne.py:207
+msgid "City where I live"
+msgstr ""
+
+#: .\app\models\personne.py:215
+msgid "Current employer"
+msgstr ""
+
+#: .\app\models\personne.py:223
+msgid "Previous employer"
+msgstr ""
+
+#: .\app\models\personne.py:324
+msgid "{} child"
+msgid_plural "{} children"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\app\models\personne.py:326
+msgid "No children"
+msgstr ""
+
+#: .\app\models\personne.py:330 .\app\models\personne.py:334
+#: .\app\models\personne.py:338 .\app\models\personne.py:342
+#: .\app\models\personne.py:346 .\app\models\personne.py:350
+#: .\app\models\personne.py:355
+#: .\app\views\my_home\profile\account_delete.py:83
+#: .\templates\includes\person\description_complete.html:51
+#: .\templates\includes\person\description_complete.html:63
+#: .\templates\includes\person\description_complete.html:96
+#: .\templates\includes\person\description_complete.html:108
+#: .\templates\includes\person\description_complete.html:154
+#: .\templates\includes\person\description_complete.html:166
+msgid "not precised"
+msgstr ""
+
+#: .\app\models\personne.py:367
+msgid "(not precised)"
+msgstr ""
+
+#: .\app\models\personne.py:369
+msgid "Latest travel: {}"
+msgstr ""
+
+#: .\app\models\personne.py:370
+msgid "Next travel : {}"
+msgstr ""
+
+#: .\app\models\personne.py:375
+msgctxt "Homme"
+msgid "Born at {}"
+msgstr ""
+
+#: .\app\models\personne.py:376
+msgctxt "Homme"
+msgid "Lives at {}"
+msgstr ""
+
+#: .\app\models\personne.py:378
+msgctxt "Femme"
+msgid "Born at {}"
+msgstr ""
+
+#: .\app\models\personne.py:379
+msgctxt "Femme"
+msgid "Lives at {}"
+msgstr ""
+
+#: .\app\models\personne.py:392
+msgctxt "Homme"
+msgid "His contact"
+msgstr ""
+
+#: .\app\models\personne.py:393
+msgctxt "Homme"
+msgid "His contacts"
+msgstr ""
+
+#: .\app\models\personne.py:395
+msgctxt "Femme"
+msgid "Her contact"
+msgstr ""
+
+#: .\app\models\personne.py:396
+msgctxt "Femme"
+msgid "Her contacts"
+msgstr ""
+
+#: .\app\models\personne.py:430
+msgid "Describe yourself"
+msgstr ""
+
+#: .\app\models\personne.py:559
+msgid "Person : {} / {} {}"
+msgstr ""
+
+#: .\app\models\personne.py:569 .\app\models\personne.py:586
+#: .\app\models\personne.py:595 .\app\models\personne.py:604
+#: .\app\models\personne.py:613 .\app\models\personne.py:622
+#: .\app\models\personne.py:631 .\app\models\personne.py:640
+#: .\app\models\personne.py:746
+msgid "Person"
+msgstr ""
+
+#: .\app\models\personne.py:570 .\app\views\my_home\travels\search.py:278
+#: .\templates\my_home\base.html:161 .\templates\my_home\search\base.html:5
+msgid "Search"
+msgstr ""
+
+#: .\app\models\personne.py:580
+msgid "Person / search"
+msgstr ""
+
+#: .\app\models\personne.py:581
+msgid "Person / searches"
+msgstr ""
+
+#: .\app\models\personne.py:590 .\app\models\personne.py:599
+#: .\app\models\personne.py:608 .\app\models\personne.py:617
+#: .\app\models\personne.py:626 .\app\models\personne.py:635
+#: .\app\models\personne.py:725 .\app\models\personne.py:750
+msgid "{} / {}"
+msgstr ""
+
+#: .\app\models\personne.py:623 .\app\models\tag.py:87
+msgid "Personality"
+msgstr ""
+
+#: .\app\models\personne.py:632 .\app\models\tag.py:26 .\app\models\tag.py:88
+#: .\app\views\my_home\language.py:24 .\templates\beta\base.html:151
+#: .\templates\my_home\base.html:229
+#: .\templates\my_home\profile\tab_help.html:67
+msgid "Language"
+msgstr ""
+
+#: .\app\models\personne.py:643
+msgid "Comments"
+msgstr ""
+
+#: .\app\models\personne.py:653
+msgid "Travel picture 1"
+msgstr ""
+
+#: .\app\models\personne.py:656
+msgid "Travel picture 2"
+msgstr ""
+
+#: .\app\models\personne.py:659
+msgid "Travel picture 3"
+msgstr ""
+
+#: .\app\models\personne.py:663
+msgid "Start ({})"
+msgstr ""
+
+#: .\app\models\personne.py:667
+msgid "End ({})"
+msgstr ""
+
+#: .\app\models\personne.py:672
+msgid "This is a past travel"
+msgstr ""
+
+#: .\app\models\personne.py:680
+msgid "From {} until {}"
+msgstr ""
+
+#: .\app\models\personne.py:682
+msgid "From {} until (not precised)"
+msgstr ""
+
+#: .\app\models\personne.py:684
+msgid "From (not precised) until {}"
+msgstr ""
+
+#: .\app\models\personne.py:686
+msgid "No date precised"
+msgstr ""
+
+#: .\app\models\personne.py:717
+msgid "went to"
+msgstr ""
+
+#: .\app\models\personne.py:717
+msgid "would like to go to"
+msgstr ""
+
+#: .\app\models\personne.py:736
+msgid "Profil"
+msgstr ""
+
+#: .\app\models\personne.py:738
+msgid "Banner"
+msgstr ""
+
+#: .\app\models\personne.py:740
+msgid "Advert"
+msgstr ""
+
+#: .\app\models\personne.py:754
+msgid "Person / photo"
+msgstr ""
+
+#: .\app\models\personne.py:755
+msgid "Person / photos"
+msgstr ""
+
+#: .\app\models\personne.py:762
+msgid "Shared by"
+msgstr ""
+
+#: .\app\models\personne.py:766
+msgid "Shared to"
+msgstr ""
+
+#: .\app\models\personne.py:792
+msgid "has a new relationship:"
+msgstr ""
+
+#: .\app\models\personne.py:793
+msgid "has a new travel:"
+msgstr ""
+
+#: .\app\models\personne.py:794
+msgid "has changed a travel, it's now:"
+msgstr ""
+
+#: .\app\models\personne.py:796
+msgid "has made a comment:"
+msgstr ""
+
+#: .\app\models\personne.py:797
+msgid "has made a testimony:"
+msgstr ""
+
+#: .\app\models\personne.py:798
+msgid "has expressed this:"
+msgstr ""
+
+#: .\app\models\personne.py:807
+msgid "Relationship"
+msgstr ""
+
+#: .\app\models\personne.py:810 .\app\models\personne.py:811
+msgid "Blog translated"
+msgstr ""
+
+#: .\app\models\personne.py:831
+#: .\applancement\templatetags\templates_extras.py:74
+msgid "{} and {}"
+msgstr ""
+
+#: .\app\models\personne.py:929 .\app\models\personne.py:947
+msgid "To"
+msgstr ""
+
+#: .\app\models\personne.py:931
+msgid "Activity"
+msgstr ""
+
+#: .\app\models\personne.py:933 .\app\models\personne.py:951
+msgid "Sent"
+msgstr ""
+
+#: .\app\models\personne.py:969
+#: .\templates\includes\person\detail_buttons.html:38
+msgid "Comment"
+msgstr ""
+
+#: .\app\models\personne.py:985
+msgid "{}{} has commented: {}{}"
+msgstr ""
+
+#: .\app\models\personne.py:999
+msgid "Activity / comment"
+msgstr ""
+
+#: .\app\models\personne.py:1000
+msgid "Activities / comments"
+msgstr ""
+
+#: .\app\models\personne.py:1008
+msgid "Message"
+msgstr ""
+
+#: .\app\models\personne.py:1019
+msgid "Activity / express yourself"
+msgstr ""
+
+#: .\app\models\personne.py:1020
+msgid "Activities / express yourself"
+msgstr ""
+
+#: .\app\models\personne.py:1029
+msgid "Testimony"
+msgstr ""
+
+#: .\app\models\personne.py:1032
+msgid "Show name and picture"
+msgstr ""
+
+#: .\app\models\personne.py:1033
+msgid "Shows the name and profile picture inside the testimony page"
+msgstr ""
+
+#: .\app\models\personne.py:1044
+msgid "{}{} testified into the site: {}{}"
+msgstr ""
+
+#: .\app\models\personne.py:1054
+msgid "Activity / testimony"
+msgstr ""
+
+#: .\app\models\personne.py:1055
+msgid "Activities / testimonies"
+msgstr ""
+
+#: .\app\models\personne.py:1075
+msgid "The {}, {}{}{} has invited you."
+msgstr ""
+
+#: .\app\models\personne.py:1082
+msgid "n.{} {} : {} : {}"
+msgstr ""
+
+#: .\app\models\personne.py:1115
+msgctxt "a aimé"
+msgid "liked"
+msgstr ""
+
+#: .\app\models\personne.py:1116
+msgctxt "n'a plus aimé"
+msgid "disliked"
+msgstr ""
+
+#: .\app\models\personne.py:1117
+msgid "your profile"
+msgstr ""
+
+#: .\app\models\personne.py:1122
+msgid "n.{} : {} --> {} : {}"
+msgstr ""
+
+#: .\app\models\personne.py:1126
+msgid "liked"
+msgstr ""
+
+#: .\app\models\personne.py:1126
+msgid "disliked"
+msgstr ""
+
+#: .\app\models\personne.py:1129
+msgid "Like"
+msgstr ""
+
+#: .\app\models\personne.py:1130
+#: .\templates\my_home\notifications\base.html:34
+msgid "Likes"
+msgstr ""
+
+#: .\app\models\personne_enums.py:12
+msgid "Everyone can see those informations"
+msgstr ""
+
+#: .\app\models\personne_enums.py:13
+msgid "Only my friends can see those informations"
+msgstr ""
+
+#: .\app\models\personne_enums.py:14
+msgid "Only me can see those informations"
+msgstr ""
+
+#: .\app\models\personne_enums.py:23
+msgid "Between 18 and 25"
+msgstr ""
+
+#: .\app\models\personne_enums.py:24
+msgid "Between 26 and 35"
+msgstr ""
+
+#: .\app\models\personne_enums.py:25
+msgid "Between 36 and 45"
+msgstr ""
+
+#: .\app\models\personne_enums.py:26
+msgid "Between 46 and 55"
+msgstr ""
+
+#: .\app\models\personne_enums.py:27
+msgid "56 and more"
+msgstr ""
+
+#: .\app\models\personne_enums.py:68
+msgid "No thank you"
+msgstr ""
+
+#: .\app\models\personne_enums.py:70
+msgid "Maybe another time"
+msgstr ""
+
+#: .\app\models\personne_enums.py:72
+msgid "I am quite simply not interested"
+msgstr ""
+
+#: .\app\models\personne_enums.py:74
+msgid "We are quite simply not interested"
+msgstr ""
+
+#: .\app\models\personne_enums.py:76
+msgid "I am not interested for now"
+msgstr ""
+
+#: .\app\models\personne_enums.py:78
+msgid "We are not interested for now"
+msgstr ""
+
+#: .\app\models\personne_enums.py:80
+msgid "I don’t travel"
+msgstr ""
+
+#: .\app\models\personne_enums.py:82
+msgid "We don’t travel"
+msgstr ""
+
+#: .\app\models\personne_enums.py:84
+msgid "I don’t travel around"
+msgstr ""
+
+#: .\app\models\personne_enums.py:86
+msgid "We don’t travel around"
+msgstr ""
+
+#: .\app\models\personne_enums.py:88
+msgid "I prefer to remain alone"
+msgstr ""
+
+#: .\app\models\personne_enums.py:90
+msgid "We prefer to remain alone"
+msgstr ""
+
+#: .\app\models\personne_enums.py:92
+msgid "We have no travel plans in common"
+msgstr ""
+
+#: .\app\models\personne_enums.py:94
+msgid "We have no ideas in common for trips out"
+msgstr ""
+
+#: .\app\models\personne_enums.py:96
+msgid "We have nothing in common in terms of activities"
+msgstr ""
+
+#: .\app\models\personne_enums.py:98
+msgid "I don’t speak your language"
+msgstr ""
+
+#: .\app\models\personne_enums.py:100
+msgid "We don’t speak your language"
+msgstr ""
+
+#: .\app\models\personne_enums.py:102
+msgid "I don’t speak English"
+msgstr ""
+
+#: .\app\models\personne_enums.py:104
+msgid "We don’t speak English"
+msgstr ""
+
+#: .\app\models\personne_enums.py:106
+msgid "I invite you to use my contacts"
+msgstr ""
+
+#: .\app\models\personne_enums.py:108
+msgid "We invite you to get in touch with our contacts"
+msgstr ""
+
+#: .\app\models\personne_enums.py:110
+msgid "I invite you to contact another contact"
+msgstr ""
+
+#: .\app\models\personne_enums.py:112
+msgid "We invite you to contact another person"
+msgstr ""
+
+#: .\app\models\personne_enums.py:114
+msgid "I invite you to contact me by private message"
+msgstr ""
+
+#: .\app\models\personne_enums.py:116
+msgid "We invite you to contact us by private message"
+msgstr ""
+
+#: .\app\models\personne_enums.py:132 .\app\models\personne_enums.py:145
+msgid "friend"
+msgstr ""
+
+#: .\app\models\personne_enums.py:133 .\app\models\personne_enums.py:146
+msgid "relationship"
+msgstr ""
+
+#: .\app\models\personne_enums.py:134
+msgid "invitation refused"
+msgstr ""
+
+#: .\app\models\personne_enums.py:135
+msgid "sent an invitation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:136 .\app\models\personne_enums.py:150
+msgid "parent / child"
+msgstr ""
+
+#: .\app\models\personne_enums.py:137 .\app\models\personne_enums.py:149
+msgid "child / parent"
+msgstr ""
+
+#: .\app\models\personne_enums.py:138 .\app\models\personne_enums.py:152
+msgid "husband / wife"
+msgstr ""
+
+#: .\app\models\personne_enums.py:139 .\app\models\personne_enums.py:151
+msgid "wife / husband"
+msgstr ""
+
+#: .\app\models\personne_enums.py:140 .\app\models\personne_enums.py:154
+msgid "teacher / student"
+msgstr ""
+
+#: .\app\models\personne_enums.py:141 .\app\models\personne_enums.py:153
+msgid "student / teacher"
+msgstr ""
+
+#: .\app\models\personne_enums.py:142
+msgid "remover / removed"
+msgstr ""
+
+#: .\app\models\personne_enums.py:147
+msgid "refused invitation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:148
+msgid "received invitation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:155
+msgid "removed / remover"
+msgstr ""
+
+#: .\app\models\personne_enums.py:159 .\app\models\personne_enums.py:172
+msgid "You are friend with {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:160 .\app\models\personne_enums.py:173
+msgid "{} is one of your friend"
+msgstr ""
+
+#: .\app\models\personne_enums.py:161
+msgid "{} declined your invitation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:162
+msgid "Invitation sent to {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:163 .\app\models\personne_enums.py:177
+msgid "You are the parent of {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:164 .\app\models\personne_enums.py:176
+msgid "You are the child of {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:165 .\app\models\personne_enums.py:179
+msgid "You are the husband of {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:166 .\app\models\personne_enums.py:178
+msgid "You are the wife of {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:167 .\app\models\personne_enums.py:181
+msgid "You are the teacher of {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:168 .\app\models\personne_enums.py:180
+msgid "You are the student of {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:169
+msgid "You have removed this relation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:174
+msgid "You declined {}'s invitation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:175
+msgid "You received an invitation from {}"
+msgstr ""
+
+#: .\app\models\personne_enums.py:182
+msgid "{} has removed the relation with you"
+msgstr ""
+
+#: .\app\models\personne_enums.py:186 .\app\models\personne_enums.py:199
+msgid "You are a friend"
+msgstr ""
+
+#: .\app\models\personne_enums.py:187 .\app\models\personne_enums.py:200
+msgid "He/she is one of your friend"
+msgstr ""
+
+#: .\app\models\personne_enums.py:188
+msgid "He/she declined your invitation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:189
+msgid "Invitation sent"
+msgstr ""
+
+#: .\app\models\personne_enums.py:190
+msgid "You are a parent"
+msgstr ""
+
+#: .\app\models\personne_enums.py:191 .\app\models\personne_enums.py:203
+msgid "You are the child"
+msgstr ""
+
+#: .\app\models\personne_enums.py:192 .\app\models\personne_enums.py:206
+msgid "You are the husband"
+msgstr ""
+
+#: .\app\models\personne_enums.py:193 .\app\models\personne_enums.py:205
+msgid "You are the wife"
+msgstr ""
+
+#: .\app\models\personne_enums.py:194
+msgid "You are the teacher"
+msgstr ""
+
+#: .\app\models\personne_enums.py:195
+msgid "You are the student"
+msgstr ""
+
+#: .\app\models\personne_enums.py:196
+msgid "You removed this relation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:201
+msgid "You declined the invitation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:202
+msgid "You received an invitation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:204
+msgid "You are the parent"
+msgstr ""
+
+#: .\app\models\personne_enums.py:207
+msgid "You are a student"
+msgstr ""
+
+#: .\app\models\personne_enums.py:208
+msgid "You are a teacher"
+msgstr ""
+
+#: .\app\models\personne_enums.py:209
+msgid "He/she has removed the relation"
+msgstr ""
+
+#: .\app\models\personne_enums.py:218
+msgid "Every day"
+msgstr ""
+
+#: .\app\models\personne_enums.py:219
+msgid "Every week"
+msgstr ""
+
+#: .\app\models\personne_enums.py:220
+msgid "Every month"
+msgstr ""
+
+#: .\app\models\personne_enums.py:221
+msgid "Never send newsletter"
+msgstr ""
+
+#: .\app\models\personne_enums.py:243 .\app\models\personne_enums.py:266
+#: .\app\models\personne_enums.py:293 .\app\models\personne_enums.py:343
+msgid "Not precised"
+msgstr ""
+
+#: .\app\models\personne_enums.py:259
+msgid "Male"
+msgstr ""
+
+#: .\app\models\personne_enums.py:260
+msgid "Female"
+msgstr ""
+
+#: .\app\models\personne_enums.py:267
+msgid "Non-smoker"
+msgstr ""
+
+#: .\app\models\personne_enums.py:268
+msgid "Smoker"
+msgstr ""
+
+#: .\app\models\personne_enums.py:269
+msgid "Social smoker"
+msgstr ""
+
+#: .\app\models\personne_enums.py:275
+msgid "Solo"
+msgstr ""
+
+#: .\app\models\personne_enums.py:295
+msgid "Nursery school"
+msgstr ""
+
+#: .\app\models\personne_enums.py:297
+msgid "Primary education"
+msgstr ""
+
+#: .\app\models\personne_enums.py:299
+msgid "Lower secondary education"
+msgstr ""
+
+#: .\app\models\personne_enums.py:301
+msgid "Upper secondary education"
+msgstr ""
+
+#: .\app\models\personne_enums.py:303
+msgid "Post-secondary non-tertiary education"
+msgstr ""
+
+#: .\app\models\personne_enums.py:305
+msgid "Short-cycle tertiary education"
+msgstr ""
+
+#: .\app\models\personne_enums.py:307
+msgid "Bachelor's Degree or equivalent level"
+msgstr ""
+
+#: .\app\models\personne_enums.py:309
+msgid "Master's Degree or equivalent level"
+msgstr ""
+
+#: .\app\models\personne_enums.py:311
+msgid "Ph.D. or equivalent level"
+msgstr ""
+
+#: .\app\models\personne_enums.py:313 .\app\models\personne_enums.py:368
+#: .\app\models\personne_enums.py:432 .\app\models\personne_enums.py:450
+msgid "Other"
+msgstr ""
+
+#: .\app\models\personne_enums.py:344
+msgid "Farmer"
+msgstr ""
+
+#: .\app\models\personne_enums.py:345
+msgid "Craftsman"
+msgstr ""
+
+#: .\app\models\personne_enums.py:346
+msgid "Artist"
+msgstr ""
+
+#: .\app\models\personne_enums.py:347
+msgid "Manager"
+msgstr ""
+
+#: .\app\models\personne_enums.py:348
+msgid "Driver"
+msgstr ""
+
+#: .\app\models\personne_enums.py:349
+msgid "Chief Executive Officer"
+msgstr ""
+
+#: .\app\models\personne_enums.py:350
+msgid "Clergyman"
+msgstr ""
+
+#: .\app\models\personne_enums.py:351
+msgid "Independent retailer"
+msgstr ""
+
+#: .\app\models\personne_enums.py:352
+msgid "Foreman, supervisor"
+msgstr ""
+
+#: .\app\models\personne_enums.py:353
+msgid "Managing director"
+msgstr ""
+
+#: .\app\models\personne_enums.py:354
+msgid "Employee"
+msgstr ""
+
+#: .\app\models\personne_enums.py:355
+msgid "Student"
+msgstr ""
+
+#: .\app\models\personne_enums.py:356
+msgid "Civil servant"
+msgstr ""
+
+#: .\app\models\personne_enums.py:357
+msgid "Engineer"
+msgstr ""
+
+#: .\app\models\personne_enums.py:358
+msgid "Primary schoolteacher"
+msgstr ""
+
+#: .\app\models\personne_enums.py:359
+msgid "Labourer"
+msgstr ""
+
+#: .\app\models\personne_enums.py:360
+msgid "Policeman or Soldier"
+msgstr ""
+
+#: .\app\models\personne_enums.py:361
+msgid "Teacher"
+msgstr ""
+
+#: .\app\models\personne_enums.py:362
+msgid "Self-employed profession"
+msgstr ""
+
+#: .\app\models\personne_enums.py:363
+msgid "Pensioner"
+msgstr ""
+
+#: .\app\models\personne_enums.py:364
+msgid "Sportsman"
+msgstr ""
+
+#: .\app\models\personne_enums.py:365
+msgid "Technician"
+msgstr ""
+
+#: .\app\models\personne_enums.py:366
+msgid "Undisclosed"
+msgstr ""
+
+#: .\app\models\personne_enums.py:367
+msgid "Unemployed"
+msgstr ""
+
+#: .\app\models\personne_enums.py:402
+msgid "Albanian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:403
+msgid "German"
+msgstr ""
+
+#: .\app\models\personne_enums.py:404
+msgid "English"
+msgstr ""
+
+#: .\app\models\personne_enums.py:405
+msgid "Arabic"
+msgstr ""
+
+#: .\app\models\personne_enums.py:406
+msgid "Armenian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:407
+msgid "Bengali"
+msgstr ""
+
+#: .\app\models\personne_enums.py:408
+msgid "Catalan"
+msgstr ""
+
+#: .\app\models\personne_enums.py:409
+msgid "Chinese"
+msgstr ""
+
+#: .\app\models\personne_enums.py:410
+msgid "Korean"
+msgstr ""
+
+#: .\app\models\personne_enums.py:411
+msgid "Croatian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:412
+msgid "Danish"
+msgstr ""
+
+#: .\app\models\personne_enums.py:413
+msgid "Spanish"
+msgstr ""
+
+#: .\app\models\personne_enums.py:414
+msgid "Finnish"
+msgstr ""
+
+#: .\app\models\personne_enums.py:415
+msgid "French"
+msgstr ""
+
+#: .\app\models\personne_enums.py:416
+msgid "Greek"
+msgstr ""
+
+#: .\app\models\personne_enums.py:417
+msgid "Hungarian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:418
+msgid "Italian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:419
+msgid "Malaysian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:420
+msgid "Mongolian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:421
+msgid "Dutch"
+msgstr ""
+
+#: .\app\models\personne_enums.py:422
+msgid "Occitan"
+msgstr ""
+
+#: .\app\models\personne_enums.py:423
+msgid "Persian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:424
+msgid "Portuguese"
+msgstr ""
+
+#: .\app\models\personne_enums.py:425
+msgid "Romanian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:426
+msgid "Russian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:427
+msgid "Serbian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:428
+msgid "Slovakian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:429
+msgid "Slovenian"
+msgstr ""
+
+#: .\app\models\personne_enums.py:430
+msgid "Swedish"
+msgstr ""
+
+#: .\app\models\personne_enums.py:431
+msgid "Turkish"
+msgstr ""
+
+#: .\app\models\personne_enums.py:448
+msgid "Flyers"
+msgstr ""
+
+#: .\app\models\personne_enums.py:449
+msgid "Word of mouth"
+msgstr ""
+
+#: .\app\models\publicite.py:22
+msgid "Ads travels right"
+msgstr ""
+
+#: .\app\models\publicite.py:23
+msgid "Ads travels left"
+msgstr ""
+
+#: .\app\models\publicite.py:24
+msgid "Ads my profile left"
+msgstr ""
+
+#: .\app\models\publicite.py:25
+msgid "Ads my profile right"
+msgstr ""
+
+#: .\app\models\publicite.py:26
+msgid "Ads news left"
+msgstr ""
+
+#: .\app\models\publicite.py:27
+msgid "Ads news right"
+msgstr ""
+
+#: .\app\models\publicite.py:33 .\app\models\publicite.py:34
+msgid "Where this ads goes"
+msgstr ""
+
+#: .\app\models\publicite.py:38
+msgid "A recall of what this ads contains (language independant)"
+msgstr ""
+
+#: .\app\models\publicite.py:46
+msgid ""
+"Priority: the lowest the higher (\"1\" is <b>before</b> \"2\" and so on...)."
+msgstr ""
+
+#: .\app\models\publicite.py:48
+msgid "How this ad appears"
+msgstr ""
+
+#: .\app\models\publicite.py:67
+msgid "Ads locale (en, fr, ...)"
+msgstr ""
+
+#: .\app\models\publicite.py:68
+msgid "Ads locale"
+msgstr ""
+
+#: .\app\models\publicite.py:71
+msgid "Ads title"
+msgstr ""
+
+#: .\app\models\publicite.py:74
+msgid "Ads content"
+msgstr ""
+
+#: .\app\models\publicite.py:89
+msgid "Ads-translated content"
+msgstr ""
+
+#: .\app\models\publicite.py:90
+msgid "Ads-translated"
+msgstr ""
+
+#: .\app\models\tag.py:24
+msgid "Company"
+msgstr ""
+
+#: .\app\models\tag.py:25
+msgid "Job"
+msgstr ""
+
+#: .\app\models\tag.py:27 .\app\models\tag.py:89
+msgid "Google maps"
+msgstr ""
+
+#: .\app\models\tag.py:28 .\app\models\tag.py:86
+msgid "Driving licences"
+msgstr ""
+
+#: .\app\models\tag.py:29
+msgid "Diploma"
+msgstr ""
+
+#: .\app\models\tag.py:30
+msgid "Point of interest"
+msgstr ""
+
+#: .\app\models\tag.py:54
+msgid "Tag with an associated value"
+msgstr ""
+
+#: .\app\models\tag.py:55
+msgid "Tags with an associated value"
+msgstr ""
+
+#: .\app\models\tag.py:67
+msgid "Tag"
+msgstr ""
+
+#: .\app\models\tag.py:96
+msgid "Used for ordering"
+msgstr ""
+
+#: .\app\models\tag.py:106
+msgid "Referent tag"
+msgstr ""
+
+#: .\app\models\tag.py:107
+msgid "Referent tags"
+msgstr ""
+
+#: .\app\models\tag.py:113
+msgid "It's the master tag"
+msgstr ""
+
+#: .\app\models\tag.py:127
+msgid "Tag translated from a referent tag"
+msgstr ""
+
+#: .\app\models\tag.py:128
+msgid "Tags translated"
+msgstr ""
+
+#: .\app\models\tag.py:168
+msgid "{} (lat: {}, lng: {})"
+msgstr ""
+
+#: .\app\models\tag.py:173
+msgid "Tag google maps referent"
+msgstr ""
+
+#: .\app\models\tag.py:174
+msgid "Tags google maps referents"
+msgstr ""
+
+#: .\app\models\tag.py:185
+msgid "Position de référence"
+msgstr ""
+
+#: .\app\models\tag.py:258
+msgid "We have a technical error. Please try again."
+msgstr ""
+
+#: .\app\models\tag.py:263 .\app\views\my_home\travels\search.py:199
+msgid "Google didn't find a town/country with this name"
+msgstr ""
+
+#: .\app\models\tag.py:280
+msgid "No name from google maps"
+msgstr ""
+
+#: .\app\models\tag.py:283
+msgid "Google didn't provide a location for this town/country with this name"
+msgstr ""
+
+#: .\app\models\tag.py:349
+msgid "Tag google maps of a place in a language"
+msgstr ""
+
+#: .\app\views\common.py:127
+msgid "Hello, {}"
+msgstr ""
+
+#: .\app\views\common_mixins.py:34
+msgid "first name"
+msgstr ""
+
+#: .\app\views\common_mixins.py:35
+msgid "last name"
+msgstr ""
+
+#: .\app\views\common_mixins.py:36
+msgid "email"
+msgstr ""
+
+#: .\app\views\common_mixins.py:37
+msgid "gender"
+msgstr ""
+
+#: .\app\views\common_mixins.py:38
+msgid "where you live"
+msgstr ""
+
+#: .\app\views\common_mixins.py:39
+msgid "when you were born"
+msgstr ""
+
+#: .\app\views\common_mixins.py:43
+msgid "at least one travel"
+msgstr ""
+
+#: .\app\views\common_mixins.py:45
+msgid "where you were born"
+msgstr ""
+
+#: .\app\views\common_mixins.py:46
+msgid "mother tongue"
+msgstr ""
+
+#: .\app\views\common_mixins.py:48
+msgid "a profile picture"
+msgstr ""
+
+#: .\app\views\common_mixins.py:49
+msgid "a banner picture"
+msgstr ""
+
+#: .\app\views\common_mixins.py:51
+msgid "how many children you have"
+msgstr ""
+
+#: .\app\views\common_mixins.py:53
+msgid "other spoken languages"
+msgstr ""
+
+#: .\app\views\common_mixins.py:54
+msgid "level of study"
+msgstr ""
+
+#: .\app\views\common_mixins.py:55
+msgid "subjects"
+msgstr ""
+
+#: .\app\views\common_mixins.py:58
+msgid "job"
+msgstr ""
+
+#: .\app\views\common_mixins.py:59
+msgid "activities"
+msgstr ""
+
+#: .\app\views\common_mixins.py:60
+msgid "hobbies"
+msgstr ""
+
+#: .\app\views\common_mixins.py:61
+msgid "driving licences"
+msgstr ""
+
+#: .\app\views\common_mixins.py:62
+msgid "personality"
+msgstr ""
+
+#: .\app\views\common_mixins.py:64
+msgid "whether you smoke"
+msgstr ""
+
+#: .\app\views\common_mixins.py:65
+msgid "star sign"
+msgstr ""
+
+#: .\app\views\common_mixins.py:66
+msgid "a description of you"
+msgstr ""
+
+#: .\app\views\index.py:17 .\app\views\my_home\contacts\index.py:19
+#: .\app\views\my_home\index.py:30 .\templates\admin\change_list.html:40
+#: .\templates\my_home\base.html:14
+msgid "Home"
+msgstr ""
+
+#: .\app\views\json\invite.py:32
+msgid "An invitation has been sent to {}"
+msgstr ""
+
+#: .\app\views\json\invite.py:33 .\app\views\json\relation_remove.py:34
+#: .\app\views\my_home\contacts\invite_friend.py:142
+#: .\app\views\my_home\notifications\index.py:146
+#: .\app\views\my_home\profile\account_delete.py:49
+#: .\app\views\my_home\profile\account_desactivate.py:54
+#: .\app\views\my_home\profile\account_reactivate.py:34
+#: .\app\views\my_home\profile\newsletter_configuration.py:49
+#: .\app\views\my_home\profile\password_change.py:73
+#: .\app\views\my_home\profile\password_change.py:78
+#: .\app\views\my_home\profile\password_recover.py:75
+#: .\app\views\my_home\register.py:131
+#: .\app\views\my_home\remarks_and_testimonies.py:80
+#: .\app\views\my_home\remarks_and_testimonies.py:129
+#: .\app\views\my_home\travels\index.py:177
+#: .\app\views\my_home\travels\search.py:80
+#: .\app\views\my_home\travels\search.py:200
+#: .\applancement\views\register.py:166 .\applancement\views\register.py:177
+#: .\applancement\views\register.py:185 .\applancement\views\views.py:55
+#: .\applancement\views\views.py:70 .\applancement\views\views.py:245
+#: .\applancement\views\views.py:255 .\applancement\views\views.py:374
+#: .\applancement\views\views.py:386
+msgid "Click here to hide this message"
+msgstr ""
+
+#: .\app\views\json\relation_remove.py:32
+msgid "The relationship with {} has been removed"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:34
+msgid ""
+"Hi,\n"
+"\n"
+"Join me absolutely free on, www.cogofly.com, the new community where you can "
+"find people you can trust and never have to worry about travelling alone "
+"again.\n"
+"\n"
+"Don't stay on your own...meet people close to home or abroad and share your "
+"activities with them.\n"
+"\n"
+"Weekends away, days out, even business trips…you can envisage doing all of "
+"these with someone who potentially shares the same socio-professional "
+"criteria, hobbies and travel aspirations as you.\n"
+"\n"
+"If you enjoy spending time on your own…you will no doubt be inspired by "
+"other people’s experiences and be able to share information via this new web "
+"platform... and why not make the most of people’s recommendations.\n"
+"\n"
+"Cogofly Team : Alone, we think...Together, we get away!\n"
+"\n"
+"PS. Once you’ve checked out the site and finalized your subscription, please "
+"feel free to share this information with, maybe, your entourage.\n"
+"\n"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:64
+#: .\templates\my_home\contacts\invite.html:5
+msgid "Invite friends"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:81
+#: .\app\views\my_home\register.py:81 .\applancement\views\register.py:76
+msgid "A user has already the same firstname and lastname"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:87
+#: .\app\views\my_home\register.py:87 .\applancement\views\register.py:82
+msgid "This email is already used"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:118
+msgid "{} has invited you!"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:120
+msgid "Cogofly invites you!"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:128
+msgid ""
+"\n"
+"To validate your registration, click on the following link:\n"
+"{}{}"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:140
+msgid "Thanks for sharing!"
+msgstr ""
+
+#: .\app\views\my_home\contacts\invite_friend.py:141
+msgid "An email has been sent to the email address you provided."
+msgstr ""
+
+#: .\app\views\my_home\error.py:25
+msgid "Error"
+msgstr ""
+
+#: .\app\views\my_home\index.py:135
+msgid "Comment added!"
+msgstr ""
+
+#: .\app\views\my_home\index.py:136 .\app\views\my_home\index.py:150
+#: .\app\views\my_home\post_message_view.py:114
+#: .\templates\my_home\notifications\tab_likes.html:17
+msgid "Click to hide"
+msgstr ""
+
+#: .\app\views\my_home\index.py:148
+msgid "Added to your wall!"
+msgstr ""
+
+#: .\app\views\my_home\index.py:149
+msgid "From now on you can share it to your contacts!"
+msgstr ""
+
+#: .\app\views\my_home\login.py:27 .\templates\my_home\base.html:237
+#: .\templates\my_home\login.html:4 .\templates\my_home\login.html.py:96
+msgid "Login"
+msgstr ""
+
+#: .\app\views\my_home\login.py:58
+msgid "Invalid email or nick or password"
+msgstr ""
+
+#: .\app\views\my_home\login.py:61
+msgid "This account is not activated."
+msgstr ""
+
+#: .\app\views\my_home\notifications\index.py:44
+#: .\templates\my_home\base.html:190
+#: .\templates\my_home\notifications\base.html:5
+msgid "Notifications"
+msgstr ""
+
+#: .\app\views\my_home\notifications\index.py:106
+msgid "Invitation accepted"
+msgstr ""
+
+#: .\app\views\my_home\notifications\index.py:107
+msgid "{} has been notified that you accepted the invitation"
+msgstr ""
+
+#: .\app\views\my_home\notifications\index.py:109
+msgid "I've accepted your invitation"
+msgstr ""
+
+#: .\app\views\my_home\notifications\index.py:119
+msgid "Invitation declined"
+msgstr ""
+
+#: .\app\views\my_home\notifications\index.py:120
+msgid "{} has been notified that you declined the invitation"
+msgstr ""
+
+#: .\app\views\my_home\notifications\index.py:122
+msgid ""
+"I've declined your invitation.\n"
+"The reason is: {}"
+msgstr ""
+
+#: .\app\views\my_home\post_message_view.py:113
+msgid "Message sent"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:42
+#: .\app\views\my_home\profile\account_delete.py:59
+#: .\app\views\my_home\profile\account_delete.py:75
+#: .\templates\my_home\profile\redirect\account_deleted.html:22
+msgid "Account deleted"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:43
+#: .\app\views\my_home\profile\account_delete.py:61
+msgid "You have just deleted your account."
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:44
+#: .\app\views\my_home\profile\account_delete.py:65
+#: .\app\views\my_home\profile\account_desactivate.py:49
+#: .\app\views\my_home\profile\account_desactivate.py:74
+msgid ""
+"Please feel free to come back in the near future and check out any new "
+"features which, we hope, will persuade you to share the adventure with us "
+"again."
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:47
+#: .\app\views\my_home\profile\account_delete.py:62
+#: .\app\views\my_home\profile\account_desactivate.py:52
+#: .\app\views\my_home\profile\account_desactivate.py:71
+msgid ""
+"We would like to take this opportunity to thank you for using Cogofly and "
+"hope to see you again very soon."
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:69
+#: .\app\views\my_home\profile\account_desactivate.py:83
+msgid "Thank you!"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:77
+msgid "{} (email: {}) has just deleted his/her account."
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:81
+msgid "The reason for deletion is: {}"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:103
+#: .\app\views\my_home\profile\account_desactivate.py:91
+#: .\app\views\my_home\profile\password_recover.py:32
+msgid "No action!"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_delete.py:104
+msgid "If you want to delete your account,please check \"Yes\"."
+msgstr ""
+
+#: .\app\views\my_home\profile\account_desactivate.py:41
+#: .\app\views\my_home\profile\account_desactivate.py:67
+#: .\templates\my_home\profile\redirect\account_desactivated.html:22
+msgid "Account desactivated"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_desactivate.py:42
+#: .\app\views\my_home\profile\account_desactivate.py:69
+msgid ""
+"You have just deactivated your account and you will no longer be visible on "
+"this site."
+msgstr ""
+
+#: .\app\views\my_home\profile\account_desactivate.py:44
+msgid ""
+"Please be advised that it can be reactivated at any time via the link that "
+"we have sent to the email address that you used when signing up. "
+msgstr ""
+
+#: .\app\views\my_home\profile\account_desactivate.py:47
+msgid "You can also reactivate your account via other social networks."
+msgstr ""
+
+#: .\app\views\my_home\profile\account_desactivate.py:78
+msgid "If you wish to reactivate it"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_desactivate.py:79
+msgid "click on the following link:"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_desactivate.py:92
+msgid "If you want to desactivate your account,please check \"Yes\"."
+msgstr ""
+
+#: .\app\views\my_home\profile\account_reactivate.py:32
+msgid "Welcome back!"
+msgstr ""
+
+#: .\app\views\my_home\profile\account_reactivate.py:33
+msgid "Your account has been successfully reactivated"
+msgstr ""
+
+#: .\app\views\my_home\profile\change_visibility.py:64
+#: .\app\views\my_home\profile\password_change.py:71
+msgid "Account updated"
+msgstr ""
+
+#: .\app\views\my_home\profile\change_visibility.py:65
+msgid "Your visibility configuration has been changed."
+msgstr ""
+
+#: .\app\views\my_home\profile\change_visibility.py:68
+msgid "Your visibility configuration has not been changed:<br/><br/>{}"
+msgstr ""
+
+#: .\app\views\my_home\profile\change_visibility.py:70
+#: .\app\views\my_home\profile\password_change.py:77
+#: .\applancement\views\register.py:176
+msgid "Please try again"
+msgstr ""
+
+#: .\app\views\my_home\profile\edit.py:106 .\templates\my_home\base.html:167
+#: .\templates\my_home\profile\base.html:5
+msgid "My account"
+msgstr ""
+
+#: .\app\views\my_home\profile\edit.py:231
+msgid "Congratulations, your profile has been successfully updated!"
+msgstr ""
+
+#: .\app\views\my_home\profile\edit.py:232
+msgid ""
+"Please note that you can amend all practical and optional information, and "
+"also check out the online help section, at any time via your profile."
+msgstr ""
+
+#: .\app\views\my_home\profile\edit.py:237
+msgid ""
+"Please also bear in mind that a more complete profile will attract more "
+"attention. Increase your chances!"
+msgstr ""
+
+#: .\app\views\my_home\profile\edit.py:240
+#: .\templates\includes\person\detail.html:190
+#: .\templates\includes\person\detail_buttons.html:187
+#: .\templates\includes\person\detail_comments.html:25
+#: .\templates\includes\person\detail_comments.html:26
+#: .\templates\includes\person\invitation_accept.html:23
+#: .\templates\includes\person\travels.html:19
+#: .\templates\includes\persons_grid.html:14
+#: .\templates\includes\progression.html:67
+#: .\templates\includes\progression.html:89
+#: .\templates\my_home\contact_detail.html:92
+#: .\templates\my_home\notifications\message_detail.html:36
+#: .\templates\my_home\notifications\message_detail.html:43
+#: .\templates\my_home\notifications\tab_likes.html:37
+#: .\templates\my_home\profile\tab_accounts.html:47
+#: .\templates\my_home\profile\tab_help.html:22
+#: .\templates\my_home\profile\tab_profile.html:35
+#: .\templates\my_home\profile\tab_profile_summary.html:49
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:26
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:27
+#: .\templates\my_home\profile\tab_tab_langues.html:26
+#: .\templates\my_home\profile\tab_tab_newsletter.html:24
+#: .\templates\my_home\profile\tab_tab_password.html:33
+#: .\templates\my_home\profile\tab_tab_visibility.html:52
+#: .\templates\my_home\search\results.html:80
+#: .\templates\my_home\search\results.html:137
+#: .\templates\my_home\search\results.html:200
+#: .\templates\my_home\search\search_advanced_good_to_know.html:39
+#: .\templates\my_home\search\search_advanced_hints.html:126
+#: .\templates\my_home\search\search_basic_good_to_know.html:34
+#: .\templates\my_home\search\search_basic_hints.html:102
+#: .\templates\my_home\travels\travel_hint_good_to_know-future.html:21
+#: .\templates\my_home\travels\travel_hint_good_to_know-past.html:18
+#: .\templates\my_home\travels\travels_list.html:45
+#: .\templates\my_home\travels\travels_list.html:94
+msgid "Close"
+msgstr ""
+
+#: .\app\views\my_home\profile\newsletter_configuration.py:47
+msgid "Newsletter configuration updated"
+msgstr ""
+
+#: .\app\views\my_home\profile\newsletter_configuration.py:48
+msgid "Your newsletter configuration has been updated."
+msgstr ""
+
+#: .\app\views\my_home\profile\password_change.py:46
+msgid "The old password is missing"
+msgstr ""
+
+#: .\app\views\my_home\profile\password_change.py:51
+msgid "Bad password"
+msgstr ""
+
+#: .\app\views\my_home\profile\password_change.py:72
+msgid "Your password has been changed."
+msgstr ""
+
+#: .\app\views\my_home\profile\password_change.py:76
+msgid "Your password has not been changed:"
+msgstr ""
+
+#: .\app\views\my_home\profile\password_recover.py:51
+#: .\applancement\views\register.py:152
+msgid "Password reset"
+msgstr ""
+
+#: .\app\views\my_home\profile\password_recover.py:52
+msgid ""
+"You've asked to reset your password, click on the following link:\n"
+"{}{}"
+msgstr ""
+
+#: .\app\views\my_home\profile\password_recover.py:63
+msgid "Mail sent"
+msgstr ""
+
+#: .\app\views\my_home\profile\password_recover.py:64
+msgid ""
+"If the mail you've provided exists, you should get a message with a link to "
+"recover your password in the few minutes to come."
+msgstr ""
+
+#: .\app\views\my_home\profile\password_recover.py:69
+msgid "No email provided"
+msgstr ""
+
+#: .\app\views\my_home\profile\password_recover.py:72
+msgid ""
+"If you want to get an email to recover your password, please check \"Yes\"."
+msgstr ""
+
+#: .\app\views\my_home\register.py:31 .\applancement\views\register.py:30
+#, python-brace-format
+msgid ""
+"By clicking the Sign Up button, you agree to our <a href=\"{0}\" target="
+"\"_blank\">Terms &amp; Conditions</a> and confirm that you have read our <a "
+"href=\"{1}\" target=\"_blank\">Data Usage Policy</a>, including our use of "
+"Cookies, mobile app, and APIs (Facebook, Twitter, Google+, LinkedIn, etc.)."
+msgstr ""
+
+#: .\app\views\my_home\register.py:42
+msgid "Sign up"
+msgstr ""
+
+#: .\app\views\my_home\register.py:74 .\applancement\views\register.py:69
+msgid "Passwords do not match"
+msgstr ""
+
+#: .\app\views\my_home\register.py:96
+msgid "This username is already used"
+msgstr ""
+
+#: .\app\views\my_home\register.py:113 .\applancement\views\register.py:103
+msgid "Thanks again for signing up."
+msgstr ""
+
+#: .\app\views\my_home\register.py:114
+msgid ""
+"We sincerely hope that you will appreciate this new and innovative "
+"international social network, for which the operative word is “sharing”\n"
+"To validate your registration, click on the following link:\n"
+"{}{}"
+msgstr ""
+
+#: .\app\views\my_home\register.py:127
+msgid "Thanks for signing up!"
+msgstr ""
+
+#: .\app\views\my_home\register.py:128
+msgid "An email confirmation has been sent to you."
+msgstr ""
+
+#: .\app\views\my_home\register.py:129
+msgid ""
+"Please check your mailbox in order to activate your account, via the link "
+"provided, and start the adventure!"
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:69
+#: .\app\views\my_home\remarks_and_testimonies.py:118
+msgid "Dear Member,"
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:71
+msgid "Thanks for your email. We acknowledge receipt of your message."
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:73
+msgid ""
+"Rest assured that your request is being dealt with,and that you will receive "
+"a reply very shortly"
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:75
+msgid "Please feel free to contact us should you have any further questions."
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:78
+#: .\app\views\my_home\remarks_and_testimonies.py:127
+msgid "Kind regards, "
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:79
+#: .\app\views\my_home\remarks_and_testimonies.py:128
+msgid "Cogofly Team. "
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:120
+msgid "Thanks for your testimony, we appreciate."
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:122
+msgid "It will be, or not, very soon accepted by the moderator."
+msgstr ""
+
+#: .\app\views\my_home\remarks_and_testimonies.py:123
+msgid ""
+"Thanks again and don't forget to talk about www.cogofly.com around you... "
+"One Cogoflyer could be close to you."
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:51
+#: .\templates\my_home\travels\base.html:4
+msgid "My travels"
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:109
+msgid "Can't start in the past..."
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:110
+msgid "...and end in the future!"
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:117
+msgid "Start is after date end..."
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:118
+msgid "...End is before date starts"
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:133
+msgid "Your travel has been removed"
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:137
+msgid "Travel is mandatory"
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:159
+msgid "Your travel has been updated!"
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:174
+msgid "Your travel has been added!"
+msgstr ""
+
+#: .\app\views\my_home\travels\index.py:176
+msgid "Operation successful!"
+msgstr ""
+
+#: .\app\views\my_home\travels\search.py:79
+msgid "Bad dates"
+msgstr ""
+
+#: .\app\views\my_home\travels\search.py:198
+msgid "Nothing found"
+msgstr ""
+
+#: .\app\views\my_home\travels\search.py:250
+msgid "Results matching with your criterias found: <b>{}</b>"
+msgstr ""
+
+#: .\app\views\static\about.py:14
+msgid "About Cogofly"
+msgstr ""
+
+#: .\app\views\static\about.py:16
+msgid ""
+"The main aim of this page is to explain the Cogofly concept.The brand "
+"Cogofly, name and logo, came to light thanks to the human values that this "
+"concept wishes to get across and maintain moving forward."
+msgstr ""
+
+#: .\app\views\static\about.py:21
+msgid ""
+"This brand is the result of a worldwide issue: <strong>There are far too "
+"many people who travel alone!</strong>"
+msgstr ""
+
+#: .\app\views\static\about.py:24
+msgid "The concept:"
+msgstr ""
+
+#: .\app\views\static\about.py:26
+msgid ""
+"The idea came to light after several professional and private trips I have "
+"been able to do over the years..."
+msgstr ""
+
+#: .\app\views\static\about.py:29
+msgid ""
+"<strong>This social network website is a worldwide concept which will help "
+"to avoid travelling, spending a weekend, make a business trip, do some rides "
+"(cultural, sport, education, etc...), or just going on an outing, ALONE...if "
+"someone just feel ALONE, as well and for any reasons, this website is then "
+"the good one !</strong>"
+msgstr ""
+
+#: .\app\views\static\about.py:36
+msgid ""
+"This situation, unfortunately, doesn't have \"borders\"...It can touch a "
+"person, a group of person, couples, families and also all socio-professional "
+"categories. "
+msgstr ""
+
+#: .\app\views\static\about.py:40
+msgid ""
+"<strong>Cogofly's primary goal is to help people to avoid travelling alone "
+"any more. The second one is simply to help them to no longer be alone.</"
+"strong>"
+msgstr ""
+
+#: .\app\views\static\about.py:44
+msgid ""
+"It also naturally deals with the following notion:<strong>: \"Who has never "
+"felt like they're always well surrounded, but ended up feeling rather alone ?"
+"</strong>"
+msgstr ""
+
+#: .\app\views\static\about.py:47
+msgid "The brand: name + logo"
+msgstr ""
+
+#: .\app\views\static\about.py:49
+msgid ""
+"It was of paramount importance to find a site name which was both catchy and "
+"easy to remember for all members, plus anyone else reading this page "
+"(verbally and visually)."
+msgstr ""
+
+#: .\app\views\static\about.py:53
+msgid "<strong>It was therefore absolutely necessary to find:</strong>"
+msgstr ""
+
+#: .\app\views\static\about.py:56
+msgid ""
+"A short name, easy to pronounce and remember (Facebook, Google, Twitter, "
+"Airbnb, Viadeo, etc...)."
+msgstr ""
+
+#: .\app\views\static\about.py:59
+msgid "A simple, clear and visual logo."
+msgstr ""
+
+#: .\app\views\static\about.py:61
+msgid "Name:"
+msgstr ""
+
+#: .\app\views\static\about.py:63
+msgid ""
+"In order for this mission to succeed, it was important to keep certain ideas "
+"and \"basic\" words in mind, such as:"
+msgstr ""
+
+#: .\app\views\static\about.py:66
+msgid "Sharing: co-travelling, car-sharing..."
+msgstr ""
+
+#: .\app\views\static\about.py:68
+msgid "Going out / Being on the move: trips, excursions, days/nights out..."
+msgstr ""
+
+#: .\app\views\static\about.py:71
+msgid "Travelling: going away, heading off, jetting off..."
+msgstr ""
+
+#: .\app\views\static\about.py:73
+msgid ""
+"<strong>CO-GO-FLY</strong>: The name seemed so <strong>OBVIOUS</strong>!"
+msgstr ""
+
+#: .\app\views\static\about.py:76
+msgid ""
+"<strong>And so Cogofly was born, its domain name reserved on Monday 28 "
+"September 2015 and its trademark protected with INPI</strong>!"
+msgstr ""
+
+#: .\app\views\static\about.py:81
+msgid "Logo:"
+msgstr ""
+
+#: .\app\views\static\about.py:83
+msgid ""
+"<strong>In order to complete this mission, it was important to highlight:</"
+"strong>"
+msgstr ""
+
+#: .\app\views\static\about.py:86
+msgid ""
+"The \"Co\" concept, which encapsulates the site's main focus: Think "
+"\"together\", Think \"Co\" and Take Off!"
+msgstr ""
+
+#: .\app\views\static\about.py:89
+msgid ""
+"The infinity sign, ∞, which resembles Co...evoking the infinite "
+"possibilities that the site will bring with its official launch on "
+"21/06/2016."
+msgstr ""
+
+#: .\app\views\static\about.py:93
+msgid ""
+"The \"smile\" situated under the name, more precisely under the \"Gofly\" "
+"part, and forming a loop around \"Co\"."
+msgstr ""
+
+#: .\app\views\static\about.py:96
+msgid "A \"smile\" which also evokes the idea of an open and accessible world."
+msgstr ""
+
+#: .\app\views\static\about.py:99
+msgid ""
+"The separation between the 2 semi-circles is intentional, calling to mind "
+"the concept of Yin & Yang, and further eliciting the need to travel "
+"together..."
+msgstr ""
+
+#: .\app\views\static\about.py:103
+msgid "A slightly tilted circle in order to express the idea of movement"
+msgstr ""
+
+#: .\app\views\static\blog.py:30
+msgid "Cogofly - Blog"
+msgstr ""
+
+#: .\app\views\static\blog.py:32
+msgid ""
+"If you require any more information or have any questions, please feel free "
+"to contact us by email by clicking <a href=\"mailto:cogofly@gmail.com\" "
+"target=\"_blank\">here </a>"
+msgstr ""
+
+#: .\app\views\static\contact_us.py:14
+msgid "Cogofly - Contact us"
+msgstr ""
+
+#: .\app\views\static\contact_us.py:16
+#: .\applancement\views\terms_and_conditions.py:16
+msgid ""
+"If you require any more information or have any questions about our Terms "
+"and Conditions, please feel free to contact us by email by clicking <a href="
+"\"mailto:cogofly@gmail.com\" target=\"_blank\">here </a>"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:14 .\templates\my_home\base.html:109
+msgid "Cogofly - Privacy policy"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:16
+msgid ""
+"Data protection is of the utmost importance to<strong>COGOFLY</strong> "
+"(right after \"<strong>COGOFLY</strong>\"). The Privacy Policy in place "
+"supplements the Terms and Conditions of the website www.<strong>COGOFLY</"
+"strong>.com (referred to hereafter as \"the Website\"), governing the "
+"relationship between the user and <strong>COGOFLY</strong>. This Privacy "
+"Policy applies to all services provided on the Website. The French version "
+"of this Privacy Policy shall prevail over any other version. The user can "
+"contact <strong>COGOFLY</strong> by the following email: <strong>COGOFLY</"
+"strong>@gmail.com. By registering on the Website, the user consents to this "
+"Privacy Policy."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:30
+msgid "1. Collection of personal data:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:32
+msgid ""
+"<strong>COGOFLY</strong> collects, processes, and uses personal data about "
+"the users in accordance with French and Europe laws and statutes on data "
+"protection. This collection has been declared to the CNIL under number "
+"1822236v0. <strong>COGOFLY</strong> uses personal data in the exclusive goal "
+"of providing the user with the services described on the Website and in the "
+"Terms and Conditions. <strong>COGOFLY</strong> will never transfer Personal "
+"Data to third parties without the user's consent. The user has a right of "
+"access, rectification and opposition on his/her personal data. To exercise "
+"those rights, the user shall contact <strong>COGOFLY</strong> by the contact "
+"email."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:45
+msgid "2. Registration:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:47
+msgid ""
+"In order to become a user of the Website, it is necessary to first create an "
+"account on the Website. To create an account, the user is required to "
+"provide the following mandatory contact information:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:52
+msgid ""
+"For a \"solo\" account: email, password or social network account such as "
+"Facebook, Twitter, Instagram, Pinterest, LinkedIn, Viadeo, Google +, family "
+"name, first name, country and city of residence, country and city of birth, "
+"gender, date of birth, at least one place the user wishes to visit."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:58
+msgid ""
+"For a group account: same information as for a \"solo\" account, but "
+"concerning at least two users (except for the users who are already "
+"registered in the Website)."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:61
+msgid ""
+"For a couple account: same information as for a \"solo\" account, but "
+"concerning both users of the couple (except if the two users who are already "
+"registered in theWebsite)."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:65
+msgid ""
+"For a family account: same information as for a \"solo\" account, but "
+"concerning all the users of the Family (except for the users who are already "
+"registered in the Website)."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:70
+msgid "3. Profile Information and contents:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:72
+msgid ""
+"Once registered, the user may provide other optional pieces of information "
+"(profession, diplomas, languages, hobbies, and so on...). The user can also "
+"publish or post different contents on the Website. These pieces of "
+"information are collected by <strong>COGOFLY</strong> to provide the user "
+"with better services and more confidence."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:80
+msgid "4. Information about the user's contacts:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:82
+msgid ""
+"If the user chooses to invite other people to join his entity, he/she shall "
+"enter the last name, first name, and email addresses of the invitees, or "
+"just their email address and potentially a phone number, depending on the "
+"data required by the invitation. This data is used only to send the "
+"invitation email and other reminders. <strong>COGOFLY</strong> stores this "
+"information to send the invitation email and to register a contact connexion "
+"if the user's invitation is accepted."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:92
+msgid ""
+"All information entered or uploaded about contacts is considered personal "
+"data for the application of this Privacy Policy."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:96
+msgid "5. Cookies:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:98
+msgid ""
+"<strong>COGOFLY</strong> uses cookies to identify the user during the course "
+"of his/her session and to recognise him/her as a user when he/she returns to "
+"the Website using the same computer and web browser. A cookie is a file "
+"stored on the user's computer tied to information about the user. "
+"<strong>COGOFLY</strong> uses session ID cookies to confirm that the user is "
+"logged in. These cookies terminate once the user closes the browser. By "
+"default, <strong>COGOFLY</strong> uses persistent cookies that store the "
+"user's login ID (but not the password) to make it easier for the user to log "
+"in when he/she comes back to the Website. These cookies will then store part "
+"of the login data in encrypted form. The user can remove or block these "
+"cookies using the settings in the browser if he/she wants to disable this "
+"convenience feature. Unfortunately, if the browser settings do not allow "
+"cookies, the user shall systematically give his user name and password to "
+"log on."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:117
+msgid ""
+"<strong>COGOFLY</strong> also receives the IP address of the user's "
+"computer, the computer operating system and type of web browser he/she is "
+"using, as well as the name of the user's ISP."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:122
+msgid ""
+"This data is saved in a log file and will be stored by. The information is "
+"used in anonymous form to analyse overall trends to help <strong>COGOFLY</"
+"strong> improve its service, e.g., <strong>COGOFLY</strong> may analyse on "
+"which days, at which time and when the Website are particularly frequented. "
+"The linkage between the user's IP address and his/her personally "
+"identifiable information is never shared with any third party without the "
+"user's permission except when required by law. <strong>COGOFLY</strong> "
+"reserves the right to review the log files from the last known IP address of "
+"the user where <strong>COGOFLY</strong> has reasonable cause to believe that "
+"the user is using the Website in breach of the Terms and Conditions or the "
+"applicable legislation. In doing this, <strong>COGOFLY</strong> protects "
+"other users, the safety of its user's data, as well as the Website and the "
+"services. Like the information the user enters at registration or in his/her "
+"profile, cookie and associated log file data is used to customise the use of "
+"the Website and to help the user to not type his user name and password "
+"again. By using the Website and/or registering with the Website, the user "
+"fully accepts the use of the above mentioned cookies and log files."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:147
+msgid "6. Viewable data:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:149
+msgid ""
+"When the user registers in the Website, he/she may choose by whom his/her "
+"profile information are viewable. Three choices are then available: profile "
+"Information can be viewable either by everybody or solely by the user's "
+"contacts/friends or solely by the user's himself/herself. The user may "
+"modify his/her choice at any time in the settings menu. However, the profile "
+"picture will always be viewable by everybody. This picture will be blurred "
+"when the profiles research succeeds, <strong>COGOFLY</strong> wishing to be "
+"clearly different from a dating website. If the user makes no choice when "
+"registering, the following rules apply by default:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:162
+msgid ""
+"Viewable by everybody: family name, first name, country/city of residence, "
+"country/city of birth, gender, date of birth, scholarship/diplomas, schools/"
+"universities, former country/city of residence, languages, current "
+"profession, current employer, former employers, types of licences, zodiacal "
+"sign, what the User has already visited/done, what the user wishes to visit/"
+"do, interests, hobbies, self-description, smoker, number of children, "
+"statute."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:171
+msgid "Viewable solely by the user: email address."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:173
+msgid ""
+"7. Sharing information with other users of <strong>COGOFLY</strong> or third "
+"parties:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:176
+msgid ""
+"Profile information is only available to other users of <strong>COGOFLY</"
+"strong> depending on the user's chosen individual privacy settings. Neither "
+"third parties (meaning not registered users) nor searching engines (eg : "
+"Google, Bing, Yahoo, etc…) have access to the user's profile information, "
+"contents and personal data. The user acknowledges that no security measures "
+"are perfect and that the user's personal data may become publicly available, "
+"in case of a website hacking for example, despite the efforts of "
+"<strong>COGOFLY</strong> to maintain security of the Website. "
+"<strong>COGOFLY</strong> cannot control the actions of other users with whom "
+"the user may shares data and information. Therefore, <strong>COGOFLY</"
+"strong> does not guarantee that personal data will not be viewed by "
+"unauthorised persons. <strong>COGOFLY</strong> is not responsible for "
+"circumvention of any privacy settings or security measures contained on the "
+"Website."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:195
+msgid ""
+"The user also acknowledges that, even after removal, copies of personal data "
+"may remain viewable in cached and archived pages."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:199
+msgid "8. Emails, and Notifications to users:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:201
+msgid ""
+"<strong>COGOFLY</strong> regularly sends out notification messages and "
+"emails to all users of <strong>COGOFLY</strong>. This communication aims at "
+"informing the user about new features or events related to the Website, to "
+"received emails, to added friends, to \"likes\", and so on…<strong>COGOFLY</"
+"strong> may present new users of <strong>COGOFLY</strong> to the user. It "
+"may also be the case that <strong>COGOFLY</strong> presents the user as a "
+"possible contact to other users of <strong>COGOFLY</strong>. Finally, "
+"<strong>COGOFLY</strong> may inform the user about other users of "
+"<strong>COGOFLY</strong> who have visited the user's profile or vice versa, "
+"i.e., the user may be one of those users with regard to another user of "
+"<strong>COGOFLY</strong> whose profile the user has visited. Generally, the "
+"user may opt out of such notifications through his/her individual personal "
+"settings, though <strong>COGOFLY</strong> reserves the right to send the "
+"user notices about his/her account."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:222
+msgid "9. Forwarding information to third parties:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:224
+msgid ""
+"<strong>COGOFLY</strong> does not forward the user's personal data, his/her "
+"contents, or other information to third parties without the user's consent, "
+"except where <strong>COGOFLY</strong> believes such sharing is either 1) "
+"necessary to use the Website or, 2) legally required or, 3) permitted by the "
+"user. For example, <strong>COGOFLY</strong> may forward personal data to "
+"service providers, to its partners or sponsors, to help <strong>COGOFLY</"
+"strong> offer a better service, a better access to and a better use of the "
+"Website as a whole."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:235
+msgid ""
+"<strong>COGOFLY</strong> may be required to disclose personal data by legal "
+"requests, such as court orders, in compliance with applicable laws and "
+"regulations. Additionally, <strong>COGOFLY</strong> may share information "
+"when <strong>COGOFLY</strong> believes it is necessary to comply with the "
+"law, to protect the interests or property of <strong>COGOFLY</strong>, to "
+"prevent fraud or other illegal activity perpetrated through the Website or "
+"using the <strong>COGOFLY</strong> name, or to prevent imminent damage. This "
+"may include sharing information with other companies, lawyers, government "
+"agencies. By using the Website or registering in the Website, the user "
+"allows <strong>COGOFLY</strong> to process and use his/her personal data for "
+"advertising or marketing purposes of partners of <strong>COGOFLY</strong> "
+"via the Website. Particularly, Personal Data may be used in order to tailor "
+"the advertisement presented to the user to his/her specific interests."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:254
+msgid "10. Miscellaneous:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:256
+msgid "10.1. Under Age:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:258
+msgid ""
+"Minors are not eligible to use the Website and are therefore not allowed to "
+"register and submit any personal information to <strong>COGOFLY</strong>. "
+"Parents and legal guardians are responsible for the protection of their "
+"children's privacy."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:264
+msgid "10.2. Links:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:266
+msgid ""
+"The Website may contain links to other websites. <strong>COGOFLY</strong> is "
+"not responsible for the privacy practices of other websites. "
+"<strong>COGOFLY</strong> encourages the User to be aware when he/she leaves "
+"the Website to read the privacy statements of each and every website that "
+"collects personally identifiable information. This Privacy Policy applies "
+"solely to information collected by <strong>COGOFLY</strong>."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:275
+msgid "11. Changing or removing information:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:277
+msgid ""
+"The user may control most personal information via the profile editing tools "
+"of his/her profile on the Website. The user may modify or delete any of his/"
+"her profile information except the mandatory information required during the "
+"registration process at any time by logging into his/her account. "
+"Information will be updated immediately, subject to have saved it. Users who "
+"wish to deactivate their account with <strong>COGOFLY</strong> should act as "
+"mentioned in article Deactivation or deletion of an account of the Terms and "
+"Conditions. In this case, <strong>COGOFLY</strong> will remove the user's "
+"name and other personally identifiable information from publicly viewable "
+"data. However, <strong>COGOFLY</strong> may retain certain data contributed "
+"by the user if it may be necessary to prevent fraud or future abuse, or for "
+"legitimate business purposes, such as statistical analysis of non-personally-"
+"identifiable data, or if required by law. All retained data will continue to "
+"be subject to the terms of the Privacy Policy that the user has previously "
+"agreed to. Where the user makes use of the communication features of the "
+"service to share information with other users of <strong>COGOFLY</strong>, "
+"however, (e.g., sending a personal message to another user of "
+"<strong>COGOFLY</strong>) the user generally cannot remove such "
+"communications."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:304
+msgid "12. Litigation:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:306
+msgid ""
+"Any dispute arising from the use of the Website is subject to this Privacy "
+"Policy and to the Terms and Conditions, including limitation of liability."
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:310
+msgid "13. Modification of Privacy Policy:"
+msgstr ""
+
+#: .\app\views\static\privacy_policy.py:312
+msgid ""
+"<strong>COGOFLY</strong> reserves the right to amend this Privacy Policy at "
+"any time. <strong>COGOFLY</strong> shall give due notice of any amendments "
+"of this Privacy Policy to the user via the user's email address or by "
+"placing a notice in the user's personal inbox on the Website."
+msgstr ""
+
+#: .\app\views\static\testimonies.py:20
+msgid "Cogofly - Testimonies"
+msgstr ""
+
+#: .\app\views\static\testimonies.py:22
+msgid "Olivier Foulon:"
+msgstr ""
+
+#: .\app\views\static\testimonies.py:24
+msgid ""
+"\"Having had the chance to work together with FRANCK on several projects, I "
+"have had the opportunity to accompany him on several business trips; he is "
+"the kind of guy you will never forget, always willing to provide assistance "
+"to all kinds of people. I believe it is part of his genetic profile to be on "
+"Earth, help people and make them happy, in both small and great ways. I "
+"believe his site is part of this process and constitutes a real inner part "
+"of his personality; almost as if it were the logical conclusion to a "
+"personal ambition dedicated to fulfilling everybody's needs and, more "
+"precisely, passion for travelling, and the embedded necessity for everybody "
+"to interchange."
+msgstr ""
+
+#: .\app\views\static\testimonies.py:38
+msgid "Michel Wauthier:"
+msgstr ""
+
+#: .\app\views\static\testimonies.py:40
+msgid ""
+"\"I have known Franck for quite a while now. He has a unique way of meeting "
+"people, striking up relationships, genuine and sincere ones, and is very "
+"loyal when it comes to friendship. Always on the move, dynamic, full of new "
+"ideas, with a real entrepreneurial spirit, he has shown courage and "
+"determination by putting everything he has into a project in which he "
+"wholeheartedly believes; a project with the goal of bringing people closer "
+"together, and getting them to meet up with each other. A project which, upon "
+"reflection, resembles him a great deal; and it is for this reason that it "
+"has to work. And not just for him, but for those whom it will help to \"co-"
+"go-fly\": new faces for new trips and places."
+msgstr ""
+
+#: .\app\views\static\testimonies.py:54
+msgid "Benjamin Mallows:"
+msgstr ""
+
+#: .\app\views\static\testimonies.py:56
+msgid ""
+"\"I've known Franck for several years now and his will to succeed, drive and "
+"motivation are simply second to none. It's a real pleasure to work with "
+"people like Franck because you always have that peace of mind, safe in the "
+"knowledge that results are guaranteed. Franck is a loyal and trustworthy "
+"colleague and friend who, I have no doubt about it, has the profile and all "
+"the prerequisites to be the very best. His project is a fascinating one and "
+"I'm very much looking forward to seeing all of his hard work pay off.\""
+msgstr ""
+
+#: .\app\views\static\testimonies.py:68
+msgid "Florent Portes:"
+msgstr ""
+
+#: .\app\views\static\testimonies.py:70
+msgid ""
+"\"Franck is the designer and creator of this website, he asked me to help "
+"him for the development, I was motivated by this idea to find a solution for "
+"all these people that don’t want to travel alone, indeed, times are "
+"difficult these days, for all, economic crisis, current situation, terrorism "
+"but the fact you can find hope despite all these bad things happening is "
+"first of all a noble idea and to take a stand in this world, and to see few "
+"persons motivated to develop this project, this is a really creative and "
+"innovative idea, to allow people that don’t know each other, to meet, travel "
+"and the more you get to know someone, the closer you feel to them, and these "
+"friendships will last, because love is stronger than all things, and we need "
+"to defend this love in this chaotic world today. Franck is a committed "
+"person, I have only known him for a few years but what struck me is his "
+"strength of conviction, close to stubbornness but to do good, and to seek "
+"quality, what struck me again is his motivation, he refuses to fail, I am "
+"motivated to work with him to see these qualities and concepts in him, his "
+"desire to succeed and to bring forth his vision, because it is with small "
+"and simple things that great things are achieved.\""
+msgstr ""
+
+#: .\app\views\static\the_team.py:14
+msgid "Cogofly - The team"
+msgstr ""
+
+#: .\app\views\static\the_team.py:15
+msgid "Who are we?"
+msgstr ""
+
+#: .\app\views\static\the_team.py:17
+msgid ""
+"<strong>COGOFLY</strong> was founded by Mr. Franck Lagathu, born on 21 June "
+"1973 in Marseille, France."
+msgstr ""
+
+#: .\app\views\static\the_team.py:20
+msgid ""
+"Commercial Support Manager at Airbus Helicopters, and former Sales Manager "
+"in the Estate Agents sector, the launch of this new site marks the start, in "
+"parallel, of a new and passionate adventure. Whilst I have a great team "
+"supporting me, as the main player it is important to talk about my own "
+"diverse experiences in order to explain how the idea of launching such a "
+"concept came about."
+msgstr ""
+
+#: .\app\views\static\the_team.py:29
+msgid ""
+"The first page written, or rather \"scribbled\", during the summer of 2006 "
+"highlighted the need for a concept which would later become part of the "
+"<strong>COGOFLY</strong> adventure. It was indeed the result of a simple "
+"observation: <strong>There are far too many people who travel alone!</strong>"
+msgstr ""
+
+#: .\app\views\static\the_team.py:36
+msgid ""
+"At the time, with this worldwide phenomenon in mind, my site was leaning "
+"towards a name that I would later deem to be overly \"pessimistic\": "
+"<strong>Never Alone!</strong>"
+msgstr ""
+
+#: .\app\views\static\the_team.py:40
+msgid ""
+"The fact that I was based in Munich for 4 years, along with other "
+"commitments, meant that I had to put the project on the backburner for a "
+"while. However I NEVER forgot about it...in fact quite the contrary! I was "
+"constantly writing down different ideas and closely following the global "
+"market. It was clear to me that the entire world was concerned and I felt I "
+"had to do something to address this universal issue."
+msgstr ""
+
+#: .\app\views\static\the_team.py:49
+msgid ""
+"Always there for my family and friends, this desire to always help people "
+"out encouraged me to launch a website which could respond to this "
+"requirement in every way. The testimonies that can be found on this site "
+"only serve to reinforce this temperament which is fully recognized and "
+"appreciated by my entourage; a temperament which, quite naturally, resulted "
+"in a connection between this site and my destiny."
+msgstr ""
+
+#: .\app\views\static\the_team.py:58
+msgid ""
+"Back from Germany in 2010, after a multitude of fruitful and enriching "
+"encounters, I was able to restart work on my ideas which had by now reached "
+"a dozen pages. The 5 years following my return home only served to "
+"strengthen the courage of my convictions, and several useful pages were "
+"added in order to further the project and work towards something more "
+"concrete."
+msgstr ""
+
+#: .\app\views\static\the_team.py:66
+msgid ""
+"2015 has been a crucial year in that I have had the chance to meet a number "
+"of people within the sector, along with web service providers, and have thus "
+"learned a great deal from being in their presence. These contacts, located "
+"via a list given to me by Marseille’s Chamber of Commerce and Industry "
+"(CCI), through their respective remarks and feedback regarding my concept, "
+"have only served to strengthen my desire to proceed with the launch of this "
+"new social network on an international scale."
+msgstr ""
+
+#: .\app\views\static\the_team.py:77
+msgid ""
+"The support of this institution helped me to realize that a number of "
+"additional skills were required, such as legal, financial and HR-related "
+"aspects...as is the case for any newfound company. Thanks to them, I was "
+"able to obtain all of the contacts required in order to set me on the right "
+"path..."
+msgstr ""
+
+#: .\app\views\static\the_team.py:84
+msgid ""
+"All of these encounters resulted in me finding another name, more "
+"internationally orientated, which expressed the idea of taking off..."
+"<strong>Take Off Mate (TOM)</strong> was therefore brought to the table. At "
+"this point I have to say a big thank you to several of my work colleagues "
+"who took the time to motivate me and give me their opinions in order to "
+"ratify each key step of my project."
+msgstr ""
+
+#: .\app\views\static\the_team.py:93
+msgid ""
+"It was with this name that I was able to present it to the Masters students "
+"at the University of Aix-Marseille at Luminy, more precisely to the "
+"<strong>Junior Aix-Marseille company (JAM), presided by Mr Florian DOUAY</"
+"strong> who, with the support of two other contributors, came up with a 43-"
+"page technical specification. It was therefore only normal to choose this "
+"establishment, and the choice was made even more quickly due to the fact "
+"that the students’ were instantly motivated, willing and full of ideas; "
+"fully in line with the ethics of this site."
+msgstr ""
+
+#: .\app\views\static\the_team.py:105
+msgid ""
+"As I turned the pages of the technical specification, it seemed to suit me "
+"more and more, and I felt the need to make the adequate changes in order to "
+"add the finishing touches. The changes carried out helped to form the "
+"foundations of this site."
+msgstr ""
+
+#: .\app\views\static\the_team.py:111
+msgid ""
+"Once the new 50-page version approved, my attention then turned towards "
+"<strong>HQF Development, and its representative Sir Olivier PONS</strong>, "
+"who convinced me to finally take the plunge with this international-scale "
+"project. His reactivity, honest approach throughout our different exchanges, "
+"passion and a general feel-good factor that I got from him, led quite "
+"naturally to <strong>the signing of a development contract on 5 October 2015."
+"</strong>"
+msgstr ""
+
+#: .\app\views\static\the_team.py:121
+msgid ""
+"As indicated in the \"About COGOFLY\" section, <strong>COGOFLY</strong> was "
+"therefore created one week before the signing of the said contract, and the "
+"brand was then deployed on a global scale."
+msgstr ""
+
+#: .\app\views\static\the_team.py:126
+msgid ""
+"<strong>My goal is to make this new social network the reference in terms of "
+"co-trips: \"The LinkedIn/Facebook\" of the Tourism industry. This new "
+"community will then have access to a reliable and intuitive site, and be "
+"able to meet up in total confidence and share common projects and goals.</"
+"strong>"
+msgstr ""
+
+#: .\app\views\static\the_team.py:133
+msgid ""
+"The conclusion of all this, and this adage came to me quite naturally, is "
+"that:"
+msgstr ""
+
+#: .\app\views\static\the_team.py:136
+msgid "<h1>Alone, we think...Together, we get away!</h1>"
+msgstr ""
+
+#: .\applancement\views\register.py:101 .\applancement\views\views.py:59
+msgid "Thanks for registering!"
+msgstr ""
+
+#: .\applancement\views\register.py:104
+msgid ""
+"We sincerely hope that you will appreciate this new and innovative "
+"international social network, for which the operative word is “sharing”"
+msgstr ""
+
+#: .\applancement\views\register.py:107
+msgid "To validate your registration, click on the following link:"
+msgstr ""
+
+#: .\applancement\views\register.py:156
+msgid "<b>Please change your password</b>"
+msgstr ""
+
+#: .\applancement\views\register.py:174
+msgid "Request refused"
+msgstr ""
+
+#: .\applancement\views\register.py:175
+msgid "Password reset is valid for one hour"
+msgstr ""
+
+#: .\applancement\views\register.py:182
+msgid "Already done"
+msgstr ""
+
+#: .\applancement\views\register.py:183
+msgid "You have already activated this account"
+msgstr ""
+
+#: .\applancement\views\register.py:184
+msgid "Please log-in"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:14
+msgid "Cogofly - Terms and Conditions"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:22
+#: .\applancement\views\terms_of_service.py:22
+msgid "Introduction"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:24
+#: .\applancement\views\terms_of_service.py:24
+msgid ""
+"These terms and conditions govern your use of this website;by using this "
+"website, you accept these terms and conditions in full and without "
+"reservation. If you disagree with these terms and conditions or any part of "
+"these terms and conditions, you must not use this website."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:30
+#: .\applancement\views\terms_of_service.py:30
+msgid ""
+"You must be at least 18 [eighteen] years of age to use this website. By "
+"using this website and by agreeing to these terms and conditions, you "
+"warrant and represent that you are at least 18 years of age."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:34
+#: .\applancement\views\terms_of_service.py:34
+msgid "License to use website"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:36
+#: .\applancement\views\terms_of_service.py:36
+msgid ""
+"Unless otherwise stated,<a href=\"/\" target=\"_blank\">www.cogofly.com</"
+"a>and/or its licensors own the intellectual property rights published on "
+"this website and materials used on <a href=\"/\" target=\"_blank\">www."
+"cogofly.com</a>.Subject to the license below, all these intellectual "
+"property rights are reserved."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:44
+#: .\applancement\views\terms_of_service.py:44
+msgid ""
+"You may view, download for caching purposes only,and print pages, files or "
+"other content from the website for your own personal use, subject to the "
+"restrictions set out below and elsewhere in these terms and conditions."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:51
+#: .\applancement\views\terms_of_service.py:51
+msgid "You must not:"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:54
+#: .\applancement\views\terms_of_service.py:54
+msgid ""
+"republish material from this website in neither print nor digital media or "
+"documents (including republication on another website);"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:57
+#: .\applancement\views\terms_of_service.py:57
+msgid "sell, rent or sub-license material from the website;"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:58
+#: .\applancement\views\terms_of_service.py:58
+msgid "show any material from the website in public;"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:59
+#: .\applancement\views\terms_of_service.py:59
+msgid ""
+"reproduce, duplicate, copy or otherwise exploit material on this website for "
+"a commercial purpose;"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:61
+#: .\applancement\views\terms_of_service.py:61
+msgid "edit or otherwise modify any material on the website;"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:62
+#: .\applancement\views\terms_of_service.py:62
+msgid ""
+"redistribute material from this website - except for content specifically "
+"and expressly made available for redistribution; or"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:65
+#: .\applancement\views\terms_of_service.py:65
+msgid ""
+"republish or reproduce any part of this website through the use of iframes "
+"or screenscrapers."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:70
+#: .\applancement\views\terms_of_service.py:70
+msgid ""
+"Where content is specifically made available for redistribution, it may only "
+"be redistributed within your organisation."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:74
+#: .\applancement\views\terms_of_service.py:74
+msgid "Acceptable use"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:76
+#: .\applancement\views\terms_of_service.py:76
+msgid ""
+"You must not use this website in any way that causes, or may cause, damage "
+"to the website or impairment of the availability or accessibility of <a href="
+"\"/\" target=\"_blank\">www.cogofly.com</a> or in any way which is unlawful, "
+"illegal, fraudulent or harmful, or in connection with any unlawful, illegal, "
+"fraudulent or harmful purpose or activity."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:83
+#: .\applancement\views\terms_of_service.py:83
+msgid ""
+"You must not use this website to copy, store, host, transmit, send, use, "
+"publish or distribute any material which consists of (or is linked to) any "
+"spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit or "
+"other malicious computer software."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:88
+#: .\applancement\views\terms_of_service.py:88
+msgid ""
+"You must not conduct any systematic or automated data collection activities "
+"on or in relation to this website without <a href=\"/\" target=\"_blank"
+"\">www.cogofly.com's</a> express written consent. This includes:"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:96
+#: .\applancement\views\terms_of_service.py:96
+msgid "scraping"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:97
+#: .\applancement\views\terms_of_service.py:97
+msgid "data mining"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:98
+#: .\applancement\views\terms_of_service.py:98
+msgid "data extraction"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:99
+#: .\applancement\views\terms_of_service.py:99
+msgid "data harvesting"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:100
+#: .\applancement\views\terms_of_service.py:100
+msgid "\"framing\" (iframes)"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:101
+#: .\applancement\views\terms_of_service.py:101
+msgid "Article \"Spinning\""
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:104
+#: .\applancement\views\terms_of_service.py:104
+msgid ""
+"You must not use this website or any part of it to transmit or send "
+"unsolicited commercial communications."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:107
+#: .\applancement\views\terms_of_service.py:107
+msgid ""
+"You must not use this website for any purposes related to marketing without "
+"the express written consent of <a href=\"/\" target=\"_blank\">www.cogofly."
+"com</a>."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:110
+#: .\applancement\views\terms_of_service.py:110
+msgid "Restricted access"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:112
+#: .\applancement\views\terms_of_service.py:112
+msgid ""
+"Access to certain areas of this website is restricted.<a href=\"/\" target="
+"\"_blank\">www.cogofly.com</a> reserves the right to restrict access to "
+"certain areas of this website, or at our discretion, this entire website.<a "
+"href=\"/\" target=\"_blank\">www.cogofly.com</a> may change or modify this "
+"policy without notice."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:120
+#: .\applancement\views\terms_of_service.py:120
+msgid ""
+"If <a href=\"/\" target=\"_blank\">www.cogofly.com</a>provides you with a "
+"user ID and password to enable you to access restricted areas of this "
+"website or other content or services, you must ensure that the user ID and "
+"password are kept confidential. You alone are responsible for your password "
+"and user ID security."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:127
+#: .\applancement\views\terms_of_service.py:127
+msgid ""
+"<a href=\"/\" target=\"_blank\">www.cogofly.com</a> may disable your user ID "
+"and password at <a href=\"/\" target=\"_blank\">www.cogofly.com's</a> sole "
+"discretion without notice or explanation."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:131
+#: .\applancement\views\terms_of_service.py:131
+msgid "User content"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:133
+#: .\applancement\views\terms_of_service.py:133
+msgid ""
+"In these terms and conditions, \"your user content\"means material "
+"(including without limitation text, images,audio material, video material "
+"and audio-visual material) that you submit to this website, for whatever "
+"purpose."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:138
+#: .\applancement\views\terms_of_service.py:138
+msgid ""
+"You grant to <a href=\"/\" target=\"_blank\">www.cogofly.com</a> a "
+"worldwide, irrevocable, non-exclusive, royalty-free license to use, "
+"reproduce, adapt, publish, translate and distribute your user content in any "
+"existing or future media.  You also grant to <a href=\"/\" target=\"_blank"
+"\">www.cogofly.com</a> the right to sub-license these rights, and the right "
+"to bring an action for infringement of these rights."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:148
+#: .\applancement\views\terms_of_service.py:148
+msgid ""
+"Your user content must not be illegal or unlawful, must not infringe any "
+"third party's legal rights, and must not be capable of giving rise to legal "
+"action whether against you or <a href=\"/\" target=\"_blank\">www.cogofly."
+"com</a> or a third party (in each case under any applicable law)."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:155
+#: .\applancement\views\terms_of_service.py:155
+msgid ""
+"You must not submit any user content to the website that is or has ever been "
+"the subject of any threatened or actual legal proceedings or other similar "
+"complaint."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:159
+#: .\applancement\views\terms_of_service.py:159
+msgid ""
+"<a href=\"/\" target=\"_blank\">www.cogofly.com</a> reserves the right to "
+"edit or remove any material submitted to this website, or stored on the "
+"servers of <a href=\"/\" target=\"_blank\">www.cogofly.com</a>, or hosted or "
+"published upon this website."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:165
+#: .\applancement\views\terms_of_service.py:165
+msgid ""
+"<a href=\"/\" target=\"_blank\">www.cogofly.com's</a> rights under these "
+"terms and conditions in relation to user content,<a href=\"/\" target="
+"\"_blank\">www.cogofly.com</a> does not undertake to monitor the submission "
+"of such content to, or the publication of such content on, this website."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:171
+#: .\applancement\views\terms_of_service.py:171
+msgid "No warranties"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:173
+#: .\applancement\views\terms_of_service.py:173
+msgid ""
+"This website is provided \"as is\" without any representations or "
+"warranties, express or implied.<a href=\"/\" target=\"_blank\">www.cogofly."
+"com</a> makes no representations or warranties in relation to this website "
+"or the information and materials provided on this website."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:180
+#: .\applancement\views\terms_of_service.py:180
+msgid ""
+"Without prejudice to the generality of the foregoing paragraph, <a href=\"/"
+"\" target=\"_blank\">www.cogofly.com</a> does not warrant that:"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:184
+#: .\applancement\views\terms_of_service.py:184
+msgid "this website will be constantly available, or available at all; or"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:187
+#: .\applancement\views\terms_of_service.py:187
+msgid ""
+"the information on this website is complete, true, accurate or non-"
+"misleading."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:190
+#: .\applancement\views\terms_of_service.py:190
+msgid ""
+"Nothing on this website constitutes, or is meant to constitute, advice of "
+"any kind. If you require advice in relation to any legal, financial or "
+"medical matter you should consult an appropriate professional."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:194
+#: .\applancement\views\terms_of_service.py:194
+msgid "Limitations of liability"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:196
+#: .\applancement\views\terms_of_service.py:196
+msgid ""
+"<a href=\"/\" target=\"_blank\">www.cogofly.com</a> will not be liable to "
+"you (whether under the law of contact, the law of torts or otherwise) in "
+"relation to the contents of, or use of, or otherwise in connection with, "
+"this website:"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:201
+#: .\applancement\views\terms_of_service.py:201
+msgid ""
+"to the extent that the website is provided free-of-charge,for any direct "
+"loss;"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:204
+#: .\applancement\views\terms_of_service.py:204
+msgid "for any indirect, special or consequential loss; or"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:206
+#: .\applancement\views\terms_of_service.py:206
+msgid ""
+"for any business losses, loss of revenue, income, profits or anticipated "
+"savings, loss of contracts or business relationships, loss of reputation or "
+"goodwill, or loss or corruption of information or data."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:211
+#: .\applancement\views\terms_of_service.py:211
+msgid ""
+"These limitations of liability apply even if <a href=\"/\" target=\"_blank"
+"\">www.cogofly.com</a> has been expressly advised of the potential loss."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:214
+#: .\applancement\views\terms_of_service.py:214
+msgid "Exceptions"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:216
+#: .\applancement\views\terms_of_service.py:216
+msgid ""
+"Nothing in this website disclaimer will exclude or limit any warranty "
+"implied by law that it would be unlawful to exclude or limit; and nothing in "
+"this website disclaimer will exclude or limit the liability of Cogofly in "
+"respect of any:"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:222
+#: .\applancement\views\terms_of_service.py:222
+msgid ""
+"death or personal injury caused by the negligence of <a href=\"/\" target="
+"\"_blank\">www.cogofly.com</a> or its agents, employees or shareholders/"
+"owners;"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:226
+#: .\applancement\views\terms_of_service.py:226
+msgid ""
+"fraud or fraudulent misrepresentation on the part of <a href=\"/\" target="
+"\"_blank\">www.cogofly.com</a>; or"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:229
+#: .\applancement\views\terms_of_service.py:229
+msgid ""
+"matter which it would be illegal or unlawful for <a href=\"/\" target="
+"\"_blank\">www.cogofly.com</a> to exclude or limit, or to attempt or purport "
+"to exclude or limit, its liability."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:233
+#: .\applancement\views\terms_of_service.py:233
+msgid "Reasonableness"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:235
+#: .\applancement\views\terms_of_service.py:235
+msgid ""
+"By using this website, you agree that the exclusions and limitations of "
+"liability set out in this website disclaimer are reasonable."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:239
+#: .\applancement\views\terms_of_service.py:239
+msgid "If you do not think they are reasonable, you must not use this website."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:241
+#: .\applancement\views\terms_of_service.py:241
+msgid "Other parties"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:243
+#: .\applancement\views\terms_of_service.py:243
+msgid ""
+"You accept that, as a limited liability entity,<a href=\"/\" target=\"_blank"
+"\">www.cogofly.com</a> has an interest in limiting the personal liability of "
+"its officers and employees. You agree that you will not bring any claim "
+"personally against <a href=\"/\" target=\"_blank\">www.cogofly.com's</a> "
+"officers or employees in respect of any losses you suffer in connection with "
+"the website."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:252
+#: .\applancement\views\terms_of_service.py:252
+msgid ""
+"Without prejudice to the foregoing paragraph, you agree that the limitations "
+"of warranties and liability set out in this website disclaimer will protect "
+"<a href=\"/\" target=\"_blank\">www.cogofly.com's</a> officers, employees, "
+"agents, subsidiaries, successors, assigns and sub-contractors as well as <a "
+"href=\"/\" target=\"_blank\">www.cogofly.com</a>."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:260
+#: .\applancement\views\terms_of_service.py:260
+msgid "Unenforceable provisions"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:262
+#: .\applancement\views\terms_of_service.py:262
+msgid ""
+"If any provision of this website disclaimer is, or is found to be, "
+"unenforceable under applicable law, that will not affect the enforceability "
+"of the other provisions of this website disclaimer."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:266
+#: .\applancement\views\terms_of_service.py:266
+msgid "Indemnity"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:268
+#: .\applancement\views\terms_of_service.py:268
+msgid ""
+"You hereby indemnify <a href=\"/\" target=\"_blank\">www.cogofly.com</a> and "
+"undertake to keep <a href=\"/\" target=\"_blank\">www.cogofly.com</"
+"a>indemnified against any losses, damages, costs, liabilities and expenses "
+"(including without limitation legal expenses and any amounts paid by <a href="
+"\"/\" target=\"_blank\">www.cogofly.com</a> to a third party in settlement "
+"of a claim or dispute on the advice of <a href=\"/\" target=\"_blank\">www."
+"cogofly.com's</a>legal advisers) incurred or suffered by <a href=\"/\" "
+"target=\"_blank\">www.cogofly.com</a> arising out of any breach by you of "
+"any provision of these terms and conditions, or arising out of any claim "
+"that you have breached any provision of these terms and conditions."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:283
+#: .\applancement\views\terms_of_service.py:283
+msgid "Breaches of these terms and conditions"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:285
+#: .\applancement\views\terms_of_service.py:285
+msgid ""
+"Without prejudice to <a href=\"/\" target=\"_blank\">www.cogofly.com's</a> "
+"other rights under these terms and conditions, if you breach these terms and "
+"conditions in any way, <a href=\"/\" target=\"_blank\">www.cogofly.com</a> "
+"may take such action as <a href=\"/\" target=\"_blank\">www.cogofly.com</a> "
+"deems appropriate to deal with the breach, including suspending your access "
+"to the website, prohibiting you from accessing the website, blocking "
+"computers using your IP address from accessing the website, contacting your "
+"internet service provider to request that they block your access to the "
+"website and/or bringing court proceedings against you."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:298
+#: .\applancement\views\terms_of_service.py:298
+msgid "Variation"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:300
+#: .\applancement\views\terms_of_service.py:300
+msgid ""
+"<a href=\"/\" target=\"_blank\">www.cogofly.com</a> may revise these terms "
+"and conditions from time-to-time. Revised terms and conditions will apply to "
+"the use of this website from the date of the publication of the revised "
+"terms and conditions on this website. Please check this page regularly to "
+"ensure you are familiar with the current version."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:307
+#: .\applancement\views\terms_of_service.py:307
+msgid "Assignment"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:309
+#: .\applancement\views\terms_of_service.py:309
+msgid ""
+"<a href=\"/\" target=\"_blank\">www.cogofly.com</a> may transfer, sub-"
+"contract or otherwise deal with <a href=\"/\" target=\"_blank\">www.cogofly."
+"com's</a> rights and/or obligations under these terms and conditions without "
+"notifying you or obtaining your consent."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:315
+#: .\applancement\views\terms_of_service.py:315
+msgid ""
+"You may not transfer, sub-contract or otherwise deal with your rights and/or "
+"obligations under these terms and conditions."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:318
+#: .\applancement\views\terms_of_service.py:318
+msgid "Severability"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:320
+#: .\applancement\views\terms_of_service.py:320
+msgid ""
+"If a provision of these terms and conditions is determined by any court or "
+"other competent authority to be unlawful and/or unenforceable, the other "
+"provisions will continue in effect. If any unlawful and/or unenforceable "
+"provision would be lawful or enforceable if part of it were deleted, that "
+"part will be deemed to be deleted, and the rest of the provision will "
+"continue in effect."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:327
+#: .\applancement\views\terms_of_service.py:327
+msgid "Entire agreement"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:329
+#: .\applancement\views\terms_of_service.py:329
+msgid ""
+"These terms and conditions, together with <a href=\"/\" target=\"_blank"
+"\">www.cogofly.com's</a> Privacy Policy constitute the entire agreement "
+"between you and <a href=\"/\" target=\"_blank\">www.cogofly.com</a> in "
+"relation to your use of this website, and supersede all previous agreements "
+"in respect of your use of this website."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:336
+#: .\applancement\views\terms_of_service.py:336
+msgid "Law and jurisdiction"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:338
+#: .\applancement\views\terms_of_service.py:338
+msgid ""
+"These terms and conditions will be governed by and construed in accordance "
+"with the laws of Marseille (France), and any disputes relating to these "
+"terms and conditions will be subject to the exclusive jurisdiction of the "
+"courts of Marseille (France)."
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:345
+msgid ""
+"Information Technology must respect human identity, human rights, people’s "
+"private lives and freedom"
+msgstr ""
+
+#: .\applancement\views\terms_and_conditions.py:348
+msgid "We are registered at the CNIL under file no. 1822236"
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:14
+msgid "Cogofly - Terms of service"
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:16
+msgid ""
+"If you require any more information or have any questions about our Terms of "
+"Service, please feel free to contact us by email by clicking <a href="
+"\"mailto:cogofly@gmail.com\" target=\"_blank\">here </a>"
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:344
+msgid "About these website Terms of Service"
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:346
+msgid ""
+"We created these website terms and conditions using the TOS/T&amp;C "
+"generator available from <a href=\"http://www.privacypolicyonline.com/\" "
+"target=\"_blank\">Privacy Policy Online </a>."
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:353
+msgid ""
+"<a href=\"http://www.cogofly.com's\" target=\"_blank\">www.cogofly.com's</"
+"a>registration number is SIREN n°&nbsp;441&nbsp;715&nbsp;612&nbsp;/SIRET n"
+"°441&nbsp;715&nbsp;612&nbsp;00020."
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:360
+msgid ""
+"<a href=\"http://www.cogofly.com\" target=\"_blank\">www.cogofly.com</"
+"a>subscribes to the following code(s) of conduct:<br /><strong>We are "
+"registered at the CNIL under file no. 1822236</strong>"
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:367
+msgid ""
+"<a href=\"http://www.cogofly.com\" target=\"_blank\">www.cogofly.com's</a> "
+"details"
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:370
+msgid ""
+"The full name of <a href=\"http://www.cogofly.com\" target=\"_blank\">www."
+"cogofly.com</a> is Cogofly."
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:375
+msgid ""
+"<a href=\"http://www.cogofly.com\" target=\"_blank\">www.cogofly.com</a> is "
+"registered in Marseille (France) under registration number SIREN n° "
+"441&nbsp;715&nbsp;612 /SIRET n°&nbsp;441&nbsp;715&nbsp;612&nbsp;00020."
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:379
+msgid "OTHER TITLE"
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:381
+msgid ""
+"<a href=\"http://www.privacypolicyonline.com/\"title=\"PrivacyPolicyOnline."
+"com Approved Site\"alt=\"Privacy Policy Online Approved Site"
+"\"><strong>URSSAF PACA n° U13072489971</strong></a>"
+msgstr ""
+
+#: .\applancement\views\terms_of_service.py:386
+msgid ""
+"You can contact <a href=\"http://www.cogofly.com\" target=\"_blank\">www."
+"cogofly.com</a> by email at our email address link at the top of this Terms "
+"of Service document."
+msgstr ""
+
+#: .\applancement\views\views.py:44
+msgid "Thank you for your registration and welcome aboard!"
+msgstr ""
+
+#: .\applancement\views\views.py:45
+msgid ""
+"<p style=\"margin-bottom: -34px;\">Take a few clicks to fill out, confirm "
+"your practical information and continue the adventure.</p>"
+msgstr ""
+
+#: .\applancement\views\views.py:48
+msgid ""
+"<p style=\"margin-bottom: -34px;\"><b>Don’t forget that in order for Cogofly "
+"members to find and notice you via their different searches, you need to add "
+"your travel plans: trips, weekends and days out...</b></p>"
+msgstr ""
+
+#: .\applancement\views\views.py:60
+msgid "You have been successfully registered."
+msgstr ""
+
+#: .\applancement\views\views.py:61
+msgid "Please <strong>change your password</strong>."
+msgstr ""
+
+#: .\applancement\views\views.py:62
+msgid "And then you can complete your profile."
+msgstr ""
+
+#: .\applancement\views\views.py:228
+msgid "Login error: username already exists"
+msgstr ""
+
+#: .\applancement\views\views.py:229
+msgid ""
+"He/she tried to login but username was already taken, so we changed it to: "
+"{}.\n"
+"His/her email is: {}"
+msgstr ""
+
+#: .\applancement\views\views.py:240 .\applancement\views\views.py:250
+msgid "Technical error"
+msgstr ""
+
+#: .\applancement\views\views.py:241
+msgid ""
+"You tried to connect with Facebook or Google, but the mail was already "
+"registered without Facebook or google."
+msgstr ""
+
+#: .\applancement\views\views.py:243
+msgid ""
+"Try to login by entering mail and password below, without using Facebook or "
+"Google"
+msgstr ""
+
+#: .\applancement\views\views.py:251
+msgid "You tried to connect with Facebook or Google."
+msgstr ""
+
+#: .\applancement\views\views.py:252
+msgid "There was a technical error with Facebook or Google."
+msgstr ""
+
+#: .\applancement\views\views.py:253
+msgid "We're sorry for this."
+msgstr ""
+
+#: .\applancement\views\views.py:254
+msgid "Please try again to login."
+msgstr ""
+
+#: .\applancement\views\views.py:370
+msgid "No name"
+msgstr ""
+
+#: .\applancement\views\views.py:371
+msgid "You tried to connect but did'nt precise a name"
+msgstr ""
+
+#: .\applancement\views\views.py:372
+msgid "We're sorry but we need at least an email and a name to go further."
+msgstr ""
+
+#: .\applancement\views\views.py:382
+msgid "No email"
+msgstr ""
+
+#: .\applancement\views\views.py:383
+msgid "You tried to connect but did'nt precise an email"
+msgstr ""
+
+#: .\applancement\views\views.py:384
+msgid "We're sorry but we need at least an email to go further."
+msgstr ""
+
+#: .\cogofly\urls.py:58
+msgid "^launch"
+msgstr ""
+
+#: .\cogofly\urls.py:63
+msgid "legal/about/$"
+msgstr ""
+
+#: .\cogofly\urls.py:65
+msgid "legal/the-team/$"
+msgstr ""
+
+#: .\cogofly\urls.py:67
+msgid "legal/testimonies/$"
+msgstr ""
+
+#: .\cogofly\urls.py:69
+msgid "legal/privacy-policy/$"
+msgstr ""
+
+#: .\cogofly\urls.py:71
+msgid "legal/contact-us/$"
+msgstr ""
+
+#: .\cogofly\urls.py:73
+msgid "blog/$"
+msgstr ""
+
+#: .\cogofly\urls.py:76
+msgid "legal/terms-and-conditions/$"
+msgstr ""
+
+#: .\cogofly\urls.py:78
+msgid "legal/terms-of-service/$"
+msgstr ""
+
+#: .\cogofly\urls.py:83
+msgid "^json$"
+msgstr ""
+
+#: .\cogofly\urls.py:85
+msgid "^json/tags/languages$"
+msgstr ""
+
+#: .\cogofly\urls.py:88 .\cogofly\urls.py:91
+msgid "^json/tags/driving_licences$"
+msgstr ""
+
+#: .\cogofly\urls.py:94
+msgid "^json/tags/diplomas"
+msgstr ""
+
+#: .\cogofly\urls.py:97
+msgid "^json/tags/points_of_interest$"
+msgstr ""
+
+#: .\cogofly\urls.py:100
+msgid "^json/tags/hobbies$"
+msgstr ""
+
+#: .\cogofly\urls.py:103
+msgid "^json/liked/(?P<id_activite>[0-9]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:106
+msgid "^json/liked-profile/(?P<id_profile>[0-9]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:109
+msgid "^json/liked-read/(?P<id_personne_like>[0-9]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:112
+msgid "^json/message-read/(?P<id_message>[0-9]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:115
+msgid "^json/invite/(?P<id_personne>[0-9]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:118
+msgid "^json/relationship-remove/(?P<id_personne>[0-9]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:124
+msgid "^my-home$"
+msgstr ""
+
+#: .\cogofly\urls.py:128
+msgid "^my-home-error$"
+msgstr ""
+
+#: .\cogofly\urls.py:133
+msgid "^my-home/activity-share/$"
+msgstr ""
+
+#: .\cogofly\urls.py:138
+msgid "^my-home/remarks-and-testimonies$"
+msgstr ""
+
+#: .\cogofly\urls.py:143
+msgid "^my-home/contacts$"
+msgstr ""
+
+#: .\cogofly\urls.py:146
+msgid "^my-home/contacts/invite$"
+msgstr ""
+
+#: .\cogofly\urls.py:149
+msgid "^my-home/contact/detail/(?P<contact_id>[0-9]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:152
+msgid "^my-home/contacts/register-validate/(?P<rand_str>[a-zA-Z0-9-_]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:157
+msgid "^my-home/profile/account-desactivated/$"
+msgstr ""
+
+#: .\cogofly\urls.py:160
+msgid "^my-home/profile/account-deleted/$"
+msgstr ""
+
+#: .\cogofly\urls.py:163
+msgid "^my-home/profile-not-complete/$"
+msgstr ""
+
+#: .\cogofly\urls.py:166
+msgid "^my-home/profile/account-reactivate/(?P<rand_str>[a-zA-Z0-9-_]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:169
+msgid "^my-home/profile/password-recover"
+msgstr ""
+
+#: .\cogofly\urls.py:172
+msgid "^my-home/profile/password-change"
+msgstr ""
+
+#: .\cogofly\urls.py:175
+msgid "^my-home/profile/newsletter-set-configuration"
+msgstr ""
+
+#: .\cogofly\urls.py:178
+msgid "^my-home/profile/visibility-change"
+msgstr ""
+
+#: .\cogofly\urls.py:181
+msgid "^my-home/profile/desactivate$"
+msgstr ""
+
+#: .\cogofly\urls.py:185
+msgid "^my-home/profile/edit$"
+msgstr ""
+
+#: .\cogofly\urls.py:189
+msgid "^my-home/profile/delete$"
+msgstr ""
+
+#: .\cogofly\urls.py:193
+msgid "^my-home/travels$"
+msgstr ""
+
+#: .\cogofly\urls.py:196
+msgid "^my-home/search$"
+msgstr ""
+
+#: .\cogofly\urls.py:201
+msgid "^my-home/notifications$"
+msgstr ""
+
+#: .\cogofly\urls.py:204
+msgid "^my-home/conversation/delete/(?P<id_conversation>[0-9]+)/$"
+msgstr ""
+
+#: .\cogofly\urls.py:208
+msgid "^my-home/language$"
+msgstr ""
+
+#: .\cogofly\urls.py:210
+msgid "^my-home/register"
+msgstr ""
+
+#: .\cogofly\urls.py:212
+msgid "^my-home/login$"
+msgstr ""
+
+#: .\cogofly\urls.py:214
+msgid "^my-home/logout$"
+msgstr ""
+
+#: .\cogofly\urls.py:216
+msgid "premium/$"
+msgstr ""
+
+#: .\templates\404.html:2 .\templates\404.html.py:3
+msgid "Page not found"
+msgstr ""
+
+#: .\templates\admin\base_site.html:3
+msgid "Cogofly administration"
+msgstr ""
+
+#: .\templates\admin\change_list.html:58
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: .\templates\admin\change_list.html:67
+msgid "Please correct the error below."
+msgstr ""
+
+#: .\templates\admin\change_list.html:67
+msgid "Please correct the errors below."
+msgstr ""
+
+#: .\templates\admin\change_list.html:78
+msgid "Filter"
+msgstr ""
+
+#: .\templates\applancement\base.html:10 .\templates\beta\base.html:3
+msgid ""
+"Find a trust person to travel together, plan your trip, whether it be going "
+"away for the weekend or just on a day out and give your ambitions a boost"
+msgstr ""
+
+#: .\templates\applancement\base.html:15
+msgid ""
+"Don't want to travel alone ? This site is made for you! Sign up for free and "
+"join the new community."
+msgstr ""
+
+#: .\templates\applancement\base.html:19
+msgid ""
+"Only one rule: never stay alone ! Think together, think 'Co', and take off. "
+"Don't wait to be abroad to meet great persons, anticipate to take advantage "
+"during all your trip and have fun!"
+msgstr ""
+
+#: .\templates\applancement\base.html:24 .\templates\beta\base.html:16
+msgid ""
+"Don't want to travel alone? This site is made for you! Sign up for free, "
+"join the new trust community and let's go together."
+msgstr ""
+
+#: .\templates\applancement\base.html:28 .\templates\beta\base.html:20
+msgid ""
+"Only one rule: never stay alone ! Think together, think 'Co', and take off! "
+"Don't wait to be abroad to meet great persons, anticipate to take advantage "
+"during all your trip and have fun!"
+msgstr ""
+
+#: .\templates\applancement\base.html:34 .\templates\applancement\base.html:40
+#: .\templates\beta\base.html:26
+msgid ""
+"Don't want to travel alone? This site is made for you! Sign up for free and "
+"join the new community."
+msgstr ""
+
+#: .\templates\applancement\base.html:45
+msgid ""
+"Don't want to travel alone? This site is made for you! Sign up for free, "
+"join the new trust community and let's go together.Only one rule: never stay "
+"alone ! Think together, think 'Co', and take off ! Don't wait to be abroad "
+"to meet great persons, anticipate to take advantage during all your trip and "
+"have fun!"
+msgstr ""
+
+#: .\templates\applancement\base.html:53
+msgid ""
+"Don't want to travel alone? This website is for you... Sign up for free and "
+"join the new community."
+msgstr ""
+
+#: .\templates\applancement\base.html:58
+msgid ""
+"Don't want to travel alone? This site is made for you! Sign up for free and "
+"join the new community and let's go together. Only one rule: never stay "
+"alone ! Think together, think 'Co', and take off ! Don't wait to be abroad "
+"to meet great persons, anticipate to take advantage during all your trip and "
+"have fun!"
+msgstr ""
+
+#: .\templates\applancement\index.html:5
+msgid ""
+"Cogofly - Don't want to travel alone? This site is made for you! Sign up for "
+"free and join the new community."
+msgstr ""
+
+#: .\templates\applancement\index.html:49
+msgid "Don't want to travel alone any more?"
+msgstr ""
+
+#: .\templates\applancement\index.html:52
+msgid "... This site is made for you!"
+msgstr ""
+
+#: .\templates\applancement\index.html:57
+msgid ""
+"Don't think twice about travelling any more, whether it be going away for "
+"the weekend or just on a day out, and give your ambitions a boost."
+msgstr ""
+
+#: .\templates\applancement\index.html:61
+msgid ""
+"Find someone you can trust, close to home or abroad, and plan your trips "
+"together…you'll also be able to plan and share weekends and outings."
+msgstr ""
+
+#: .\templates\applancement\index.html:66
+msgid ""
+"Discover a new way of travelling which is safe, practical and financially "
+"advantageous."
+msgstr ""
+
+#: .\templates\applancement\index.html:73
+msgid "Come and surf, very soon, this new wave."
+msgstr ""
+
+#: .\templates\applancement\index.html:76
+msgid ""
+"In order to be notified of the site’s official release, and start the "
+"adventure with us, please register below:"
+msgstr ""
+
+#: .\templates\applancement\index.html:135
+msgid "You were already registered"
+msgstr ""
+
+#: .\templates\applancement\index.html:136
+msgid "Thank you for registering!"
+msgstr ""
+
+#: .\templates\applancement\index.html:139 .\templates\my_home\index.html:34
+#: .\templates\my_home\index.html.py:44 .\templates\my_home\index.html:54
+msgid "Click here"
+msgstr ""
+
+#: .\templates\applancement\index.html:176
+msgid ""
+"We've sent you an<br /> <strong>email for validation!</strong><br /> If you "
+"haven't received it in a few minutes,<br /> please check your spam folder!"
+msgstr ""
+
+#: .\templates\applancement\index.html:183
+msgid "I got it!"
+msgstr ""
+
+#: .\templates\applancement\index.html:220
+msgid ""
+"<strong>Congratulations!</strong><br /><br /> Your registration is confirmed!"
+msgstr ""
+
+#: .\templates\applancement\index.html:226
+msgid "Great!"
+msgstr ""
+
+#: .\templates\applancement\index.html:383 .\templates\my_home\register.html:4
+msgid "Register"
+msgstr ""
+
+#: .\templates\applancement\index.html:399
+#: .\templates\includes\person\add_comment.html:59
+#: .\templates\includes\person\invitation_accept.html:61
+#: .\templates\includes\person\invitation_accept.html:104
+#: .\templates\includes\person\send_message.html:73
+#: .\templates\includes\person\travel.html:51
+#: .\templates\my_home\base.html:1205
+#: .\templates\my_home\password_recover.html:54
+#: .\templates\my_home\profile\tab_profile.html:101
+#: .\templates\my_home\profile\tab_profile.html:164
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:74
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:126
+#: .\templates\my_home\travels\base.html:136
+msgid "Cancel"
+msgstr ""
+
+#: .\templates\applancement\index.html:408
+msgid "Sign up for free"
+msgstr ""
+
+#: .\templates\applancement\index.html:425
+msgid "To love is to share... Go ahead and click on the buttons below:"
+msgstr ""
+
+#: .\templates\applancement\index.html:457 .\templates\my_home\base.html:222
+#: .\templates\my_home\logout.html:4
+msgid "Logout"
+msgstr ""
+
+#: .\templates\applancement\index.html:473
+msgid "Alone we think...Together we get away!"
+msgstr ""
+
+#: .\templates\beta\base.html:8
+msgid "Fed up of travelling alone?"
+msgstr ""
+
+#: .\templates\beta\base.html:11
+msgid ""
+"Break down borders together! Join the international cotraveller's community "
+"and choose with whom you go away"
+msgstr ""
+
+#: .\templates\beta\base.html:111
+msgid "Cogofly - Don't travel alone anymore"
+msgstr ""
+
+#: .\templates\beta\base.html:146
+msgid "Log in"
+msgstr ""
+
+#: .\templates\beta\base.html:181
+msgid "FED UP OF<br/>TRAVELLING ALONE?"
+msgstr ""
+
+#: .\templates\beta\base.html:183
+msgid "Break down borders together!"
+msgstr ""
+
+#: .\templates\beta\base.html:192
+msgid "Concept"
+msgstr ""
+
+#: .\templates\beta\base.html:193 .\templates\beta\base.html.py:334
+msgid "Community"
+msgstr ""
+
+#: .\templates\beta\base.html:194 .\templates\my_home\premium.html:18
+msgid "Advantages"
+msgstr ""
+
+#: .\templates\beta\base.html:195 .\templates\beta\base.html.py:504
+msgid "Observations"
+msgstr ""
+
+#: .\templates\beta\base.html:196 .\templates\beta\base.html.py:578
+msgid "How does it work?"
+msgstr ""
+
+#: .\templates\beta\base.html:205
+msgid ""
+"JOIN THE INTERNATIONAL COTRAVELLER's COMMUNITY AND CHOOSE WITH WHOM YOU GO "
+"AWAY..."
+msgstr ""
+
+#: .\templates\beta\base.html:216 .\templates\beta\base.html.py:633
+msgid "SIGN UP FOR FREE"
+msgstr ""
+
+#: .\templates\beta\base.html:266
+msgid ""
+"Don’t be fazed by travelling any more, whether you want to go away for the "
+"weekend or just on a day out, and give your dreams a boost."
+msgstr ""
+
+#: .\templates\beta\base.html:282
+msgid ""
+"Find someone you can trust, <br/> close to home or abroad, and plan together "
+"your trips... you'll also be able to plan and share weekends and outings."
+msgstr ""
+
+#: .\templates\beta\base.html:299
+msgid ""
+"Discover a new way to get away which is financially advantageous, safe, and "
+"highly practical."
+msgstr ""
+
+#: .\templates\beta\base.html:314
+msgid "Alone we think, together we act!"
+msgstr ""
+
+#: .\templates\beta\base.html:360
+msgid "THE GENESIS OF COTRAVELLERS"
+msgstr ""
+
+#: .\templates\beta\base.html:364
+msgid ""
+"Connect with persons from the 4 corners of the world, share their "
+"experiences and expand your network."
+msgstr ""
+
+#: .\templates\beta\base.html:369
+msgid ""
+"Find cotravellers, with potentially the same socio-professional criteria and "
+"areas of interest, in order to organise your trips in the best possible "
+"conditions."
+msgstr ""
+
+#: .\templates\beta\base.html:375
+msgid ""
+"Think <span style=\"text-decoration: underline;\">Together</span>, think "
+"<span style=\"text-decoration: underline;\">Co</span>, and take off to share "
+"your trips, weekends, and others outings.!"
+msgstr ""
+
+#: .\templates\beta\base.html:392
+msgid "The world of Cogoflyers is born... come and follow their adventures!"
+msgstr ""
+
+#: .\templates\beta\base.html:415
+msgid "ADVANTAGES"
+msgstr ""
+
+#: .\templates\beta\base.html:434
+msgid "Peace of mind"
+msgstr ""
+
+#: .\templates\beta\base.html:438
+msgid "Trips out, at any time, in complete confidence."
+msgstr ""
+
+#: .\templates\beta\base.html:441
+msgid "Break down language barriers."
+msgstr ""
+
+#: .\templates\beta\base.html:444
+msgid ""
+"No more last-minute rushing around. Plan ahead in order to make the most of "
+"your stay."
+msgstr ""
+
+#: .\templates\beta\base.html:454
+msgid "Financial"
+msgstr ""
+
+#: .\templates\beta\base.html:457
+msgid "Share accommodation costs (eg. additional fees for a double room...)."
+msgstr ""
+
+#: .\templates\beta\base.html:458
+msgid "Share additional expenses (taxi, car hire, fuel, tolls...)."
+msgstr ""
+
+#: .\templates\beta\base.html:459
+msgid "More attractive prices for shows, sightseeing, excursions..."
+msgstr ""
+
+#: .\templates\beta\base.html:468
+msgid "Practical"
+msgstr ""
+
+#: .\templates\beta\base.html:471
+msgid ""
+"Join up easily with groups on turnkey trips and excursions or to take part "
+"in diverse activities."
+msgstr ""
+
+#: .\templates\beta\base.html:472
+msgid ""
+"Additional activities: sport, excursions, local and regional sightseeing..."
+msgstr ""
+
+#: .\templates\beta\base.html:473
+msgid ""
+"Find a willing and reliable travel companion…and who knows, maybe a new "
+"friend!"
+msgstr ""
+
+#: .\templates\beta\base.html:485
+msgid "Combine handy tips and fun projects and get away stress-free!"
+msgstr ""
+
+#: .\templates\beta\base.html:527
+msgid "Never alone"
+msgstr ""
+
+#: .\templates\beta\base.html:529
+msgid ""
+"Too many people travel alone and remain so for the duration of their trip."
+msgstr ""
+
+#: .\templates\beta\base.html:533
+msgid ""
+"Divorce, friends changing their minds, expatriate reintegration and, quite "
+"simply, solitude, are often the root-cause of this situation..."
+msgstr ""
+
+#: .\templates\beta\base.html:539
+msgid ""
+"Held back by shyness? Don't know anyone to join groups? Lacking "
+"motivation? ...Plan ahead and step into the unknown together!"
+msgstr ""
+
+#: .\templates\beta\base.html:557
+msgid "You prefer to be alone... this site is also made for you!"
+msgstr ""
+
+#: .\templates\beta\base.html:601
+msgid "1, 2, 3... Go!"
+msgstr ""
+
+#: .\templates\beta\base.html:605
+msgid "1. Fill in all mandatory fields."
+msgstr ""
+
+#: .\templates\beta\base.html:608
+msgid "2. Add your trips(s) : trip, weekend away, day out..."
+msgstr ""
+
+#: .\templates\beta\base.html:612
+msgid ""
+"3. Use the search, basic or advanced, in order to find your travel "
+"companion: <b>THE COGOFLYER!</b>"
+msgstr ""
+
+#: .\templates\beta\base.html:629
+msgid "Convinced and want to try?"
+msgstr ""
+
+#: .\templates\beta\base.html:647 .\templates\my_home\base.html:1226
+msgid "About"
+msgstr ""
+
+#: .\templates\beta\base.html:648 .\templates\my_home\base.html:1227
+msgid "The team"
+msgstr ""
+
+#: .\templates\beta\base.html:649 .\templates\my_home\base.html:1228
+#: .\templates\my_home\remarks_and_testimonies.html:29
+msgid "Testimonies"
+msgstr ""
+
+#: .\templates\beta\base.html:650 .\templates\my_home\base.html:1229
+msgid "Terms &amp; Conditions"
+msgstr ""
+
+#: .\templates\beta\base.html:651 .\templates\my_home\base.html:1230
+msgid "Privacy policy"
+msgstr ""
+
+#: .\templates\beta\base.html:652 .\templates\my_home\base.html:1231
+msgid "Contact us"
+msgstr ""
+
+#: .\templates\beta\base.html:660
+msgid "To love is to share:"
+msgstr ""
+
+#: .\templates\beta\base.html:686
+#, python-format
+msgid ""
+"&copy; Copyright %(date_now)s - <a href=\"%(url_index)s\">Cogofly</a> - All "
+"rights reserved."
+msgstr ""
+
+#: .\templates\includes\form_generic\fields_by_groupno.html:75
+msgid "Show"
+msgstr ""
+
+#: .\templates\includes\form_generic\fields_by_groupno.html:99
+msgid "Ok"
+msgstr ""
+
+#: .\templates\includes\form_generic\form_non_field_errors.html:11
+msgid "Error:"
+msgstr ""
+
+#: .\templates\includes\panel_message.html:18
+#: .\templates\my_home\contacts\index.html:15
+#: .\templates\my_home\error.html:35 .\templates\my_home\index.html:22
+#: .\templates\my_home\index.html.py:23
+msgid "Information"
+msgstr ""
+
+#: .\templates\includes\person\activities.html:23
+#, python-format
+msgid "%(desc)s shared this with you"
+msgstr ""
+
+#: .\templates\includes\person\activities.html:32
+#, python-format
+msgid "You shared this with %(desc)s."
+msgstr ""
+
+#: .\templates\includes\person\add_comment.html:8
+#: .\templates\includes\person\add_comment.html:18
+#: .\templates\includes\person\detail_buttons.html:35
+msgid "Add a comment"
+msgstr ""
+
+#: .\templates\includes\person\add_comment.html:55
+#: .\templates\includes\person\send_message.html:69
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:77
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:129
+msgid "Submit"
+msgstr ""
+
+#: .\templates\includes\person\conversation.html:4
+#: .\templates\my_home\notifications\message_detail.html:24
+msgid "Answer"
+msgstr ""
+
+#: .\templates\includes\person\conversation_message.html:10
+msgid "You wrote:"
+msgstr ""
+
+#: .\templates\includes\person\conversation_message.html:52
+#: .\templates\my_home\notifications\messages_list.html:31
+msgid "wrote:"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:20
+msgid "Man"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:22
+msgid "Woman"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:46
+msgid "Languages:"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:54
+#: .\templates\includes\person\description_complete.html:66
+#: .\templates\includes\person\description_complete.html:78
+#: .\templates\includes\person\description_complete.html:99
+#: .\templates\includes\person\description_complete.html:111
+#: .\templates\includes\person\description_complete.html:146
+#: .\templates\includes\person\description_complete.html:157
+#: .\templates\includes\person\description_complete.html:169
+#: .\templates\includes\person\description_complete.html:199
+#: .\templates\includes\person\description_complete.html:207
+msgid "hidden"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:70
+msgid "Subjects:"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:75
+msgctxt "subjects"
+msgid "not precised"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:120
+msgctxt "job"
+msgid "not precised"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:123
+msgctxt "job"
+msgid "hidden"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:143
+msgctxt "activity sectors"
+msgid "not precised"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:149
+msgid "Hobbies:"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:161
+msgid "Driving licences:"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:183
+msgid "Personality:"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:188
+msgctxt "personality"
+msgid "not precised"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:191
+msgctxt "personality"
+msgid "hidden"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:222
+msgid "Self-description:"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:227
+msgctxt "self_description"
+msgid "not precised"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:230
+msgctxt "self_description"
+msgid "hidden"
+msgstr ""
+
+#: .\templates\includes\person\description_complete.html:238
+msgid "This person didn't want to share his/her informations."
+msgstr ""
+
+#: .\templates\includes\person\detail.html:73
+msgid "See his profile"
+msgstr ""
+
+#: .\templates\includes\person\detail.html:77
+msgid "See her profile"
+msgstr ""
+
+#: .\templates\includes\person\detail.html:89
+msgid "See his travels"
+msgstr ""
+
+#: .\templates\includes\person\detail.html:93
+msgid "See her travels"
+msgstr ""
+
+#: .\templates\includes\person\detail.html:103
+#: .\templates\includes\person\send_message.html:16
+msgid "Send a message"
+msgstr ""
+
+#: .\templates\includes\person\detail.html:117
+msgid "See his contacts"
+msgstr ""
+
+#: .\templates\includes\person\detail.html:121
+msgid "See her contacts"
+msgstr ""
+
+#: .\templates\includes\person\detail_activite_express_yourself.html:14
+#, python-format
+msgid "%(name)s expressed himself"
+msgstr ""
+
+#: .\templates\includes\person\detail_activite_express_yourself.html:18
+#, python-format
+msgid "%(name)s expressed herself"
+msgstr ""
+
+#: .\templates\includes\person\detail_buttons.html:15
+#: .\templates\includes\person\detail_buttons.html:30
+msgid "I like"
+msgstr ""
+
+#: .\templates\includes\person\detail_buttons.html:50
+#: .\templates\includes\person\detail_buttons.html:52
+#: .\templates\includes\person\invite.html:21
+#: .\templates\includes\person\invite.html:23
+#: .\templates\includes\person\invite.html:30
+msgid "Remove this relation"
+msgstr ""
+
+#: .\templates\includes\person\detail_buttons.html:92
+#: .\templates\includes\person\detail_buttons.html:96
+#: .\templates\includes\person\detail_buttons.html:180
+#: .\templates\includes\person\detail_buttons.html:182
+msgid "Share"
+msgstr ""
+
+#: .\templates\includes\person\detail_buttons.html:153
+msgid "Check / uncheck all"
+msgstr ""
+
+#: .\templates\includes\person\detail_comments.html:13
+#: .\templates\includes\person\detail_comments.html:15
+msgid "See all comments"
+msgstr ""
+
+#: .\templates\includes\person\invitation_accept.html:13
+#: .\templates\includes\person\invitation_accept.html:14
+#: .\templates\includes\person\invitation_accept.html:35
+#: .\templates\includes\person\invitation_accept.html:57
+msgid "Accept"
+msgstr ""
+
+#: .\templates\includes\person\invitation_accept.html:18
+#: .\templates\includes\person\invitation_accept.html:19
+#: .\templates\includes\person\invitation_accept.html:100
+msgid "Refuse"
+msgstr ""
+
+#: .\templates\includes\person\invitation_accept.html:43
+#, python-format
+msgid "Accept %(nom)s's invitation?"
+msgstr ""
+
+#: .\templates\includes\person\invitation_accept.html:78
+msgid "Decline"
+msgstr ""
+
+#: .\templates\includes\person\invitation_accept.html:86
+#, python-format
+msgid "Reason to decline %(nom)s's :"
+msgstr ""
+
+#: .\templates\includes\person\invite.html:37
+#, python-format
+msgid "Remove the relation with %(nom)s?"
+msgstr ""
+
+#: .\templates\includes\person\invite.html:69
+#: .\templates\includes\person\invite.html:70
+#: .\templates\includes\person\invite.html:75
+#: .\templates\my_home\base.html:205
+msgid "Invite"
+msgstr ""
+
+#: .\templates\includes\person\invite.html:81
+#, python-format
+msgid "Invite %(nom)s?"
+msgstr ""
+
+#: .\templates\includes\person\send_message.html:23
+msgid "Write below:"
+msgstr ""
+
+#: .\templates\includes\person\travels.html:7
+#: .\templates\my_home\travels\base.html:37
+msgid "Realized"
+msgstr ""
+
+#: .\templates\includes\person\travels.html:12
+#: .\templates\my_home\travels\base.html:42
+msgid "To do"
+msgstr ""
+
+#: .\templates\includes\progression.html:14
+msgid ""
+"Important: it is of paramount importance to add a trip, a weekend or a day "
+"out if you want to appear in the search results and give yourself the "
+"opportunity to meet new cogoflyers!"
+msgstr ""
+
+#: .\templates\includes\progression.html:27
+#, python-format
+msgid "Your profile is %(progression_percent)s%% complete:"
+msgstr ""
+
+#: .\templates\includes\progression.html:44
+msgid ""
+"In order to add to it, or even finalise it, please go to \"Amend your profile"
+"\"."
+msgstr ""
+
+#: .\templates\includes\progression.html:48
+msgid ""
+"The more information you have on your profile, the more people will check it "
+"out. What's more, they'll be more inclined to place their trust in you... "
+"increase your chances of being found straightaway."
+msgstr ""
+
+#: .\templates\includes\progression.html:60
+msgid "Show me more"
+msgstr ""
+
+#: .\templates\includes\progression.html:74
+#, python-format
+msgid ""
+"Once you have filled out the missing optional information, your profile will "
+"be 100%% complete, and therefore viewed by more people:"
+msgstr ""
+
+#: .\templates\my_home\base.html:101
+msgid "This site uses cookies in order to provide,"
+msgstr ""
+
+#: .\templates\my_home\base.html:103
+msgid "protect and optimise Cogofly's services."
+msgstr ""
+
+#: .\templates\my_home\base.html:105
+msgid "By continuing, you agree to our policy covering all of the above."
+msgstr ""
+
+#: .\templates\my_home\base.html:108
+msgid "Find out more here:&nbsp;"
+msgstr ""
+
+#: .\templates\my_home\base.html:114
+msgid "Do not show this message again"
+msgstr ""
+
+#: .\templates\my_home\base.html:173 .\templates\my_home\travels\base.html:8
+msgid "My trips"
+msgstr ""
+
+#: .\templates\my_home\base.html:179 .\templates\my_home\contacts\base.html:5
+msgid "My contacts"
+msgstr ""
+
+#: .\templates\my_home\base.html:197
+msgid "My notices"
+msgstr ""
+
+#: .\templates\my_home\base.html:1237
+msgid "Follow us on:"
+msgstr ""
+
+#: .\templates\my_home\base.html:1285
+#, python-format
+msgid ""
+"&copy; Copyright %(annee)s - <a href=\"%(url_index)s\">Cogofly</a> - All "
+"rights reserved."
+msgstr ""
+
+#: .\templates\my_home\contact_detail.html:97
+msgid "He has no contacts yet."
+msgstr ""
+
+#: .\templates\my_home\contact_detail.html:101
+msgid "She has no contacts yet."
+msgstr ""
+
+#: .\templates\my_home\contacts\index.html:18
+msgid ""
+"<p><b>Welcome</b> to your list of contacts.</p> <ul> <li><p><b>At any time, "
+"you can:</b></p></li> <ul> <li>See their full profiles.</li> <li>Check out "
+"their activities, past and future: trips, weekends and various outings.</li> "
+"<li>Send them a message.</li> </ul> </ul>"
+msgstr ""
+
+#: .\templates\my_home\contacts\index.html:32
+msgid "The Cogofly team"
+msgstr ""
+
+#: .\templates\my_home\contacts\index.html:150
+msgid ""
+"<p>No friends yet...?</p> <p><strong>You have 3 choices:</strong></p> <ul> "
+"<li style=\"margin-bottom: 10px\"> Invite your friends by email through the "
+"icon « Invite » located in the taskbar. </li> <li style=\"margin-bottom: 10px"
+"\"> Check out your search results once you have decided to travel or go away "
+"with another Cogofly member. </li> <li style=\"margin-bottom: 10px\"> Log "
+"out, go down to the bottom of the site's homepage and click on the social "
+"network links. <b>You will then be able to share the information with those "
+"around you and encourage them, and their contacts, to sign up on the site.</"
+"b> </li> </ul> <p>Good luck</p>"
+msgstr ""
+
+#: .\templates\my_home\contacts\invite.html:16
+#: .\templates\my_home\contacts\invite.html:17
+msgid "Invite a friend"
+msgstr ""
+
+#: .\templates\my_home\contacts\invite.html:48
+#: .\templates\my_home\password_recover.html:45
+#: .\templates\my_home\remarks_and_testimonies.html:60
+#: .\templates\my_home\remarks_and_testimonies.html:93
+msgid "Send"
+msgstr ""
+
+#: .\templates\my_home\error.html:11 .\templates\my_home\index.html:6
+#: .\templates\my_home\profile\redirect\account_deleted.html:6
+#: .\templates\my_home\profile\redirect\account_desactivated.html:6
+#: .\templates\my_home\profile\redirect\not_complete.html:6
+msgid "My home"
+msgstr ""
+
+#: .\templates\my_home\error.html:58
+msgid "There's no error for the moment..."
+msgstr ""
+
+#: .\templates\my_home\error.html:67
+msgid "Click here to go back to the main page"
+msgstr ""
+
+#: .\templates\my_home\index.html:20
+msgid "Key steps:"
+msgstr ""
+
+#: .\templates\my_home\index.html:28
+msgid "Search for a cotraveller:"
+msgstr ""
+
+#: .\templates\my_home\index.html:38
+msgid "Add a trip, a weekend or a day:"
+msgstr ""
+
+#: .\templates\my_home\index.html:48
+msgid "Complete your profile:"
+msgstr ""
+
+#: .\templates\my_home\index.html:84
+msgid "The Cogoflyers' dashboard"
+msgstr ""
+
+#: .\templates\my_home\index.html:123
+#: .\templates\my_home\profile\tab_profile.html:88
+#: .\templates\my_home\profile\tab_profile.html:151
+#: .\templates\my_home\profile\tab_tab_newsletter.html:17
+#: .\templates\my_home\profile\tab_tab_password.html:26
+#: .\templates\my_home\profile\tab_tab_visibility.html:45
+#: .\templates\my_home\travels\base.html:135
+msgid "Confirm"
+msgstr ""
+
+#: .\templates\my_home\index.html:129 .\templates\my_home\index.html.py:130
+#: .\templates\my_home\profile\tab_profile.html:94
+#: .\templates\my_home\profile\tab_profile.html:95
+#: .\templates\my_home\profile\tab_profile.html:157
+#: .\templates\my_home\profile\tab_profile.html:158
+#: .\templates\my_home\travels\travel_form_add.html:49
+#: .\templates\my_home\travels\travel_form_add.html:50
+#: .\templates\my_home\travels\travel_form_edit.html:50
+#: .\templates\my_home\travels\travel_form_edit.html:51
+msgid "Updating..."
+msgstr ""
+
+#: .\templates\my_home\index.html:176
+msgid "Cogofly's News"
+msgstr ""
+
+#: .\templates\my_home\index.html:283
+msgid "Cogofly listens!"
+msgstr ""
+
+#: .\templates\my_home\index.html:286
+msgid ""
+"If you have any remarks, notes or suggestions, please click on the link "
+"below."
+msgstr ""
+
+#: .\templates\my_home\index.html:315
+msgid ""
+"Thank you in advance for your trust and support, along with any comments and "
+"suggestions you may have."
+msgstr ""
+
+#: .\templates\my_home\language.html:27
+#: .\templates\my_home\profile\tab_tab_langues.html:7
+msgid "You can change your language here"
+msgstr ""
+
+#: .\templates\my_home\login.html:38
+msgid "Connect in one-clic"
+msgstr ""
+
+#: .\templates\my_home\login.html:47
+msgid "Log in with Facebook"
+msgstr ""
+
+#: .\templates\my_home\login.html:54
+msgid "Log in with Google"
+msgstr ""
+
+#: .\templates\my_home\login.html:63
+msgid "... or type in your login informations"
+msgstr ""
+
+#: .\templates\my_home\login.html:102
+msgid "Not registered yet? Click here"
+msgstr ""
+
+#: .\templates\my_home\login.html:108
+msgid "Password lost? Click here"
+msgstr ""
+
+#: .\templates\my_home\notifications\base.html:26
+msgid "Invitations"
+msgstr ""
+
+#: .\templates\my_home\notifications\messages_list.html:46
+#, python-format
+msgid "To see your messages history, with <b>%(p_fullname)s</b>,"
+msgstr ""
+
+#: .\templates\my_home\notifications\messages_list.html:52
+msgid "click here"
+msgstr ""
+
+#: .\templates\my_home\notifications\messages_list.html:88
+msgid "Delete this conversation"
+msgstr ""
+
+#: .\templates\my_home\notifications\messages_list_delete.html:46
+#, python-format
+msgid "Conversation with %(p_full)s"
+msgstr ""
+
+#: .\templates\my_home\notifications\messages_list_delete.html:53
+msgid "Do you really want to delete the whole conversation?"
+msgstr ""
+
+#: .\templates\my_home\notifications\tab_invitations.html:70
+#: .\templates\my_home\notifications\tab_invitations.v2.html:78
+msgid "You have no invitations yet"
+msgstr ""
+
+#: .\templates\my_home\notifications\tab_invitations.v2.html:26
+msgid "Show invitation"
+msgstr ""
+
+#: .\templates\my_home\notifications\tab_likes.html:50
+#: .\templates\my_home\notifications\tab_likes.v2.html:125
+msgid "You have currently no Likes"
+msgstr ""
+
+#: .\templates\my_home\notifications\tab_likes.v2.html:44
+msgid "Click here to see more"
+msgstr ""
+
+#: .\templates\my_home\notifications\tab_likes.v2.html:104
+msgid "Read!"
+msgstr ""
+
+#: .\templates\my_home\notifications\tab_messages.html:16
+msgid "No new messages"
+msgstr ""
+
+#: .\templates\my_home\notifications\tab_messages.html:103
+msgid "If you want to write a message to your contacts, click here:"
+msgstr ""
+
+#: .\templates\my_home\password_recover.html:5
+msgid "Password recover"
+msgstr ""
+
+#: .\templates\my_home\premium.html:6
+msgid "Premium"
+msgstr ""
+
+#: .\templates\my_home\premium.html:23
+msgid "Offers"
+msgstr ""
+
+#: .\templates\my_home\premium.html:32
+msgid ""
+"<h2>Hello, and welcome to the Premium option.</h2> <p>The latter will only "
+"be available once the final version of the site is launched, along with "
+"various options and other features, from 21st June 2017. </p> <p><b>With the "
+"Premium option, you will be able to:</b></p> <ul> <li>Surf the site ad-free."
+"</li><br/> <li>Organise events (trips / weekends / excursions) based on the "
+"concept: <b>« Let he who loves me follow me...»</b><br/><br/> <ul> "
+"<li><b>Aim: You will choose...</b></li><br/> <ul> <li>Your dates.</li> "
+"<li>Your destinations.</li> <li>The type of event.</li> <li>The number of "
+"people.</li> <li>And, potentially, « human » criteria...</li><br/> </ul> </"
+"ul> <ul> <li><b>Advantages: Choices more effective...</b></li> <ul> <li>You "
+"don’t have to carry out any further searches yourself.</li> <li>You will "
+"receive notifications from those who have signed up.</li> <li>You will be "
+"able to check and, <b>above all</b>, confirm with whom you go away.</li> "
+"<li>More flexibility and non-negligible gain in time.</li> <li>You will be "
+"presented with a veritable choice, adapted to your preferences.</li><br/> </"
+"ul> </ul> </li> <li> <b>Many other options will follow in order to entice "
+"you even more...</b> </li> </ul>"
+msgstr ""
+
+#: .\templates\my_home\premium.html:81
+msgid ""
+"<b>A special offer, with free monthly subscriptions to the Premium option</"
+"b> to be won by invitation, will also be available very soon... <b>will also "
+"be available very soon...</b>"
+msgstr ""
+
+#: .\templates\my_home\profile\profile_summary.html:65
+msgid "See my profile"
+msgstr ""
+
+#: .\templates\my_home\profile\profile_summary.html:72
+#: .\templates\my_home\profile\tab_help.html:10
+msgid "Modify my profile"
+msgstr ""
+
+#: .\templates\my_home\profile\profile_summary.html:78
+msgid "Change my parameters"
+msgstr ""
+
+#: .\templates\my_home\profile\profile_summary.html:84
+msgid "Help"
+msgstr ""
+
+#: .\templates\my_home\profile\redirect\account_deleted.html:25
+msgid "This account is deleted."
+msgstr ""
+
+#: .\templates\my_home\profile\redirect\account_deleted.html:30
+#: .\templates\my_home\profile\redirect\account_desactivated.html:35
+#: .\templates\my_home\profile\redirect\not_complete.html:36
+#, python-format
+msgid ""
+"You still can join the support team by <a href=\"%(url_support)s\">clicking "
+"here.</a>"
+msgstr ""
+
+#: .\templates\my_home\profile\redirect\account_desactivated.html:25
+msgid "Your account has been desactivated"
+msgstr ""
+
+#: .\templates\my_home\profile\redirect\account_desactivated.html:29
+msgid ""
+"If by chance you wish to re-activate it, you have received a mail with a "
+"link for reactivation."
+msgstr ""
+
+#: .\templates\my_home\profile\redirect\not_complete.html:22
+msgid "Incomplete Profile"
+msgstr ""
+
+#: .\templates\my_home\profile\redirect\not_complete.html:26
+#, python-format
+msgid ""
+"Your profile is not complete: <a href=\"%(url_profile_edit)s\"> <button type="
+"\"button\" class=\"btn btn-default\"> Click here </button> </a>"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_accounts.html:7
+msgid "All my groups"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_accounts.html:23
+msgid "Add my couple account"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_accounts.html:31
+msgid "Add my family account"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_accounts.html:39
+msgid "Add a group"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help.html:15
+msgid "My parameters"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help.html:35
+#: .\templates\my_home\profile\tab_profile.html:18
+#: .\templates\my_home\profile\tab_profile.html:56
+msgid "Practicals information"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help.html:40
+msgid "Optionals information"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help.html:62
+#: .\templates\my_home\profile\tab_parameters.html:10
+#: .\templates\my_home\profile\tab_tab_password.html:20
+msgid "Password"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help.html:77
+#: .\templates\my_home\profile\tab_parameters.html:25
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:4
+msgid "Delete my account"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help.html:82
+#: .\templates\my_home\profile\tab_parameters.html:30
+msgid "My dashboard"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_desactivate_delete_account.html:5
+msgid ""
+"At any time, via the “My settings” button on your profile, you can decide "
+"whether or not to keep your account active."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_desactivate_delete_account.html:11
+msgid ""
+"A final “alert” message will appear, allowing you to confirm or change your "
+"mind, in order to avoid any inadvertent keyboard errors."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_informations_facultatives.html:3
+msgid ""
+"<p><b>Filling in the different criteria is not mandatory... the choice is "
+"yours!</b> </p> <p>However, if you are interested in going away with someone "
+"similar to yourself, we would advise <b>taking a few extra seconds to fill "
+"in the fields to suit your requirements.</b> </p> <p><b>That way you will "
+"guarantee finding people with common interests</b>, something which may be "
+"important to you. </p> <p><b>A more detailed profile will without doubt "
+"attract more attention...</b> so don’t wait around, give yourself the best "
+"chance! </p>"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_informations_pratiques.html:3
+msgid ""
+"<p><b>The personal information has intentionally been marked as mandatory.</"
+"b> </p> <p><b>Cogofly wants each and every member to feel valued,</b> "
+"important and fully involved in this new concept designed to help people "
+"travel/go away together... </p> <p><b>Putting people back in the spotlight</"
+"b>, and ensuring that this new social network is top quality, <b>remains "
+"Cogofly’s leitmotiv!</b> </p> <p><b>Pseudonyms</b>, often considered "
+"impersonal, <b>will not be used by this new international community.</b> </p>"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_language.html:5
+msgid ""
+"You can change the language settings at any time via the “My settings” "
+"button on your profile."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:5
+msgid ""
+"The dashboard has been created in order to allow you to keep up to date with "
+"important news and events linked to your account."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:10
+msgid ""
+"You will therefore receive, in chronological order, and in one click (you "
+"can choose the frequency yourself):"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:19
+msgid ""
+"Your contacts’ latest activities: trips added (past or future), remarks with "
+"regard to different events, activities shared, and so on…"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:26
+msgid ""
+"Other notifications such as messages, membership invitations, and things "
+"that people « like »."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:32
+msgid ""
+"Useful and valuable information uploaded to your news feed by the Cogofly "
+"team. This internal site blog, updated daily, will allow you to:"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:39
+msgid "Discover the world’s most beautiful destinations."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:45
+msgid "Get the best out of the site and all of its features."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:51
+msgid ""
+"Obtain a range of social, cultural and practical information on various "
+"different subjects."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:61
+msgid ""
+"By default you will receive the dashboard link once a week; however you can "
+"change the frequency whenever you like if you prefer to receive it once a "
+"day or even once a month."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:68
+msgid "In order to do so, you just need to go on to your profile and select:"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_newsletter.html:72
+msgid "Change my settings"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_password.html:5
+msgid ""
+"You can change the password at any time via the “My settings” button on your "
+"profile."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_password.html:10
+msgid "The copy/paste function works here too."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_visibility.html:5
+msgid ""
+"You can choose who can see your personal information and you always maintain "
+"full control of the latter."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_visibility.html:11
+msgid ""
+"In order to make your profile more visible, by default everyone will be able "
+"to see your selected criteria."
+msgstr ""
+
+#: .\templates\my_home\profile\tab_help\help_visibility.html:17
+msgid "It's up to you to make the right choice!"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_profile.html:7
+msgid "Modify my data"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_profile.html:29
+#: .\templates\my_home\profile\tab_profile.html:124
+msgid "Optional information"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_profile.html:81
+msgid "mandatory field"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:3
+msgid "Deactivate my account"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:45
+msgid ""
+"<p><b>Do you really want to deactivate your account?</b></p> <ul> <li>If you "
+"decide to do it, you will no longer be visible on this site!<br/><br/></li> "
+"<li>Please be advised that it can be reactivated at any time via the link "
+"that we have sent to the email address that you used when signing up. You "
+"can also reactivate your account via other social networks.</li> </ul>"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_tab_desactivate_delete_account.html:100
+msgid ""
+"<p><b>Do you really want to delete your account?</b></p> <ul> <li>If you "
+"decide to do it, your data will be permanently deleted and your profile will "
+"be no longer visible!</li> <li>Please be advised, if you change your mind, "
+"you will need to create a new profile.</li> </ul>"
+msgstr ""
+
+#: .\templates\my_home\profile\tab_tab_visibility.html:14
+msgid "Uncheck if you want to hide those informations"
+msgstr ""
+
+#: .\templates\my_home\register.html:39
+msgid "Sign up in one click"
+msgstr ""
+
+#: .\templates\my_home\register.html:48
+msgid "Sign up with Facebook"
+msgstr ""
+
+#: .\templates\my_home\register.html:55
+msgid "Sign up with Google"
+msgstr ""
+
+#: .\templates\my_home\register.html:64
+msgid "... or fill in"
+msgstr ""
+
+#: .\templates\my_home\register.html:98
+msgid "Register!"
+msgstr ""
+
+#: .\templates\my_home\remarks_and_testimonies.html:5
+msgid "Remarks and testimonies"
+msgstr ""
+
+#: .\templates\my_home\remarks_and_testimonies.html:24
+msgid "Remarks"
+msgstr ""
+
+#: .\templates\my_home\remarks_and_testimonies.html:50
+#: .\templates\my_home\remarks_and_testimonies.html:51
+#: .\templates\my_home\remarks_and_testimonies.html:83
+#: .\templates\my_home\remarks_and_testimonies.html:84
+msgid "Appreciation"
+msgstr ""
+
+#: .\templates\my_home\search\base.html:24
+msgid "Basic"
+msgstr ""
+
+#: .\templates\my_home\search\base.html:29
+msgid "Advanced"
+msgstr ""
+
+#: .\templates\my_home\search\results.html:36
+msgid "Your search results: 0 member(s)"
+msgstr ""
+
+#: .\templates\my_home\search\results.html:43
+msgid "We are sorry if your search yielded no results."
+msgstr ""
+
+#: .\templates\my_home\search\results.html:48
+msgid "Warning:"
+msgstr ""
+
+#: .\templates\my_home\search\results.html:50
+msgid ""
+"Remember to add, <span style=\"text-decoration: underline\">at least,</span> "
+"one trip in order to be seen (this goes for all Cogofly members!)."
+msgstr ""
+
+#: .\templates\my_home\search\results.html:65
+msgid "Solution 1 &raquo;"
+msgstr ""
+
+#: .\templates\my_home\search\results.html:72
+msgid "Solution 2 &raquo;"
+msgstr ""
+
+#: .\templates\my_home\search\results.html:87
+msgid ""
+"<b>Nevertheless, do not fear, anything is possible if you decide to:</b> <br/"
+"><br/> <ul> <li><b>Try</b> again in a few days / weeks (if you’re not in too "
+"much of a hurry...): <ul> <li>New destinations will more than likely have "
+"appeared.</li> <li>New profiles may have been created, even updated.</li> </"
+"ul> <br/> </li> <li><b>Narrow</b> your search criteria by clearly "
+"indicating, for example: <ul> <li>The town of your choice (rather than just "
+"the country…).</li> <li>Exact dates (rather than a rough time period...).</"
+"li> </ul> <br/> </li> <li><b>Widen</b> your search criteria with more "
+"“flexibility”, by just indicating: <ul> <li>The country you wish to visit "
+"(rather than a particular town...). </li> <li>A rough time period (rather "
+"than exact dates...). </li> </ul> </li> </ul>"
+msgstr ""
+
+#: .\templates\my_home\search\results.html:145
+msgid ""
+"<p> <b>Invite</b> your friends to join <b>www.cogofly.com</b> in order to "
+"share what you like with them. This is the ideal opportunity to encourage "
+"people to travel and go out, without necessarily having to inform your whole "
+"network. </p> <p> <b><span style=\"text-decoration: underline; margin-left: "
+"50px\"> In order to proceed: </span></b> </p> <ul> <li>Click on the \"Invite"
+"\" button located on the taskbar. </li> <li>Otherwise click on the \"My "
+"contacts\" button and the attached link. </li> </ul> <p> <b>Share</b> the "
+"<b>www.cogofly.com</b> website via all social media: other people, outside "
+"of your own network, will almost certainly be keen to sign up and organize "
+"the same plans/destinations as you. </p> <p> <b><span style=\"text-"
+"decoration: underline; margin-left: 50px\"> In order to proceed: </span></b> "
+"</p> <ul> <li> Log out in order to return to the home page. </li> <li>Scroll "
+"down to the bottom and click on the required button (Facebook, Google+, "
+"etc...) </li> </ul>"
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_form.html:15
+#: .\templates\my_home\search\search_basic_form.html:14
+msgid "Co&nbsp;!"
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_form.html:21
+#: .\templates\my_home\search\search_advanced_form.html:22
+#: .\templates\my_home\search\search_basic_form.html:20
+#: .\templates\my_home\search\search_basic_form.html:21
+msgid "Searching..."
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_good_to_know.html:10
+#: .\templates\my_home\search\search_basic_good_to_know.html:9
+#: .\templates\my_home\travels\base.html:64
+#: .\templates\my_home\travels\base.html:85
+msgid "Good to know &raquo;"
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_good_to_know.html:16
+msgid ""
+"<p>The goal of this advanced search is to find, once more, a range of people "
+"with the same destination and/or rough travel dates in mind as you, but also "
+"with certain people-related criteria. </p> <p>As opposed to the basic "
+"search, this advanced search will actually allow you to choose with whom to "
+"go away (ex : sex, age, and so on but not by name)... what will be the most "
+"important criteria for you? </p> <p>This search will only function if <b>at "
+"least one</b> of the above fields is filled out (place, date, criteria). If "
+"no information is entered, the search will yield zero results! </p> <p>If, "
+"however, you still have any unanswered questions as to how the search works, "
+"please take the time to read the hints and tips section... </p>"
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_hints.html:10
+#: .\templates\my_home\search\search_basic_hints.html:10
+msgid "Hints &raquo;"
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_hints.html:20
+#: .\templates\my_home\search\search_basic_hints.html:19
+msgid "Tip 1"
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_hints.html:25
+#: .\templates\my_home\search\search_basic_hints.html:24
+msgid "Tip 2"
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_hints.html:33
+msgid ""
+"<p><b>All of the fields above are optional.</b></p> <p>Choose any number of "
+"preferences in any order, find your ideal travel companion and use one of "
+"the following approaches:</p> <ul> <li><b>You know precisely where and when "
+"you want to go:</b> fill in all fields.</li> <li><b>You don’t know when you "
+"want to go away: </b> fill in at the very least the destination, and then "
+"check the dates that appear and select the ones that suit you.</li> "
+"<li><b>You don’t know where you want to go:</b> fill in at the very least "
+"your date of departure and/or arrival, or even a time frame, and sit back "
+"while the most amazing destinations are selected for you.</li> <li><b>You "
+"wish to remain in your « comfort zone » and go away with people:</b><br/><br/"
+"> <ul> <li>Who work in the same sector.</li> <li>Who do exactly the same job."
+"</li> <li>With whom you have activities in common (sporting, cultural, "
+"leisure...).</li> <li>Who have visited the same cities/countries.</li> "
+"<li>Who have the same plans.</li> <li>And so on...</li> </ul> </li> </ul> "
+"<p>This advanced search will respond <b>perfectly</b> to your most realistic "
+"demands.</p>"
+msgstr ""
+
+#: .\templates\my_home\search\search_advanced_hints.html:74
+msgid ""
+"<p><b>All of the fields above are optional.</b></p> <p>You enjoy being alone "
+"and wish to remain so... <b>This site is also for you!</b> </p> <p>You will "
+"be able to use this <b>advanced search</b> to find, <b>just like the basic "
+"search,</b> people who have already been to the town/country that you have "
+"picked as your next destination. Furthermore, thanks to all of the useful "
+"criteria, you will be able to find people <b>with the same centers of "
+"interest.</b></p> <p><b>Will the latter be sufficient and pertinent enough "
+"to enable you to hit it off with people and discuss your travel plans to the "
+"full?... You alone have the answer!</b></p> <p>You will <b>no doubt</b> be "
+"able to obtain helpful information through other people’s experiences and "
+"the useful information they share via this new platform, and why not make "
+"the most of some of their recommendations.</p> <p>In order to do so you can "
+"use <b>this search by entering dates in the past</b> and then chatting with "
+"people to your heart’s content in order to prepare your next trip/day out.</"
+"p> <p><b>You will then also be able to use the search by entering dates in "
+"the future if:</b></p> <ul> <li>You change your mind at the last minute.</"
+"li> <li>You need help once you’ve arrived at your chosen destination.</li> "
+"<li>You haven’t found anyone who has visited the place in question.</li> "
+"<li>You want to help a friend who hasn't had time to sign up to the site and "
+"who wants to find a travel companion.</li> </ul> <p><b>Who better than "
+"fellow travellers to help you: travel like they do, make the most of their "
+"feedback and share practical information about the countries they have "
+"visited?</b></p>"
+msgstr ""
+
+#: .\templates\my_home\search\search_basic_good_to_know.html:15
+msgid ""
+"<p>The goal of this basic search is to find a range of people with the same "
+"destination and/or rough travel dates in mind as you. It is not designed to "
+"find any one particular person. (searching by surname/first name is "
+"impossible)! </p> <p>This search will therefore only function <b>if at least "
+"one of the two fields</b> above is filled out. If no information is entered, "
+"the search will yield zero results! </p> <p>If, however, you still have any "
+"unanswered questions as to how the search works, please take the time to "
+"read the hints and tips section... </p>"
+msgstr ""
+
+#: .\templates\my_home\search\search_basic_hints.html:33
+msgid ""
+"<p><b>All of the fields above are optional.</b></p> <p><b>Choose any number "
+"of preferences</b> in any order, find your ideal travel companion and use "
+"one of the following approaches:</p> <ul> <li><b>You know precisely where "
+"and when you want to go:</b> fill in all fields.</li> <li><b>You don’t know "
+"when you want to go away:</b> fill  in at the very least the destination, "
+"and then check the dates that appear and select the ones that suit you.</li> "
+"<li><b>You don’t know where you want to go:</b> fill in at the very least "
+"your date of departure and/or arrival, or even a time frame, and sit back "
+"while the most amazing destinations are selected for you.</li> </ul>"
+msgstr ""
+
+#: .\templates\my_home\search\search_basic_hints.html:58
+msgid ""
+"<p><b>All of the fields above are optional.</b></p> <p>You enjoy being alone "
+"and wish to remain so... <b>This site is also for you!</b> </p> <p>You will "
+"be able to use this basic search to find, <b>first and foremost,</b> people "
+"who have already been to the town/country that you have picked as your next "
+"destination.</p> <p><b>You will no doubt be able to obtain helpful "
+"information through other people’s experiences</b> and the useful "
+"information they share via this new platform, <b>and why not make the most "
+"of some of their recommendations.</b></p> <p>In order to do so you can use "
+"<b>this basic search by entering dates in the past</b> and then chatting "
+"with people to your heart’s content in order to prepare your next trip/day "
+"out.</p> <p><b>You will then also be able to use the search by entering "
+"dates in the future if:</b></p> <ul> <li>You change your mind at the last "
+"minute.</li> <li>You need help once you’ve arrived at your chosen "
+"destination.</li> <li>You haven’t found anyone who has visited the place in "
+"question.</li> <li>You want to help a friend who hasn't had time to sign up "
+"to the site and who wants to find a travel companion.</li> </ul> <p><b>Who "
+"better than fellow travellers to help you:</b></p> <p><b>Share their "
+"experiences, make the most of their feedback and share useful information?</"
+"b></p>"
+msgstr ""
+
+#: .\templates\my_home\travels\base.html:59
+#: .\templates\my_home\travels\base.html:80
+#: .\templates\my_home\travels\base.html:134
+msgid "Add a trip"
+msgstr ""
+
+#: .\templates\my_home\travels\base.html:137
+msgid "form-ajout-voyage"
+msgstr ""
+
+#: .\templates\my_home\travels\travel_hint_good_to_know-future.html:10
+#: .\templates\my_home\travels\travel_hint_good_to_know-past.html:7
+msgid ""
+"In order to add a trip, and be a part of  Cogofly members’ search results, "
+"please fill in at least one of the two fields (place and/or date)"
+msgstr ""
+
+#: .\templates\my_home\travels\travels_list.html:22
+#: .\templates\my_home\travels\travels_list_grid.html:24
+msgid "No comment for this travel"
+msgstr ""
+
+#: .\templates\my_home\travels\travels_list.html:40
+msgid "Modify"
+msgstr ""
+
+#: .\templates\my_home\travels\travels_list.html:50
+#: .\templates\my_home\travels\travels_list.html:54
+msgid "Remove"
+msgstr ""
+
+#: .\templates\my_home\travels\travels_list.html:51
+msgid "Delete"
+msgstr ""
+
+#: .\templates\my_home\travels\travels_list.html:66
+msgid "Remove this travel?"
+msgstr ""
+
+#: .\templates\my_home\travels\travels_list.html:67
+msgid "This travel will be removed from your travel list"
+msgstr ""
+
+#: .\templates\my_home\travels\travels_list.html:92
+msgid "Edit"
+msgstr ""
+
+#: .\templates\my_home\travels\travels_list.html:93
+msgid "Save"
+msgstr ""

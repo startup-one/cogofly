@@ -1,0 +1,30 @@
+{% comment %}---------------------------------------------------------------
+On l'inclut pour renvoyer un panel contenant le détail d'un contact.
+Actuellement, les "parents" qui incluent ce fichier peuvent préciser via des
+booléens si on montre activités ou voyages :
+- show_activities
+- show_travels
+{% endcomment %}{% load static staticfiles compress i18n dumper templates_extras %}
+{% if a.comments|length %}
+    <div class="row" style="margin-top: 10px">
+        <div class="col-lg-12">
+            <button class="btn btn-default" type="button"
+                    data-hqf-switch="$.ct('div')/Xu/$.ct('div').nt()/Xd"
+                    title="{% trans 'See all comments' %}">
+                <i class="fa fa-comments-o fa-fw"></i>&nbsp;
+                {% trans 'See all comments' %}
+            </button>
+        </div>
+        <div class="col-lg-12" style="display: none">
+            <hr />
+            {% for c in a.comments %}
+                {{ c.description|safe }}<br />
+            {% endfor %}<br />
+            <button class="btn btn-default" type="button"
+                    data-hqf-switch="$.ct('div')/Xu/$.ct('div').pv()/Xd"
+                    title="{% trans 'Close' %}">
+                <i class="fa fa-times"></i>&nbsp;{% trans 'Close' %}
+            </button>
+        </div>
+    </div>
+{% endif %}

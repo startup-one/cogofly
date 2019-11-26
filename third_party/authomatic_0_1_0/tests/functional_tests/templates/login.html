@@ -1,0 +1,100 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+{% if error %}
+  <div style="color: red">
+    <h1>Error</h1>
+    <pre>{{ error.message }}</pre>
+  </div>
+{% else %}
+  {% set content = result.user.content or '' %}
+  {% set safe_content = content.strip('"')|replace("'", "&#8217;")|default('', None)|safe or '""' %}
+  {% set safe_cred_response = credentials_response.content|default('', None)|safe or '""' %}
+
+  <hr/>
+  <h1>Login result for provider: <span id="login-result">{{ result.provider.name }}</span></h1>
+  <h2>User</h2>
+  <table>
+    {% for property in user_properties|sort %}
+      <tr>
+        <td><strong>{{ property }}:&nbsp;</strong></td>
+        {% if property == 'birth_date' and result.user[property] %}
+          <td id="{{ property }}">{{ result.user[property].strftime(birth_date_format) }}</td>
+        {% else %}
+          <td id="{{ property }}">{{ result.user[property]|default('', true) }}</td>
+        {% endif %}
+      </tr>
+    {% endfor %}
+    <tr class="hidden">
+      <td><strong>content:&nbsp;</strong></td>
+      <td id="content">{{ result.user.content }}</td>
+    </tr>
+  </table>
+
+  {% if original_credentials %}
+    <h2>Original Credentials</h2>
+    <table>
+      {% for k, v in original_credentials|dictsort %}
+      <tr class="{% if k == 'config' %}hidden{% endif %}"}>
+        <td><strong>{{ k }}:&nbsp;</strong></td>
+        <td id="original-credentials-{{ k }}">{{ v|default('', true) }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h3>Credentials Refresh</h3>
+    <h4>Refresh Response Status: <span id="original-credentials-refresh_status">{{ credentials_response.status|default('REFRESH NOT SUPPORTED') }}</span></h4>
+    <pre id="credentials-response" class="prettyprint"></pre>
+
+    <h2>Refreshed Credentials</h2>
+    <table>
+      {% for k, v in refreshed_credentials|dictsort %}
+      <tr class="{% if k == 'config' %}hidden{% endif %}"}>
+        <td><strong>{{ k }}:&nbsp;</strong></td>
+        <td id="refreshed-credentials-{{ k }}">{{ v|default('', true) }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+
+  <h3>Access Token Response Content</h3>
+  <pre id="access-token-content" class="prettyprint">{{ access_token_content }}</pre>
+
+  <h3>User Info Response Content</h3>
+  <pre id="human-readable-user-content" class="prettyprint">{{ content }}</pre>
+  <h3>User content should contain these strings:</h3>
+  <pre id="user-content-json-keys" class="prettyprint"></pre>
+
+  <script type="text/javascript">
+    // Display syntax-highlighted user-info response content
+    var userContent = document.getElementById('human-readable-user-content');
+    try {
+        userContent.innerHTML = JSON.stringify({{ safe_content }}, undefined, 4);
+    } catch(e) {
+         userContent.innerHTML = '{{ safe_content|replace('\n', ' ')|replace('\r', ' ') }}';
+    }
+
+    // Display syntax-highlighted strings user-info response should contain
+    var pattern = /"([^"]+)":/g;
+    var matches
+    var output = [];
+    while (matches = pattern.exec(userContent.innerHTML)) {
+        var res = "'" + matches[1] + "'";
+        if(output.indexOf(res) === -1){
+            output.push(res);
+        }
+    }
+    var userContentJSONKeys = document.getElementById('user-content-json-keys');
+    userContentJSONKeys.innerHTML = "[" + output.sort().join(', ') + "]";
+
+    // Display syntax-highlighted credentials refresh response content
+    var credentialsResponse = document.getElementById('credentials-response');
+    try {
+        credentialsResponse.innerHTML = JSON.stringify('{{ safe_cred_response|replace('\n', ' ')|replace('\r', ' ') }}', undefined, 4);
+    } catch(e) {
+        credentialsResponse.innerHTML = '{{ safe_cred_response|replace('\n', ' ')|replace('\r', ' ') }}';
+    }
+  </script>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,131 @@
+{% load static staticfiles compress i18n model_access dumper %}
+<div class="row likes-summary" style="margin-top: 10px">
+    <div class="col-lg-12">
+        {% if common.notifications.likes.has_other_pages and common.notifications.likes.number > 1 %}
+            {# c'est mon paginateur maison #}
+            <ul class="pagination pagination-lg"
+                style="margin-top: 0">
+                {% for obj in common.notifications.likes.paginator.around %}
+                    <li{% if obj.is_current %} class="disabled"{% endif %}>
+                        <a {% if not obj.is_current %} href="?p_like={{ obj.page }}"{% endif %}>
+                            {% if obj.last and not obj.is_current %}
+                                &raquo;
+                            {% endif %}
+                            {{ obj.page }}
+                            {% if obj.first and not obj.is_current %}
+                                &laquo;
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% for like in common.notifications.likes %}
+
+            <div class="panel panel-primary like-summary"
+                 id="like-summary-{{ like.pk }}">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-3 profile-photo">
+                            <div class="photo-profile-normal"
+                                 style="height: 80px;">
+                                <span class="helper"></span>
+                                <img src="{{ like.src.url_photo_profil }}" />
+                            </div>
+                        </div>
+                        <div class="col-lg-9" style="word-wrap: break-word;">
+                            <h4>
+                            {% with like|description_with_tag:'strong' as d %}
+                                {{ d|safe }}
+                            {% endwith %}
+                            </h4>
+                            <button class="btn btn-validate"
+                                    type="button" onclick="return false;">
+                                {% blocktrans trimmed %}
+                                Click here to see more
+                                {% endblocktrans %}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+        {% if common.notifications.likes.has_other_pages %}
+            {# c'est mon paginateur maison #}
+            <ul class="pagination pagination-lg"
+                style="margin-top: 0">
+                {% for obj in common.notifications.likes.paginator.around %}
+                    <li{% if obj.is_current %} class="disabled"{% endif %}>
+                        <a {% if not obj.is_current %} href="?p_like={{ obj.page }}"{% endif %}>
+                            {% if obj.last and not obj.is_current %}
+                                &raquo;
+                            {% endif %}
+                            {{ obj.page }}
+                            {% if obj.first and not obj.is_current %}
+                                &laquo;
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+
+{% for like in common.notifications.likes %}
+    <div class="row" style="margin-top: 15px; display: none"
+         id="like-full-{{ like.pk }}">
+
+        <div class="col-lg-12">
+            {# Tous les paramètres à envoyer à l'include "person_detail" : #}
+            {% with link_contact_detail=True %}
+            {% with 'my_home_notifications' as form_send_message_url %}
+            {% with like.src as personne %}
+            {% with like.pk as id_unique %}
+            {% with show_travels=False %}
+            {% with show_buttons=False %}
+            {% with 'my_home_notifications' as form_invitation_send_decision_url %}
+                {% include 'includes/person/detail.html' %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+        </div>
+        <div class="col-lg-12">
+            <form action="#" method="get" style="margin-bottom: 10px">
+            <button class="btn btn-dark mark-like-read"
+                    data-hqf-switch="$('#like-summary-{{ like.pk }}')/k/$('.likes-summary')/Xd/$.ct('.row')/Ou"
+                    data-like-pk="{{ like.pk }}"
+                    onclick="return test_si_seul(this);">
+                <i class="fa fa-check"></i>&nbsp;{% trans "Read!" %}
+            </button>
+            </form>
+        </div>
+    </div>
+
+    <script>$(document).ready(function() {
+        notificationsApplyEffects('like', 'likes');
+    });
+    function test_si_seul(e) {
+        if ($('.like-summary').length==1) {
+            {# reste un seul sur le point d'être supprimé -> "no-likes-yet" #}
+            $('.no-likes-yet').slideDown();
+        }
+    }</script>
+
+{% endfor %}
+<div class="row no-likes-yet" {% if common.notifications.likes_count %} style="display: none"{% endif %}>
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <h4>{% blocktrans trimmed %}
+                    You have currently no Likes
+                {% endblocktrans %}</h4>
+            </div>
+        </div>
+    </div>
+</div>

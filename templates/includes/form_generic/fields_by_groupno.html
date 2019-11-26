@@ -1,0 +1,162 @@
+{% comment %}---------------------------------------------------------------
+C'est une boucle qui affiche des champs :
+Truc super pratique : si "groupno" a été assigné
+- dans le formulaire python correspondant
+- dans le template qui inclut ce fichier
+alors il y a un filtre qui est appliqué, pratique pour afficher des "groupes"
+de champs !
+
+{% endcomment %}{% load i18n klass dumper %}
+{% for field in form.visible_fields %}
+
+    {% if field.field.widget.attrs.groupno == group_no %}
+
+    {% with field.field.widget.attrs as fattrs %}
+        {% if fattrs.spaceabove %}{# attribut custom pour faire une ligne : #}
+            <hr class="field-separator" align="left" />
+        {% endif %}
+
+        {% if fattrs.rowstart %}
+        <div class="row">
+        {% endif %}
+        {% if fattrs.rowspan %}
+        <div class="col-lg-{{ fattrs.rowspan }}">
+        {% endif %}
+
+        <div class="form-group{% if field.errors %} has-error{% endif %}{% if fattrs.formgroupclass %} {{ fattrs.formgroupclass }}{% endif %}">
+            {% if field.help_text %}
+                {% if fattrs.helpcolor %}{# attribut custom #}
+                <span style="color: {{ fattrs.helpcolor }}">
+                {% endif %}
+                <label>{{ field.help_text|safe }}</label><br/>
+                {% if fattrs.helpcolor %}{# attribut custom #}
+                </span>
+                {% endif %}
+            {% endif %}
+            {% if field.field.widget|klass == 'CheckboxInputBootstrap' %}
+                {# traiter les check box séparément : #}
+                {{ field }}
+            {% elif field.field.widget|klass == 'CheckboxSelectMultipleBootstrap' %}
+                {% comment %}
+                Habillage spécial pour les choix multiples en checkboxes :
+                - ne montrer que le label + bouton "voir"
+                - quand on clique sur le bouton, il montre les choix
+                {% endcomment %}
+                <label for="{{ field.auto_id }}">
+                    {{ field.label }}
+                </label>
+                <label for="{{ field.auto_id }}" class="sr-only">
+                    {{ field.label }}
+                </label>
+                <script>
+                $(document).ready(function() {
+                    modalCheckboxesClickOkInitialize('{{ field.auto_id }}');
+                });
+                </script>
+                {% comment %}
+                <button class="btn btn-default" type="button"
+                        data-hqf-switch="$/Xh/$.nt()/Xs/$.nt().nt()/Xd">
+                    {% trans 'More' %}&nbsp;&raquo;
+                </button>
+                <button class="btn btn-default" type="button"
+                        data-hqf-switch="$/Xh/$.pv()/Xs/$.nt()/Xu"
+                        style="display: none">
+                    {% trans 'Less' %}&nbsp;&laquo;
+                </button>
+                    {{ field.auto_id }}
+                {% endcomment %}
+                <br/>
+                <button type="button" class="btn btn-validate btn-circle"
+                    data-toggle="modal"
+                    data-target="#modal-field-{{ field.auto_id }}"
+                    onclick="modalCheckboxesShowHintIfNotDone();"
+                    title="{% trans 'Show' %}">
+                    <i class="fa fa-plus"></i>
+                </button>
+
+
+                <div class="modal fade"
+                      id="modal-field-{{ field.auto_id }}"
+                      tabindex="-1" role="dialog"
+                      style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-body">
+                            <p>
+                            {{ field }}
+                            </p>
+                            </div>{#<!-- /modal-body --> #}
+
+                            <div class="modal-footer">
+                                <button class="btn btn-validate btn-block"
+                                        type="button"
+                                        onclick="return modalCheckboxesClickOk(this);"
+                                        data-dismiss="modal">
+                                    <i class="fa fa-check"></i>
+                                    {% trans 'Ok' %}
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            {% else %}
+                {% if field.label %}
+                    {% if fattrs.captioncolor %}{# attribut custom #}
+                    <span style="color: {{ fattrs.captioncolor }}">
+                    {% endif %}
+                        <label>{{ field.label|safe }}</label>
+                        <label for="{{ field.auto_id }}"
+                               class="sr-only">{{ field.label|safe }}
+                        </label>
+                    {% if fattrs.captioncolor %}{# attribut custom #}
+                    </span>
+                    {% endif %}
+                    {% if field.field.widget|klass == 'DateSelectorWidget' %}
+                        {# style "block" = même ligne -> ajout <br /> #}
+                        <br/>
+                    {% endif %}
+                {% endif %}
+                {% comment %}
+                Gestion d'un champ image "custom" qui donne des indications
+                sur l'affichage :
+                {% endcomment %}
+                {% if field.field|klass == 'CustomImageField' %}
+                    {% with field.field.picture_attributes as p %}
+                        <img src="{{ p.url }}"
+                             width="{{ p.width }}"
+                             height="{{ p.height }}"
+                             {% if p.style %}style="{{ p.style }}" {% endif %}/>
+                    {% endwith %}
+                {% endif %}
+                {{ field|safe }}
+            {% endif %}
+        </div>
+
+        {% if field.errors %}
+        <div class="form-group">
+            <div class="alert alert-danger" role="alert">
+            {% for error in field.errors %}
+                <span class="glyphicon glyphicon-exclamation-sign"
+                      aria-hidden="true"></span>
+                <span class="sr-only">{{ error }}</span>
+                {{ error }}
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if fattrs.rowspan %}
+        </div>
+        {% endif %}
+        {% if fattrs.rowend %}
+        </div>
+        {% endif %}
+
+    {% endwith %}
+
+    {% endif %}{# if groupno == group_no #}
+
+{% endfor %}

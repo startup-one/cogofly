@@ -1,0 +1,209 @@
+{% comment %}---------------------------------------------------------------
+On l'inclut pour renvoyer un panel contenant le détail d'un contact.
+{% endcomment %}{% load static staticfiles compress i18n dumper templates_extras %}
+<div class="panel panel-primary person-detail-mode-grid">
+    {% if not hide_heading %}
+    <div class="panel-heading" style="font-size: larger; font-weight:normal;">
+        {% if link_contact_detail %}
+        <a href="{% url 'contact_detail' contact_id=personne.pk %}"
+           target="_blank" class="hide-aw">
+        {% endif %}
+            {{ personne.full_name }}{# full_name() = fonction du modèle Personne #}
+        {% if link_contact_detail %}
+            <span style="display: inline-block; float: right">
+                <i class="fa fa-plus-circle" style="font-size: 140%"></i>
+                {# <i class="fa fa-search fa-fw"></i> #}
+            </span>
+        </a>
+        {% endif %}
+    </div>
+    {% endif %}
+    {#<!-- /.panel-heading -->#}
+    <div class="panel-body">
+        <div class="row">
+            {% if not hide_profile_photo %}
+                <div class="col-lg-6 profile-photo">
+                {% if link_contact_detail %}
+                <a href="{% url 'contact_detail' contact_id=personne.pk %}"
+                   target="_blank" class="hide-a">
+                {% endif %}
+                    <div class="photo-profile-normal">
+                        <span class="helper"></span>
+                        <img src="{{ personne.url_photo_profil }}" />
+                    </div>
+                {% if link_contact_detail %}
+                </a>
+                {% endif %}
+                </div>
+            {% endif %}
+            <div class="{% if not hide_profile_photo %}col-lg-6{% else %}col-lg-12{% endif %} profile-description">
+                {% if link_contact_detail %}
+                <a href="{% url 'contact_detail' contact_id=personne.pk %}"
+                   target="_blank" class="hide-a">
+                {% endif %}
+                    <p><b>
+                        {% for t in personne.description_resume %}
+                            {{ t }}{% if not forloop.last %}<br />{% endif %}
+                        {% endfor %}
+                    </b></p>
+                    <p style="margin-left: 5%">
+                        {% for t in personne.description_last_travels %}
+                            <span style="font-size:small">&#9679;</span>
+                            {{ t|safe }}{% if not forloop.last %}<br/>{% endif %}
+                        {% endfor %}
+                    </p>
+                {% if link_contact_detail %}
+                </a>
+                {% endif %}
+                {% comment %} Tous les boutons qui suivent doivent être
+                              surchargés avec la classe btn_added_class
+                              parce qu'ils n'étaient absolument pas prévus
+                              pour être ici, donc il faut rajouter du css,
+                              donc c'est la solution la plus rapide
+                {% endcomment %}
+                {% with btn_added_class=' btn-block btn-person-detail' %}
+
+                {% if show_description_complete %}
+                    <button class="btn btn-default btn-adn {{ btn_added_class }}"
+                            style="margin-top: 10px;"  type="button"
+                            data-hqf-toggle="$('.description-complete')/d/u">
+                        <i class="fa fa-user"></i>&nbsp;
+                        {% if personne.est_un_homme %}
+                            {% blocktrans trimmed %}
+                                See his profile
+                            {% endblocktrans %}
+                        {% else %}
+                            {% blocktrans trimmed %}
+                                See her profile
+                            {% endblocktrans %}
+                        {% endif %}<br />
+                    </button>
+                {% endif %}
+                {% if show_travels %}
+                    <button class="btn btn-default btn-twitter{{ btn_added_class }}"
+                            type="button"
+                            data-hqf-toggle="$('body').fd('.travels')/i/o/$('body').fd('.travels').fd('.nav')/i/o/$('body').fd('.travels').fd('.tab-content')/i/o">
+                        <i class="fa fa-briefcase"></i>&nbsp;
+                        {% if personne.est_un_homme %}
+                            {% blocktrans trimmed %}
+                                See his travels
+                            {% endblocktrans %}
+                        {% else %}
+                            {% blocktrans trimmed %}
+                                See her travels
+                            {% endblocktrans %}
+                        {% endif %}
+                    </button>
+                {% endif %}
+
+                {% if personne != common.personne %}
+                    {# aussi pas show_buttons sinon send affiché 2 fois #}
+                    {% if show_send_message and not show_buttons %}
+                        {% with _('Send a message') as label_send_a_message %}
+                            {% include "includes/person/send_message.html" %}
+                        {% endwith %}
+                    {% endif %}
+                {% endif %}
+
+                {% if show_contacts %}
+                    <button class="btn btn-default btn-instagram {{ btn_added_class }}"
+                            type="button"
+                            data-hqf-toggle="$('body').fd('.contacts')/i/o"
+                            style="margin-top: 5px"
+                            onclick="return contactsRefreshGrid(this);">
+                        <i class="fa fa-users"></i>
+                        {% if personne.est_un_homme %}
+                            {% blocktrans trimmed %}
+                                See his contacts
+                            {% endblocktrans %}
+                        {% else %}
+                            {% blocktrans trimmed %}
+                                See her contacts
+                            {% endblocktrans %}
+                        {% endif %}
+                    </button>
+                {% endif %}
+
+                {% if show_invite_big %}
+                    {% include "includes/person/invite.html" %}
+                {% endif %}
+
+                {% endwith %}
+
+            </div>
+        </div>
+
+
+
+{% comment %}------------------------------------------------------------
+(!) Ici : inclusion basée sur le parent qui DOIT mettre des booléens à True.
+{% endcomment %}
+    {% if show_activities %}
+        {% with show_description=True %}
+            {% include 'includes/person/activities.html' %}
+        {% endwith %}
+    {% endif %}
+
+    {% if personne_conversation %}
+        {% if conversation.messages.all|length %}
+
+            <ul class="timeline">
+                {% include "includes/person/conversation.html" %}
+            </ul>
+
+        {% endif %}
+    {% endif %}
+
+    {% if show_express_yourself %}
+        {% include 'includes/person/detail_activite_express_yourself.html' %}
+    {% endif %}
+
+    {% if show_comment and activite %}
+        {# used here and "express yourself" box too: #}
+        {% include 'includes/person/detail_comments.html' %}
+    {% endif %}
+
+{# ------------------------------------------------------------ #}
+
+
+    </div>{#<!-- /.panel-body -->#}
+
+
+    {% if show_buttons %}
+        {# used here and "express yourself" box too: #}
+        {% include 'includes/person/detail_buttons.html' %}
+    {% endif %}
+
+</div>
+
+
+
+{% if show_description_complete %}
+<div class="panel panel-primary description-complete" style="display: none">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <button type="button" class="btn btn-dark btn-block"
+                        data-hqf-switch="$.ct('.panel')/Ou">
+                <i class="fa fa-times"></i>
+                    {% trans 'Close' %}
+                </button>
+            </div>
+            <div class="col-lg-12">
+                {% include "includes/person/description_complete.html" %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if show_travels %}
+<div class="panel panel-primary travels" style="display: none">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12">
+            {% include "includes/person/travels.html" %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,65 @@
+{% comment %}---------------------------------------------------------------
+Fichier destiné à diminuer la charge de person_detail.html
+{% endcomment %}{% load static staticfiles compress i18n dumper %}
+
+<div class="modal fade"
+     id="modal-add-comment-{{ activite.pk }}"
+     tabindex="-1" role="dialog"
+     aria-labelledby="{% trans "Add a comment" %}" aria-hidden="true"
+     style="display: none;">
+    <form action="{{ request.get_full_path }}"
+          method="POST" autocomplete="off">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true"
+                            data-dismiss="modal">×</button>
+                    <h4 class="modal-title">
+                        {% trans "Add a comment" %}
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    {# Boucle alors qu'il y a un champ ! Mais au cas où : #}
+                    {% for field in form_comment %}
+
+                        <div class="form-group {% if field.errors %}has-error{% endif %}">
+                            {% if field.label %}
+                                <label>{{ field.label }}</label>
+                                <label for="{{ field.auto_id }}"
+                                       class="sr-only">{{ field.label }}
+                                </label>
+                            {% endif %}
+                            {{ field }}
+                        </div>
+                        {% if field.errors %}
+                        <div class="form-group">
+                            <div class="alert alert-danger" role="alert">
+                            {% for error in field.errors %}
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">{{ error }}</span>
+                                {{ error }}
+                            {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {{ field.help_text }}
+
+                    {% endfor %}
+
+
+
+                </div>{#<!-- /modal-body --> #}
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-validate">
+                        {% trans 'Submit' %}
+                    </button>
+                    <button type="button" class="btn btn-dark"
+                            data-dismiss="modal">
+                        {% trans 'Cancel' %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

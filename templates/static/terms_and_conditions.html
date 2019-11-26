@@ -1,0 +1,108 @@
+{% extends "applancement/base.html" %}
+{% load staticfiles i18n templates_extras compress %}
+
+{% block title %}
+    <title>{{ tac_title }}</title>
+{% endblock %}
+
+{% block custom_js %}
+    {% with "js/launch/bg-slider-terms-and-conditions.js" as custom_js_slider %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock custom_js %}
+
+{% block body %}
+    {% block header_applancement %}
+    {% autoescape off %}
+    <section class="terms-and-conditions">
+        <h1>{{ tac_title }}</h1><br />
+        <p>{{ tac_contact_us }}</p>
+        <h2>{{ tac_introduction }}</h2>
+        <p>{{ tac_introduction_1 }}</p>
+        <p>{{ tac_introduction_2 }}</p>
+        <h2>{{ tac_licence }}</h2>
+        <p>{{ tac_licence_1 }}</p>
+        <p>{{ tac_licence_2 }}</p>
+        <p>{{ tac_licence_you_must_not.title }}</p>
+        <ul>
+            {% for txt in tac_licence_you_must_not.tab %}
+                <li>{{ txt }}</li>
+            {% endfor %}
+        </ul>
+        <p>{{ tac_content_redistribution }}</p>
+        <h2>{{ tac_acceptable_use.title }}</h2>
+        {% for txt in tac_acceptable_use.tab %}
+            <p>{{ txt }}</p>
+        {% endfor %}
+        <ul>
+        {% for txt in tac_acceptable_this_includes_tab %}
+            <li>{{ txt }}</li>
+        {% endfor %}
+        </ul>
+        <p>{{ tac_you_must_not_use_1 }}</p>
+        <p>{{ tac_you_must_not_use_2 }}</p>
+        <h2>{{ tac_restricted_access_title }}</h2>
+        <p>{{ tac_restricted_access_1 }}</p>
+        <p>{{ tac_restricted_access_2 }}</p>
+        <p>{{ tac_restricted_access_3 }}</p>
+        <h2>{{ tac_user_content }}</h2>
+        <p>{{ tac_user_content_1 }}</p>
+        <p>{{ tac_user_content_2 }}</p>
+        <p>{{ tac_user_content_3 }}</p>
+        <p>{{ tac_user_content_4 }}</p>
+        <p>{{ tac_user_content_5 }}</p>
+        <p>{{ tac_user_content_6 }}</p>
+        <h2>{{ tac_no_warranties_title }}</h2>
+        <p>{{ tac_no_warranties_1 }}</p>
+        <p>{{ tac_no_warranties_2 }}</p>
+        <ul>
+          <li>{{ tac_no_warranties_2_1 }}</li>
+          <li>{{ tac_no_warranties_2_2 }}</li>
+        </ul>
+        <p>{{ tac_no_warranties_3 }}</p>
+        <h2>{{ tac_liability_title }}</h2>
+        <p>{{ tac_liability_1 }}</p>
+        <ul>
+          <li>{{ tac_liability_1_1 }}</li>
+          <li>{{ tac_liability_1_2 }}</li>
+          <li>{{ tac_liability_1_3 }}</li>
+        </ul>
+        <p>{{ tac_liability_2 }}</p>
+        <h2>{{ tac_exceptions_title }}</h2>
+        <p>{{ tac_exceptions_1 }}</p>
+        <ul>
+          <li>{{ tac_exceptions_1_1 }}</li>
+          <li>{{ tac_exceptions_1_2 }}</li>
+          <li>{{ tac_exceptions_1_3 }}</li>
+        </ul>
+        <h2>{{ tac_reasonableness_title }}</h2>
+        <p>{{ tac_reasonableness_1 }}</p>
+        <p>{{ tac_reasonableness_2 }}</p>
+        <h2>{{ tac_other_parties_title }}</h2>
+        <p>{{ tac_other_parties_1 }}</p>
+        <p>{{ tac_other_parties_2 }}</p>
+        <h2>{{ tac_unenforceable_provisions_title }}</h2>
+        <p>{{ tac_unenforceable_provisions_1 }}</p>
+        <h2>{{ tac_indemnity_title }}</h2>
+        <p>{{ tac_indemnity_1 }}</p>
+        <h2>{{ tac_breaches_title }}</h2>
+        <p>{{ tac_breaches_1 }}</p>
+        <h2>{{ tac_variation_title }}</h2>
+        <p>{{ tac_variation_1 }}</p>
+        <h2>{{ tac_assignment_title }}</h2>
+        <p>{{ tac_assignment_1 }}</p>
+        <p>{{ tac_assignment_2 }}</p>
+        <h2>{{ tac_severability_title }}</h2>
+        <p>{{ tac_severability_1 }}</p>
+        <h2>{{ tac_entire_agreement_title }}</h2>
+        <p>{{ tac_entire_agreement_1 }}</p>
+        <h2>{{ tac_law_and_juridiction_title }}</h2>
+        <p>{{ tac_law_and_juridiction_1 }}</p>
+        <p>
+            {{ tac_information_technology }}<br />
+            {{ tac_registered_CNIL }}
+        </p>
+    </section>
+    {% endautoescape %}
+    {% endblock header_applancement %}
+{% endblock %}

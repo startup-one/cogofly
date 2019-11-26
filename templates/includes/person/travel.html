@@ -1,0 +1,123 @@
+{% comment %}---------------------------------------------------------------
+Affichage du détail d'un voyage.
+
+Le voyage est un modèle PersonneTravel, et ce fichier est inclus plusieurs fois,
+pour les voyages passés, et à venir, comme ceci :
+
+    {% for travel in personne.travels_done %}
+        {% with travel as travel %}
+            {% include "includes/personne_travel.html" %}
+        {% endwith %}
+    {% endfor %}
+
+{% endcomment %}{% load static staticfiles compress i18n l10n templates_extras %}
+{% cleanup %}
+<h4 style="margin-bottom: 0; border-top: 1px solid #ddd; padding-top: 10px">
+   {{ personne_travel.travel.formatted_address }}
+</h4>
+<div class="row">
+    <div class="col-lg-12" style="margin: 0">
+        <h5 style="margin: 10px; margin-left: 0">
+            {{ personne_travel.description_dates }}
+        </h5>
+        {% if personne_travel.comments %}
+            <p class="travel-description">
+                {{ personne_travel.comments|safe }}
+            </p>
+        {% endif %}
+    </div>
+    {% if personne_travel.urls_photos|length %}
+    <div class="col-lg-12">
+        <div class="row">
+        {% for url in personne_travel.urls_photos %}
+            {% if url %}
+                <div class="col-lg-4">
+                    <a href="{{ url }}"
+                       class="travel-image-popup">
+                        <img src="{{ url }}"
+                             style="width: 100%; padding: 5px; height: auto;" />
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endcleanup %}
+{% if personne_travel.urls_photos|length %}
+<script>$(document).ready(function() {
+    travelsInitializePreview("{% url 'my_home_travel' %}",
+                             "{% trans 'Cancel' %}");
+    $('.travel-image-popup').magnificPopup({
+        type: 'image',
+        showCloseBtn: false,
+        closeOnContentClick: true,
+        modal: false,
+        mainClass: 'mfp-with-zoom',
+        zoom: {
+            enabled: true,
+            duration: 300,
+            easing: 'ease-in-out'
+        }
+    });
+});</script>
+{% endif %}
+{% comment %}
+
+Franck voulait afficher les personnes avec qui on était parti en voyage.
+Ca serait super sympa, mais ça fait partie des évolutions à venir.
+Actuellement, je n'affiche rien, mais je laisse tout le code prêt à être
+utilisé :
+
+------------
+<table class="table">
+    <tbody>
+        <tr style="margin-top: 50px">
+            <td>&nbsp;</td>
+            <td style="text-align: right">Martine Dubroc&nbsp;
+                <img src="https://inassets1-internationsgmbh.netdna-ssl.com/image/60_60/2007/11/20/a0b2dc82bd2aeb2f8d2bd222c0597ed0_heather_allard_u_18860_u.jpg"
+                     width="60" height="60"
+                     style="margin: 2px; padding: 2px; border-radius: 15px;"/>
+            </td>
+            <td style="vertical-align: middle">
+                <button type="button" class="btn btn-warning">Voir</button>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td style="text-align: right">Megan McGarrity&nbsp;
+                <img src="https://inassets1-internationsgmbh.netdna-ssl.com/image/60_60/2015/12/05/957c2466ccf2e0573154f7a6797dbcaff8a7e61e085f109922a16d76c5512ccb.jpeg"
+                     width="60" height="60"
+                     style="margin: 2px; padding: 2px; border-radius: 15px;"/>
+            </td>
+            <td style="vertical-align: middle">
+                <button type="button" class="btn btn-warning">Voir</button>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td style="text-align: right">Christian Sorokin&nbsp;
+                <img src="https://inassets1-internationsgmbh.netdna-ssl.com/image/60_60/2015/12/07/89a33fd9a3834ad9377ec899ac172b1b8de2644cee7a2112781084d7178e2ba0.jpeg"
+                     width="60" height="60"
+                     style="margin: 2px; padding: 2px; border-radius: 15px;"/>
+            </td>
+            <td style="vertical-align: middle">
+                <button type="button" class="btn btn-warning">Voir</button>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td style="text-align: right">Iman Charles-Herrou&nbsp;
+                <img src="https://inassets1-internationsgmbh.netdna-ssl.com/image/60_60/2015/12/08/f526a775e0d56146c94deec69f547d63a3cdea7379fe3d0d2d5ce5d4655996ce.jpeg"
+                     width="60" height="60"
+                     style="margin: 2px; padding: 2px; border-radius: 15px;"/>
+            </td>
+            <td style="vertical-align: middle">
+                <button type="button" class="btn btn-warning">Voir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+{% endcomment %}

@@ -1,0 +1,15 @@
+.social-widgets-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.social-widgets-wrapper .fb-share-button {
+    margin: 0;
+}

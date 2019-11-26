@@ -1,0 +1,109 @@
+{% load static staticfiles compress i18n django_markdown %}
+<div class="row" style="margin-top: 10px; {% if not common.personne.profile_complete %}display:none{% endif %}" id="profile-summary">
+
+    {# Publicités #}
+    <div class="col-lg-3">
+        {% for publicite in publicites_gauche %}
+            <div class="panel panel-primary">
+                <div class="panel-body panel-ads">
+                    <h1>{{ publicite.title }}</h1>
+                    {{ publicite.content|markdown }}
+                </div>
+            </div>
+        {% empty %}
+            &nbsp;
+        {% endfor %}
+    </div>{# <!-- /.col-lg-3 --> #}
+
+    <div class="col-lg-6">
+
+        {% if progression %}
+            {% include "includes/progression.html" %}
+        {% endif %}
+
+        <div class="panel panel-default {% if request.session.message %}panel-toggle-message{% endif %}">
+            <div class="panel-heading">
+                {{ common.personne.full_name }}
+                <a href="{% url 'contact_detail' contact_id=personne.pk %}"
+                   target="_blank"
+                   style="color: inherit; text-decoration: none;">
+                    &nbsp;
+                </a>
+            </div>{# <!-- /.panel-heading --> #}
+            <div class="panel-body">
+                <div class="row">
+
+                    <div class="col-lg-6 profile-photo">
+
+                        <div class="photo-profile-normal" style="height: 300px;">
+                            <span class="helper"></span>
+                            <img src="{{ url_photo_profil }}">
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 profile-description">
+
+                        <p><b>
+                            {% for t in personne.description_resume %}
+                                {{ t }}{% if not forloop.last %}<br />{% endif %}
+                            {% endfor %}
+                        </b></p>
+                        <p style="margin-left: 5%">
+                            {% for t in personne.description_last_travels %}
+                                <span style="font-size:small">&#9679;</span>
+                                {{ t|safe }}{% if not forloop.last %}<br/>{% endif %}
+                            {% endfor %}
+                        </p>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button class="btn btn-adn btn-block"
+                                        data-hqf-switch="$.ct('.row').pt().ct('.row').pt().ct('.row')/u/$('.description-complete')/Od"
+                                        style="text-align: left; margin: 0 0 6px;">
+                                    <i class="fa fa-user"></i>
+                                    {% trans "See my profile" %}
+                                </button>
+                                <button class="btn btn-primary btn-block"
+                                        id="profile-btn-edit"
+                                        type="button" style="text-align: left"
+                                        data-hqf-switch="$.ct('.row').pt().ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pt().ct('.row').nt()/Od">
+                                    <i class="fa fa-pencil"></i>
+                                    {% trans "Modify my profile" %}
+                                </button>
+                                <button class="btn btn-info btn-block"
+                                        type="button" style="text-align: left"
+                                        data-hqf-switch="$.ct('.row').pt().ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pt().ct('.row').nt().nt().nt()/Od">
+                                    <i class="fa fa-gears"></i>
+                                    {% trans "Change my parameters" %}
+                                </button>
+                                <button class="btn btn-dark btn-block"
+                                        type="button" style="text-align: left"
+                                        data-hqf-switch="$.ct('.row').pt().ct('.row').pt().ct('.row')/u/$.ct('.row').pt().ct('.row').pt().ct('.row').nt().nt().nt().nt().nt()/Od">
+                                    <i class="fa fa-life-saver"></i>
+                                    {% trans "Help" %}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>{# <!-- /.panel-body --> #}
+        </div>{# <!-- /.panel --> #}
+
+    </div>{# <!-- /.col-lg-6 --> #}
+
+    {# Publicités #}
+    <div class="col-lg-3">
+        {% for publicite in publicites_droite %}
+            <div class="panel panel-primary">
+                <div class="panel-body panel-ads">
+                    <h1>{{ publicite.title }}</h1>
+                    {{ publicite.content|markdown }}
+                </div>
+            </div>
+        {% empty %}
+            &nbsp;
+        {% endfor %}
+    </div>{# <!-- /.col-lg-3 --> #}
+</div>

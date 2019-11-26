@@ -1,0 +1,38 @@
+{% comment %}---------------------------------------------------------------
+Ce fichier est inclus lorsqu'on veut afficher les partages d'une activité
+"Olivier shared this with you"
+{% endcomment %}{% load static staticfiles compress i18n model_access templates_extras dumper %}
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table" style="margin-bottom: 10px">
+            <thead>
+                <tr>
+                    <th colspan="3" style="padding-top: 10px">
+                    {% if show_description %}
+                        {{ activite.description|safe }}
+                    {% endif %}
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    {% with activite|persons_who_shared_this_to:common.personne as desc %}
+        {% if desc %}
+        <div class="col-lg-12" style="word-wrap: break-word;">
+        <i>
+            {% blocktrans trimmed %}{{ desc }} shared this with you
+            {% endblocktrans %}
+        </i>
+        </div>
+        {% endif %}
+    {% endwith %}
+    {% with activite|person_who_shared_this_is:common.personne as desc %}
+        {% if desc %}
+        <div class="col-lg-12" style="word-wrap: break-word;">
+        <i>{% blocktrans trimmed %}You shared this with {{ desc }}.
+        {% endblocktrans %}
+        </i>
+        </div>
+        {% endif %}
+    {% endwith %}
+</div>

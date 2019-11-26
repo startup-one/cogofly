@@ -1,0 +1,56 @@
+{% load static staticfiles compress i18n %}
+<div class="row" style="margin-top: 10px">
+    <div class="col-lg-12">
+{% for like in common.notifications.likes.all %}
+
+    {# Tous les paramètres à envoyer à l'include "person_detail" : #}
+    {% with 'my_home_notifications' as form_send_message_url %}
+    {% with like.src as personne %}
+    {% with like.pk as id_unique %}
+    {% with show_travels=True %}
+    {% with show_buttons=True %}
+    {% with 'my_home_notifications' as form_invitation_send_decision_url %}
+
+        <h4 style="margin-bottom: 0; border-top: 1px solid #ddd; padding-top: 10px">
+            <button type="button" class="btn btn-validate btn-circle mark-like-read"
+                    data-like-pk="{{ id_unique }}"
+                    title="{% trans 'Click to hide' %}">
+                <i class="fa fa-times"></i>
+            </button>
+
+            <button type="button" class="btn btn-outline btn-success"
+                    data-btn-to-show="likes-btn-show-detail-{{ id_unique }}"
+                    data-panel-to-show="likes-form-show-detail-{{ id_unique }}"
+                    onclick="togglePanel(this);"
+                    style="display: inline-block;">
+                Détails
+            </button>
+            &nbsp;&nbsp;{{ like.description }}
+        </h4>
+
+        <div class="row" id="likes-form-show-detail-{{ id_unique }}"
+             style="display: none; margin-top: 20px">
+            <div class="col-lg-8">
+                {% include 'includes/person/detail.html' %}
+                <button class="btn btn-dark"
+                        onclick="return togglePanel(this);">
+                    {% trans 'Close' %}
+                </button>
+            </div>
+        </div>
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+
+{% empty %}
+
+    <h4>{% blocktrans trimmed %}
+        You have currently no Likes
+    {% endblocktrans %}</h4>
+
+{% endfor %}
+    </div>
+</div>

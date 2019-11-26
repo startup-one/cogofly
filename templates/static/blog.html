@@ -1,0 +1,33 @@
+{% extends "applancement/base.html" %}
+{% load staticfiles i18n templates_extras compress django_markdown %}
+
+{% block title %}
+    <title>{{ blog_title }}</title>
+{% endblock %}
+
+{% block custom_js %}
+    {% with "js/launch/bg-slider-contact.js" as custom_js_slider %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock custom_js %}
+
+{% block body %}
+    {% block header_applancement %}
+    {% autoescape off %}
+    <section class="blog">
+        <h1>{{ blog_title }}</h1><br />
+    </section>
+    <section class="blog">
+
+        {% for blog in blogs %}
+            <div class="panel-news">
+                {{ blog.content|markdown }}
+            </div>
+        {% endfor %}
+
+    <p> {{ blog_contact_us }}</p>
+    </section>
+
+    {% endautoescape %}
+    {% endblock header_applancement %}
+{% endblock body %}

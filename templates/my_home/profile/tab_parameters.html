@@ -1,0 +1,60 @@
+{% load static staticfiles compress i18n %}
+<div class="row" id="my-parameters" style="display: none">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel panel-default {% if request.session.message %}panel-toggle-message{% endif %}">
+            <div class="panel-body">
+            <ul class="nav nav-pills" id="my-parameters-tab">
+                <li id="btn-password" class="active">
+                    <a href="#tab-password" aria-expanded="false" data-toggle="tab">
+                        {% trans 'Password' %}
+                    </a>
+                </li>
+                <li id="btn-languages">
+                    <a href="#tab-languages" aria-expanded="false" data-toggle="tab">
+                        {% trans 'Spoken languages' %}
+                    </a>
+                </li>
+                <li id="btn-visibility">
+                    <a href="#tab-visibility" aria-expanded="true" data-toggle="tab">
+                        {% trans 'Visibility' %}
+                    </a>
+                </li>
+                <li id="btn-other">
+                    <a href="#tab-other" aria-expanded="false" data-toggle="tab">
+                        {% trans 'Delete my account' %}
+                    </a>
+                </li>
+                <li id="btn-newsletter">
+                    <a href="#tab-newsletter" aria-expanded="false" data-toggle="tab">
+                        {% trans 'My dashboard' %}
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                {# séparation dans des fichiers sinon HTML trop surchargé #}
+                <div class="tab-pane fade active in" id="tab-password">
+                    {% include 'my_home/profile/tab_tab_password.html' %}
+                </div>
+                <div class="tab-pane fade" id="tab-languages">
+                    {% include 'my_home/profile/tab_tab_langues.html' %}
+                </div>
+                <div class="tab-pane fade" id="tab-visibility">
+                    {% include 'my_home/profile/tab_tab_visibility.html' %}
+                </div>
+                <div class="tab-pane fade" id="tab-other">
+                    {% include 'my_home/profile/tab_tab_desactivate_delete_account.html' %}
+                </div>
+                <div class="tab-pane fade" id="tab-newsletter">
+                    {% include 'my_home/profile/tab_tab_newsletter.html' %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                </div>
+            </div>
+            </div>{# <!-- /.panel-body --> #}
+        </div>{# <!-- /.panel --> #}
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>

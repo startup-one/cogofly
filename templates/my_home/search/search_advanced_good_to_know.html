@@ -1,0 +1,42 @@
+{% comment %}--------------------------------------------------------------
+advanced hints / séparé pour alléger le template principal
+{% endcomment %}{% load static staticfiles compress i18n klass %}
+
+<div class="row">
+    <div class="col-lg-9">
+        <button class="btn btn-outline btn-hint btn-block"
+                type="button" onclick="return false;"
+                data-hqf-switch="$.ct('.row')/Xu/$.ct('.row').nt()/Xd">
+            {% trans 'Good to know &raquo;' %}
+        </button>
+    </div>
+</div>
+<div class="row" id="good-to-know-advanced" style="display: none">
+    <div style="margin-top: 10px" class="col-lg-9">
+        {% spaceless %}{% blocktrans trimmed %}
+        <p>The goal of this advanced search is to find, once more, a range of
+            people with the same destination and/or rough travel dates in
+            mind as you, but also with certain people-related criteria.
+        </p>
+        <p>As opposed to the basic search, this advanced search will
+            actually allow you to choose with whom to go away
+            (ex : sex, age, and so on but not by name)... what will be the
+            most important criteria for you?
+        </p>
+        <p>This search will only function if <b>at least one</b> of the above
+            fields is filled out (place, date, criteria). If no information
+            is entered, the search will yield zero results!
+        </p>
+        <p>If, however, you still have any unanswered questions as to how
+            the search works, please take the time to read the
+            hints and tips section...
+        </p>
+        {% endblocktrans %}{% endspaceless %}
+
+        <button class="btn btn-dark btn-block" type="button"
+                onclick="return false;"
+                data-hqf-switch="$.ct('.row').pv()/Xd/$.ct('.row')/Ou">
+            <i class="fa fa-times"></i>&nbsp;{% trans 'Close' %}
+        </button>
+    </div>
+</div>

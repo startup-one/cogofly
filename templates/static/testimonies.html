@@ -1,0 +1,47 @@
+{% extends "applancement/index.html" %}
+{% load staticfiles i18n templates_extras compress %}
+
+{% block title %}
+    <title>{{ testimonies_title }}</title>
+{% endblock %}
+
+{% block custom_js %}
+    {% with "js/launch/bg-slider-testimonies.js" as custom_js_slider %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock custom_js %}
+
+{% block body %}
+    {% block header_applancement %}
+    {% autoescape off %}
+    <section class="terms-and-conditions" style="margin: 26px;">
+        <h1>{{ testimonies_title }}</h1><br />
+    </section>
+    {% for testimony in testimonies %}
+    <section class="terms-and-conditions" style="margin: 26px;">
+        <h2 {% if forloop.counter|divisibleby:2 %}style="text-align: right" {% endif %}>{{ testimony.title }}</h2>
+        <p>{{ testimony.details }}</p>
+    </section>
+    {% endfor %}
+
+    {% endautoescape %}
+    {% endblock header_applancement %}
+
+    {% for temoignage in temoignages.all %}
+    <section class="terms-and-conditions" style="margin: 26px;">
+        {% if temoignage.testimony_show_name %}
+            <h2 style="margin: 0; {% if forloop.counter|divisibleby:2 %}text-align: right;{% endif %}">
+            {{ temoignage.personne.full_name }}
+            <span style="display: block; width: 100px; height: auto; margin: 20px">
+                <img src="{{ temoignage.personne.url_photo_profil }}"
+                     style="max-width: 100%"/>
+            </span>
+            </h2>
+        {% endif %}
+
+        <p>{{ temoignage.date_creation_relative }}</p>
+        <p>{{ temoignage.testimony }}</p>
+    </section>
+    {% endfor %}
+
+{% endblock body %}

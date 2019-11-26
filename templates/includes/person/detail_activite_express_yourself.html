@@ -1,0 +1,31 @@
+{% load static staticfiles compress i18n django_markdown dumper %}
+
+{% with activite.express_yourself.personne as p %}
+
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table" style="margin-bottom: 10px">
+            <thead>
+                <tr>
+                    <th colspan="3" style="padding-top: 10px">
+                        {{ activite.date_creation_relative }} -
+                        {% with p.full_name as name %}
+                            {% if p.est_un_homme %}
+                                {% blocktrans trimmed %}
+                                    {{ name }} expressed himself
+                                {% endblocktrans %}
+                            {% else %}
+                                {% blocktrans trimmed %}
+                                    {{ name }} expressed herself
+                                {% endblocktrans %}
+                            {% endif %}
+                        {% endwith %}
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+{% endwith %}
+
+{{ activite.express_yourself.message }}

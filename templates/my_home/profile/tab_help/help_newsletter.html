@@ -1,0 +1,76 @@
+{% load static staticfiles compress i18n %}
+<div class="row">
+    <div class="col-lg-12 col-help">{% spaceless %}
+        <p><strong>
+        {% blocktrans trimmed %}
+            The dashboard has been created in order to allow you to keep up to
+            date with important news and events linked to your account.
+        {% endblocktrans %}
+        </strong></p>
+        <p>{% blocktrans trimmed %}
+            You will therefore receive, in chronological order,
+            and in one click (you can choose the frequency yourself):
+        {% endblocktrans %}
+        </p>
+
+        <ul>
+
+            <li>
+                {% blocktrans trimmed %}
+                Your contacts’ latest activities: trips added
+                (past or future), remarks with regard to different events,
+                activities shared, and so on…
+                {% endblocktrans %}
+            </li>
+            <li>
+                {% blocktrans trimmed %}
+                Other notifications such as messages,
+                membership invitations, and things that people « like ».
+                {% endblocktrans %}
+            </li>
+            <li>
+                {% blocktrans trimmed %}
+                Useful and valuable information uploaded to your news
+                feed by the Cogofly team. This internal site blog,
+                updated daily, will allow you to:
+                {% endblocktrans %}
+                <ul>
+                    <li>
+                        {% blocktrans trimmed %}
+                        Discover the world’s
+                        most beautiful destinations.
+                        {% endblocktrans %}
+                    </li>
+                    <li>
+                        {% blocktrans trimmed %}
+                        Get the best out of the site
+                        and all of its features.
+                        {% endblocktrans %}
+                    </li>
+                    <li>
+                        {% blocktrans trimmed %}
+                        Obtain a range of social, cultural and
+                        practical information on various different
+                        subjects.
+                        {% endblocktrans %}
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><strong>{% blocktrans trimmed %}
+            By default you will receive the dashboard link once a week;
+            however you can change the frequency whenever you like
+            if you prefer to receive it once a day or even once a month.
+        {% endblocktrans %}
+        </strong></p>
+
+        <p>{% blocktrans trimmed %}
+            In order to do so, you just need to go on to your
+            profile and select:
+        {% endblocktrans %}
+            "<strong>{% trans 'Change my settings' %}</strong>".
+        </p>
+    {% endspaceless %}
+    </div>
+</div>

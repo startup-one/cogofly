@@ -1,0 +1,49 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n translate_url  %}
+{% block main-title %}
+    <i class="fa fa-language fa-fw"></i>
+    {% block title %}{{ titre }}{% endblock %}
+{% endblock %}
+
+{% block css_supplementaire %}
+<style>
+body, #page-wrapper {
+    background-image: url({% static 'img/1600x1280/flags.jpg' %});
+    background-size: cover;
+}
+h1.page-header {
+    color: black;
+}
+</style>
+{% endblock %}
+
+{% block central %}
+<div class="row">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-language fa-fw"></i>
+                {% trans 'You can change your language here' %}
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="list-group">
+                    {% for l in common.translated_urls %}
+                    <a href="{{ l.slug }}"
+                       class="list-group-item">
+                        <img src="{{ l.url_drapeau }}"
+                             alt="{{ l.nom_local|title }}"
+                             title="{{ l.nom_local|title }}" />
+                        &nbsp;
+                        {{ l.nom_local|title }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>
+<!-- /.row -->
+{% endblock %}

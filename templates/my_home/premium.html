@@ -1,0 +1,130 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n dumper %}
+{% block main-title %}<span style="color: yellow; text-shadow: 1px 1px 2px #000;">
+    <i class="fa fa-star-o fa-fw"></i>
+    </span>
+    {% block title %}{% trans "Premium" %}{% endblock %}
+{% endblock %}
+{% block central %}
+<div class="row">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel">
+            <div class="panel-body" style="padding-bottom:15px;">
+
+                <ul class="nav nav-pills">
+                    <li id="btn-avantages" class="active">
+                        <a href="#tab-avantages" aria-expanded="false" data-toggle="tab">
+                            {% trans 'Advantages' %}
+                        </a>
+                    </li>
+                    <li id="btn-offres">
+                        <a href="#tab-offres" aria-expanded="false" data-toggle="tab">
+                            {% trans 'Offers' %}
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    {# séparation dans des fichiers sinon HTML trop surchargé #}
+                    <div class="tab-pane fade active in" id="tab-avantages">
+                        <div class="row" style="margin-top: 10px">
+                            <div class="col-lg-12">
+                                {% spaceless %}{% blocktrans trimmed %}
+                                <h2>Hello, and welcome to the Premium option.</h2>
+                                <p>The latter will only be available once the final
+                                    version of the site is launched, along with
+                                    various options and other features,
+                                    from 21st June 2017.
+                                </p>
+                                <p><b>With the Premium option, you will be able to:</b></p>
+                                <ul>
+                                <li>Surf the site ad-free.</li><br/>
+                                <li>Organise events (trips / weekends / excursions)
+                                    based on the concept:
+                                    <b>« Let he who loves me follow me...»</b><br/><br/>
+                                    <ul>
+                                        <li><b>Aim: You will choose...</b></li><br/>
+                                        <ul>
+                                            <li>Your dates.</li>
+                                            <li>Your destinations.</li>
+                                            <li>The type of event.</li>
+                                            <li>The number of people.</li>
+                                            <li>And, potentially, « human » criteria...</li><br/>
+                                        </ul>
+                                    </ul>
+                                    <ul>
+                                        <li><b>Advantages: Choices more effective...</b></li>
+                                        <ul>
+                                            <li>You don’t have to carry out any
+                                                further searches
+                                                yourself.</li>
+                                            <li>You will receive notifications from those who have signed up.</li>
+                                            <li>You will be able to check and, <b>above all</b>, confirm
+                                                with whom you go away.</li>
+                                            <li>More flexibility and non-negligible gain in time.</li>
+                                            <li>You will be presented with a veritable choice, adapted
+                                                to your preferences.</li><br/>
+                                        </ul>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>Many other options will follow in order to entice you even more...</b>
+                                </li>
+                                </ul>
+                                {% endblocktrans %}{% endspaceless %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-offres">
+                        <div class="row" style="margin-top: 10px">
+                            <div class="col-lg-12">
+                            {% spaceless %}{% blocktrans trimmed %}
+                                <b>A special offer, with free monthly subscriptions
+                                to the Premium option</b> to be won by invitation, will
+                                also be available very soon...
+                                <b>will also be available very soon...</b>
+                            {% endblocktrans %}{% endspaceless %}
+                            {% comment %}
+                            Franck m'a demandé le 03/03/2016 de cacher ces offres, et de les remplacer
+                            par celles qui sont juste au dessus.
+                                <p>Whilst awaiting this Premium option, <b>which you will be able to
+                                    recommend to your entourage</b>, to win the same subscription,
+                                    <b>Cogofly has decided to make this option free of charge</b>
+                                    as soon as it has been released:</p>
+                                <p><b>This offer is valid with immediate effect,
+                                    in line with the following conditions:</b></p>
+                                <ul>
+                                <li><b>Between 0 and 1 000 members:</b><br />
+                                    10 years’ free subscription to our Premium option
+                                    (effective once the 1000th person has signed up...
+                                    and so on for the numbers shown below)
+                                    </li>
+                                <li><b>Between 1 000 and 10 000 members:</b><br />
+                                    3 years for free</li>
+                                <li><b>Between 10 000 and 100 000 members:</b><br />
+                                    1 year for free</li>
+                                <li><b>Between 100 000 and 1 000 000 members:</b><br />
+                                    3 months for free<br /></li>
+                                <li><b>Beyond 1 000 000 members:</b><br />
+                                    1 month for free</li>
+                                </ul>
+                                <p><b>The first subscribers will be the most favored...so hurry up and
+                                    transfer the info.</b></p>
+                                <p><b>Cogofly would like to take the opportunity
+                                    to thank you in advance</b> for your support,
+                                    and for all the help you are able to provide us
+                                    as we go international.</p>
+                                <p><b>Together, let’s make Cogofly the worldwide reference in terms
+                                    of co-travelling and much, much more...
+                                    literally speaking, the number one social network!</b></p>
+                            {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>
+{% endblock %}

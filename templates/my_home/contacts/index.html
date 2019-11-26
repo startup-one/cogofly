@@ -1,0 +1,233 @@
+{% extends 'my_home/contacts/base.html' %}
+{% load static staticfiles compress i18n %}
+{% block central %}
+
+    <div class="row">
+        {% if message %}
+        <div class="col-lg-12">
+            {% include "includes/panel_message.html" %}
+        </div>
+        {% endif %}
+
+        <div class="col-lg-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    {% trans 'Information' %}
+                </div>
+                <div class="panel-body">
+                    {% blocktrans trimmed %}
+                        <p><b>Welcome</b> to your list of contacts.</p>
+                        <ul>
+                        <li><p><b>At any time, you can:</b></p></li>
+                        <ul>
+                        <li>See their full profiles.</li>
+                        <li>Check out their activities, past and future:
+                            trips, weekends and various outings.</li>
+                        <li>Send them a message.</li>
+                        </ul>
+                        </ul>
+                    {% endblocktrans %}
+                </div>
+                <div class="panel-footer panel-custom">
+                    {% trans "The Cogofly team" %}
+                </div>
+            </div>
+        {% comment %}
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    {% trans 'Invitations' %}
+                </div>
+                <div class="panel-body">
+                    <p>
+                        {% blocktrans trimmed %}
+                            If you want to invite friends, click here:
+                        {% endblocktrans %}
+                    </p>
+                    <a href="{% url "my_home_contacts_invite" %}"
+                        style="text-decoration: none;">
+                        <button class="btn btn-validate btn-block">
+                            <i class="fa fa-envelope fa-fw"></i>
+                            {% trans "Invite friends" %}
+                        </button>
+                    </a>
+                </div>
+                <div class="panel-footer">
+                    {% trans "The Cogofly team" %}
+                </div>
+            </div>
+        {% endcomment %}
+        </div>
+
+        <div class="col-lg-9">
+        {% with show_travels=False %}
+        {% with show_buttons=False %}
+        {% with show_send_message=False %}
+        {% with form_send_message_url='my_home_contacts' %}
+
+        {% if contacts|length %}
+        <script>
+        function resizeCompute() {
+            var w = ($('body').width() < 700 ? '100%' : '48%');
+            $('.grid-item').css({ 'width': w });
+            var g = $('.grid');
+            g.isotope({
+                itemSelector: '.grid-item',
+                layoutMode: 'fitRows',
+                transitionDuration: '2s'
+            });
+            g.isotope({ sortBy : 'original-order' });
+            /*
+            g.isotope('once', 'arrangeComplete', function() {
+                g.isotope({ sortBy : 'original-order' });
+            });
+            g.isotope({ sortBy : 'random' });
+            var j = $('.grid-item').length*10;
+            $('.grid-item').each(function() {
+                console.log(j);
+                $(this).css('z-index', j--);
+            });
+            */
+        }
+
+        var gTimerResize = 0;
+        $(document).ready(function () {
+            gTimerResize = window.setTimeout(resizeCompute, 1);
+        });
+
+
+        $(window).resize(function(){
+            if (gTimerResize !== null) {
+                window.clearTimeout(gTimerResize);
+            }
+            gTimerResize = window.setTimeout(resizeCompute, 500);
+        });
+
+        </script>
+        {% if contacts.has_other_pages %}
+            {# c'est mon paginateur maison #}
+            <ul class="pagination pagination-lg"
+                style="margin-top: 0">
+                {% for obj in contacts.paginator.around %}
+                    <li{% if obj.is_current %} class="disabled"{% endif %}>
+                        <a {% if not obj.is_current %} href="?page={{ obj.page }}"{% endif %}>
+                            {% if obj.last and not obj.is_current %}
+                                &raquo;
+                            {% endif %}
+                            {{ obj.page }}
+                            {% if obj.first and not obj.is_current %}
+                                &laquo;
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="grid">
+        {% endif %}
+        {% for c in contacts %}
+            <div class="grid-item">
+
+            {% with form_send_message=c.form %}
+            {% with personne=c.contact %}
+            {% with id_unique=c.contact.pk %}
+            {% with prefilled_content=c.contact.full_name %}
+            {% with link_contact_detail=True  %}
+
+                    {% include 'includes/person/detail.html' %}
+
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            </div>
+
+        {% empty %}
+
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                {% blocktrans trimmed %}
+                    <p>No friends yet...?</p>
+                    <p><strong>You have 3 choices:</strong></p>
+                    <ul>
+                        <li style="margin-bottom: 10px">
+                            Invite your friends by email through the
+                            icon « Invite » located in the taskbar.
+                        </li>
+                        <li style="margin-bottom: 10px">
+                            Check out your search results once you have
+                            decided to travel or go away with another
+                            Cogofly member.
+                        </li>
+                        <li style="margin-bottom: 10px">
+                            Log out, go down to the bottom of the site's
+                            homepage and click on the social network links.
+                            <b>You will then be able to share the information
+                                with those around you and encourage them,
+                                and their contacts, to sign up on the site.</b>
+                        </li>
+                    </ul>
+                    <p>Good luck</p>
+                {% endblocktrans %}
+                </div>
+            </div>
+        {% endfor %}
+
+        {% if contacts|length %}
+        </div>
+        {% if contacts.has_other_pages %}
+            {# c'est mon paginateur maison #}
+            <ul class="pagination pagination-lg"
+                style="margin-top: 0">
+                {% for obj in contacts.paginator.around %}
+                    <li{% if obj.is_current %} class="disabled"{% endif %}>
+                        <a {% if not obj.is_current %} href="?page={{ obj.page }}"{% endif %}>
+                            {% if obj.last and not obj.is_current %}
+                                &raquo;
+                            {% endif %}
+                            {{ obj.page }}
+                            {% if obj.first and not obj.is_current %}
+                                &laquo;
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endif %}
+
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        {% endwith %}
+        </div>
+
+        {% comment %}
+        <div class="col-lg-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <strong>{% trans "Offer" %}</strong>
+                </div>
+                <div class="panel-body">
+                    <p>{% blocktrans trimmed %}
+                        <b>A special offer, through which free monthly
+                        subscriptions</b> to the eagerly-awaited
+                        Premium version can be won,
+                        <b>will also be available very soon...</b>
+                    {% endblocktrans %}</p>
+                    <p>
+                    <a href="{% url 'my_home_remarks_and_testimonies' %}">
+                    <button class="btn btn-default btn-block">
+                        {% trans 'Suggestions? Click here!' %}
+                    </button>
+                    </a>
+                    </p>
+                </div>
+                <div class="panel-footer">
+                    Footer
+                </div>
+            </div>
+        </div>
+        {% endcomment %}
+    </div>
+{% endblock %}

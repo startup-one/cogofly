@@ -1,0 +1,55 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n dumper %}
+{% block main-title %}
+    <i class="fa fa-user fa-fw"></i>
+    {% block title %}{% trans "My account" %}{% endblock %}
+{% endblock %}
+
+{% block central %}
+
+    {% if message %}
+        <div class="row">
+            <div class="col-lg-3">&nbsp;</div>
+            <div class="col-lg-6">
+                {% include "includes/panel_message.html" %}
+            </div>
+            <div class="col-lg-3">&nbsp;</div>
+        </div>
+    {% endif %}
+
+    {% comment %}---------------------------------------------------------
+     (!) C'est dans le résumé qu'il y a tous les boutons qui permettent
+         d'accéder aux autres menus :
+    {% endcomment %}
+    {% include "my_home/profile/profile_summary.html" %}
+
+    {% include 'my_home/profile/tab_profile.html' %}
+    {% include 'my_home/profile/tab_parameters.html' %}
+    {% include 'my_home/profile/tab_accounts.html' %}
+    {% include 'my_home/profile/tab_help.html' %}
+    {% include 'my_home/profile/tab_profile_summary.html' %}
+
+    <script>
+        $(document).ready(function() {
+            var r = $($('#edit-profile-form').find('.row')[0]),
+                ps = $('#profile-summary');
+            if (r.find('.alert-danger').length) {
+                ps.slideUp();
+                r.slideDown();
+            }
+            {% if not common.personne.profile_complete %}
+                /* Ne montrer que le profile si "#profile" pour forcer à entrer
+                 * les informations obligatoires
+                 */
+                ps.hide();
+                $('#edit-profile-form').show();
+                var r = $($('#edit-profile-form').find('.row')[0]),
+                    b = r.find('button');
+                console.log(b);
+                r.show();
+                $(b[0]).parent().removeClass('col-lg-6').addClass('col-lg-12');
+                $(b[2]).parent().remove();
+            {% endif %}
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,225 @@
+{% comment %}---------------------------------------------------------------
+Details buttons (like, share and so on)
+{% endcomment %}{% load static staticfiles compress i18n dumper templates_extras %}
+
+{% if show_buttons %}
+<div class="panel-footer" {% if mode_grid %}
+     style="position: absolute; bottom: 22px; width: 99%;"{% endif %}>
+    <h4 class="footer-buttons">
+        {% if show_like %}
+            {# like : si pas une activité -> forcément une personne #}
+            <button class="btn btn-default btn-footer ilike" {% cleanup %}
+                {% if activite %}data-liked="{{ activite.pk }}"
+                {% else %}data-person="{{ personne.pk }}"
+                {% endif %}{% endcleanup %}
+                title="{% trans 'I like' %}"
+                type="button">
+                    {% if activite %}
+                        {% if activite in liked %}
+                            <i class="fa fa-thumbs-up fa-fw"></i>
+                        {% else %}
+                            <i class="fa fa-thumbs-o-up fa-fw"></i>
+                        {% endif %}
+                    {% else %}
+                        {% if personne in liked_person %}
+                            <i class="fa fa-thumbs-up fa-fw"></i>
+                        {% else %}
+                            <i class="fa fa-thumbs-o-up fa-fw"></i>
+                        {% endif %}
+                    {% endif %}
+                {% comment %}--------------------------------------------
+                    {% trans 'I like' %}
+                {% endcomment %}
+            </button>
+        {% endif %}
+
+        {% if show_comment and activite %}
+            <button title="{% trans "Add a comment" %}"
+                    type="button" class="btn btn-default btn-footer"
+                    data-toggle="modal" data-target="#modal-add-comment-{{ activite.pk }}">
+                <i class="fa fa-comments-o fa-fw"></i>&nbsp;{% trans "Comment" %}
+            </button>
+        {% endif %}
+
+        {% if show_invite_big %}
+            {% if personne != common.personne %}
+                {# Ne proposer d'inviter que si on n'a pas déjà de lien avec elle : #}
+                {% if relation_desc and can_remove %}
+
+                    <button type="button" class="btn btn-default btn-danger{{ btn_added_class }}"
+                            data-toggle="modal"
+                            data-target="#modal-remove-{{ id_unique }}"
+                            title="{% trans 'Remove this relation' %}">
+                        <i class="fa fa-times"></i>&nbsp;
+                        {% trans 'Remove this relation' %}
+                    </button>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
+{% comment %}
+35.reunion.17.05.2016 / Franck m'a demandé de supprimer la possibilité
+d'envoyer un message directement, ce que je trouve pas pratique du tout
+mais il ne m'écoute pas, je suis sûr que comme beaucoup de mes conseils
+on devra revenir en arrière :
+
+    2018/01/28
+    Reste à faire pour que ça fonctionne :
+    - faire dans applancement/templatetags/model_access.py
+      un truc qui crée une forme dynamique :
+        context['form_send_message'] = MessageSendForm(obj_bd=contact,
+                                                       champ='id_personne')
+    - la ressortir dans le contexte de search.py
+    - modifier tout le code en dessous pour que les deux puissent fonctionner
+
+
+    ------------------------------------------
+    request.get_full_path pour qu'on revienne sur la page :
+    {% with request.get_full_path as form_send_message_full_url %}
+    {% with show_send_message=True %}
+    {% with _('Send a message') as label_send_a_message %}
+
+    {% include "includes/person/send_message.html" %}
+
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+
+    s'inspirer de l'ancien code pour relier les choses ensemble :
+
+        {% if show_send_message and activite %}
+            {# Obligé de convertir l'entier en chaine... #}
+            {% with activite.pk|stringformat:"i" as pk_str %}
+            {# ...puis de le concaténer (impossible à faire en une fois) #}
+            {% with 'msg-'|add:pk_str as id_unique %}
+            {# avant de mettre "Send a message" : prefilled_content #}
+            {% with _('Send a message') as prefilled_content %}
+            {% with _('Send a message') as label_send_a_message %}
+
+                {% include "includes/person/send_message.html" %}
+
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+            {% endwith %}
+        {% elif show_send_message %}
+            {% with _('Send a message') as label_send_a_message %}
+                {% include "includes/person/send_message.html" %}
+            {% endwith %}
+        {% endif %}
+
+{% endcomment %}
+
+
+    {% with common.personne.contacts as cts %}
+        {% if show_share and activite %}
+        {% if cts|length > 1 or cts|first != personne %}
+            <button class="btn btn-default btn-footer" type="button"
+                    title="{% trans 'Share' %}"
+                    data-toggle="modal"
+                    data-target="#modal-share-{{ activite.pk }}" >
+                <i class="fa fa-share-alt fa-fw"></i>
+                {% trans 'Share' %}
+            </button>
+        {% endif %}
+        {% endif %}{# /if show_share #}
+    {% endwith %}
+
+    {% if show_invite_small %}
+        {% with btn_added_class=" btn-footer" %}
+        {% with button_already_shown=True %}
+            {% include "includes/person/invite.html" %}
+        {% endwith %}
+        {% endwith %}
+    {% endif %}
+
+    </h4>
+
+    {# Après les boutons, mettres les dialogues cachés : #}
+    {% if show_comment and activite %}
+        {% include "includes/person/add_comment.html" %}
+    {% endif %}
+
+    {% if show_invite_big %}
+        {% with button_already_shown=True %}
+            {% include "includes/person/invite.html" %}
+        {% endwith %}
+    {% endif %}
+
+    {% if show_invitation_accept %}
+        {% include "includes/person/invitation_accept.html" %}
+    {% endif %}
+
+    {% with common.personne.contacts as cts %}
+        {% if show_share and activite %}
+        {% if cts|length > 1 or cts|first != personne %}
+            <div class="modal fade"
+                  id="modal-share-{{ activite.pk }}"
+                  tabindex="-1" role="dialog"
+                  style="display: none;">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form enctype="multipart/form-data" role="form"
+                              action="{% url 'activity_share_view' %}"
+                              method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="activite"
+                               value="{{ activite.pk }}" />
+
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="check-uncheck-all"
+                                               type="checkbox"
+                                               name="contacts[]" />
+                                        <i>
+                                            {% trans 'Check / uncheck all' %}
+                                        </i>
+                                    </label>
+                                </div>
+                            </div>
+                            {% for contact in common.personne.contacts %}
+                                {% if contact != personne %}
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"
+                                                       name="contacts[]"
+                                                       value="{{ contact.pk }}" />
+                                                {{ contact.full_name }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            <script>$(document).ready(function() {
+                                checkUncheckAll('.check-uncheck-all');
+                            });</script>
+                        </div>{#<!-- /modal-body -->#}
+
+                        <div class="modal-footer">
+
+                            <button class="btn btn-primary"
+                                    title="{% trans 'Share' %}">
+                                <i class="fa fa-share-alt fa-fw"></i>
+                                {% trans 'Share' %}
+                            </button>
+                            <button class="btn btn-default" type="button"
+                                    data-dismiss="modal">
+                                <i class="fa fa-times"></i>
+                                {% trans 'Close' %}
+                            </button>
+                        </div>
+                        </form>
+
+                    </div>{#<!-- /modal-content -->#}
+                </div>{#<!-- /modal-dialog -->#}
+            </div>
+        {% endif %}
+        {% endif %}{# /if show_share #}
+    {% endwith %}
+</div>
+{% endif %}

@@ -1,0 +1,67 @@
+{% comment %}--------------------------------------------
+  Fichier inclus lorsque je dois afficher un formulaire pour un voyage.
+  Je dois afficher un formulaire pour chaque voyage, et j'avais deux
+  possibilités :
+  - tout pré-construit : c'est lourd
+  - le construire dynamiquement avec jQuery
+
+  J'ai choisi la première parce que tout est côté Django, dans le template,
+  pas de prise de tête avec jQuery et j'ai déjà perdu trop de temps à
+  gérer des constructions dynamiques qui ne fonctionnaient pas par le passé.
+
+{% endcomment %}{% load i18n klass static %}
+<div class="row"
+    id="travel-edit-{{ v.obj.pk }}"
+    {% if form_style_add %}style="{{ form_style_add }}{% if not form.errors %}; display: none{% endif %}"
+    {% elif not form.errors %}style="display: none"{% endif %}>
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <i class="fa fa-edit fa-fw"></i>
+                {{ title_form }}
+            </div>{# <!-- /.panel-heading --> #}
+            <div class="panel-body">
+
+
+                <form role="form"
+                      action="{% url 'my_home_travel' %}"
+                      enctype="multipart/form-data"
+                      method="POST">
+                    {% csrf_token %}
+
+                    {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                    {% endfor %}
+
+                    {% include "includes/form_generic/fields_by_groupno.html" %}
+
+                    {% include "includes/form_generic/form_non_field_errors.html" %}
+
+                    <div class="col-lg-3">
+                        <button class="btn btn-validate btn-block"
+                                type="submit"
+                                onclick="$(this).hide(); $(this).next().show();">
+                            {{ btn_submit_label }}
+                        </button>
+                        <button class="btn btn-dark btn-block"
+                                type="button"
+                                style="display: none">
+                            <img src="{% static 'img/anims/wait.gif' %}"
+                                 alt="{% trans 'Updating...' %}">
+                            {% trans 'Updating...' %}
+                        </button>
+
+                    </div>{# <!-- /.col-lg-3 --> #}
+                    <div class="col-lg-3">
+                        <button class="btn btn-dark btn-block" type="button"
+                                data-hqf-switch="$.ct('.row')/Xu/$.ct('.row').pv()/Od">
+                            <i class="fa fa-times"></i>&nbsp;&nbsp;
+                            {{ btn_cancel_label }}
+                        </button>
+                    </div>{# <!-- /.col-lg-3 --> #}
+                </form>
+
+            </div>{# /.panel-body #}
+        </div>{# /.panel panel-primary #}
+    </div>{# /.col-lg-12 #}
+</div>{# /.row #}

@@ -1,0 +1,22 @@
+{% comment %}--------------------------------------------
+Séparation pour plus de clarté
+{% endcomment %}{% load i18n klass %}
+<div class="row" id="good-to-know-travels-past" style="display: none">
+    <div class="col-lg-12">
+        <p>
+            <b>{% blocktrans trimmed %}
+                In order to add a trip, and be a part of  Cogofly members’ search
+                results, please fill in at least one of the two
+                fields (place and/or date)
+            {% endblocktrans %}
+            </b>
+        </p>
+        <p>
+        <button class="btn btn-hint"
+                data-hqf-switch="$.ct('.row')/Ou">
+            <i class="fa fa-times"></i>
+            {% trans 'Close' %}
+        </button>
+        </p>
+    </div>{# /.col-lg-12 #}
+</div>{# /.row #}

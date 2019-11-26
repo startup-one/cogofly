@@ -1,0 +1,244 @@
+{% comment %}---------------------------------------------------------------
+Détail complet d'une personne
+{% endcomment %}{% load static staticfiles compress i18n templates_extras dumper model_access %}
+{% spaceless %}{% cleanup %}
+<div class="row personne-description-complete">
+    <div class="col-lg-12 separator">
+        {# <hr style="border: solid 2px #337ab7; margin: 0px 0 20px;" /> #}
+        <hr />
+    </div>
+    <div class="col-lg-12">
+        {% if common.personne|can_see_informations_of:personne %}{% cleanup %}
+        <div class="row personne-description-complete">
+            <div class="col-lg-12">
+                <div class="personne-description-complete-cadre-sobre"
+                     style="background: url('{% static "img/bg-cadres/world.jpg" %}'); background-size: cover; background-position: center center;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>
+                            {% if personne.est_un_homme %}
+                                {% trans 'Man' %}
+                            {% else %}
+                                {% trans 'Woman' %}
+                            {% endif %}
+                            {% if personne.age_visible %}
+                            {% if personne.get_age %}
+                                ,&nbsp;{{ personne.get_age }}
+                            {% endif %}{% endif %}.
+                            </p>
+                            {% if personne.nb_enfants_visible %}
+                                <p>{{ personne.nb_enfants_description }}.</p>
+                            {% endif %}
+                            {% if personne.langue_visible and personne.langue %}
+                                <p><strong>{% trans 'Mother tongue:' %}</strong>
+                                {{ personne.langue_description|lower }}
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="personne-description-complete-cadre"
+                     style="background: url('{% static "img/bg-cadres/blue-69738.jpg" %}'); background-size: cover; background-position: center center;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>- <strong>{% trans 'Languages:' %}</strong>
+                            {% if personne.langues2_visible %}
+                                {% for item in personne.langues2.still_valid_distinct %}
+                                    {{ item.value|lower }}{% if not forloop.last %},{% else %}.{% endif %}
+                                {% empty %}
+                                    {% trans 'not precised' %}
+                                {% endfor %}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+
+                            <p>- <strong>{% trans 'Level of education:' %}</strong>
+                            {% if personne.niveau_etudes_visible %}
+                                {% if personne.niveau_etudes %}
+                                    {{ personne.niveau_etudes_description|lower }}
+                                {% else %}
+                                    {% trans 'not precised' %}
+                                {% endif %}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+
+                            <p>- <strong>{% trans 'Subjects:' %}</strong>
+                            {% if personne.programme_visible %}
+                                {% for item in personne.programmes2.still_valid_distinct %}
+                                    {{ item.value|lower }}{% if not forloop.last %},{% else %}.{% endif %}
+                                {% empty %}
+                                    {% trans 'not precised' context 'subjects' %}
+                                {% endfor %}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="personne-description-complete-cadre"
+                     style="background: url('{% static "img/bg-cadres/blue-69738.jpg" %}'); background-size: cover; background-position: center center;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>- <strong>{% trans 'Current employer:' %}</strong>
+                            {% if personne.employer_current_visible %}
+                                {% if personne.employer_current %}
+                                    {{ personne.employer_current_description|lower }}
+                                {% else %}
+                                    {% trans 'not precised' %}
+                                {% endif %}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+
+                            <p>- <strong>{% trans 'Previous employer:' %}</strong>
+                            {% if personne.employer_previous_visible %}
+                                {% if personne.employer_previous %}
+                                    {{ personne.employer_previous_description|lower }}
+                                {% else %}
+                                    {% trans 'not precised' %}
+                                {% endif %}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+
+                            <p>- <strong>{% trans 'Job:' %}</strong>
+                            {% if personne.profession_visible %}
+                                {% if personne.profession %}
+                                    {{ personne.profession_description|lower }}
+                                {% else %}
+                                    {% trans 'not precised' context 'job' %}
+                                {% endif %}
+                            {% else %}
+                                {% trans 'hidden' context 'job'  %}
+                            {% endif %}
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row personne-description-complete">
+            <div class="col-lg-6">
+                <div class="personne-description-complete-cadre"
+                     style="background: url('{% static "img/bg-cadres/blue-69738.jpg" %}'); background-size: cover; background-position: center center;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>- <strong>{% trans 'Activity sectors:' %}</strong>
+                            {% if personne.activite_visible %}
+                                {% for item in personne.activites2.still_valid_distinct %}
+                                    {{ item.value|lower }}{% if not forloop.last %},{% else %}.{% endif %}
+                                {% empty %}
+                                    {% trans 'not precised' context 'activity sectors' %}
+                                {% endfor %}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+                            <p>- <strong>{% trans 'Hobbies:' %}</strong>
+                            {% if personne.hobbies_visible %}
+                                {% for item in personne.hobbies2.still_valid_distinct %}
+                                    {{ item.value|lower }}{% if not forloop.last %},{% else %}.{% endif %}
+                                {% empty %}
+                                    {% trans 'not precised' %}
+                                {% endfor %}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+
+                            <p>- <strong>{% trans 'Driving licences:' %}</strong>
+                            {% if personne.conduite_visible %}
+                                {% for item in personne.types_permis2.still_valid_distinct %}
+                                    {{ item.value|lower }}{% if not forloop.last %},{% else %}.{% endif %}
+                                {% empty %}
+                                    {% trans 'not precised' %}
+                                {% endfor %}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="personne-description-complete-cadre"
+                     style="background: url('{% static "img/bg-cadres/blue-69738.jpg" %}'); background-size: cover; background-position: center center;">
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <p>- <strong>{% trans 'Personality:' %}</strong>
+                            {% if personne.personnalite_visible %}
+                                {% for item in personne.personnalites2.still_valid_distinct %}
+                                    {{ item.value|lower }}{% if not forloop.last %},{% else %}.{% endif %}
+                                {% empty %}
+                                    {% trans 'not precised' context 'personality' %}
+                                {% endfor %}
+                            {% else %}
+                                {% trans 'hidden' context 'personality' %}
+                            {% endif %}
+                            </p>
+
+                            <p>- <strong>{% trans 'Smoker:' %}</strong>
+                            {% if personne.est_fumeur_visible %}
+                                {{ personne.est_fumeur_description }}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+                            <p>- <strong>{% trans 'Star sign:' %}</strong>
+                            {% if personne.custom_zodiac_sign_visible %}
+                                {# ! ici c'est la description qui renvoie "not precised" #}
+                                {{ personne.custom_zodiac_sign_description|lower }}
+                            {% else %}
+                                {% trans 'hidden' %}
+                            {% endif %}
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row personne-description-complete">
+            <div class="col-lg-12">
+                <div class="personne-description-complete-cadre-sobre"
+                     style="background: url('{% static "img/bg-cadres/drawing-pad.jpg" %}');background-size: cover;">
+        <div class="row">
+            <div class="col-lg-12 self-description">
+                <strong>{% trans 'Self-description:' %}</strong>
+                {% if personne.self_description_visible %}
+                    {% if personne.self_description %}
+                        <br /><br />{{ personne.self_description }}
+                    {% else %}
+                        {% trans 'not precised' context 'self_description' %}
+                    {% endif %}
+                {% else %}
+                    {% trans 'hidden' context 'self_description' %}
+                {% endif %}
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>{% endcleanup %}
+    {% else %}
+        <h4 style="text-align: center">{% blocktrans trimmed %}
+            This person didn't want to share his/her informations.
+        {% endblocktrans %}</h4>
+    {% endif %}
+    </div>
+</div>
+{% endcleanup %}{% endspaceless %}

@@ -1,0 +1,177 @@
+{% load static staticfiles compress i18n %}
+<div class="row" style="display: none; margin-top: 10px">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel panel-primary {% if request.session.message %}panel-toggle-message{% endif %}">
+            <div class="panel-heading">
+                <i class="fa fa-edit fa-fw"></i>&nbsp;{% trans "Modify my data" %}
+            </div>{# <!-- /.panel-heading --> #}
+            <div class="panel-body">
+                <button class="btn btn-block btn-profile-mandatory" type="button"
+                        style="text-align: left; height: 90px"
+                        data-hqf-switch="$.ct('.row')/u/$($.ct('.row').nt().fd('.row')[0])/d">
+                    &nbsp;&nbsp;
+                    <span style="line-height: 80px; font-size: xx-large; height: 100%; width: 20%; display: block; float: right; vertical-align: middle">
+                        <i class="fa fa-plus fa-fw"></i>
+                    </span>
+                    <span style="font-size: larger; line-height: 70px; vertical-align: middle">
+                    {% trans 'Practicals information' %}
+                    </span>
+                </button>
+                <button class="btn btn-block btn-profile-optional" type="button"
+                        style="text-align: left; height: 90px"
+                        data-hqf-switch="$.ct('.row')/u/$($.ct('.row').nt().fd('.row')[1])/d">
+                    &nbsp;&nbsp;
+                    <span style="line-height: 80px; font-size: xx-large; height: 100%; width: 20%; display: block; float: right; vertical-align: middle">
+                        <i class="fa fa-plus fa-fw"></i>
+                    </span>
+                    <span style="font-size: larger; line-height: 70px; vertical-align: middle">
+                    {% trans 'Optional information' %}
+                    </span>
+                </button>
+                <button class="btn btn-dark btn-block" type="button"
+                        data-hqf-switch="$.pt().ct('.row')/u/$.pt().ct('.row').pv()/Od">
+                    <i class="fa fa-times"></i>
+                    {% trans "Close" %}
+                </button>
+            </div>{# <!-- /.panel-body --> #}
+        </div>{# <!-- /.panel --> #}
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>
+
+<form id="edit-profile-form" enctype="multipart/form-data"
+      action="{% url 'my_home_profile_edit' %}"
+      method="POST">
+{% csrf_token %}
+    <div class="row" style="display: none; margin-top: 10px">
+
+        <div class="col-lg-3">&nbsp;</div>
+
+        <div class="col-lg-6">
+
+            <div class="panel panel-primary {% if request.session.message %}panel-toggle-message{% endif %}">
+                <div class="panel-heading">
+                    <i class="fa fa-edit fa-fw"></i>
+                    {% trans 'Practicals information' %}
+                </div>{# <!-- /.panel-heading --> #}
+                <div class="panel-body">
+
+                    <div class="col-lg-12 photo">
+                        <div class="photo-profile-normal" style="height: 300px;">
+                        <span class="helper"></span>
+                        {# url_photo précalculé #}
+                        <img src="{{ url_photo_profil }}"
+                             style="width: auto; max-height: 300px; max-width: 100%;">
+                        </div>
+                        {% with group_no=0 %}
+                            {% include "includes/form_generic/fields_by_groupno.html" %}
+                        {% endwith %}
+                    </div>{# <!-- /.col-lg-12 --> #}
+
+                    {# display only field "groupno"=value #}
+                    <div class="col-lg-12">
+                    {% with group_no=2 %}
+                        {% include "includes/form_generic/fields_by_groupno.html" %}
+                    {% endwith %}
+                    </div>
+
+                    <div class="col-lg-12"><p>
+                    <span class="important-field">
+                        * {% trans 'mandatory field' %}
+                    </span>
+                    </p></div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-validate btn-block"
+                                type="submit"
+                                onclick="$(this).hide(); $(this).next().show();">
+                            {% trans "Confirm" %}
+                        </button>
+                        <button class="btn btn-validate btn-block"
+                                type="button"
+                                style="display: none">
+                            <img src="{% static 'img/anims/wait.gif' %}"
+                                 alt="{% trans 'Updating...' %}">
+                            {% trans 'Updating...' %}
+                        </button>
+                    </div>{# <!-- /.col-lg-6 --> #}
+                    <div class="col-lg-6">
+                        <button class="btn btn-dark btn-block" type="button"
+                                data-hqf-switch="$.ct('.row')/u/$.ct('.row').pt().pv()/Od">
+                           {% trans "Cancel" %}
+                        </button>
+                    </div>{# <!-- /.col-lg-6 --> #}
+
+                </div>{# <!-- /.panel-body --> #}
+            </div>{# <!-- /.panel --> #}
+
+        </div>{# <!-- /.col-lg-6 --> #}
+
+        <div class="col-lg-3">&nbsp;</div>
+
+    </div>
+
+    <div class="row" style="display: none; margin-top: 10px">
+
+
+        <div class="col-lg-3">&nbsp;</div>
+
+        <div class="col-lg-6">
+
+            <div class="panel panel-primary {% if request.session.message %}panel-toggle-message{% endif %}">
+                <div class="panel-heading">
+                    <i class="fa fa-edit fa-fw"></i>
+                    {% trans 'Optional information' %}
+                </div><!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12 photo">
+                            <div class="photo-profile-normal" style="height: 300px;">
+                            <span class="helper"></span>
+                            {# url_photo précalculé #}
+                            <img src="{{ url_photo_banniere }}"
+                                 style="width: auto; max-height: 300px; max-width: 100%;">
+                            </div>
+                            {% with group_no=1 %}
+                                {% include "includes/form_generic/fields_by_groupno.html" %}
+                            {% endwith %}
+                        </div>{# <!-- /.col-lg-12 --> #}
+                    </div>
+                    {# principe : n'afficher que les champs "groupno"=valeur #}
+                    {% with group_no=3 %}
+                        {% include "includes/form_generic/fields_by_groupno.html" %}
+                    {% endwith %}
+
+                    {% include "includes/form_generic/form_non_field_errors.html" %}
+
+                    <div class="col-lg-6">
+                        <button class="btn btn-validate btn-block"
+                                id="register-submit-button" type="submit"
+                                onclick="$(this).hide(); $(this).next().show();">
+                            {% trans "Confirm" %}
+                        </button>
+                        <button class="btn btn-validate btn-block"
+                                type="button"
+                                style="display: none">
+                            <img src="{% static 'img/anims/wait.gif' %}"
+                                 alt="{% trans 'Updating...' %}">
+                            {% trans 'Updating...' %}
+                        </button>
+                    </div>{# <!-- /.col-lg-6 --> #}
+                    <div class="col-lg-6">
+                        <button class="btn btn-dark btn-block" type="reset"
+                                data-hqf-switch="$.ct('.row')/u/$.ct('.row').pt().pv()/Od">
+                            {% trans "Cancel" %}
+                        </button>
+                    </div>{# <!-- /.col-lg-6 --> #}
+
+                </div>{# <!-- /.panel-body --> #}
+            </div>{# <!-- /.panel --> #}
+
+
+        </div>{# <!-- /.col-lg-6 --> #}
+
+        <div class="col-lg-3">&nbsp;</div>
+
+    </div>
+</form>

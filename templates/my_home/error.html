@@ -1,0 +1,81 @@
+{% extends 'my_home/base.html' %}{% comment %}
+Page qui affiche un message d'erreur qui est dans la session,
+par exemple si erreur login facebook.
+(!!) Ça n'est pas géré comme partout ailleurs, ici, on affiche le message
+     avec un bouton de redirection vers l'index, c'est donc
+     UNIQUEMENT À UTILISER EN CAS DE MESSAGES CRITIQUES
+{% endcomment %}{% load static staticfiles compress i18n django_markdown %}
+
+{% block main-title %}
+    {% block title %}{% if user.is_authenticated %}
+        {{ common.hello }}{% else %}{% trans "My home" %}
+    {% endif %}{% endblock %}
+{% endblock %}
+
+{% block css_supplementaire %}
+<style>{# Même #}
+body, #page-wrapper {
+    background-image: url({% static 'img/bg/sea.jpg' %});
+    background-size: cover;
+    border: 0;
+}
+h1.page-header {
+    color: white;
+}
+</style>
+{% endblock %}
+
+{% block central %}
+    <div class="row">
+        <div class="col-lg-3">&nbsp;</div>
+
+        <div class="col-lg-6">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    {% trans 'Information' %}
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                        {% if message %}
+                            {% autoescape off %}
+                            {% for msg in message %}
+                                {% if forloop.last %}
+                                    <br />
+                                {% endif %}
+                                {% if forloop.first %}
+                                    <h3 style="margin-top: 0">{{ msg }}</h3>
+                                {% else %}
+                                    {{ msg }}
+                                {% endif %}
+                                {% if not forloop.first %}
+                                    <br />
+                                {% endif %}
+                            {% endfor %}
+                            {% endautoescape %}
+                        {% else %}
+                            <p>{% blocktrans trimmed %}
+                                There's no error for the moment...
+                            {% endblocktrans %}
+                            </p>
+                        {% endif %}
+                        </div>
+                        <div class="col-md-12" style="margin-top: 20px">
+                            <a href="{% url 'my_home_index' %}">
+                            <button class="btn btn-validate btn-block">
+                            {% blocktrans trimmed %}
+                                Click here to go back to the main page
+                            {% endblocktrans %}
+                            </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">&nbsp;</div>
+
+    </div>
+{% endblock %}

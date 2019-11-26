@@ -1,0 +1,95 @@
+{% load static staticfiles compress i18n model_access dumper %}
+{% with c.conversation|first_person_who_is_not:common.personne as personne %}
+{% comment %}
+ (!) La classe msg-notread est utilisée en JS pour faire l'appel AJAX et
+     marquer les messages comme lus, et diminuer le compteur
+{% endcomment %}
+<div class="panel panel-primary conversation-summary{% if opt_messages_not_read %} msg-notread{% else %} msg-read{% endif %}"
+     id="conversation-summary-{{ c.conversation.pk }}">
+    <div class="panel-body" style="padding: 0">
+        <div class="row">
+            <div class="col-lg-3 profile-photo">
+                <div class="photo-profile-normal"{% if not opt_messages_not_read %} style="max-height: 80px"{% endif %}>
+                    <span class="helper"></span>
+                    <img src="{{ personne.url_photo_profil }}" />
+                </div>
+            </div>
+            <div class="col-lg-9">
+                {% if opt_messages_not_read %}
+                    {% for message in c.conversation.messages_by_date %}
+                        {% if message.dst == common.personne and not message.is_read %}
+                            <h4 class="message-not-read"
+                                data-msg="{{ message.pk }}">
+                                <span class="timeline-badge">
+                                    <i class="fa fa-star"></i>
+                                </span><b>
+                                    <span class="new-line-responsive">
+                                        {{ message.date_creation_relative }},
+                                    </span>
+                                    <span>
+                                    {{ message.src.full_name }}
+                                    {% trans "wrote:" %}<br />
+                                    </span>
+                                    <p>
+                                        {{ message.message_summary|safe }}
+                                    </p></b>
+                                {% if not forloop.last %}
+                                    <hr />
+                                {% endif %}
+                            </h4>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <div class="row">
+                        <div class="col-lg-11 message-read">
+                            {% with personne.full_name as p_fullname %}
+                                {% blocktrans trimmed %}
+                                    To see your messages history, with
+                                    <b>{{ p_fullname }}</b>,
+                                {% endblocktrans %}
+                            {% endwith %}
+                            <button type="button" class="btn btn-validate slide">
+                                {% trans 'click here' %}
+                            </button>
+
+                            <hr />
+                        </div>
+                    </div>
+                    {% comment %} Extrait de la conversation
+                    {% for message in c.conversation.messages_by_date %}
+
+                        {% if forloop.counter0 < 2 %}
+                            <h4 data-msg="{{ message.pk }}"
+                                style="font-size: 95%">
+                                {{ message.date_creation_relative }},
+                                {% if message.dst != common.personne %}
+                                    {% trans 'You wrote:'|lower %}
+                                {% else %}
+                                    {{ message.src.full_name }}
+                                    {% trans "wrote:" %}
+                                {% endif %}
+                                <p style="margin-left:30px">
+                                    {{ message.message_summary|safe }}
+                                </p>
+                            </h4>
+                        {% endif %}
+                    {% endfor %}
+                    {% endcomment %}
+                {% endif %}
+                <div class="row">
+                    <div class="col-lg-11 conversation-delete">
+                        <span>
+                        </span>
+                        <button type="button" class="btn btn-default"
+                                data-toggle="modal"
+                                data-target="#conversation-delete-{{ c.conversation.pk }}">
+                            &nbsp;<i class="fa fa-trash-o"></i>&nbsp;
+                        {% trans 'Delete this conversation' %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endwith %}

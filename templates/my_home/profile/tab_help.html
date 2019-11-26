@@ -1,0 +1,113 @@
+{% load static staticfiles compress i18n %}
+<div class="row" style="display: none">
+    <div class="col-lg-3">&nbsp;</div>
+    <div class="col-lg-6">
+        <div class="panel panel-default {% if request.session.message %}panel-toggle-message{% endif %}">
+            <div class="panel-body">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#tab-help-profile-modify" aria-expanded="false" data-toggle="tab">
+                            {% trans "Modify my profile" %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab-help-my-parameters" aria-expanded="false" data-toggle="tab">
+                            {% trans "My parameters" %}
+                        </a>
+                    </li>
+                    <li class="li-button-close">
+                        <button type="button" class="btn nav-pills btn-hqf-close btn-dark"
+                                data-hqf-switch="$.ct('.row')/u/$.ct('.row').pv().pv().pv().pv().pv()/Od">
+                        <i class="fa fa-times"></i>
+                            {% trans 'Close' %}
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    {# séparation dans des fichiers sinon HTML trop surchargé #}
+                    <div class="tab-pane fade active in" id="tab-help-profile-modify">
+                        <div class="row help-custom">
+                            <div class="col-lg-12">
+                                <ul class="nav nav-pills">
+                                    <li class="active">
+                                        <a href="#tab-help-informations-pratiques" aria-expanded="false" data-toggle="tab">
+                                            {% trans 'Practicals information' %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-help-informations-optional" aria-expanded="false" data-toggle="tab">
+                                            {% trans 'Optionals information' %}
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="tab-help-informations-pratiques">
+                                        {% include 'my_home/profile/tab_help/help_informations_pratiques.html' %}
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-help-informations-optional">
+                                        {% include 'my_home/profile/tab_help/help_informations_facultatives.html' %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-help-my-parameters">
+                        <div class="row help-custom">
+                            <div class="col-lg-12">
+                                <ul class="nav nav-pills">
+                                    <li class="active">
+                                        <a href="#tab-help-my-parameters-password" aria-expanded="false" data-toggle="tab">
+                                            {% trans "Password" %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-help-my-parameters-language" aria-expanded="false" data-toggle="tab">
+                                            {% trans "Language" %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-help-my-parameters-visibility" aria-expanded="false" data-toggle="tab">
+                                            {% trans "Visibility" %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-help-my-parameters-desactivate-delete-my-account" aria-expanded="false" data-toggle="tab">
+                                            {% trans "Delete my account" %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-help-my-parameters-newsletter" aria-expanded="false" data-toggle="tab">
+                                            {% trans "My dashboard" %}
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    {# séparation dans des fichiers sinon HTML trop surchargé #}
+                                    <div class="tab-pane fade active in" id="tab-help-my-parameters-visibility">
+                                        {% include 'my_home/profile/tab_help/help_visibility.html' %}
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-help-my-parameters-password">
+                                        {% include 'my_home/profile/tab_help/help_password.html' %}
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-help-my-parameters-language">
+                                        {% include 'my_home/profile/tab_help/help_language.html' %}
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-help-my-parameters-desactivate-delete-my-account">
+                                        {% include 'my_home/profile/tab_help/help_desactivate_delete_account.html' %}
+                                    </div>
+                                    <div class="tab-pane fade" id="tab-help-my-parameters-newsletter">
+                                        {% include 'my_home/profile/tab_help/help_newsletter.html' %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>{# /tab-content #}
+            </div>{# /panel-body #}
+        </div>{# /panel #}
+    </div>
+    <div class="col-lg-3">&nbsp;</div>
+</div>

@@ -1,0 +1,114 @@
+{% extends 'my_home/base.html' %}
+{% load static staticfiles compress i18n dumper %}
+{% block main-title %}<i class="fa fa-lock fa-fw"></i>
+    {% block title %}{% trans "Register" %}{% endblock %}
+{% endblock %}
+
+{% block css_supplementaire %}
+<style>
+body, #page-wrapper {
+    background-image: url({% static 'img/bg/palmier.jpg' %});
+    background-size: cover;
+    border: 0;
+}
+h1.page-header {
+    color: white;
+}
+</style>
+{% endblock %}
+
+{# A la demande de Franck supprimer le menu en haut : #}
+{% block navigation %}
+{% endblock %}
+{% block ligne_top_vide %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+
+{% block central %}
+<div class="row">
+    <div class="col-lg-3">
+        &nbsp;
+    </div>
+    <div class="col-lg-6">
+
+        {% include "includes/panel_message.html" %}
+
+        <div class="panel panel-default" {% if request.session.message %}style="display: none" {% endif %}>
+            <div class="panel-heading">
+                {% trans 'Sign up in one click' %}
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6" title="facebook">
+                        <a href="{% url 'login' 'facebook' %}"
+                           class="btn btn-block btn-social btn-facebook">
+                            <i class="fa fa-facebook"></i>
+                            {% trans "Sign up with Facebook" %}
+                        </a>
+                    </div>
+                    <div class="col-md-6" title="google">
+                        <a href="{% url 'login' 'google' %}"
+                           class="btn btn-block btn-social btn-google-plus">
+                            <i class="fa fa-google-plus"></i>
+                            {% trans "Sign up with Google" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default" {% if request.session.message %}style="display: none" {% endif %}>
+            <div class="panel-heading">
+                {% trans '... or fill in' %}
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+
+                <form id="register-form" action="{% url 'my_home_register' %}"
+                      method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group {% if field.errors %}has-error{% endif %}">
+                            <label>{{ field.label }}</label>
+                            <label for="{{ field.auto_id }}"
+                                   class="sr-only">{{ field.label }}
+                            </label>
+                            {{ field }}
+                        </div>
+                        {% if field.errors %}
+                        <div class="form-group">
+                            <div class="alert alert-danger" role="alert">
+                            {% for error in field.errors %}
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">{{ error }}</span>
+                                {{ error }}
+                            {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {{ field.help_text }}
+                    {% endfor %}
+
+                    {% include "includes/form_generic/form_non_field_errors.html" %}
+
+                    <button class="btn btn-primary btn-block"
+                            id="register-submit-button" type="submit">
+                        {% trans "Register!" %}
+                    </button>
+
+
+                </form>
+                <p style="margin-top: 10px">
+                    {{ agree_with_toc_and_tos|safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        &nbsp;
+    </div>
+</div>
+<!-- /.row -->
+{% endblock %}

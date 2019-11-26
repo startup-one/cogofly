@@ -1,0 +1,111 @@
+{% comment %}---------------------------------------------------------------
+On l'inclut pour donner la possibilité d'avoir un bouton "inviter",
+et si on clique dessus, la boîte qui s'affiche avec.
+Attention ! On a besoin d'un id unique.
+{% endcomment %}{% load static staticfiles compress i18n klass model_access %}
+
+{# type_of_relation_you = fonction pour extraire une relation : #}
+{% with common.personne|type_of_relation_you:personne as relation_desc %}
+
+{# N'afficher que si ce n'est pas l'utilisateur en cours : #}
+<button type="button" class="btn btn-default btn-success btn-choice-invitation"
+        data-toggle="modal" data-target="#modal-invite-accept-{{ id_unique }}"
+        title="{% trans 'Accept' %}">
+    <i class="fa fa-check"></i>&nbsp;{% trans 'Accept' %}
+</button>
+<button type="button" class="btn btn-default btn-danger btn-choice-invitation"
+        data-toggle="modal" data-target="#modal-invite-decline-{{ id_unique }}"
+        title="{% trans 'Refuse' %}">
+    <i class="fa fa-trash"></i>&nbsp;{% trans 'Refuse' %}
+</button>
+<button type="button" class="btn btn-default btn-dark btn-choice-invitation"
+        data-hqf-switch="$.ct('#tab-invitations').fd('.invitations-summary')/Xd/$.ct('.row')/Xu">
+    <i class="fa fa-times"></i>&nbsp;{% trans 'Close' %}
+</button>
+{% comment %}--------------------------------------------------------
+
+Boîte modale d'acceptation de l'invitation
+
+
+{% endcomment %}
+<form class="modal fade"
+      id="modal-invite-accept-{{ id_unique }}"
+      action="{% url form_invitation_send_decision_url %}" method="POST"
+      tabindex="-1" role="dialog"
+      aria-labelledby="{% trans 'Accept' %}" aria-hidden="true"
+      style="display: none;">
+    {% csrf_token %}
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+            <p>
+                {% blocktrans trimmed with nom=personne.full_name %}
+                Accept {{ nom }}'s invitation?
+                {% endblocktrans %}
+            </p>
+            <p>
+                {# Normalement un seul champ = id personne dont on accepte : #}
+                {% for field in personne|make_form_invitation_accept %}
+                    {{ field }}
+                {% endfor %}
+            </p>
+            </div>{#<!-- /modal-body --> #}
+
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-success">
+                    {% trans 'Accept' %}
+                </button>
+                <button class="btn btn-default"
+                        data-dismiss="modal">
+                    {% trans 'Cancel' %}
+                </button>
+            </div>
+
+        </div>
+    </div>
+</form>
+{% comment %}--------------------------------------------------------
+
+Boîte modale de refus de l'invitation
+
+
+{% endcomment %}
+<form class="modal fade"
+      id="modal-invite-decline-{{ id_unique }}"
+      action="{% url form_invitation_send_decision_url %}" method="POST"
+      tabindex="-1" role="dialog"
+      aria-labelledby="{% trans 'Decline' %}" aria-hidden="true"
+      style="display: none;">
+    {% csrf_token %}
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body">
+            <p>
+                {% blocktrans trimmed with nom=personne.full_name %}
+                Reason to decline {{ nom }}'s :
+                {% endblocktrans %}
+            </p>
+            <p>
+                {# Normalement un seul champ = id personne à inviter : #}
+                {% for field in personne|make_form_invitation_refuse %}
+                    {{ field }}
+                {% endfor %}
+            </p>
+            </div>{#<!-- /modal-body --> #}
+
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-danger">
+                    {% trans 'Refuse' %}
+                </button>
+                <button class="btn btn-default"
+                        data-dismiss="modal">
+                    {% trans 'Cancel' %}
+                </button>
+            </div>
+
+        </div>
+    </div>
+</form>
+{% endwith %}

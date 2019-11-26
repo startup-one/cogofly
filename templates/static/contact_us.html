@@ -1,0 +1,30 @@
+{% extends "applancement/base.html" %}
+{% load staticfiles i18n templates_extras compress %}
+
+{% block title %}
+    <title>{{ contact_us_title }}</title>
+{% endblock %}
+
+{% block metas %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ block.super }}
+{% endblock metas %}
+
+{% block custom_js %}
+    {% with "js/launch/bg-slider-contact.js" as custom_js_slider %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock custom_js %}
+
+{% block body %}
+    {% block header_applancement %}
+    {% autoescape off %}
+    <section class="terms-and-conditions">
+        <h1>{{ contact_us_title }}</h1><br />
+        <p> {{ contact_us_contact_us }}</p>
+        <h2>{{ contact_us_introduction }}</h2>
+        <p> {{ contact_us_introduction_1 }}</p>
+    </section>
+    {% endautoescape %}
+    {% endblock header_applancement %}
+{% endblock body %}

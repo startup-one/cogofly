@@ -1,0 +1,60 @@
+{% extends "applancement/base.html" %}
+{% load staticfiles i18n templates_extras compress %}
+
+{% block title %}
+    <title>{{ privacy_policy_title }}</title>
+{% endblock %}
+
+{% block custom_js %}
+    {% with "js/launch/bg-slider-privacy-policy.js" as custom_js_slider %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock custom_js %}
+
+{% block body %}
+    {% block header_applancement %}
+    {% autoescape off %}
+    <section class="terms-and-conditions">
+        <h1>{{ privacy_policy_title }}</h1><br />
+        <p>{{ privacy_policy_data_protection }}</p>
+        <h2>{{ privacy_policy_1_collection }}</h2>
+        <p>{{ privacy_policy_1_collection_details }}</p>
+        <h2>{{ privacy_policy_2_registration }}</h2>
+        <p>{{ privacy_policy_2_registration_details }}</p>
+        <p>{{ privacy_policy_2_registration_details_enum }}</p>
+        <h2>{{ privacy_policy_3_profile_information }}</h2>
+        <p>{{ privacy_policy_3_profile_information_details }}</p>
+        <h2>{{ privacy_policy_4_users_contacts }}</h2>
+        <p>{{ privacy_policy_4_users_contacts_details_1 }}</p>
+        <p>{{ privacy_policy_4_users_contacts_details_2 }}</p>
+        <h2>{{ privacy_policy_5_cookies }}</h2>
+        <p>{{ privacy_policy_5_cookies_details_1 }}</p>
+        <p>{{ privacy_policy_5_cookies_details_2 }}</p>
+        <p>{{ privacy_policy_5_cookies_details_3 }}</p>
+        <h2>{{ privacy_policy_6_viewable_datas }}</h2>
+        <p>{{ privacy_policy_6_viewable_datas_1 }}</p>
+        <p>{{ privacy_policy_6_viewable_datas_2 }}</p>
+        <p>{{ privacy_policy_6_viewable_datas_3 }}</p>
+        <h2>{{ privacy_policy_7_sharing_information }}</h2>
+        <p>{{ privacy_policy_7_sharing_information_details_1 }}</p>
+        <p>{{ privacy_policy_7_sharing_information_details_2 }}</p>
+        <h2>{{ privacy_policy_8_emails_and_notifications }}</h2>
+        <p>{{ privacy_policy_8_emails_and_notifications_details }}</p>
+        <h2>{{ privacy_policy_9_forwarding_information }}</h2>
+        <p>{{ privacy_policy_9_forwarding_information_details_1 }}</p>
+        <p>{{ privacy_policy_9_forwarding_information_details_2 }}</p>
+        <h2>{{ privacy_policy_10_miscellaneous }}</h2>
+        <h3>{{ privacy_policy_10_miscellaneous_1 }}</h3>
+        <p>{{ privacy_policy_10_miscellaneous_1_details }}</p>
+        <h3>{{ privacy_policy_10_miscellaneous_2 }}</h3>
+        <p>{{ privacy_policy_10_miscellaneous_2_details }}</p>
+        <h2>{{ privacy_policy_11_changing_information }}</h2>
+        <p>{{ privacy_policy_11_changing_information_details }}</p>
+        <h2>{{ privacy_policy_12_litigation }}</h2>
+        <p>{{ privacy_policy_12_litigation_details }}</p>
+        <h2>{{ privacy_policy_13_modification }}</h2>
+        <p>{{ privacy_policy_13_modification_details }}</p>
+    </section>
+    {% endautoescape %}
+    {% endblock header_applancement %}
+{% endblock body %}

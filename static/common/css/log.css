@@ -1,0 +1,294 @@
+input[type=text], input[type=url], input[type=email], input[type=tel], textarea {
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    background: #fff;
+    color: #444;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+#register, #login-page, #signup-page,
+#registration-done-check-email,
+#registration-validated {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 13px;
+    display: block;
+    line-height: 1.3em;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+#login-page label, #signup-page label,
+#registration-done-check-email label,
+#registration-validated label {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+#register a,
+#login-page a,
+#signup-page a {
+    text-decoration: none;
+}
+
+#register form,
+#login-page #se-login-form,
+#signup-page #se-login-form,
+#login-page #openid_form,
+#signup-page #openid_form,
+#registration-done-check-email form,
+#registration-validated form {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+#register form,
+#login-page .formContainer,
+#signup-page .formContainer,
+#registration-done-check-email form,
+#registration-validated form {
+    width: 280px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #e6e6e6;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 100%;
+    display: block;
+}
+
+#register form,
+#signup-page .formContainer,
+#registration-done-check-email form,
+#registration-validated form {
+    margin-bottom: 20px;
+}
+
+#login-page #openid-buttons,
+#signup-page #openid-buttons {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+#login-page .major-provider,
+#signup-page .major-provider {
+    cursor: pointer;
+    border-radius: 3px;
+    width: 136px;
+    height: 38px;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+#login-page .major-provider .icon-container,
+#signup-page .major-provider .icon-container {
+    display: inline-block;
+    width: 35px;
+    height: 100%;
+    padding: 0;
+    float: left;
+}
+
+#login-page .major-provider .icon,
+#signup-page .major-provider .icon {
+    background: url('../img/login-sprites.png?v=1');
+    display: inline-block;
+    margin: 11px auto;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: 0;
+}
+
+#login-page .major-provider, #signup-page .major-provider {
+    cursor: pointer;
+}
+#login-page .major-provider .text,
+#signup-page .major-provider .text {
+    width: 100px;
+    height: 100%;
+    color: #fff;
+    display: table;
+    border: 0;
+    font-size: 100%;
+}
+#login-page .major-provider .text span,
+#signup-page .major-provider .text span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+#login-page .major-provider.google-login,
+#signup-page .major-provider.google-login {
+    border: 1px solid #e0492f;
+}
+#login-page .major-provider.google-login .icon,
+#signup-page .major-provider.google-login .icon {
+    background-position: 0 0;
+}
+#login-page .major-provider.google-login .icon-container,
+#signup-page .major-provider.google-login .icon-container {
+    border-right: 1px solid #bf3b24;
+    background: #e0492f;
+}
+#login-page .major-provider.google-login .text,
+#signup-page .major-provider.google-login .text {
+    background: #e0492f;
+}
+
+#login-page .major-provider.facebook-login,
+#signup-page .major-provider.facebook-login {
+    border: 1px solid #395697;
+}
+
+#login-page .major-provider.facebook-login .icon-container,
+#signup-page .major-provider.facebook-login .icon-container {
+    background: #395697;
+    border-right: 1px solid #2a4683;
+}
+#login-page .major-provider.facebook-login .icon,
+#signup-page .major-provider.facebook-login .icon {
+    background-position: -17px 0;
+}
+
+#login-page .major-provider.facebook-login .text,
+#signup-page .major-provider.facebook-login .text {
+    background: #395697;
+}
+
+
+
+
+#login-page .or-container,
+#signup-page .or-container {
+    text-align: center;
+    margin: 20px 0;
+    color: #808080;
+    font-variant: small-caps;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+#login-page .or-hr,
+#signup-page .or-hr {
+    margin-bottom: -20px;
+    height: 0;
+    border: 0;
+    border-top: 1px solid #e6e6e6;
+    background-color: #aaa;
+    color: #aaa;
+}
+#login-page #or,
+#signup-page #or {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    background-color: #fff;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+#login-page #se-login-form input,
+#signup-page #se-login-form input,
+#login-page #openid_form input,
+#signup-page #openid_form input,
+#registration-done-check-email input,
+#registration-validated input {
+    margin: 5px 0 5px 0;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+}
+
+#login-page #se-login-form input[type=text],
+#signup-page #se-login-form input[type=text],
+#login-page #openid_form input[type=text],
+#signup-page #openid_form input[type=text],
+#login-page #se-login-form input[type=email],
+#signup-page #se-login-form input[type=email],
+#login-page #openid_form input[type=email],
+#signup-page #openid_form input[type=email],
+#login-page #se-login-form input[type=password],
+#signup-page #se-login-form input[type=password],
+#login-page #openid_form input[type=password],
+#signup-page #openid_form input[type=password] {
+    color: #2a2a28;
+    width: 263px;
+    line-height: 1.3;
+    font-size: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    height: 18px;
+    border: 1px solid #e6e6e6;
+    border-radius: 0;
+    cursor: auto !important;
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+}
+
+#register  input[type=submit],
+#login-page input[type=button],
+#signup-page input[type=button],
+#login-page input[type=submit],
+#signup-page input[type=submit],
+#signup-page-cancel input[type=submit],
+#registration-done-check-email input[type=submit],
+#registration-validated input[type=submit]{
+    width: 100%;
+}
+#register  input[type=submit],
+#login-page input[type=button],
+#signup-page input[type=button],
+#login-page input[type=submit],
+#signup-page input[type=submit],
+#signup-page-cancel input[type=submit],
+#registration-done-check-email input[type=submit],
+#registration-validated input[type=submit],
+#registration-done-check-email form div.information,
+#registration-validated form div.information {
+    text-align: center;
+    background: #07c;
+    color: #fff;
+    border-radius: 3px;
+    padding: 12px 40px;
+    box-shadow: none;
+    text-shadow: none;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 0 !important;
+}
+#registration-done-check-email form div.information,
+#registration-validated form div.information {
+    background: #4a3035;
+}
+#signup-page-cancel input[type=submit] {
+    background: #bf3b24;
+    color: #fff;
+}
+
+#login-page input[type=text], #signup-page input[type=text] {
+    box-shadow: none;
+}
