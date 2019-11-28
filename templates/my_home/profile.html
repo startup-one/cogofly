@@ -1,0 +1,117 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
+<script>UPLOADCARE_PUBLIC_KEY = "YOUR_PUBLIC_KEY";</script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+
+.portfolio {
+  padding:6%;
+  text-align:center;
+}
+
+.heading {
+  background:#fff;
+  padding:1%;
+  text-align:left;
+  box-shadow:0px 0px 4px 0px #545b62;
+}
+
+.heading img {
+  width:10%;
+}
+
+.bio-info {
+  padding:5%;
+  background:#fff;
+  box-shadow:0px 0px 4px 0px #b0b3b7;
+}
+
+.name {
+  font-family:'Charmonman', cursive;
+  font-weight:600;
+}
+
+.bio-image {
+  text-align:center;
+}
+
+.bio-image img {
+  width:250px;
+  height:250px;
+  border-radius:50%;
+}
+
+.bio-content {
+  text-align:left;
+}
+
+.bio-content p {
+  font-weight:600;
+  font-size:30px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+    <div class="container portfolio">
+	<div class="bio-info">
+
+	<div class="row">
+            <div class="col-md-12">
+                <div class="">	<h2 class="text-center">My Profile</h2>
+                </div>
+            </div>	
+        </div><br><br>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="bio-content">
+					<h2>Add your Profile</h2>
+                    <h6>Not mandotory but almost.. your first picture start here you can change them.</h6>
+                </div>
+            </div>
+            
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="bio-image">
+              <img src="../../static/common/img/user.png"><br>
+                        <input type="hidden" role="uploadcare-uploader" name="my_file" />
+						</div>			
+					</div>
+				</div>	
+            </div>
+            <div class="container">
+            
+                    <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+               <a href="/tripcard"><button class="btn btn-primary" type="button"> Previous</button></a>
+                <a href="/demo"><button class="btn btn-danger" type="button"> Next</button></a>
+            </div>
+            </div>
+        </div>
+		</div>	
+	</div>
+</div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

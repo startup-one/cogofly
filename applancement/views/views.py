@@ -22,7 +22,7 @@ from third_party.authomatic_0_1_0 import authomatic
 from third_party.authomatic_0_1_0.authomatic import adapters
 from third_party.authomatic_0_1_0.authomatic.providers import oauth1, oauth2, \
     openid, gaeopenid
-
+from django.shortcuts import render, redirect
 
 # (!!) beta testeur = message like
 #      "please fill your profile, please..." + redirect to profile editing
@@ -616,3 +616,23 @@ def logout(req):
         return HttpResponseRedirect(redirect)
     return HttpResponseRedirect('/')
 
+
+#new functions 
+
+def addtrip(request):
+    return render(request, 'my_home/addtrip.html')
+
+def tripcard(request):
+    return render(request, 'my_home/tripcard.html')
+
+def profile(request):
+    return render(request, 'my_home/profile.html')
+
+def review(request):
+    return render(request, 'my_home/review.html')
+
+def tripsdone(request):
+    return render(request, 'my_home/tripsdone.html')
+    
+def demo(request):
+    return render(request, 'my_home/demo.html')

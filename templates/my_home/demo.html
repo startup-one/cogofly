@@ -1,0 +1,154 @@
+<div class="container">
+
+        <div class="register">
+            </div> 
+        <div class="login">
+           <div class="container">
+                <h2 style="text-align: left;">Your Personal Information To <br>Travel Together Peacefully</h2><br>
+                <input type="text" placeholder="Go">
+                <input type="text" placeholder="GoFly">
+                <input type="text" placeholder="New York, USA">
+                <input type="text" placeholder="Paris, France">
+                <a href="/tripsdone"><button class="btn btn-primary" type="button"> Next</button></a>
+        <br>
+           </div>
+        </div> 
+      </div>
+
+
+      <style>
+      
+      /*Start Global Style*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:#e9ebee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    font-family: sans-serif;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+  height:100%
+}
+
+.login ,.register{width: 50%}
+
+/*Start Login Style*/
+.login{
+    float:right;
+    background-color: #fafafa;
+    height: 62%;
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    padding-top: 20px;
+}
+.login h1{
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+input[type="text"] , input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid lightgray;
+    background-color: #fff;
+}
+input[type="checkbox"]{
+    float: left;
+    margin-right: 5px;
+}
+.login span{
+    float: left
+}
+.login a{
+    float: left;
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s all ease-in-out;
+}
+.login a:hover{color: royalblue;font-weight: bold}
+.login button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: royalblue;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.login button:hover{
+    width:97%;
+    font-size: 22px;
+    border-radius: 5px;
+    
+}
+.login hr{
+    width: 30%;
+    display: inline-block
+}
+
+.login p{
+    display: inline-block;
+    margin: 0px 10px 30px;
+}
+.login ul{
+    list-style: none;
+    margin-bottom:40px;  
+}
+.login ul li{
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.login ul li:hover{opacity: 0.6}
+.login ul li:last-child{margin-right: 0}
+.login .copyright{
+    display: inline-block;
+    float: none;
+}
+/*Start Register Style*/
+.register{
+    float: left;
+    background-image: url("../../static/common/img/1280x1600/bg1a.jpg");
+    height: 62%;
+    color:#fff;
+    background-size: cover;
+    background-position: center;
+    border-radius:  0 10px 10px  0;
+    text-align: center;
+}
+.register h2{
+    margin: 30px 0;
+    font-size: 50px;
+    letter-spacing: 3px
+}
+.register p{
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.register button{
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition:0.2s all  ease-in-out;
+}
+.register button:hover{
+    color: royalblue;
+    background-color: #fff;
+    cursor: pointer;
+}
+      
+      </style>

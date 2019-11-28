@@ -145,14 +145,29 @@ http://ogp.me/
             </div>
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
 		        <ul class="nav navbar-nav">
-		            <li>
+                        <li>
+                                <a href="{% url 'my_home_login' %}">
+                                    {% trans 'Help' %}
+                                </a>
+                            </li>
+                            <li>
+                                        <img src="../../static/common/img/th.jpeg" width="55">
+                                 
+                                </li>
+                    
+                    <li>
                         <a href="{% url 'my_home_login' %}">
-                            {% trans 'Log in' %}
+                            {% trans 'Login' %}
                         </a>
                     </li>
-		            <li class="dropdown language">
+                    <li>
+                            <a href="{% url 'my_home_login' %}">
+                                {% trans 'Sign up' %}
+                            </a>
+                        </li>
+		            <!-- <li class="dropdown language">
 		               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                           {% trans 'Language' %} <b class="caret"></b>
+                           {% trans 'Sign up' %} <b class="caret"></b>
                        </a>
                     
                        <ul class="dropdown-menu" style="background-color: transparent;">
@@ -167,7 +182,7 @@ http://ogp.me/
                             </li>
                            {% endfor %}
 		               </ul>
-		            </li>
+		            </li> -->
 		        </ul>
             </div>
             
@@ -185,23 +200,55 @@ http://ogp.me/
 			<div class="row">
 				<div class="col-md-12">
 					<div class="slogan" id="slogan">
-						<h2>{% trans "FED UP OF<br/>TRAVELLING ALONE?" %}</h2>
-                        <h4 style="display:none; margin-top: 20px">
-                        {% trans "Break down borders together!" %}
-                        </h4>
+						<h3 style="text-transform: capitalize; font-size: 40;">{% trans "Alone, We Think..Together, We Travel!" %}</h3>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					 <div class="section-nav page-scroll" id="navsection">
-						<ul class="navitem">
-                            <li><a href="#concept">{% trans "Concept" %}</a></li>
-                            <li><a href="#community">{% trans "Community" %}</a></li>
-                            <li><a href="#advantages">{% trans "Advantages" %}</a></li>
-                            <li><a href="#statement">{% trans "Observations" %}</a></li>
-                            <li><a href="#future">{% trans "How does it work?" %}</a></li>
-						</ul>
+					 <div class="section-nav page-scroll" id="navsection"><div class="container-fluid">
+                            <div class="row">
+                            <div class="sm-12 lg-6">
+                               </div> <!-- Closing div tag for md-6 -->
+                            </div> <!-- Closing div tag for row -->
+                          <div id="flight_configurations"
+                          <form> 
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <!-- <input type="text" class="form-control" placeholder="Destination">
+                                {% for i in 'manideep' %}
+                                  <span>{{i}}</span>
+                                {% endfor %} -->
+                                <div>
+                                    <select class="form-control">
+                                      <option>Select Location</option>
+                                      <!-- <option>USA</option> -->
+                                      <option>New Delhi, INDIA</option>
+                                      <option>London, UK</option>
+                                  <option>New York, USA</option>
+                                  <option>Tokyo, Japan</option>
+                                  <option>Paris, France</option>
+                                      <!-- <option>Dubai</option> -->
+                                    </select>
+                                </div>
+                                  
+                            </div>
+                            <div class="col-sm-3">
+                              <input class="form-control" type="date" id="date1" name="date" placeholder="Departure" type="text"> 
+                              <!-- Having difficulty making the departure date text appear in an attractive manner because the placeholder text isn't working. -->
+                            </div>
+                            <div class="col-sm-3">
+                              <input class="form-control" type="date" id="date1" name="date" placeholder="Arrival" type="text"> 
+                            </div> 
+                            <div class="col-sm-2">
+                            <a href="/addtrip"><button type="submit" class="btn btn-primary"> Find Flights </button></a>
+                            </div>
+                          </div>
+                          </form>
+                          </div> 
+                          
+                          </div> 
+                          
 					</div>
 				</div>
 			</div>
@@ -211,14 +258,14 @@ http://ogp.me/
                         {% spaceless %}
                             <h4 style="color: orange">
                                 {% blocktrans trimmed %}
-                                    JOIN THE INTERNATIONAL COTRAVELLER's COMMUNITY AND CHOOSE WITH WHOM YOU GO AWAY...
+                                    Trustworth of travelers are waiting for you worldwide....as well as lots of beauty too.
                                 {% endblocktrans %}
                             </h4>
                         {% endspaceless %}
 					</div>
 				</div>
 			</div>
-	        <div class="row">
+	        <!-- <div class="row">
 	            <div class="col-12">
                     <div class="connection">
                         <a class="btn btn-square button-register" href="{% url 'my_home_register' %}">{% cleanup %}
@@ -226,7 +273,7 @@ http://ogp.me/
                         {% endcleanup %}</a>
                     </div>
 	            </div>
-            </div>
+            </div> -->
 			<div class="row" style="margin-top: {% if LANGUAGE_CODE != 'fr' %} 7% {% else %} 0 {% endif %}">
                 <div class="page-scroll" id="first-page-scroll">
                     <a href="#concept" class="btn btn-circle">
@@ -861,3 +908,157 @@ http://ogp.me/
 </body>
 
 </html>
+
+<style>
+
+/*------- Navbar------*/
+
+.navbar-light {
+  background-color: #D7F4FC;
+}
+
+span.navbar-brand {
+  text-shadow: 1px 1px yellow;
+}
+
+.navbar-light li {
+  transition: .8s;
+  margin-left: 10%;
+}
+
+.navbar-light li:hover {
+  text-shadow: 1px 1px yellow;
+  text-decoration-line: underline;
+}
+
+nav li img {
+  width: 50px;
+  position: relative;
+  right: 0px;
+  margin-top: 5px;
+}
+
+nav form #searchBar {
+  margin-top: .33em;
+  margin-left: 30%;
+  border-radius: 3%;
+  width: 240px;
+  position: relative;
+  -webkit-box-shadow: 4px 5px 15px -5px rgba(0,0,0,0.49);
+-moz-box-shadow: 4px 5px 15px -5px rgba(0,0,0,0.49);
+box-shadow: 4px 5px 15px -5px rgba(0,0,0,0.49);
+  z-index: 1000;
+  transition: .4s
+}
+
+nav form #searchBar:focus {
+  width: 263px;
+  -webkit-box-shadow: 4px 5px 15px -5px rgba(0,0,0,0.99);
+-moz-box-shadow: 4px 5px 15px -5px rgba(0,0,0,0.99);
+box-shadow: 4px 5px 15px -5px rgba(0,0,0,0.99);
+}
+
+/* Cover Image */
+
+#cover_image {
+  width: 100%;
+  margin-top: -30%;
+  background-color: #D7F4FC; /* We add this for protection in the event the original photo is unavailable. */
+}
+
+/* Flight search and configurations */
+
+
+.emphasis {
+  font-weight: bold;
+  transition: 1s;
+}
+
+.emphasis:hover {
+  color: yellow;
+}
+#radio_stuff {
+ /* background-color: pink; */
+  position: absolute;
+ left: 25%;
+  color: white;
+  margin-top: 15%;
+  margin-right: 2em;
+  
+}
+
+.form-check {
+  display: block;
+  float: left;
+  margin-left: 2em;
+}
+
+#option1 {
+  background-color: pink;
+}
+
+#number_people {
+  position: absolute;
+  right: 35%;
+  color: white;
+  margin-top: 15%;
+}
+
+
+
+#exampleSelect1 {
+  background-color: #ccffff;
+}
+
+#flight_configurations {
+    margin-top: 2%;
+    padding-left: 7%;
+    padding-right: 8%;
+    margin-bottom: 2%;
+}
+
+input[type="date"]::before{
+    color: #999;
+    content: attr(placeholder) "         "; 
+}
+input[type="date"]:focus::before {
+    content: "" !important;
+  color: #999;
+}
+
+#recommended {
+  z-index: 1000000;
+  color: #E62211;
+  font-size: 50;
+  position: absolute;
+  bottom: 35%;
+  left: 30%;
+}
+
+.nation_warnings {
+  position: absolute;
+  width: 40%;
+  bottom: 26%;
+  left: 41%;
+  color: #FCF9F9;
+}
+
+.description_warnings {
+  position: absolute;
+  width: 35%;
+  top: 77%;
+  right: 35%;
+  color: #FCF9F9;
+}
+
+</style>
+
+<script>
+
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+
+
+</script>

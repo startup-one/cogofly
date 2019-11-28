@@ -29,6 +29,17 @@ urlpatterns = [
 
     url(r'^login/(\w*)', app_l_views.login, name='login'),
     url(r'^logout/?$', app_l_views.logout, name='logout'),
+
+    # New url's
+    url(r'^addtrip/?$', app_l_views.addtrip, name='addtrip'),
+    url(r'^tripcard/?$', app_l_views.tripcard, name='tripcard'),
+    url(r'^profile/?$', app_l_views.profile, name='profile'),
+    url(r'^review/?$', app_l_views.review, name='review'),
+    url(r'^tripsdone/?$', app_l_views.tripsdone, name='tripsdone'),
+    url(r'^demo/?$', app_l_views.demo, name='demo'),
+
+
+
     url(r'^admin/', admin.site.urls),
 
     # se connecter à la place d'un utilisateur pour tester les bogues :

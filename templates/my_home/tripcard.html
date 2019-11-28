@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Trip</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Libre Barcode 39' rel='stylesheet'>
+<style>
+
+
+.portfolio {
+  padding:6%;
+  text-align:center;
+}
+
+.heading {
+  background:#fff;
+  padding:1%;
+  text-align:left;
+  box-shadow:0px 0px 4px 0px #545b62;
+}
+
+.heading img {
+  width:10%;
+}
+
+.bio-info {
+  padding:5%;
+  background:#fff;
+  box-shadow:0px 0px 4px 0px #b0b3b7;
+}
+
+.name {
+  font-family:'Charmonman', cursive;
+  font-weight:600;
+}
+
+.bio-image {
+  text-align:center;
+}
+
+.bio-image img {
+  width:250px;
+  height:250px;
+  border-radius:5%;
+}
+
+.bio-content {
+  text-align:left;
+}
+
+.bio-content p {
+  font-weight:600;
+  font-size:30px;
+}
+div.elem-group {
+  margin: 20px 0;
+}
+
+div.elem-group.inlined {
+  width: 49%;
+  display: inline-block;
+  float: left;
+  margin-left: 1%;
+}
+
+label {
+  display: block;
+  font-family: 'Nanum Gothic';
+  padding-bottom: 10px;
+  font-size: 1.25em;
+  text-align: left !important;
+}
+
+input, select, textarea {
+  border-radius: 2px;
+  border: 2px solid #777;
+  box-sizing: border-box;
+  font-size: 1.25em;
+  font-family: 'Nanum Gothic';
+  width: 100%;
+  padding: 10px;
+}
+
+div.elem-group.inlined input {
+  width: 95%;
+  display: inline-block;
+}
+
+/ TODO:  PUT ANIMATIONS ON PSEUDO ELEMENT INSTEAD
+.glowing-animation {
+  animation: glowing 17000ms infinite;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -2px  1 rgba(61, 72, 70, .4) }
+  40% { box-shadow: 0 0 20px 3px rgba(61, 72, 70, .5) }
+  60% { box-shadow: 0 0 30px 3px rgba(61, 72, 70, .3) }
+  100% { box-shadow: 0 0 -10px 0 rgba(61, 72, 70, .2) }
+}
+
+#barcodeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darken(#0B1110,2);
+  padding: 0px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0px 1px rgba(61, 72, 70, .8);
+  cursor: crosshair;
+}
+
+#barcode{
+  position: relative;
+  color: #fff;
+  font-family: 'Libre Barcode 128 Text', cursive;
+  font-size: 5rem;
+  font-weight: 100;
+  white-space: no-wrap;
+}
+
+.animatedSpan{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  &:hover {
+    color: darkturquoise;
+  }
+}
+
+.barcodeSelected{
+  color: darkturquoise;
+}
+
+.highlighted{
+  color: aliceblue;
+  border-bottom: 1px solid darkred;
+  padding-bottom: 10px;
+  // text-shadow: 1px 1px 25px aqua;
+  text-shadow: 1px 1px 35px aqua;
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+    <div class="container portfolio">
+	<div class="bio-info">
+		<div class="row">
+			<div class="col-md-7 card" style="background: whitesmoke !important"><br>
+                    <img src="../../static/img/logo.jpg" width="200"><br>
+                <div class="col-md-12">
+                <div class="row">
+                <div class="col-md-6">
+                    <h6>Your Destination</h6>
+                    <span style="color:red;">New York, USA</span>
+                </div>
+                <div class="col-md-3">
+                        <h6>Start Date</h6>
+                        <span>27/11/2019</span>
+                </div>
+                <div class="col-md-3">
+                        <h6>End Date</h6>
+                        <span>29/11/2019</span>
+                </div>
+                </div><br>
+                
+                <div class="row">
+                        <div class="col-md-6">
+                            <h6>Your Images</h6>
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-6">
+                         <img src="../../static/common/img/bg3.jpg" width="50">
+                         <img src="../../static/common/img/bg3.jpg" width="50">
+                         <img src="../../static/common/img/bg3.jpg" width="50">
+                    </div>
+                </div><br>
+                
+                <div class="row">
+                        <div class="col-md-6">
+                            <h6>Comments</h6>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        
+<textarea rows="4" cols="50">
+    </textarea>
+                    </div>
+                </div>
+            </div><br>
+            </div>
+            <div class="col-md-1"></div>
+            
+                    <div class="col-md-4 card" style="background: royalblue;"><br>
+                        <h4 class="text-white">Trip Card</h4>
+                        <div class="col-md-12">
+                        <div class="">
+                        <div class="col-md-12">
+                            <h6 class="text-left text-white" style="font-size: 12px;">StopOver</h6>
+                            <h4 class="text-left text-white" style="color:red;">New York, USA</h4>
+                        </div><br>
+                        <div class="col-md-12">
+                                <h6 class="text-left text-white" style="font-size: 12px;">Start Date</h6>
+                                <h5 class="text-left text-white">27/11/2019</h5>
+                        </div><br>
+                        <div class="col-md-12">
+                                <h6 class="text-left text-white" style="font-size: 12px;">End Date</h6>
+                                <h5 class="text-left text-white">29/11/2019</h5>
+                        </div>
+                        </div><br>
+                        
+                        <div class="row">
+                                <div class="col-md-12">
+                                    <!-- <p style="font-family: 'Libre Barcode 39';font-size: 22px;color:#fff;text-align: left;">1234567901234567890</p> -->
+
+                                    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
+
+<div id='barcodeContainer' class='glowing-animation'>
+  <h1 id="barcode">
+    <span class = "animatedSpan ">[</span><span class = "animatedSpan"></span><span class = "animatedSpan">0</span><span class = "animatedSpan">D</span><span class = "animatedSpan">C</span><span class = "animatedSpan">0</span><span class = "animatedSpan">9</span><span class = "animatedSpan">1</span><span class = "animatedSpan">L</span><span class = "animatedSpan">3</span><span class = "animatedSpan ">]
+    </span>
+
+    
+  </h1>
+</div>    
+
+
+                                </div>
+                        </div>
+                    </div><br>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+                <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+            <a href="/addtrip"> <button class="btn btn-primary" type="button"> Previous</button></a>
+            <a href="/profile"><button class="btn btn-danger" type="button"> Next</button></a>
+        </div>
+        </div>
+    </div>
+	</div>
+</div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
