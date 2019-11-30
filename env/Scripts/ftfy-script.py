@@ -1,4 +1,4 @@
-#!e:\cogofly\cogofly-website-v2-develop\env\scripts\python.exe
+#!d:\cogofly-trail\cogofly\env\scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'ftfy==5.6','console_scripts','ftfy'
 __requires__ = 'ftfy==5.6'
 import re

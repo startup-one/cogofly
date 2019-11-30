@@ -1,4 +1,4 @@
-#!e:\cogofly\cogofly-website-v2-develop\env\scripts\python.exe
+#!d:\cogofly-trail\cogofly\env\scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":
