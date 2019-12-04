@@ -42,13 +42,10 @@
 {% compress js %}
     <script src="{% static "common/js/bootstrap-datetimepicker.js" %}"></script>
 {% endcompress %}
-    <script src="{% static "bower_components/raphael/raphael-min.js" %}"></script>
     {# <!-- le script au dessus fait péter compress, le remettre ici : --> #}
 {% compress js %}
     <script src="{% static "common/js/tools/cookies.js" %}"></script>
-    <script src="{% static "bower_components/morrisjs/morris.min.js" %}"></script>
     <script src="{% static "common/js/morris-data.js" %}"></script>
-    <script src="{% static "dist/js/sb-admin-2.js" %}"></script>
     <script src="{% static "common/js/select2.full.js" %}"></script>
     <script src="{% static "common/js/jquery/jquery.cookiesdirective.js" %}"></script>
 
