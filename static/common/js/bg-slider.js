@@ -3,12 +3,12 @@ var gBgImgs={
     '1280x1600': [
         //{src: '{{ STATIC_URL|escapejs }}img/1280x1600/bg1b.jpg'},
         //{src: '{{ STATIC_URL|escapejs }}img/1280x1600/bg1a.jpg'}
-        {src: '{{ STATIC_URL|escapejs }}img/1280x1600/bg2a.jpg'}
+        {src: '{{ STATIC_URL|escapejs }}common/img/1280x1600/bg2a.jpg'}
     ],
     '1600x1280': [
         //{src: '{{ STATIC_URL|escapejs }}img/1600x1280/bg1b.jpg'},
         //{src: '{{ STATIC_URL|escapejs }}img/1600x1280/bg1a.jpg'}
-        {src: '{{ STATIC_URL|escapejs }}img/1600x1280/bg2a.jpg'}
+        {src: '{{ STATIC_URL|escapejs }}common/img/1600x1280/bg2a.jpg'}
     ]
 };
 if (window.location.hostname.indexOf('dev')>=0) {
