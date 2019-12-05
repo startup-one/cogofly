@@ -21,13 +21,14 @@
 }
 </style>
     <link href="{% static "common/css/bootstrap-datetimepicker.css" %}" rel="stylesheet">
+     <link href="{% static "common/css/bootstrap.min.css" %}" rel="stylesheet">
     {% compress css %}
 
     {# <!-- Custom Fonts -->#}
     <link href="{% static "common/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
 
     {# <!-- jQuery placecomplete -->#}
-    <link href="{% static "common/jquery.placecomplete.css" %}" rel="stylesheet" type="text/css">
+   
 
     {# <!-- Customisation Cogofly -->#}
     <link href="{% static "common/3rdp/magnific-popup/magnific-popup.css" %}" rel="stylesheet" type="text/css">
@@ -45,8 +46,6 @@
     {# <!-- le script au dessus fait péter compress, le remettre ici : --> #}
 {% compress js %}
     <script src="{% static "common/js/tools/cookies.js" %}"></script>
-    <script src="{% static "common/js/morris-data.js" %}"></script>
-    <script src="{% static "common/js/select2.full.js" %}"></script>
     <script src="{% static "common/js/jquery/jquery.cookiesdirective.js" %}"></script>
 
 {% endcompress %}
